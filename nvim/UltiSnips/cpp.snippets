@@ -1,0 +1,161 @@
+priority -50
+
+extends c
+
+# my snippets
+priority -40
+
+snippet inc "include" b
+#include <${1:iostream}>
+endsnippet
+
+snippet std "using namespace std" b
+using namespace std;
+endsnippet
+
+snippet fore "for iteration" b
+for (${1:auto} ${2:var}: ${3:objects}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet cout "cout" b
+cout << ${1:var} << endl;
+endsnippet
+
+snippet cin "cin" b
+cin >> ${1:var}
+endsnippet
+
+snippet itera "iterating" b
+for (${1:auto} ${2:i} = ${3:container}.begin(); $2 != $3.end(); ++$2) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet vec "vector" b
+vector<${1:T}> ${2}
+endsnippet
+
+snippet vvec "vector" b
+vector<vector<${1:T}>> ${2}
+endsnippet
+
+snippet tryh5 "try and catch in hdf5" b
+try {
+Exception::dontPrint();
+${0}
+} catch (FileIException error) {
+error.printErrorStack();
+} catch (DataSetIException error) {
+error.printErrorStack();
+} catch (DataSpaceIException error) {
+error.printErrorStack();
+} catch (DataTypeIException error) {
+error.printErrorStack();
+}
+endsnippet
+
+# vim-snippets
+
+# We want to overwrite everything in parent ft.
+priority -49
+###########################################################################
+#			    Global functions 						  #
+###########################################################################
+
+global !p
+
+def write_docstring_args(arglist, snip):
+	args = str(arglist).split(',')
+
+	if len(args) > 1:
+		c = 0
+		for arg in args:
+			if c == 0:
+				snip.rv += arg
+				c = 1
+			else:
+				snip += '*       : %s' % arg.strip()
+	else:
+		snip.rv = args[0]
+
+
+endglobal
+
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+snippet beginend "$1.begin(), $1.end() (beginend)"
+${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
+endsnippet
+
+snippet cls "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+	explicit ${1/(\w+).*/$1/} (${2:arguments});
+	virtual ~${1/(\w+).*/$1/} ();
+
+private:
+	${0:/* data */}
+};
+endsnippet
+
+snippet ns "namespace .. (namespace)"
+namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
+{
+	${VISUAL}$0
+}${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
+endsnippet
+
+snippet readfile "read file (readF)"
+std::vector<char> v;
+if (FILE *fp = fopen(${1:"filename"}, "r"))
+{
+	char buf[1024];
+	while(size_t len = fread(buf, 1, sizeof(buf), fp))
+		v.insert(v.end(), buf, buf + len);
+	fclose(fp);
+}
+endsnippet
+
+snippet map "std::map (map)"
+std::map<${1:key}, ${2:value}> map$0;
+endsnippet
+
+snippet tp "template <typename ..> (template)"
+template <typename ${1:_InputIter}>
+endsnippet
+
+snippet cla "An entire .h generator" b
+#ifndef ${2:`!v substitute(vim_snippets#Filename('$1_H','ClassName'),'.*','\U&\E','')`}
+#define $2
+
+class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
+{
+private:
+	$3
+
+public:
+	$1();
+	virtual ~$1();
+};
+
+#endif /* $2 */
+endsnippet
+
+snippet fnc "Basic c++ doxygen function template" b
+/**
+* @brief: ${4:brief}
+*
+* @param: `!p write_docstring_args(t[3],snip)`
+*
+* @return: `!p snip.rv = t[1]`
+*/
+${1:ReturnType} ${2:FunctionName}(${3:param})
+{
+	${0:FunctionBody}
+}
+endsnippet
+# vim:ft=snippets:
