@@ -1,44 +1,77 @@
-" not show column of the cursor
-set nocursorcolumn
-" theme
+" Put the color scheme on the top!!!
 syntax enable
+set background=dark
+set signcolumn=yes
+set shortmess+=c
+" let g:gruvbox_italic=1
+" let g:gruvbox_invert_selection=0
+" colorscheme gruvbox
+let g:edge_style = 'neon'
+let g:edge_enable_italic = 0
+let g:edge_cursor = 'auto'
+let g:edge_menu_selection_background = 'blue'
+let g:edge_transparent_background = 1
+colorscheme edge
+" let g:gruvbox_contrast_dark='soft'
+" let g:gruvbox_italicize_comments=1
+" let g:gruvbox_transparent_bg=1
+
+" Cursor column and line
+set nocursorcolumn
+hi! link CursorLineNr Title
 set noshowmode
 set conceallevel=0
 set termguicolors
 set shiftwidth=4
-set background=dark
-let g:gruvbox_invert_selection=0
-let g:gruvbox_italic=1
-colorscheme gruvbox
-let g:gruvbox_contrast_dark='hard'
-" gruvbox
-let g:gruvbox_italicize_comments=1
-let g:gruvbox_transparent_bg=1
+
 " indetLine config
 let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_fileTypeExclude = ['tex', 'json'] " conceallevel related
-" highlight the color code
-lua << EOF
-require 'colorizer'.setup {
-  'vim';
-  'css';
-  'javascript';
-  html = {
-    mode = 'foreground';
-  }
-}
-EOF
+
+" tabline highlight
+hi TabLineSel guibg=#51afef guifg=#23272e
+hi TabLine guibg=#5B6268 guifg=#23272e
+
 " make the comment italic
 highlight Comment cterm=italic gui=italic
-" My setting for echo message
-highlight EchoHi guifg=Yellow cterm=bold
+
+" treesitter
+hi! TSUnderline guibg=none gui=none
+
+" highlight for matchup
+hi MatchWord guibg=#424040 gui=NONE
+hi MatchWordCur guibg=#424040 gui=NONE
+hi MatchParen guibg=#828385 gui=NONE
+hi MatchParenCur guibg=#828385 gui=NONE
+
 " To enable transparent background in vim
 augroup TranspBg
     autocmd!
     autocmd VimEnter * hi Normal guibg=none
+    autocmd VimEnter * hi NormalFloat guibg=none
+    autocmd VimEnter * hi EndOfBuffer guibg=none
 augroup END
+
+" hop highlight
+" highlight HopNextKey guifg=#eaed47 gui=bold,underline
+" highlight HopNextKey1 guifg=#00dfff gui=bold,underline
+" highlight HopNextKey2 guifg=#5fa1ba gui=bold,underline
+" highlight HopUnmatched guifg=#f5f2f2
+highlight HopNextKey guifg=#fcf908 gui=bold
+highlight HopNextKey1 guifg=#4af53b gui=bold,underline
+highlight HopNextKey2 guifg=#4af53b gui=bold,underline
+highlight HopUnmatched guifg=#f5f2f2
+
+" sign column and related (ale, gitgutter)
 highlight SignColumn guibg=Normal
+highligh ALEErrorSign guibg=none guifg=Red
+highligh ALEWarningSign guibg=none guifg=Yellow
+highligh GitGutterAdd guibg=none guifg=LightGreen
+highligh GitGutterChange guibg=none guifg=LightBlue
+highligh GitGutterDelete guibg=none guifg=LightRed
+highligh GitGutterChangeDelete guibg=none guifg=LightRed
+
 " fzf highlight
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
@@ -49,14 +82,14 @@ let g:fzf_colors = {
             \ 'hl+':     ['fg', 'Statement'],
             \ 'info':    ['fg', 'PreProc'],
             \ 'border':  ['fg', 'Normal'],
-            \ 'prompt':  ['fg', 'Gruvbox'],
+            \ 'prompt':  ['fg', 'Yellow'],
             \ 'pointer': ['fg', 'Exception'],
             \ 'marker':  ['fg', 'Keyword'],
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] }
 " for tmux blinking cursor: https://github.com/neovim/neovim/wiki/FAQ#flick-cursor-when-use-neovim-under-tmux
-hi EndOfBuffer ctermbg=NONE ctermfg=200 cterm=NONE
-hi Normal ctermbg=NONE ctermfg=200 cterm=NONE
+" hi EndOfBuffer ctermbg=NONE ctermfg=200 cterm=NONE
+" hi Normal ctermbg=NONE ctermfg=200 cterm=NONE
 
 " Statusline highlight
 " From https://github.com/phaazon/config/blob/master/nvim-lua/statusline.vim
@@ -71,9 +104,9 @@ hi StatusLineColNbr guibg=#23272e guifg=#98be65
 hi StatusLineGitBranchSymbol guibg=#23272e guifg=#ff6c6b
 hi StatusLineGitBranchName guibg=#23272e guifg=#da8548
 hi StatusLineGitDiffNone guibg=#23272e guifg=#98be65
-hi StatusLineGitDiffAdd guibg=#23272e guifg=#98be65
-hi StatusLineGitDiffMod guibg=#23272e guifg=#51afef
-hi StatusLineGitDiffDel guibg=#23272e guifg=#ff6c6b
+hi StatusLineGitDiffAdd guibg=#23272e guifg=LightGreen
+hi StatusLineGitDiffMod guibg=#23272e guifg=LightBlue
+hi StatusLineGitDiffDel guibg=#23272e guifg=LightRed
 
 hi StatusLineALEMsg guibg=#23272e guifg=#da8548
 hi StatusLineALEErrors guibg=#23272e guifg=#ff6c6b
@@ -87,7 +120,7 @@ hi StatusLineCurrentSymbolBracket guibg=#23272e guifg=#5B6268 gui=italic
 
 hi StatusLineNormalMode guibg=#51afef guifg=#23272e
 hi StatusLineNormalModeItalic guibg=#51afef guifg=#23272e gui=italic
-hi StatusLineNormalModeWinNr guibg=#316a91 guifg=#23272e
+hi StatusLineNormalModeWinNr guibg=#317a91 guifg=#23272e
 
 hi StatusLineInsertMode guibg=#98be65 guifg=#23272e
 hi StatusLineInsertModeItalic guibg=#98be65 guifg=#23272e gui=italic
@@ -171,10 +204,6 @@ hi StatusLineHitEnterPromptModeWinNr guibg=#b64a49 guifg=#23272e
 "     \ }
 
 
-" hop highlight
-" highlight HopNextKey guifg=Black guibg=Yellow blend=0
-" highlight HopNextKey1 guifg=Black guibg=Yellow blend=0
-" highlight HopNextKey2 guifg=Black guibg=Yellow blend=0
 " highlight for gitgutter
 " highlight GitGutterAdd    guifg=Yellow ctermfg=Yellow cterm=bold
 " highlight GitGutterChange guifg=Cyan ctermfg=Cyan cterm=bold

@@ -1,28 +1,29 @@
--- local chain_complete_list_cpp = {
---   default = {
---     {complete_items = {'buffers', 'snippet'}},
---     {complete_items = {'lsp'}, triggered_only = {'.', '::', '->', '<C-space>'}},
---     {complete_items = {'path'}, triggered_only = {'/'}},
---   },
---   string = {},
---   comment = {}
+-- vim.o.completeopt = "menuone,noselect"
+-- require'compe'.setup {
+--   enabled = true;
+--   autocomplete = true;
+--   debug = false;
+--   min_length = 2;
+--   preselect = 'enable';
+--   throttle_time = 10;
+--   source_timeout = 200;
+--   incomplete_delay = 400;
+--   max_abbr_width = 80;
+--   max_kind_width = 10;
+--   max_menu_width = 10;
+--   documentation = false;
+
+--   source = {
+--     path = true;
+--     buffer = true;
+--     calc = false;
+--     vsnip = false;
+--     nvim_lsp = true;
+--     nvim_lua = true;
+--     spell = false;
+--     tags = false;
+--     snippets_nvim = false;
+--     treesitter = true;
+--     ultisnips = true;
+--   };
 -- }
-
--- local on_attach_cpp = function()
---     require'completion'.on_attach({
---         chain_complete_list = chain_complete_list_cpp,
---     })
--- end
-
--- require'lspconfig'.clangd.setup{
---     cmd = { "clangd", "--completion-style=detailed"},
---     on_attach=require'completion'.on_attach
--- }
--- require'lspconfig'.jedi_language_server.setup{on_attach=require'completion'.on_attach}
-
-
--- -- disable the lsp diagnostic
--- local nvim_lsp = require'lspconfig'
--- -- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
-

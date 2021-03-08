@@ -7,16 +7,16 @@ let g:coc_fzf_opts = []
 
 " CTRL-A CTRL-Q to select all and build quickfix list
 function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
+    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+    copen
+    cc
 endfunction
 
 let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
+            \ 'ctrl-q': function('s:build_quickfix_list'),
+            \ 'ctrl-t': 'tab split',
+            \ 'ctrl-s': 'split',
+            \ 'ctrl-v': 'vsplit' }
 
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
@@ -66,8 +66,8 @@ command! -bang -nargs=* PRg
             \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>),
             \ 1,
             \ {
-                \ 'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2],
-                \ 'options': ['--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']
+            \ 'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2],
+            \ 'options': ['--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']
             \ },
             \ <bang>0)
 
@@ -113,10 +113,10 @@ function! s:bibtex_cite_sink(lines)
 endfunction
 
 command! FZFBibtex :call fzf#run({
-                \ 'source': 'bibtex-ls '.expand('%:p:h').'/bibtex.bib',
-                \ 'sink*': function('<sid>bibtex_cite_sink'),
-                \ 'window': 'call Centered_floating_window()',
-                \ 'options': '--ansi --layout=reverse-list --expect=ctrl-t,<CR> --multi --prompt "Cite> "'})
+            \ 'source': 'bibtex-ls '.expand('%:p:h').'/bibtex.bib',
+            \ 'sink*': function('<sid>bibtex_cite_sink'),
+            \ 'window': 'call Centered_floating_window()',
+            \ 'options': '--ansi --layout=reverse-list --expect=ctrl-t,<CR> --multi --prompt "Cite> "'})
 
 command! FZFTexToc :call vimtex#fzf#run('cl', {'window': 'call Centered_floating_window()'})
 
@@ -130,112 +130,112 @@ function! s:fzf_project(lines)
 endfunction
 
 command! FZFProject :call fzf#run({
-                \ 'source': 'cat /Users/wangk/.config/nvim/myprojects.fzf',
-                \ 'sink*': function('<sid>fzf_project'),
-                \ 'window': 'call Centered_floating_window()',
-                \ 'options': '--ansi --layout=reverse-list --multi --prompt "Project> "'})
+            \ 'source': 'cat /Users/wangk/.config/nvim/myprojects.fzf',
+            \ 'sink*': function('<sid>fzf_project'),
+            \ 'window': 'call Centered_floating_window()',
+            \ 'options': '--ansi --layout=reverse-list --multi --prompt "Project> "'})
 
 " FZF for asynctasks.vim
 function! s:fzf_sink(what)
-	let p1 = stridx(a:what, '<')
-	if p1 >= 0
-		let name = strpart(a:what, 0, p1)
-		let name = substitute(name, '^\s*\(.\{-}\)\s*$', '\1', '')
-		if name !=# ''
-			exec 'AsyncTask '. fnameescape(name)
-		endif
-	endif
+    let p1 = stridx(a:what, '<')
+    if p1 >= 0
+        let name = strpart(a:what, 0, p1)
+        let name = substitute(name, '^\s*\(.\{-}\)\s*$', '\1', '')
+        if name !=# ''
+            exec 'AsyncTask '. fnameescape(name)
+        endif
+    endif
 endfunction
 
 function! s:fzf_task()
-	let rows = asynctasks#source(&columns * 48 / 100)
-	let source = []
-	for row in rows
-		let name = row[0]
-		let source += [name . '  ' . row[1] . '  : ' . row[2]]
-	endfor
-	let opts = { 'source': source, 'sink': function('s:fzf_sink'),
-				\ 'options': '+m --nth 1 --inline-info --tac' }
-	if exists('g:fzf_layout')
-		for key in keys(g:fzf_layout)
-			let opts[key] = deepcopy(g:fzf_layout[key])
-		endfor
-	endif
-	call fzf#run(opts)
+    let rows = asynctasks#source(&columns * 48 / 100)
+    let source = []
+    for row in rows
+        let name = row[0]
+        let source += [name . '  ' . row[1] . '  : ' . row[2]]
+    endfor
+    let opts = { 'source': source, 'sink': function('s:fzf_sink'),
+                \ 'options': '+m --nth 1 --inline-info --tac' }
+    if exists('g:fzf_layout')
+        for key in keys(g:fzf_layout)
+            let opts[key] = deepcopy(g:fzf_layout[key])
+        endfor
+    endif
+    call fzf#run(opts)
 endfunction
 command! -nargs=0 AsyncTaskFzf call s:fzf_task()
 
 " grep in fzf
-function! SearchPRg()
-    call inputsave()
-    echohl EchoHi
-    let pattern = input({'prompt': 'Enter search pattern: '})
-    if pattern !=# '' && pattern !=# '^G'
-        call inputrestore()
-        execute 'PRg ' . pattern
-    endif
-  echohl None
-endfunction
+" function! SearchPRg()
+"     call inputsave()
+"     echohl Yellow
+"     let pattern = input({'prompt': 'Enter search pattern: '})
+"     if pattern !=# '' && pattern !=# '^G'
+"         call inputrestore()
+"         execute 'PRg ' . pattern
+"     endif
+"     echohl None
+" endfunction
 
 
-function! s:fzf_z(lines)
-    let l:line_list = split(a:lines[0], '|')
-    echo 'Enter Path >> ' . l:line_list[0]
-    execute ':cd '. l:line_list[0]
-    execute 'Files ' . l:line_list[0]
-endfunction
+" function! s:fzf_z(lines)
+"     let l:line_list = split(a:lines[0], '|')
+"     echo 'Enter Path >> ' . l:line_list[0]
+"     execute ':cd '. l:line_list[0]
+"     execute 'Files ' . l:line_list[0]
+" endfunction
 
-command! FZFZ :call fzf#run({
-    \ 'source': 'cat ~/.z | cut -d "|" -f 1',
-    \ 'sink*': function('<sid>fzf_z'),
-    \ 'window': 'call Centered_floating_window()',
-    \ 'options': '--ansi --multi --prompt "Z jump> "'})
+" command! FZFZ :call fzf#run({
+"             \ 'source': 'cat ~/.z | cut -d "|" -f 1',
+"             \ 'sink*': function('<sid>fzf_z'),
+"             \ 'window': 'call Centered_floating_window()',
+"             \ 'options': '--ansi --multi --prompt "Z jump> "'})
 
 " fzf highlights
-function! s:fzf_highlight_sink(line)
-    echo a:line
-endfunction
+" function! s:fzf_highlight_sink(line)
+"     echo a:line
+" endfunction
 
-function! s:fzf_highlight(show_code)
-    redir => cout
-    silent highlight
-    redir END
-    let raw_list = split(cout, "\n")
-    if !a:show_code
-        let list = []
-        let list_hi = []
-        for l in raw_list
-            if l[0] !=# ' '
-                let l_list = split(l)
-                call add(list, l_list[0] . '  xxx')
-                call add(list_hi, l_list[0])
-            endif
-        endfor
-        call fzf#run({
-            \ 'source': list,
-            \ 'sink*': function('s:fzf_highlight_sink'),
-            \ 'window': 'call Centered_floating_window()',
-            \ 'options': '--ansi --multi --prompt "Highlights > "'})
-        for l in list_hi
-            call matchadd(l, '\v\zs' . l . ' +xxx\ze')
-        endfor
-    else
-        let list = []
-        for l in raw_list
-            if l[0] !=# ' '
-                call add(list, l)
-            endif
-        endfor
-        call fzf#run({
-            \ 'source': list,
-            \ 'sink*': function('s:fzf_highlight_sink'),
-            \ 'window': 'call Centered_floating_window()',
-            \ 'options': '--ansi --multi --prompt "Highlights > "'})
-        for l in list
-            let l_list = split(l)
-            call matchadd(l_list[0], '\v\zs' . l_list[0] . ' +xxx\ze')
-        endfor
-    endif
-endfunction
-command! FZFHighlight call s:fzf_highlight(v:false)
-command! FZFHighlightWithCode call s:fzf_highlight(v:true)
+" function! s:fzf_highlight(show_code)
+"     redir => cout
+"     silent highlight
+"     redir END
+"     let raw_list = split(cout, "\n")
+"     if !a:show_code
+"         let list = []
+"         let list_hi = []
+"         for l in raw_list
+"             if l[0] !=# ' '
+"                 let l_list = split(l)
+"                 call add(list, l_list[0] . '  xxx')
+"                 call add(list_hi, l_list[0])
+"             endif
+"         endfor
+"         call fzf#run({
+"                     \ 'source': list,
+"                     \ 'sink*': function('s:fzf_highlight_sink'),
+"                     \ 'window': 'call Centered_floating_window()',
+"                     \ 'options': '--ansi --multi --prompt "Highlights > "'})
+"         for l in list_hi
+"             call matchadd(l, '\v\zs' . l . ' +xxx\ze')
+"         endfor
+"     else
+"         let list = []
+"         for l in raw_list
+"             if l[0] !=# ' '
+"                 call add(list, l)
+"             endif
+"         endfor
+"         call fzf#run({
+"                     \ 'source': list,
+"                     \ 'sink*': function('s:fzf_highlight_sink'),
+"                     \ 'window': 'call Centered_floating_window()',
+"                     \ 'options': '--ansi --multi --prompt "Highlights > "'})
+"         for l in list
+"             let l_list = split(l)
+"             call matchadd(l_list[0], '\v\zs' . l_list[0] . ' +xxx\ze')
+"         endfor
+"     endif
+" endfunction
+" command! FZFHighlight call s:fzf_highlight(v:false)
+" command! FZFHighlightWithCode call s:fzf_highlight(v:true)

@@ -13,8 +13,10 @@ let g:ale_completion_enabled = 0
 let g:ale_list_window_size = 5
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
+" let g:ale_sign_error = '✘'
+" let g:ale_sign_warning = '⚡'
 let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚡'
+let g:ale_sign_warning = '⚑'
 let g:ale_set_balloons = 1
 let g:ale_open_list = 0
 " error format
@@ -34,12 +36,13 @@ let g:ale_linters = {
     \'cpp': ['clang++'],
     \'hpp': ['clang++'],
     \'text': [],
+    \'vim':['vint'],
+    \'tex': ['chktex'],
+    \'lua': ['luacheck'],
     \}
-    " \'vim':['vint'],
-    " \'tex': ['chktex']
 let g:ale_c_gcc_options = '-O2 -std=c99'
 let g:ale_cpp_gcc_options = '-O2 -std=c++17'
-" let g:ale_tex_chktex_options='-I -n1 -n2 -n24 -n8 -n11 -n13'
+let g:ale_tex_chktex_options='-I -n1 -n2 -n24 -n8 -n11 -n13 -n3'
 
 " formater(fixer) config
 let g:ale_fixers={
@@ -49,6 +52,7 @@ let g:ale_fixers={
     \'cpp': ['clang-format'],
     \'hpp': ['clang-format'],
     \'rust': ['rustfmt'],
+    \'lua': ['luafmt'],
     \}
 let g:ale_cpp_clangtidy_executable='/usr/local/bin/clang-tidy'
 let g:ale_cpp_clangd_executable='/usr/local/opt/llvm/bin/clangd'

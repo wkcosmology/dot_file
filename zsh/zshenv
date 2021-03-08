@@ -1,0 +1,125 @@
+export XDG_CONFIG_HOME="/Users/wangk/.config/"
+#using Exuberant ctags
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# go package
+export PATH="/Users/wangk/go/bin:$PATH"
+# llvm: clangd etc.
+export PATH="$PATH:/usr/local/opt/llvm/bin/"
+# config node_module path
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# config python path
+export PATH="$PATH:/Users/wangk/anaconda3/bin"
+# add my package path
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/anaconda3/lib/python3.7/site-packages/"
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/Documents/Project/9.GalaxyGroup/"
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/Documents/Project/10.HaloMassProxy/"
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/Documents/Project/11.PeculiarVelocity/"
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/Documents/Project/"
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/Documents/Project/mylib/"
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/Documents/Project/library/libsource/cigale-master/"
+# for the correctly running of cython compile
+export CFLAGS="-I /Users/wangk/anaconda3/lib/python3.7/site-packages/numpy/core/include $CFLAGS"
+# for zathura in vimtex, see *vimtex-faq-zathura-macos* in vimtex document
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+
+# MacPorts Installer addition on 2017-09-06_at_21:58:33: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# added by Anaconda2 4.4.0 installer
+export PATH="$PATH:/Users/wangk/anaconda3/bin"
+
+# limit the threads of numpy lib
+# export MKL_NUM_THREADS=1
+# export NUMEXPR_NUM_THREADS=1
+# export OMP_NUM_THREADS=1
+
+# toggle true color
+export TERM="xterm-256color"
+
+# high light the mannul
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[38;5;;246m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[04;38;5;146m'
+
+# better exceptions
+export BETTER_EXCEPTIONS=1
+
+# third party package for python: loguru
+export LOGURU_FORMAT="<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green>｜<level>{level: <8}</level>｜<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+
+# config for politza/pdf-tools
+export PKG_CONFIG_PATH=/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+
+# itermplot
+export MPLBACKEND="module://itermplot"
+
+# openmpi
+export OMPI_CXX=g++-9
+
+# alias
+export MYLIB_PATH=/Users/wangk/Documents/Project/library
+
+# boost
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/boost_1_73_0:$CPLUS_INCLUDE_PATH
+
+# local package
+export C_INCLUDE_PATH=/usr/local/include/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/usr/local/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/usr/local/lib/:$LIBRARY_PATH
+
+# gcc path
+export C_INCLUDE_PATH=$MYLIB_PATH/include/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/lib/:$LIBRARY_PATH
+
+# fftw2
+export C_INCLUDE_PATH=$MYLIB_PATH/include/fftw2/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/include/fftw2/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/lib/fftw2/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/lib/fftw2/:$LIBRARY_PATH
+
+# hdf5
+export C_INCLUDE_PATH=$MYLIB_PATH/include/hdf5/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/include/hdf5/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/lib/hdf5/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/lib/hdf5/:$LIBRARY_PATH
+
+# fftw3
+export C_INCLUDE_PATH=$MYLIB_PATH/include/fftw3/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/include/fftw3/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/lib/fftw3/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/lib/fftw3/:$LIBRARY_PATH
+
+# hipp
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/hipp/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LIBRARY_PATH
+
+# spdlog
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/spdlog/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/libsource/spdlog/build/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/libsource/spdlog/build/:$LIBRARY_PATH
+
+# elucid
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/mycosmolib/include/mycosmo:$CPLUS_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/mycosmolib/include/elucid:$CPLUS_INCLUDE_PATH
+
+# eigen
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/eigen:$CPLUS_INCLUDE_PATH
+
+# kcorrect
+export KCORRECT_DIR=/Users/wangk/Documents/Project/library/libsource/kcorrect
+export PATH=$KCORRECT_DIR/bin:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$KCORRECT_DIR/lib
+
+export EDITOR='nvim'
+export CC='/usr/local/bin/g++-9'
+export MPICC='/Users/wangk/Documents/Project/library/bin/mpic++'
+source "$HOME/.cargo/env"

@@ -76,7 +76,7 @@ function! GetFileName()
     endif
 
     if exists('*WebDevIconsGetFileTypeSymbol')
-      let b:file_name = printf('%s %s', WebDevIconsGetFileTypeSymbol(b:file_name), b:file_name)
+      let b:file_name = printf('%s %s %%m', WebDevIconsGetFileTypeSymbol(b:file_name), b:file_name)
     endif
   endif
 
@@ -87,47 +87,47 @@ function! MakeActiveStatusLine()
   let b:hls = {
     \ 'n': {
       \ 'n': 'StatusLineNormalMode',
-      \ 'i': 'StatusLineNormalModeItalic',
+      \ 'i': 'StatusLineNormalMode',
       \ 'nr': 'StatusLineNormalModeWinNr'
       \ },
     \ 'i': {
       \ 'n': 'StatusLineInsertMode',
-      \ 'i': 'StatusLineInsertModeItalic',
+      \ 'i': 'StatusLineInsertMode',
       \ 'nr': 'StatusLineInsertModeWinNr'
       \ },
     \ "\<C-v>": {
       \ 'n': 'StatusLineVisualMode',
-      \ 'i': 'StatusLineVisualModeItalic',
+      \ 'i': 'StatusLineVisualMode',
       \ 'nr': 'StatusLineVisualModeWinNr'
       \ },
     \ 'v': {
       \ 'n': 'StatusLineVisualMode',
-      \ 'i': 'StatusLineVisualModeItalic',
+      \ 'i': 'StatusLineVisualMode',
       \ 'nr': 'StatusLineVisualModeWinNr'
       \ },
     \ 'V': {
       \ 'n': 'StatusLineVisualLineMode',
-      \ 'i': 'StatusLineVisualLineModeItalic',
+      \ 'i': 'StatusLineVisualLineMode',
       \ 'nr': 'StatusLineVisualLineModeWinNr'
       \ },
     \ '': {
       \ 'n': 'StatusLineVisualBlockMode',
-      \ 'i': 'StatusLineVisualBlockModeItalic',
+      \ 'i': 'StatusLineVisualBlockMode',
       \ 'nr': 'StatusLineVisualBlockModeWinNr'
       \ },
     \ 'R': {
       \ 'n': 'StatusLineReplaceMode',
-      \ 'i': 'StatusLineReplaceModeItalic',
+      \ 'i': 'StatusLineReplaceMode',
       \ 'nr': 'StatusLineReplaceModeWinNr'
       \ },
     \ 'c': {
       \ 'n': 'StatusLineCommandMode',
-      \ 'i': 'StatusLineCommandModeItalic',
+      \ 'i': 'StatusLineCommandMode',
       \ 'nr': 'StatusLineCommandModeWinNr'
       \ },
     \ 'r?': {
       \ 'n': 'StatusLineHitEnterPromptMode',
-      \ 'i': 'StatusLineHitEnterPromptModeItalic',
+      \ 'i': 'StatusLineHitEnterPromptMode',
       \ 'nr': 'StatusLineHitEnterPromptModeWinNr'
       \ },
     \ }
@@ -145,7 +145,7 @@ function! MakeActiveStatusLine()
   endif
 
 
-  let b:status_line = printf('%%#%s# %d %%#%s# %s ', b:hl2, win_id2win(g:statusline_winid), b:hl, GetFileName())
+  let b:status_line = printf('%%#%s# %d %%#%s# %s', b:hl2, win_id2win(g:statusline_winid), b:hl, GetFileName())
   let b:status_line .= '%#StatusLineLinNbr# %v%#StatusLineBg2b#:%#StatusLineColNbr#%l%< %#StatusLineBg2b#(%p%% %LL)'
   let b:status_line .= printf('%%=%%#StatusLineBg# %s%s ', ALEStatus(), VcsStatus())
 

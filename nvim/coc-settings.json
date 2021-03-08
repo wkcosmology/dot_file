@@ -11,7 +11,7 @@
 "suggest.maxCompleteItemCount": 15,
 "suggest.floatEnable": false,
 "suggest.enablePreview": false,
-"suggest.echodocSupport": true,
+"suggest.echodocSupport": false,
 "suggest.minTriggerInputLength": 2,
 "suggest.keepCompleteopt": false,
 "suggest.detailField": "preview",
@@ -19,11 +19,10 @@
 "suggest.labelMaxLength": 100,
 "suggest.removeDuplicateItems": true,
 "suggest.disableMenu": true,
+"suggest.autoTrigger": "always",
 
 "coc.source.around.enable": true,
 "coc.source.buffer.enable": true,
-
-"codeLens.enable": true,
 
 "clangd.arguments": [
     "--completion-style=detailed",
@@ -55,18 +54,8 @@
 "jedi.diagnostics.didSave": true,
 "jedi.workspace.extraPaths": [],
 
-"python.linting.enabled": false,
-"pyright.disableDiagnostics": true,
-"python.formatting.provider": "",
-"python.analysis.autoImportCompletions": false,
-"python.analysis.autoSearchPaths": false,
-
-"languageserver": {
-  "lua": {
-    "command": "/Users/wangk/.luarocks/bin/lua-lsp",
-    "filetypes": ["lua"]
-  }
-},
+"lua.enable": true,
+"Lua.diagnostics.enable": false,
 
 "yank.highlight.enable": false,
 "yank.list.maxsize": 50,

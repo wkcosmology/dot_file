@@ -18,7 +18,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " very powerful!!! easy motion
 Plug 'easymotion/vim-easymotion'
-" Plug 'phaazon/hop.nvim'
+Plug 'phaazon/hop.nvim'
 " for quick commentary
 Plug 'tpope/vim-commentary'
 " abbreviation substitution and Coerion
@@ -68,13 +68,9 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'stsewd/fzf-checkout.vim'
 " using fzf window for coc, current for coc-yank
 Plug 'antoinemadec/coc-fzf'
+" coc for floaterm
 Plug 'voldikss/fzf-floaterm', { 'on': ['FloatermNew', 'Floaterms', 'FloatermToggle']}
 Plug 'rafcamlet/coc-nvim-lua', { 'for': ['lua'] }
-
-" ---------------------------------------------------------------------------
-" build-in LSP
-" ---------------------------------------------------------------------------
-" Plug 'neovim/nvim-lspconfig'
 
 " ---------------------------------------------------------------------------
 " Buffer/Window/Session
@@ -89,13 +85,12 @@ Plug 'xolox/vim-session', { 'on':  ['OpenSession', 'SaveSession', 'ViewSession']
 " ui
 " ---------------------------------------------------------------------------
 " color theme
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/edge'
 " show the doc on echo, deprecated since coc is better
-" Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/echodoc.vim'
 " let the cursor stay away from ceil and bottom
 Plug 'drzel/vim-scrolloff-fraction'
-" great tabline and stateline
-" Plug 'vim-airline/vim-airline'
 " show the vertical lines to represent the indent
 Plug 'Yggdroot/indentLine'
 " maximum and restore current window, powerful!!!
@@ -121,7 +116,6 @@ Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
 " Git
 " ---------------------------------------------------------------------------
 " show git modified line in the state column
-" Plug 'lewis6991/gitsigns.nvim' TO see
 Plug 'airblade/vim-gitgutter'
 " powerful git tool
 Plug 'tpope/vim-fugitive'
@@ -143,9 +137,9 @@ Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 " vimtex
-Plug 'lervag/vimtex', { 'for': ['tex'] }
+Plug 'lervag/vimtex'
 " spell check
-Plug 'reedes/vim-lexical', { 'for': ['tex', 'markdown'] }
+Plug 'kamykn/spelunker.vim', { 'for': ['tex', 'markdown'] }
 " gist
 Plug 'lambdalisue/vim-gista', { 'on': ['Gista'] }
 " Cheatsheet for vim
@@ -160,20 +154,32 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 " highlight color code
 Plug 'norcalli/nvim-colorizer.lua'
 " lua for vim development
-" Plug 'tjdevries/nlua.nvim'
+Plug 'tjdevries/nlua.nvim'
 " Plug 'chimay/wheel'
+" filetree in lua
+Plug 'kyazdani42/nvim-tree.lua'
 
-
+" ---------------------------------------------------------------------------
+" Lsp and completion
+" ---------------------------------------------------------------------------
 Plug 'neovim/nvim-lspconfig'
-" Plug 'nvim-lua/completion-nvim'
-" Plug 'hrsh7th/nvim-compe'
 
+" ---------------------------------------------------------------------------
+" Lua
+" ---------------------------------------------------------------------------
+Plug 'RishabhRD/popfix'
+
+" ---------------------------------------------------------------------------
+" Telescope
+" ---------------------------------------------------------------------------
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
+Plug 'nvim-telescope/telescope-symbols.nvim'
+" Plug 'nvim-telescope/telescope-fzf-writer.nvim'
 
 call plug#end()
 " end of vim plugins manager:vim-plug------------------------------------------

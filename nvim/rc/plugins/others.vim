@@ -15,6 +15,12 @@ set expandtab
 set colorcolumn=120
 " https://github.com/bfrg/vim-cpp-modern
 let c_no_curly_error = 1
+" set hidden
+set hidden
+" no backup
+set nobackup
+" pmenu height
+set pumheight=20
 
 " set smartcase
 set ignorecase
@@ -34,9 +40,3 @@ augroup END
 " python 
 let g:python3_host_prog = '/Users/wangk/anaconda3/bin/python3'
 let g:python_host_prog = ''
-
-" spell check
-augroup lexical
-  autocmd!
-  autocmd FileType markdown,mkd,tex call lexical#init()
-augroup END

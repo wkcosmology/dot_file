@@ -1,0 +1,4 @@
+-- local Color, colors, Group, groups, styles = require("colorbuddy").setup()
+-- Color.new('darkyellow', '#c2c437')
+-- Group.new("TSType", colors.yellow, colors.background, styles.bold)
+-- Group.new("TSFunction", colors.darkyellow, colors.background, styles.bold)

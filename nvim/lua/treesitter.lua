@@ -1,8 +1,7 @@
-lua <<EOF
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
-        disable = { "tex" }
+        disable = { "tex"}
     },
     indent = {
         enable = false,
@@ -32,5 +31,8 @@ require'nvim-treesitter.configs'.setup {
         },
     },
 }
-EOF
 
+-- for issue https://github.com/nvim-treesitter/nvim-treesitter/issues/78
+require "nvim-treesitter.highlight"
+local hlmap = vim.treesitter.highlighter.hl_map
+hlmap.error = nil

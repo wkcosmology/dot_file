@@ -4,7 +4,8 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-yank',
             \ 'coc-json',
-            \ 'coc-pyright',
+            \ 'coc-lua',
+            \ 'coc-jedi',
             \ 'coc-vimlsp',
             \ 'coc-snippets',
             \ 'coc-explorer',
@@ -62,7 +63,11 @@ let g:coc_explorer_global_presets = {
 \     'reveal': 'current buffer',
 \     'position': 'floating',
 \     'floating-position': 'right-center',
-\     'floating-width': 50,
+\     'floating-width': 60,
 \     'floating-height': &lines - 2,
 \   },
 \ }
+augroup coc_explorer_number
+    autocmd!
+    autocmd FileType coc-explorer :set fillchars=eob:\  nu rnu
+augroup END

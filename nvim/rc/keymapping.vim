@@ -14,8 +14,6 @@ tnoremap <Esc> <C-\><C-n><cr>
 nnoremap Y y$
 " tagbar
 nnoremap <silent> <leader>vv :Vista<cr>
-" work around https://github.com/liuchengxu/vista.vim/issues/385
-" nnoremap <silent> <leader>vs :call vista#finder#fzf#Run('coc')<cr>
 " alias to left and right in insert mode
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
@@ -28,14 +26,14 @@ cnoremap <C-e> <End>
 " Use <C-L> to clear the highlighting of :set hlsearch.
 nnoremap <silent> <C-l> :nohlsearch<cr>
 " easy motion setting
-nmap <silent> <leader>jj <Plug>(easymotion-overwin-f)
-nmap <silent> <leader>jl <Plug>(easymotion-bd-jk)
-nmap <silent> <leader>js <Plug>(easymotion-overwin-f2)
-nmap <silent> <leader>jw <Plug>(easymotion-bd-w)
-nmap <silent> <leader>je <Plug>(easymotion-bd-e)
-" nmap <silent> <leader>jj :call MyHop('char1')<cr>
-" nmap <silent> <leader>jw :call MyHop('word')<cr>
-" nmap <silent> <leader>jl :call MyHop('line')<cr>
+nmap <silent> <leader>ji <Plug>(easymotion-overwin-f)
+" nmap <silent> <leader>jl <Plug>(easymotion-bd-jk)
+" nmap <silent> <leader>js <Plug>(easymotion-overwin-f2)
+" nmap <silent> <leader>jw <Plug>(easymotion-bd-w)
+" nmap <silent> <leader>je <Plug>(easymotion-bd-e)
+nmap <silent> <leader>jj :call MyHop('char1')<cr>
+nmap <silent> <leader>jw :call MyHop('word')<cr>
+nmap <silent> <leader>jl :call MyHop('line')<cr>
 augroup align
     autocmd!
     autocmd FileType tex,markdown xmap ga <Plug>(EasyAlign)
@@ -49,10 +47,18 @@ augroup END
 nnoremap <silent> <leader>: :Telescope commands<cr>
 " fuzzy search content
 nnoremap <silent> <leader>ss :Telescope current_buffer_fuzzy_find<cr>
+" fuzzy search help
+nnoremap <silent> <leader>sh :Telescope help_tags<cr>
+" grep word under cursor
+nnoremap <silent> <leader>sw :lua require'telescope_script'.telescope_grep_current_string()<cr>
 " fuzzy search terminal
 nnoremap <silent> <leader>sg :Floaterms<cr>
 " yank history
 nnoremap <silent> <space>sy  :CocFzfList yank<cr>
+" Symbols
+nnoremap <silent> <space>se  :lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
+" command history
+nnoremap <silent> <space>cr  :Telescope command_history<cr>
 " marks
 nnoremap <silent> <space>sm :Marks<cr>
 augroup search
@@ -68,7 +74,7 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search for my projects
 nnoremap <silent> <Leader>pp :FZFProject <cr>
-nnoremap <silent> <leader>ps :call SearchPRg()<bar>redraw<cr>
+nnoremap <silent> <leader>ps :lua require('telescope_script').telescope_grep_string()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " F-group: File related
@@ -166,10 +172,11 @@ nnoremap <leader>gl :diffget //3<cr>
 nnoremap <leader>gw :Gwrite<cr>
 nnoremap <leader>gg :G<cr>
 nnoremap <leader>gv :GV<cr>
-nnoremap <leader>gb :GBranches<cr>
+nnoremap <leader>gb :lua require('telescope_script').telescope_git_branches()<cr>
 nnoremap <leader>gm :Gblame<cr>
 nnoremap <leader>gP :Git push<cr>
-nnoremap <leader>gp :Git pull<cr>
+nnoremap <leader>gf :Git fetch<cr>
+" nnoremap <leader>gp :Git pull<cr>
 nnoremap <leader>gs :Gista list<cr>
 
 " hunk related
@@ -195,20 +202,26 @@ nmap <F1> :ALEFix<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup rename
-    autocmd!
-    autocmd BufEnter *.c,*.cpp,*.h,*.hpp nmap \r  <Plug>(coc-rename)
-augroup END
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gt <Plug>(coc-type-definition)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" augroup rename
+"     autocmd!
+"     autocmd BufEnter *.c,*.cpp,*.h,*.hpp nmap \r  <Plug>(coc-rename)
+" augroup END
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gt <Plug>(coc-type-definition)
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " utilities
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>ud :UndotreeToggle<cr>
+augroup sourcefile
+    autocmd!
+    autocmd BufEnter *.lua nnoremap <leader>ee :luafile %<cr>
+    autocmd BufEnter *.vim nnoremap <leader>ee :source %<cr>
+    autocmd BufEnter *.tex nmap <leader>ee <plug>(vimtex-compile)
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
