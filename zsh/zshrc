@@ -158,5 +158,14 @@ zinit light-mode for \
     zinit-zsh/z-a-patch-dl \
     zinit-zsh/z-a-bin-gem-node
 
+zinit snippet https://github.com/sainnhe/edge/raw/master/zsh/.zsh-theme-edge-dark
+
 
 ### End of Zinit's installer chunk
+
+# fzf color
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+--color=fg:#c5cdd9,bg:#262729,hl:#6cb6eb 
+--color=fg+:#c5cdd9,bg+:#262729,hl+:#5dbbc1 
+--color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
+--color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'

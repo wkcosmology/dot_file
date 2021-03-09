@@ -37,9 +37,7 @@ alias mpirun='/Users/wangk/Documents/Project/library/bin/mpirun'
 alias mpiexec='/Users/wangk/Documents/Project/library/bin/mpiexec'
 
 # tmux
-TMUX_CONFIG='/Users/wangk/.config/tmux/.tmux.conf'
-# alias tn='TERM=screen-256color /usr/local/bin/tmux -u -f $TMUX_CONFIG new'
-# alias ta='TERM=screen-256color /usr/local/bin/tmux -u -f $TMUX_CONFIG attach'
+TMUX_CONFIG='/Users/wangk/.config/tmux/tmux.conf'
 alias tn='/usr/local/bin/tmux -u -f $TMUX_CONFIG new'
 alias ta='/usr/local/bin/tmux -u -f $TMUX_CONFIG attach'
 alias tl='/usr/local/bin/tmux list-sessions'
