@@ -166,7 +166,7 @@ nnoremap <leader>te :TestNearest<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>gd :Gvdiffsplit!<cr>
+nnoremap <leader>gd :lua require('script').toggle_git_diff()<cr>
 nnoremap <leader>gh :diffget //2<cr>
 nnoremap <leader>gl :diffget //3<cr>
 nnoremap <leader>gw :Gwrite<cr>
@@ -202,15 +202,15 @@ nmap <F1> :ALEFix<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" augroup rename
-"     autocmd!
-"     autocmd BufEnter *.c,*.cpp,*.h,*.hpp nmap \r  <Plug>(coc-rename)
-" augroup END
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gr <Plug>(coc-references)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gt <Plug>(coc-type-definition)
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
+augroup rename
+    autocmd!
+    autocmd BufEnter *.c,*.cpp,*.h,*.hpp nmap \r  <Plug>(coc-rename)
+augroup END
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gt <Plug>(coc-type-definition)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " utilities
