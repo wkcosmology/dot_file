@@ -21,8 +21,13 @@ end
 
 -- git branches
 function M.telescope_git_branches()
-    local opt = {}
-    opt.cwd = vim.fn.expand("%:p:h")
+    if vim.fn["FugitiveHead"]() == "" then
+        print("This is not a git repo!")
+        return
+    end
+    local repo = vim.fn["FugitiveGitDir"]()
+    repo = string.match(repo, "/([^/]+)/.git$")
+    opt = {prompt_prefix = " " .. repo .. " > "}
     require("telescope.builtin").git_branches(opt)
 end
 

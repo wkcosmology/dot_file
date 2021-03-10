@@ -15,7 +15,7 @@
 "suggest.minTriggerInputLength": 2,
 "suggest.keepCompleteopt": false,
 "suggest.detailField": "preview",
-"suggest.maxCompleteItemCount": 10,
+"suggest.maxCompleteItemCount": 15,
 "suggest.labelMaxLength": 100,
 "suggest.removeDuplicateItems": true,
 "suggest.disableMenu": true,

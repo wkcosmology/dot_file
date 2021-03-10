@@ -4,6 +4,7 @@ function! Dot(path)
 endfunction
 
 " excute all the files under rc/ and rc/plugins/
+
 for file in split(glob(Dot('rc/*.vim')), '\n')
   execute 'source' file
 endfor

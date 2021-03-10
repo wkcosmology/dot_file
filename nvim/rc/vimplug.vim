@@ -91,6 +91,8 @@ Plug 'sainnhe/edge'
 Plug 'Shougo/echodoc.vim'
 " let the cursor stay away from ceil and bottom
 Plug 'drzel/vim-scrolloff-fraction'
+" statusline
+Plug 'wkcosmology/statusline'
 " show the vertical lines to represent the indent
 Plug 'Yggdroot/indentLine'
 " maximum and restore current window, powerful!!!
@@ -116,7 +118,9 @@ Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
 " Git
 " ---------------------------------------------------------------------------
 " show git modified line in the state column
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 " powerful git tool
 Plug 'tpope/vim-fugitive'
 " tree like git browser
@@ -163,6 +167,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Lsp and completion
 " ---------------------------------------------------------------------------
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'steelsojka/completion-buffers'
 
 " ---------------------------------------------------------------------------
 " Lua
@@ -174,7 +180,6 @@ Plug 'RishabhRD/popfix'
 " ---------------------------------------------------------------------------
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'

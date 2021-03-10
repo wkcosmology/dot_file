@@ -26,7 +26,7 @@ cnoremap <C-e> <End>
 " Use <C-L> to clear the highlighting of :set hlsearch.
 nnoremap <silent> <C-l> :nohlsearch<cr>
 " easy motion setting
-nmap <silent> <leader>ji <Plug>(easymotion-overwin-f)
+" nmap <silent> <leader>ji <Plug>(easymotion-overwin-f)
 " nmap <silent> <leader>jl <Plug>(easymotion-bd-jk)
 " nmap <silent> <leader>js <Plug>(easymotion-overwin-f2)
 " nmap <silent> <leader>jw <Plug>(easymotion-bd-w)
@@ -151,8 +151,8 @@ nnoremap <leader>tn :FloatermNew<cr>
 
 augroup t_group
     autocmd!
-    autocmd FileType c,cpp,h,cpp,python,javascript,lua noremap <silent><leader>tr :AsyncTask file-run<cr>
-    autocmd FileType c,cpp,h,cpp,python,javascript,lua noremap <silent><leader>tb :AsyncTask file-build<cr>
+    autocmd FileType c,cpp,h,cpp,python,javascript,lua noremap <silent><leader>ee :AsyncTask file-run<cr>
+    autocmd FileType c,cpp,h,cpp,python,javascript,lua noremap <silent><leader>ee :AsyncTask file-build<cr>
 augroup END
 
 augroup floaterm
@@ -166,7 +166,7 @@ nnoremap <leader>te :TestNearest<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>gd :lua require('script').toggle_git_diff()<cr>
+nnoremap <silent> <leader>gd :lua require('script').toggle_git_diff()<cr>
 nnoremap <leader>gh :diffget //2<cr>
 nnoremap <leader>gl :diffget //3<cr>
 nnoremap <leader>gw :Gwrite<cr>
@@ -180,9 +180,9 @@ nnoremap <leader>gf :Git fetch<cr>
 nnoremap <leader>gs :Gista list<cr>
 
 " hunk related
-nnoremap <leader>hq :GitGutterQuickFix<cr>
 nnoremap <leader>hs <nop>
-nnoremap <leader>hp :GitGutterPreviewHunk<cr>
+nnoremap <leader>hp :lua require"gitsigns".preview_hunk()<cr>
+nnoremap <leader>hb :lua require"gitsigns".blame_hunk()<cr>
 
 command FloatermNewLazyGit :FloatermNew 
             \ --height=0.9 --width=0.8 --wintype=float
