@@ -164,9 +164,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 " ---------------------------------------------------------------------------
 " Lsp and completion
 " ---------------------------------------------------------------------------
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-Plug 'steelsojka/completion-buffers'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'steelsojka/completion-buffers'
 
 " ---------------------------------------------------------------------------
 " Lua

@@ -12,7 +12,7 @@ set shiftwidth=4
 " indetLine config
 let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_fileTypeExclude = ['tex', 'json'] " conceallevel related
+let g:indentLine_fileType = ['python', 'c', 'cpp', 'h', 'hpp'] " conceallevel related
 " edge config
 let g:edge_style = 'neon'
 let g:edge_enable_italic = 0
