@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " enable overlay for choose win
 let g:choosewin_overlay_enable = 0
 let g:choosewin_blink_on_land = 0

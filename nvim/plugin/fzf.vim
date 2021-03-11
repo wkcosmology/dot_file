@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " fzf basic configure
 let g:fzf_buffers_jump = 1
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']

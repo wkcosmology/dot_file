@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " general config
 let g:ale_linters_explicit = 1
 " enable lint on save

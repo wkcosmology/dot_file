@@ -1,4 +1,5 @@
-" Put the color scheme on the top!!!
+scriptencoding utf-8
+set cmdheight=2
 syntax enable
 set background=dark
 set signcolumn=yes
@@ -20,10 +21,37 @@ let g:edge_cursor = 'auto'
 let g:edge_menu_selection_background = 'blue'
 let g:edge_transparent_background = 1
 let g:edge_better_performance = 1
-
-" put color scheme before any highlight
 colorscheme edge
-
+" Shougo/echodoc
+let g:echodoc_enable_at_startup = 1
+let g:echodoc#type = 'signature'
+" taboo
+set sessionoptions+=tabpages,globals 
+let g:taboo_tab_format=" \uf02b  %N. [Default%m] "
+let g:taboo_renamed_tab_format=" \uf02b  %N. [%l%m] "
+" undo tree
+let g:undotree_WindowLayout = 2
+let g:undotree_SplitWidth = 50
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_ShortIndicators = 1
+" scrolloff_fraction
+let g:scrolloff_fraction = 0.15
+" floaterm
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.7
+let g:floaterm_wintype = 'normal'
+let g:floaterm_position = 'center'
+let g:floaterm_title = 'Terminal($1/$2)'
+hi FloatermBorder guibg=Normal guifg=DarkYellow
+hi Floaterm guibg=Normal
+let g:fzf_floaterm_newentries = {
+  \ '+terminal' : {
+    \ 'title': 'Terminal',
+    \ 'cmd': '' },
+  \ '+ipython' : {
+    \ 'title': 'IPython',
+    \ 'cmd': 'ipython' },
+  \ }
 " highligh current line number
 hi! link CursorLineNr Title
 " tabline highlight

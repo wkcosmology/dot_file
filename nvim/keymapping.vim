@@ -14,6 +14,16 @@ tnoremap <Esc> <C-\><C-n><cr>
 nnoremap Y y$
 " tagbar
 nnoremap <silent> <leader>vv :Vista<cr>
+" subversive
+nmap s <plug>(SubversiveSubstitute)
+nmap ss <plug>(SubversiveSubstituteLine)
+nmap S <plug>(SubversiveSubstituteToEndOfLine)
+" vim-asterisk
+map *  <Plug>(asterisk-z*)
+map #  <Plug>(asterisk-z#)
+map g* <Plug>(asterisk-gz*)
+map g# <Plug>(asterisk-gz#)
+let g:asterisk#keeppos = 1
 " alias to left and right in insert mode
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
@@ -31,8 +41,8 @@ nmap <silent> <leader>jw :call MyHop('word')<cr>
 nmap <silent> <leader>jl :call MyHop('line')<cr>
 augroup align
     autocmd!
-    autocmd FileType tex,markdown xmap ga <Plug>(EasyAlign)
-    autocmd FileType tex,markdown nmap ga <Plug>(EasyAlign)
+    autocmd FileType tex,markdown xmap <buffer> ga <Plug>(EasyAlign)
+    autocmd FileType tex,markdown nmap <buffer> ga <Plug>(EasyAlign)
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -58,10 +68,10 @@ nnoremap <silent> <space>cr  :Telescope command_history<cr>
 nnoremap <silent> <space>sm :Marks<cr>
 augroup search
     autocmd!
-    autocmd BufEnter * nnoremap <silent> <leader>so :BTags<cr>
-    autocmd BufEnter *.py,*.c,*.h,*.cpp,*.hpp nnoremap <silent> <leader>so :Telescope treesitter<cr>
-    autocmd BufEnter *.tex noremap <silent><leader>so :FZFTexToc<cr>
-    autocmd BufEnter *.tex noremap <silent><leader>sb :Telescope bibtex<cr>
+    autocmd FileType vim nnoremap <buffer><silent> <leader>so :BTags<cr>
+    autocmd FileType c,h,cpp,hpp,python,lua nnoremap <buffer><silent> <leader>so :Telescope treesitter<cr>
+    autocmd FileType tex nnoremap <buffer><silent><leader>so :FZFTexToc<cr>
+    autocmd FileType tex nnoremap <buffer><silent><leader>sb :Telescope bibtex<cr>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -87,7 +97,6 @@ nnoremap <silent> <Leader>ft :execute'CocCommand explorer --preset floatingRight
 " B-group: buffers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search buffers
-" nnoremap <silent> <leader>bb :Buffers <cr>
 nnoremap <silent> <leader>bb :Telescope buffers<cr>
 " close current buffer
 nmap <silent> <leader>bd :Bdelete<cr>
@@ -123,30 +132,20 @@ augroup exitwithq
     autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list,fugitiveblame nnoremap <buffer> <C-c> :close<cr>
     autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list inoremap <buffer> <C-c> :close<cr>
     autocmd FileType list inoremap <buffer> <C-c> :close<cr>
-    autocmd FileType floaterm tnoremap <C-g> <C-\><C-n>:close<cr>
-    autocmd FileType floaterm inoremap <C-g> <C-\><C-n>:close<cr>
-    autocmd FileType floaterm nnoremap <C-g> :close<cr>
-    autocmd FileType floaterm nnoremap <C-c> :close<cr>
-    autocmd FileType floaterm nnoremap q :close<cr>
-    autocmd FileType TelescopePrompt inoremap <C-c> <esc><esc><cr>
-    " unmap q and C-g
-    autocmd FileType fugitiveblame,fugitive,gista-list nnoremap <buffer> q <nop>
-    autocmd FileType fugitiveblame,fugitive,gista-list nnoremap <buffer> <C-g> <nop>
+    autocmd FileType floaterm tnoremap <buffer> <C-g> <C-\><C-n>:close<cr>
+    autocmd FileType floaterm inoremap <buffer> <C-g> <C-\><C-n>:close<cr>
+    autocmd FileType floaterm nnoremap <buffer> <C-g> :close<cr>
+    autocmd FileType floaterm nnoremap <buffer> <C-c> :close<cr>
+    autocmd FileType floaterm nnoremap <buffer> q :close<cr>
 augroup END
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" T-group Async-task/terminal/vim-test
+" T-group terminal/test
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> <leader>tf :AsyncTaskFzf<cr>
 nnoremap <leader>tt :FloatermToggle<cr>
 nnoremap <leader>tn :FloatermNew<cr>
-
-augroup t_group
-    autocmd!
-    autocmd FileType c,cpp,h,cpp,python,javascript,lua noremap <silent><leader>ee :AsyncTask file-run<cr>
-    autocmd FileType c,cpp,h,cpp,python,javascript,lua noremap <silent><leader>ee :AsyncTask file-build<cr>
-augroup END
 
 augroup floaterm
     autocmd!
@@ -157,7 +156,7 @@ augroup END
 nnoremap <leader>te :TestNearest<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Git
+" G-group: Git
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>gd :lua require('script').toggle_git_diff()<cr>
 nnoremap <leader>gh :diffget //2<cr>
@@ -165,11 +164,10 @@ nnoremap <leader>gl :diffget //3<cr>
 nnoremap <leader>gw :Gwrite<cr>
 nnoremap <leader>gg :G<cr>
 nnoremap <leader>gv :GV<cr>
-nnoremap <leader>gb :lua require('telescope_script').telescope_git_branches()<cr>
-nnoremap <leader>gm :Gblame<cr>
+nnoremap <silent> <leader>gb :lua require('telescope_script').telescope_git_branches()<cr>
+nnoremap <leader>gm :Git blame<cr>
 nnoremap <leader>gP :Git push<cr>
 nnoremap <leader>gf :Git fetch<cr>
-" nnoremap <leader>gp :Git pull<cr>
 nnoremap <leader>gs :Gista list<cr>
 
 " hunk related
@@ -177,14 +175,8 @@ nnoremap <leader>hs <nop>
 nnoremap <leader>hp :lua require"gitsigns".preview_hunk()<cr>
 nnoremap <leader>hb :lua require"gitsigns".blame_hunk()<cr>
 
-command FloatermNewLazyGit :FloatermNew 
-            \ --height=0.9 --width=0.8 --wintype=float
-            \ --name=lazygit --position=center --autoclose=2
-            \ lazygit
-nnoremap <leader>gt :execute 'lcd %:p:h'<bar>:FloatermNewLazyGit<cr>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ale key mapping
+" ALE key mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -197,7 +189,7 @@ nmap <F1> :ALEFix<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup rename
     autocmd!
-    autocmd BufEnter *.c,*.cpp,*.h,*.hpp nmap \r  <Plug>(coc-rename)
+    autocmd FileType c,h,cpp,hpp nmap <buffer> \r  <Plug>(coc-rename)
 augroup END
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
@@ -209,11 +201,13 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 " utilities
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>ud :UndotreeToggle<cr>
-augroup sourcefile
+augroup exe_file
     autocmd!
-    autocmd BufEnter *.lua nnoremap <leader>ee :luafile %<cr>
-    autocmd BufEnter *.vim nnoremap <leader>ee :source %<cr>
-    autocmd BufEnter *.tex nmap <leader>ee <plug>(vimtex-compile)
+    autocmd FileType lua nnoremap <buffer> <leader>ee :luafile %<cr>
+    autocmd FileType vim nnoremap <buffer> <leader>ee :source %<cr>
+    autocmd FileType tex nmap <buffer> <leader>ee <plug>(vimtex-compile)
+    autocmd FileType python noremap <buffer><silent> <leader>ee :AsyncTask file-run<cr>
+    autocmd FileType c,cpp,h,cpp noremap <buffer><silent> <leader>ee :AsyncTask file-build<cr>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -259,13 +253,6 @@ if !exists('*DeleteHiddenBuffers') " Clear all hidden buffers when running
         endfor
     endfunction
 endif
-
-"  find .git for project
-fun! s:fzf_root()
-    let path = finddir('.git', expand('%:p:h').';')
-    return fnamemodify(substitute(path, '.git', '', ''), ':p:h')
-endfun
-command FZFProjectFile :execute'Files ' . <SID>fzf_root()
 
 " cd the path of current buffer
 fun s:CdPwd()

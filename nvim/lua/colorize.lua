@@ -1,5 +1,3 @@
-set termguicolors
-lua << EOF
 require 'colorizer'.setup {
   'vim';
   'css';
@@ -9,4 +7,3 @@ require 'colorizer'.setup {
     mode = 'foreground';
   }
 }
-EOF

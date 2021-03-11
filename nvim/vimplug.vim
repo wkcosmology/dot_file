@@ -16,8 +16,7 @@ Plug 'haya14busa/vim-asterisk'
 Plug 'tpope/vim-surround'
 " enhance . operate, support more like vim-surround
 Plug 'tpope/vim-repeat'
-" very powerful!!! easy motion
-" Plug 'easymotion/vim-easymotion'
+" lua version of easymotion
 Plug 'phaazon/hop.nvim'
 " for quick commentary
 Plug 'tpope/vim-commentary'

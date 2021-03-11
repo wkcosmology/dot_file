@@ -8,6 +8,7 @@ fun s:cnt_cmd(cmd)
     execute ':' . v:count1 . a:cmd
   end
 endf
+
 nnoremap <silent> [q :<C-u>call <SID>cnt_cmd('cprevious')<cr>
 nnoremap <silent> ]q :<C-u>call <SID>cnt_cmd('cnext')<cr>
 nnoremap <silent> [Q :cfirst<cr>

@@ -1,3 +1,4 @@
+scriptencoding utf-8
 let g:coc_global_extensions = [
             \ 'coc-lists',
             \ 'coc-clangd',
