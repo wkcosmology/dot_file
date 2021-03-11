@@ -35,8 +35,6 @@ Plug 'google/vim-searchindex'
 Plug 'svermeulen/vim-subversive'
 " Great snippet tool, need backend source
 Plug 'SirVer/ultisnips'
-" paired operation
-Plug 'tpope/vim-unimpaired'
 " Useful UNIX command
 Plug 'tpope/vim-eunuch'
 " align
@@ -118,8 +116,6 @@ Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
 " Git
 " ---------------------------------------------------------------------------
 " show git modified line in the state column
-" Plug 'airblade/vim-gitgutter'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 " powerful git tool
 Plug 'tpope/vim-fugitive'
@@ -129,6 +125,8 @@ Plug 'junegunn/gv.vim', { 'on': 'GV' }
 " ---------------------------------------------------------------------------
 " Anxuliary
 " ---------------------------------------------------------------------------
+" useful plugin for lua
+Plug 'nvim-lua/plenary.nvim'
 " Great terminal tool
 Plug 'voldikss/vim-floaterm', { 'on': ['FloatermNew', 'Floaterms', 'FloatermToggle']}
 " asynchronously check error

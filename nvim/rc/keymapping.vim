@@ -23,14 +23,9 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-" Use <C-L> to clear the highlighting of :set hlsearch.
+" Clear highlight
 nnoremap <silent> <C-l> :nohlsearch<cr>
-" easy motion setting
-" nmap <silent> <leader>ji <Plug>(easymotion-overwin-f)
-" nmap <silent> <leader>jl <Plug>(easymotion-bd-jk)
-" nmap <silent> <leader>js <Plug>(easymotion-overwin-f2)
-" nmap <silent> <leader>jw <Plug>(easymotion-bd-w)
-" nmap <silent> <leader>je <Plug>(easymotion-bd-e)
+" keymapping for hop
 nmap <silent> <leader>jj :call MyHop('char1')<cr>
 nmap <silent> <leader>jw :call MyHop('word')<cr>
 nmap <silent> <leader>jl :call MyHop('line')<cr>
@@ -80,12 +75,10 @@ nnoremap <silent> <leader>ps :lua require('telescope_script').telescope_grep_str
 " F-group: File related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search files under current project
-" nnoremap <silent> <Leader>ff :FZFProjectFile<cr>
 nnoremap <silent> <Leader>ff :lua require('telescope_script').telescope_files()<cr>
 " save the file
 nnoremap <silent> <leader>fs :w<cr>
 " fuzzy search most recent file
-" nnoremap <silent> <leader>fr :FZFMru --preview '~/.vim/plugged/fzf.vim/bin/preview.sh {}'<cr>
 nnoremap <silent> <leader>fr :Telescope oldfiles<cr>
 " open defx file tree
 nnoremap <silent> <Leader>ft :execute'CocCommand explorer --preset floatingRightside ' . expand('%:p:h')<cr>
