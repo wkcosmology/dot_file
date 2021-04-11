@@ -5,6 +5,18 @@ extends c
 # my snippets
 priority -40
 
+snippet cb "comment block" b
+/*
+ * ${1}
+ */
+endsnippet
+
+snippet ift "IF TEST" b
+#ifdef TEST
+${1}
+#endif
+endsnippet
+
 snippet inc "include" b
 #include <${1:iostream}>
 endsnippet

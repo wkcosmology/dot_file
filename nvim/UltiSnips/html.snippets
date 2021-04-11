@@ -60,7 +60,11 @@ endsnippet
 # HTML TAGS #
 #############
 snippet a "Link" w
-<a href="${1:http://www.${2:url.com}}"${3: target="_blank"}>${4:Anchor Text}</a>
+<a href="${1:http://www.${2:url.com}}">${3:Anchor Text}</a>
+endsnippet
+
+snippet at "Link external" w
+<a href="${1:http://www.${2:url.com}}" target="_blanck">${3:Anchor Text}</a>
 endsnippet
 
 snippet abbr "<abbr>" w
@@ -106,7 +110,7 @@ snippet body "<body>"
 endsnippet
 
 snippet br "<br>" w
-<br>$1</br>
+<br />
 endsnippet
 
 snippet button "<button>"
@@ -254,7 +258,7 @@ snippet header "<header>"
 endsnippet
 
 snippet hr "<hr>"
-<hr>
+<hr />
 endsnippet
 
 snippet html "HTML basic structure" b
