@@ -1,6 +1,6 @@
 # config neovim
-alias vi=/Users/wangk/Documents/Project/library/libsource/nvim-osx64/bin/nvim
-alias vim=/Users/wangk/Documents/Project/library/libsource/nvim-osx64/bin/nvim
+alias vi=nvim
+alias vim=nvim
 # replace ls with exa
 export EXA_COLORS="di=36"
 alias ls=exa
@@ -66,7 +66,10 @@ alias sync_group_venus="sync_lib /Users/wangk/Documents/Project/9.GalaxyGroup/ w
 alias sync_halo_venus="sync_lib /Users/wangk/Documents/Project/10.HaloMassProxy/ wangk 166.111.131.54 /home/wangk/10.HaloMassProxy 2222"
 alias sync_vel_venus="sync_lib /Users/wangk/Documents/Project/11.PeculiarVelocity/ wangk 166.111.131.54 /home/wangk/11.PeculiarVelocity 2222"
 alias sync_pc_venus="sync_lib /Users/wangk/Documents/Project/12.ProtoCluster/ wangk 166.111.131.54 /home/wangk/12.ProtoCluster 2222"
+alias sync_pc_orion="sync_lib /Users/wangk/Documents/Project/12.ProtoCluster/ wangk 58.192.69.130 /home/wangk/12.ProtoCluster 6622"
 alias sync_group_orion="sync_lib /Users/wangk/Documents/Project/9.GalaxyGroup/ wangk 58.192.69.130 /home/wangk/9.GalaxyGroup 6622"
 alias sync_halo_orion="sync_lib /Users/wangk/Documents/Project/10.HaloMassProxy/ wangk 58.192.69.130 /home/wangk/10.HaloMassProxy 6622"
-alias sync_enhance_venus="sync_lib /Users/wangk/Documents/Project/mylib/enhanced/ wangk venus.phys.tsinghua.edu.cn /home/wangk/mylib/enhanced 2222"
+alias sync_enhance_venus="sync_lib /Users/wangk/Documents/Project/mylib/enhanced/ wangk 166.111.131.54 /home/wangk/mylib/enhanced 2222"
 alias sync_gez_venus="sync_lib /Users/wangk/Documents/Project/13.GalaxyEvolutionZcosmos/ wangk 166.111.131.54 /home/wangk/13.GalaxyEvolutionZcosmos 2222"
+alias sync_cgpc_orion="sync_lib /Users/wangk/Documents/Project/14.ConnectGalaxyInPC/ wangk 58.192.69.130 /home/wangk/14.ConnectGalaxyInPC 6622"
+alias sync_cgpc_venus="sync_lib /Users/wangk/Documents/Project/14.ConnectGalaxyInPC/ wangk 166.111.131.54 /home/wangk/14.ConnectGalaxyInPC 2222"

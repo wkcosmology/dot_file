@@ -1,11 +1,12 @@
-GroupFinder /Users/wangk/Documents/Project/9.GalaxyGroup/
-HaloMassProxy /Users/wangk/Documents/Project/10.HaloMassProxy/
-Tester /Users/wangk/Desktop/tester/
-ProtoCluster /Users/wangk/Documents/Project/12.ProtoCluster/
-GalaxyEvolutionZcosmos /Users/wangk/Documents/Project/13.GalaxyEvolutionZcosmos/
-Paper /Users/wangk/Documents/Project/paper/
-Config /Users/wangk/.config/
-VimPlug /Users/wangk/.vim/plugged/
-MyLib /Users/wangk/Documents/Project/mylib/
-Lib /Users/wangk/Documents/Project/library/
-
+GroupFinder                     ~/Documents/Project/9.GalaxyGroup/
+HaloMassProxy                   ~/Documents/Project/10.HaloMassProxy/
+ProtoCluster                    ~/Documents/Project/12.ProtoCluster/
+GalaxyEvolutionZcosmos          ~/Documents/Project/13.GalaxyEvolutionZcosmos/
+ConnectGalaxyInPC               ~/Documents/Project/14.ConnectGalaxyInPC/
+Paper                           ~/Documents/Project/paper/
+Config                          ~/.config/
+VimPlug                         ~/.vim/plugged/
+MyLib                           ~/Documents/Project/mylib/
+Lib                             ~/Documents/Project/library/
+Tester                          ~/Desktop/tester/
+Homepage                        ~/Documents/Project/wkcosmology.github.io/

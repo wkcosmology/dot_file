@@ -166,28 +166,6 @@ function! s:fzf_task()
 endfunction
 command! -nargs=0 AsyncTaskFzf call s:fzf_task()
 
-" fzf checkout
-let g:fzf_branch_actions = {
-      \ 'diff': {
-      \   'prompt': 'Diff> ',
-      \   'execute': 'Git diff {branch}',
-      \   'multiple': v:false,
-      \   'keymap': 'ctrl-f',
-      \   'required': ['branch'],
-      \   'confirm': v:false,
-      \ },
-      \ 'checkout': {
-      \   'prompt': " " + matchstr(FugitiveGitDir(), "/([^/]+)/.git$" + " > "),
-      \   'execute': 'Git checkout {branch}',
-      \   'multiple': v:false,
-      \   'keymap': 'enter',
-      \   'required': ['branch'],
-      \   'confirm': v:false,
-      \ },
-      \}
-" echo ' ' . matchstr(FugitiveGitDir(), '/([^/]+)/.git$') . ' > '
-echo matchstr(FugitiveGitDir(), '/Users/wangk\*.git')
-" echo FugitiveGitDir()
 
 " grep in fzf
 " function! SearchPRg()

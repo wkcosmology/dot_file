@@ -13,7 +13,7 @@ set shiftwidth=4
 " indetLine config
 let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_fileType = ['python', 'c', 'cpp', 'h', 'hpp'] " conceallevel related
+let g:indentLine_fileType = ['python', 'c', 'cpp', 'h', 'hpp', 'html', 'css', 'javascript'] " conceallevel related
 " edge config
 let g:edge_style = 'neon'
 let g:edge_enable_italic = 0
@@ -39,9 +39,10 @@ let g:scrolloff_fraction = 0.15
 " floaterm
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.7
-let g:floaterm_wintype = 'normal'
+let g:floaterm_wintype = 'float'
 let g:floaterm_position = 'center'
 let g:floaterm_title = 'Terminal($1/$2)'
+let g:floaterm_autoinsert = v:true
 hi FloatermBorder guibg=Normal guifg=DarkYellow
 hi Floaterm guibg=Normal
 let g:fzf_floaterm_newentries = {
@@ -53,12 +54,13 @@ let g:fzf_floaterm_newentries = {
     \ 'cmd': 'ipython' },
   \ }
 " highligh current line number
-hi! link CursorLineNr Title
+hi! link CursorLineNr Constant
 " tabline highlight
-hi TabLineSel guibg=#51afef guifg=#23272e
-hi TabLine guibg=#5B6268 guifg=#23272e
-" make the comment italic
+hi TabLineSel guibg=#191f24 guifg=#51b0ef
+hi TabLine guibg=#191f24 guifg=#757574
+" disable the comment italic
 highlight Comment cterm=italic gui=italic
+" highligh Comment cterm=none gui=none
 " treesitter
 hi! TSUnderline guibg=none gui=none
 " highlight for matchup

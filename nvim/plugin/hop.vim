@@ -3,9 +3,11 @@ function! MyHop(mode)
   if a:mode ==# 'char1'
         echo 'Search for 1 character:  '
         execute 'HopChar1'
+        call feedkeys(':', 'nx')
     elseif a:mode ==# 'char2'
         echo 'Search for 2 characters:  '
         execute 'HopChar2'
+        call feedkeys(':', 'nx')
     elseif a:mode ==# 'word'
         execute 'HopWord'
     elseif a:mode ==# 'line'

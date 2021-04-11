@@ -2,25 +2,25 @@ local M = {}
 M.__index = M
 
 -- find_files: current buffer or the git repo
-function M.telescope_files()
+function M.files(buf_path)
   local opt = {}
-  local buf_path = vim.fn.expand("%:p:h")
 
   if buf_path == "/Users/wangk" then
     print("Do not grep in home directory!")
     return nil
   end
 
-  opt.cwd = buf_path
   if vim.fn["fugitive#head"]() ~= "" then
-    require("telescope.builtin").git_files(opt)
+    opt.cwd = string.sub(vim.fn['FugitiveGitDir'](), 1, -6)
+    require("telescope.builtin").find_files(opt)
   else
+    opt.cwd = buf_path
     require("telescope.builtin").find_files(opt)
   end
 end
 
 -- git branches
-function M.telescope_git_branches()
+function M.git_branches()
   if vim.fn["FugitiveHead"]() == "" then
     print("This is not a git repo!")
     return
@@ -32,10 +32,10 @@ function M.telescope_git_branches()
 end
 
 -- grep input string from the git repo or the current path
-function M.telescope_grep_string(str)
+function M.grep_string(str)
   local opt = {}
   local buf_path = vim.fn.expand("%:p:h")
-  if buf_path == "/Users/wangk" then
+  if buf_path == vim.env.HOME then
     print("Do not grep in home directory!")
     return nil
   end
@@ -47,16 +47,31 @@ function M.telescope_grep_string(str)
   end
 
   opt.search = str or vim.fn.input("Grep For > ")
-  if opt.search == "" then
-    return nil
-  end
+  if opt.search == "" then return nil end
   require("telescope.builtin").grep_string(opt)
 end
 
 -- grep word under cursor in the project
-function M.telescope_grep_current_string()
+function M.grep_current_string()
   local str = vim.fn.expand("<cword>")
-  M.telescope_grep_string(str)
+  M.grep_string(str)
+end
+
+-- grep in coc-explorer
+function M.coc_explorer_git()
+  local path = vim.fn.CocAction('runCommand', 'explorer.getNodeInfo', 0)['fullpath']
+  require('telescope.builtin').find_files({cwd = path})
+end
+
+-- wrap git status
+function M.git_status()
+  if vim.fn["fugitive#head"]() == "" then
+    echo "Not in git repo!"
+  else
+    opt = {}
+    opt.cwd = string.sub(vim.fn['FugitiveGitDir'](), 1, -6)
+    require("telescope.builtin").git_status(opt)
+  end
 end
 
 return M

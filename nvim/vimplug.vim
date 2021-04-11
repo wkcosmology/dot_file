@@ -17,13 +17,11 @@ Plug 'tpope/vim-surround'
 " enhance . operate, support more like vim-surround
 Plug 'tpope/vim-repeat'
 " lua version of easymotion
-Plug 'phaazon/hop.nvim'
+ Plug 'phaazon/hop.nvim'
 " for quick commentary
 Plug 'tpope/vim-commentary'
 " abbreviation substitution and Coerion
 Plug 'tpope/vim-abolish'
-" extend f, F, t, T for searching
-Plug 'rhysd/clever-f.vim'
 " add more text object
 Plug 'wellle/targets.vim'
 " auto add pairs
@@ -39,8 +37,8 @@ Plug 'tpope/vim-eunuch'
 " align
 Plug 'junegunn/vim-easy-align'
 " markdown
-Plug 'godlygeek/tabular', { 'for': ['md'] }
-Plug 'plasticboy/vim-markdown', { 'for': ['md'] }
+Plug 'godlygeek/tabular', { 'for': ['markdown'] }
+Plug 'plasticboy/vim-markdown', { 'for': ['markdown'] }
 " document
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " matchup
@@ -49,6 +47,14 @@ Plug 'andymass/vim-matchup'
 Plug 'liuchengxu/vista.vim'
 " undo tree visualizer
 Plug 'mbbill/undotree', { 'on': ['UndotreeToggle', 'UndotreeShow'] }
+" vim for vim
+Plug 'tpope/vim-scriptease'
+" mark the mark
+Plug 'kshenoy/vim-signature'
+" prettier
+Plug 'prettier/vim-prettier'
+" dispatch run the tasks
+Plug 'tpope/vim-dispatch'
 
 " ---------------------------------------------------------------------------
 " coc/fzf
@@ -59,15 +65,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " fzf vim plugin
 Plug 'junegunn/fzf.vim'
-" fzf most recently used
-Plug 'pbogut/fzf-mru.vim'
-" fzf for branches
-Plug 'stsewd/fzf-checkout.vim'
 " using fzf window for coc, current for coc-yank
 Plug 'antoinemadec/coc-fzf'
 " coc for floaterm
 Plug 'voldikss/fzf-floaterm', { 'on': ['FloatermNew', 'Floaterms', 'FloatermToggle']}
-Plug 'rafcamlet/coc-nvim-lua', { 'for': ['lua'] }
+" git branched
+Plug 'stsewd/fzf-checkout.vim'
+Plug 'pbogut/fzf-mru.vim'
 
 " ---------------------------------------------------------------------------
 " Buffer/Window/Session
@@ -115,11 +119,13 @@ Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
 " Git
 " ---------------------------------------------------------------------------
 " show git modified line in the state column
-Plug 'lewis6991/gitsigns.nvim'
+Plug 'airblade/vim-gitgutter'
 " powerful git tool
 Plug 'tpope/vim-fugitive'
 " tree like git browser
 Plug 'junegunn/gv.vim', { 'on': 'GV' }
+" github
+Plug 'pwntester/octo.nvim'
 
 " ---------------------------------------------------------------------------
 " Anxuliary
@@ -133,14 +139,14 @@ Plug 'dense-analysis/ale'
 " add head information
 Plug 'alpertuna/vim-header', { 'on': 'AddHeader'}
 " run the test file, support many filetypes, including python
-Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
+" Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
 " task control
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 " vimtex
 Plug 'lervag/vimtex'
 " spell check
-Plug 'kamykn/spelunker.vim', { 'for': ['tex', 'markdown'] }
+Plug 'kamykn/spelunker.vim', { 'for': ['tex', 'markdown', 'html', 'json'] }
 " gist
 Plug 'lambdalisue/vim-gista', { 'on': ['Gista'] }
 " Cheatsheet for vim
@@ -153,7 +159,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 " highlight color code
-Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " lua for vim development
 Plug 'tjdevries/nlua.nvim'
 " Plug 'chimay/wheel'
@@ -171,6 +178,14 @@ Plug 'kyazdani42/nvim-tree.lua'
 " Lua
 " ---------------------------------------------------------------------------
 Plug 'RishabhRD/popfix'
+Plug 'wkcosmology/vim-lua-format'
+
+" ---------------------------------------------------------------------------
+" web development
+" ---------------------------------------------------------------------------
+Plug 'tamago324/vim-browsersync'
+Plug 'tyru/open-browser.vim'
+Plug 'mattn/emmet-vim'
 
 " ---------------------------------------------------------------------------
 " Telescope
@@ -181,8 +196,11 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
-" Plug 'nvim-telescope/telescope-fzf-writer.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
+Plug 'fhill2/telescope-ultisnips.nvim'
+
 
 call plug#end()
 " end of vim plugins manager:vim-plug------------------------------------------
 " :setlocal foldmethod=marker
+"

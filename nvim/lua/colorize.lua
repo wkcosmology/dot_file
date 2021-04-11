@@ -1,9 +1,9 @@
-require 'colorizer'.setup {
-  'vim';
-  'css';
-  'lua';
-  'javascript';
-  html = {
-    mode = 'foreground';
-  }
-}
+-- require 'colorizer'.setup {
+--   'vim';
+--   'css';
+--   'lua';
+--   'javascript';
+--   html = {
+--     mode = 'foreground';
+--   }
+-- }

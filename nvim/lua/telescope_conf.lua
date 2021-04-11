@@ -1,4 +1,7 @@
 local actions = require("telescope.actions")
+local action_state = require('telescope.actions.state')
+local utils = require('telescope.utils')
+
 require("telescope").setup {
     defaults = {
         vimgrep_arguments = {
@@ -49,20 +52,14 @@ require("telescope").setup {
     extensions = {
         fzy_native = {
             override_generic_sorter = true,
-            override_file_sorter = true,
-        },
-        -- fzf_writer = {
-        --     minimum_grep_characters = 2,
-        --     minimum_files_characters = 0,
-        --     -- Disabled by default.
-        --     -- Will probably slow down some aspects of the sorter, but can make color highlights.
-        --     -- I will work on this more later.
-        --     use_highlighter = true
-        -- }
+            override_file_sorter = true
+        }
     }
 }
 
 local Telescope = require("telescope")
 Telescope.load_extension("fzy_native")
 Telescope.load_extension("bibtex")
--- Telescope.load_extension("fzf_writer")
+Telescope.load_extension('octo')
+Telescope.load_extension('media_files')
+Telescope.load_extension('ultisnips')

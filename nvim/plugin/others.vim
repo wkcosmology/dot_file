@@ -1,9 +1,13 @@
 " my config--------------------------------------------------------------------
+" wrap to prevent word break
+set wrap
 " simple vim setting
 filetype plugin indent on
 " hybrid line number
 set number relativenumber
 " set cursorline!
+set cursorline
+" set filetype
 filetype plugin indent on
 " On pressing tab, insert 4 spaces
 set expandtab
@@ -29,9 +33,14 @@ augroup keepcursorpos
                 \ execute "normal! g`\"" |
                 \ endif
 augroup END
+" CC for tree-sitter
+let $CC = '(which clang)'
 " python 
-let g:python3_host_prog = '/Users/wangk/anaconda3/bin/python3'
+let g:python3_host_prog = '/Users/wangk/anaconda3/envs/py39/bin/python'
 let g:python_host_prog = ''
+let g:lua_format_config = '/Users/wangk/.config/nvim/lua-format'
+" vim-targets, disable nearby surround operation
+let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr lb ar ab lB Ar aB Ab AB'
 " gist_vim
 let g:gist_show_privates = 1
 let g:gist_edit_with_buffers = 1

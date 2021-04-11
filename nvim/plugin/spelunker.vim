@@ -48,8 +48,8 @@ let g:spelunker_disable_acronym_checking = 1
 let g:spelunker_disable_backquoted_checking = 1
 
 let g:spelunker_disable_auto_group = 1
-  augroup spelunker
-    autocmd!
-    autocmd BufWinEnter,BufWritePost *.tex call spelunker#check()
-    autocmd CursorHold *.tex call spelunker#check_displayed_words()
-  augroup END
+augroup spelunker
+  autocmd!
+  autocmd BufWinEnter,BufWritePost *.md,*.html,*.tex,*.json call spelunker#check()
+  autocmd CursorHold *.md,*.tex,*.html,*.json call spelunker#check_displayed_words()
+augroup END
