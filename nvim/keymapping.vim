@@ -27,6 +27,8 @@ let g:asterisk#keeppos = 1
 " alias to left and right in insert mode
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <C-j> <Down>
@@ -52,6 +54,8 @@ nnoremap <silent> <leader>: :Telescope commands<cr>
 nnoremap <silent> <leader>ss :Telescope ultisnips ultisnips<cr>
 " fuzzy search help
 nnoremap <silent> <leader>sh :Telescope help_tags<cr>
+" quickfix
+nnoremap <silent> <leader>sq :Telescope quickfix<cr>
 " grep word under cursor
 nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
 " fuzzy search terminal
@@ -66,8 +70,8 @@ nnoremap <silent> <space>cr  :Telescope command_history<cr>
 nnoremap <silent> <space>sm :Marks<cr>
 augroup search
     autocmd!
-    autocmd FileType vim nnoremap <silent> <buffer><silent> <leader>so :BTags<cr>
-    autocmd FileType c,h,cpp,hpp,python,lua nnoremap <silent> <buffer><silent> <leader>so :Telescope treesitter<cr>
+    autocmd FileType vim nnoremap <silent> <buffer><silent> <leader>so :Telescope coc document_symbols<cr>
+    autocmd FileType c,h,cpp,hpp,python,lua nnoremap <silent> <buffer><silent> <leader>so :Telescope coc document_symbols<cr>
     autocmd FileType tex nnoremap <silent> <buffer><silent><leader>so :FZFTexToc<cr>
     autocmd FileType tex nnoremap <silent> <buffer><silent><leader>sb :Telescope bibtex<cr>
 augroup END
@@ -113,6 +117,8 @@ nmap <C-t> <Nop>
 nmap <C-t>n :TabooOpen 
 nmap <C-t>r :TabooRename 
 nmap <C-t>c :tabclose<cr>
+nmap <C-t>] :tabnext<cr>
+nmap <C-t>[ :tabprevious<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " window related

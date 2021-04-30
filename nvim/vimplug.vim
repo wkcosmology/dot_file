@@ -25,7 +25,8 @@ Plug 'tpope/vim-abolish'
 " add more text object
 Plug 'wellle/targets.vim'
 " auto add pairs
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'LunarWatcher/auto-pairs'
 " display number of matchings
 Plug 'google/vim-searchindex'
 " define s as substitution
@@ -52,7 +53,7 @@ Plug 'tpope/vim-scriptease'
 " mark the mark
 Plug 'kshenoy/vim-signature'
 " prettier
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " dispatch run the tasks
 Plug 'tpope/vim-dispatch'
 
@@ -165,7 +166,7 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'tjdevries/nlua.nvim'
 " Plug 'chimay/wheel'
 " filetree in lua
-Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'kyazdani42/nvim-tree.lua'
 
 " ---------------------------------------------------------------------------
 " Lsp and completion
@@ -186,6 +187,7 @@ Plug 'wkcosmology/vim-lua-format'
 Plug 'tamago324/vim-browsersync'
 Plug 'tyru/open-browser.vim'
 Plug 'mattn/emmet-vim'
+Plug 'AndrewRadev/tagalong.vim'
 
 " ---------------------------------------------------------------------------
 " Telescope
@@ -198,6 +200,7 @@ Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
+Plug 'fannheyward/telescope-coc.nvim'
 
 
 call plug#end()
