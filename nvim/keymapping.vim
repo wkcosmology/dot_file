@@ -80,7 +80,8 @@ augroup END
 " P-group: Project related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search for my projects
-nnoremap <silent> <Leader>pp :FZFProject <cr>
+" nnoremap <silent> <Leader>pp :FZFProject <cr> // change to telescope/project
+nnoremap <silent> <Leader>pp :lua require'telescope'.extensions.project.project{}<cr>
 nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

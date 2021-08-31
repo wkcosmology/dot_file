@@ -38,7 +38,7 @@ augroup END
 " CC for tree-sitter
 let $CC = '(which clang)'
 " python 
-let g:python3_host_prog = '/Users/wangk/anaconda3/envs/py39/bin/python'
+let g:python3_host_prog = '/Users/wangk/anaconda3/bin/python3'
 let g:python_host_prog = ''
 let g:lua_format_config = '/Users/wangk/.config/nvim/lua-format'
 " vim-targets, disable nearby surround operation

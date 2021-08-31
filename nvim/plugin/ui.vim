@@ -64,10 +64,10 @@ highlight Comment cterm=italic gui=italic
 " treesitter
 hi! TSUnderline guibg=none gui=none
 " highlight for matchup
-hi MatchWord guibg=#424040 gui=NONE
-hi MatchWordCur guibg=#424040 gui=NONE
-hi MatchParen guibg=#828385 gui=NONE
-hi MatchParenCur guibg=#828385 gui=NONE
+hi MatchWord guibg=white gui=NONE guifg=black
+hi MatchWordCur guibg=white gui=NONE guifg=black
+hi MatchParen guibg=white gui=NONE guifg=black
+hi MatchParenCur guibg=white gui=NONE guifg=black
 " highligh hop
 highlight HopNextKey guifg=#fcf908 gui=bold
 highlight HopNextKey1 guifg=#0af1f5 gui=bold,underline

@@ -25,8 +25,7 @@ Plug 'tpope/vim-abolish'
 " add more text object
 Plug 'wellle/targets.vim'
 " auto add pairs
-" Plug 'jiangmiao/auto-pairs'
-Plug 'LunarWatcher/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 " display number of matchings
 Plug 'google/vim-searchindex'
 " define s as substitution
@@ -195,10 +194,10 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make CC=/usr/local/bin/gcc-9' }
+Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
-Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 
