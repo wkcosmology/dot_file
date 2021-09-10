@@ -14,6 +14,7 @@ tnoremap <Esc> <C-\><C-n><cr>
 nnoremap Y y$
 " tagbar
 nnoremap <silent> <leader>vv :Vista<cr>
+nnoremap <silent> <leader>vs :Vista finder<cr>
 " subversive
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
@@ -125,7 +126,9 @@ nmap <C-t>[ :tabprevious<cr>
 " window related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " toggle zoom
-let g:maximizer_default_mapping_key = '<C-w>m'
+" let g:maximizer_default_mapping_key = '<C-w>m'
+let g:maximizer_set_default_mapping = 0
+nnoremap <silent><C-w>m :MaximizerToggle<cr>
 " choose the window
 nnoremap <silent> <C-w>w :ChooseWin<cr>
 nnoremap <silent> <C-w>e :ChooseWinSwap<cr>
