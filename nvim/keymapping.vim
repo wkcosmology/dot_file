@@ -28,6 +28,8 @@ let g:asterisk#keeppos = 1
 " alias to left and right in insert mode
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 cnoremap <C-f> <Right>
@@ -95,8 +97,9 @@ nnoremap <silent> <Leader>ff :lua require('telescope_script').files(vim.fn.expan
 " fuzzy search most recent file
 nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
 " open defx file tree
-nnoremap <silent> <Leader>ft :execute'CocCommand explorer --preset splitLeft ' . expand('%:p:h')<cr>
-nnoremap <silent> <Leader>fh :execute'CocCommand explorer --preset floatingRightside ' . expand('%:p:h')<cr>
+" nnoremap <silent> <Leader>ft :execute'CocCommand explorer --preset splitLeft ' . expand('%:p:h')<cr>
+" nnoremap <silent> <Leader>fh :execute'CocCommand explorer --preset floatingRightside ' . expand('%:p:h')<cr>
+nnoremap <silent> <Leader>ft :NvimTreeFindFile<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " B-group: buffers
@@ -203,9 +206,9 @@ nmap <leader>fm :ALEFix<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup rename
-    autocmd!
-    autocmd FileType c,h,cpp,hpp,javascript,css,php,html nmap <buffer> \r  <Plug>(coc-rename)
+" augroup rename
+"     autocmd!
+"     autocmd FileType c,h,cpp,hpp,javascript,css,php,html nmap <buffer> \r  <Plug>(coc-rename)
 augroup END
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
