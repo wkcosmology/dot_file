@@ -1,4 +1,6 @@
 " my config--------------------------------------------------------------------
+" completeopt for nvim_cmp
+set completeopt=menu,menuone,noselect
 " wrap to prevent word break
 set wrap
 " simple vim setting
@@ -15,6 +17,7 @@ filetype plugin indent on
 set expandtab
 " set colorcolumn
 set colorcolumn=120
+autocmd BufEnter *.tex set colorcolumn=79
 " https://github.com/bfrg/vim-cpp-modern
 let c_no_curly_error = 1
 " set hidden

@@ -17,7 +17,7 @@ Plug 'tpope/vim-surround'
 " enhance . operate, support more like vim-surround
 Plug 'tpope/vim-repeat'
 " lua version of easymotion
- Plug 'phaazon/hop.nvim'
+Plug 'phaazon/hop.nvim'
 " for quick commentary
 Plug 'tpope/vim-commentary'
 " abbreviation substitution and Coerion
@@ -25,7 +25,7 @@ Plug 'tpope/vim-abolish'
 " add more text object
 Plug 'wellle/targets.vim'
 " auto add pairs
-Plug 'windwp/nvim-autopairs'
+" Plug 'windwp/nvim-autopairs'
 " display number of matchings
 Plug 'google/vim-searchindex'
 " define s as substitution
@@ -60,14 +60,14 @@ Plug 'tpope/vim-dispatch'
 " coc/fzf
 " ---------------------------------------------------------------------------
 " coc plugin
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " fzf plugin
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " fzf vim plugin
 Plug 'junegunn/fzf.vim'
 " using fzf window for coc, current for coc-yank
-Plug 'antoinemadec/coc-fzf'
-" coc for floaterm
+" Plug 'antoinemadec/coc-fzf'
+" fzf for floaterm
 Plug 'voldikss/fzf-floaterm', { 'on': ['FloatermNew', 'Floaterms', 'FloatermToggle']}
 " git branched
 Plug 'stsewd/fzf-checkout.vim'
@@ -87,7 +87,8 @@ Plug 'xolox/vim-session', { 'on':  ['OpenSession', 'SaveSession', 'ViewSession']
 " ---------------------------------------------------------------------------
 " color theme
 " Plug 'gruvbox-community/gruvbox'
-Plug 'sainnhe/edge'
+" Plug 'sainnhe/edge'
+Plug 'bluz71/vim-moonfly-colors'
 " show the doc on echo, deprecated since coc is better
 Plug 'Shougo/echodoc.vim'
 " let the cursor stay away from ceil and bottom
@@ -111,7 +112,7 @@ Plug 'mhinz/vim-startify'
 " C/C++ related
 " ---------------------------------------------------------------------------
 " GDB
-Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh', 'for': ['c', 'cpp', 'h', 'hpp']}
+" Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh', 'for': ['c', 'cpp', 'h', 'hpp']}
 " switch header and source file
 Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
 
@@ -165,20 +166,22 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'tjdevries/nlua.nvim'
 " Plug 'chimay/wheel'
 " filetree in lua
-" Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " ---------------------------------------------------------------------------
 " Lsp and completion
 " ---------------------------------------------------------------------------
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'nvim-lua/completion-nvim'
-" Plug 'steelsojka/completion-buffers'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'kdheepak/cmp-latex-symbols'
 
 " ---------------------------------------------------------------------------
 " Lua
 " ---------------------------------------------------------------------------
-Plug 'RishabhRD/popfix'
-Plug 'wkcosmology/vim-lua-format'
+Plug 'RishabhRD/popfix', { 'for': ['lua'] }
+Plug 'wkcosmology/vim-lua-format', { 'for': ['lua'] }
 
 " ---------------------------------------------------------------------------
 " web development
@@ -199,7 +202,7 @@ Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
-Plug 'fannheyward/telescope-coc.nvim'
+" Plug 'fannheyward/telescope-coc.nvim'
 
 
 call plug#end()

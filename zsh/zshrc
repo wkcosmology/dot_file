@@ -66,7 +66,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git web-search osx extract tmux
         wd python copydir fzf zsh-autosuggestions
-        colorize zsh-syntax-highlighting zsh-z k zsh_reload)
+        zsh-z k zsh_reload)
 # autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 # auto complete, using the Ctrl-SPC to auto accept the suggestion

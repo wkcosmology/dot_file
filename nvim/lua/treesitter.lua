@@ -27,7 +27,6 @@ require'nvim-treesitter.configs'.setup {
             keymaps = {
                 smart_rename = "\\r",
             },
-            disable = {"c", "cpp", "h", "hpp"},
         },
     },
 }

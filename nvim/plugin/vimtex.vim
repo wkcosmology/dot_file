@@ -35,7 +35,7 @@ let g:matchup_matchparen_enabled = 1
 let g:vimtex_fold_enabled = 0
 let g:vimtex_fold_manual = 0
 " close conceal
-let g:vimtex_syntax_conceal_default = 0
+let g:vimtex_syntax_conceal_disable = 1
 " toc config
 let g:vimtex_toc_config = {
       \ 'name' : 'Table of contents (VimTeX)',

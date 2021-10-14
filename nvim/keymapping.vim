@@ -64,7 +64,8 @@ nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string(
 " fuzzy search terminal
 nnoremap <silent> <leader>sg :Floaterms<cr>
 " yank history
-nnoremap <silent> <space>sy  :CocFzfList yank<cr>
+" nnoremap <silent> <space>sy  :CocFzfList yank<cr>
+nnoremap <silent> <space>sy  :Telescope registers<cr>
 " Symbols
 nnoremap <silent> <space>se  :lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
 " command history

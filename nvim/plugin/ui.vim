@@ -6,22 +6,29 @@ set signcolumn=yes
 set shortmess+=c
 " Cursor column and line
 set nocursorcolumn
+set nocursorline
 set noshowmode
 set conceallevel=0
 set termguicolors
 set shiftwidth=4
 " indetLine config
-let g:indentLine_setColors = 0
+let g:indentLine_enabled = 1
+let g:indentLine_color_term = 239
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_fileType = ['python', 'c', 'cpp', 'h', 'hpp', 'html', 'css', 'javascript'] " conceallevel related
 " edge config
-let g:edge_style = 'neon'
-let g:edge_enable_italic = 0
-let g:edge_cursor = 'auto'
-let g:edge_menu_selection_background = 'blue'
-let g:edge_transparent_background = 1
-let g:edge_better_performance = 1
-colorscheme edge
+" let g:edge_style = 'default'
+" let g:edge_enable_italic = 0
+" let g:edge_cursor = 'auto'
+" let g:edge_menu_selection_background = 'blue'
+" let g:edge_transparent_background = 1
+" let g:edge_better_performance = 1
+" let g:edge_diagnostic_text_highlight = 0
+" colorscheme edge
+" moonfly config
+let g:moonflyTransparent = 1
+let g:moonflyUndercurls = 0
+colorscheme moonfly
 " Shougo/echodoc
 let g:echodoc_enable_at_startup = 1
 let g:echodoc#type = 'signature'
