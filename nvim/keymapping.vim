@@ -13,8 +13,7 @@ tnoremap <Esc> <C-\><C-n><cr>
 " Let Y yank to the line end
 nnoremap Y y$
 " tagbar
-nnoremap <silent> <leader>vv :Vista<cr>
-nnoremap <silent> <leader>vs :Vista finder<cr>
+nnoremap <silent> <leader>vv :SymbolsOutline<cr>
 " subversive
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
@@ -64,7 +63,6 @@ nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string(
 " fuzzy search terminal
 nnoremap <silent> <leader>sg :Floaterms<cr>
 " yank history
-" nnoremap <silent> <space>sy  :CocFzfList yank<cr>
 nnoremap <silent> <space>sy  :Telescope registers<cr>
 " Symbols
 nnoremap <silent> <space>se  :lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
@@ -73,19 +71,24 @@ nnoremap <silent> <space>cr  :Telescope command_history<cr>
 " marks
 nnoremap <silent> <space>sm :Marks<cr>
 augroup search
-    autocmd!
-    autocmd FileType vim nnoremap <silent> <buffer><silent> <leader>so :Telescope coc document_symbols<cr>
-    autocmd FileType c,h,cpp,hpp,python,lua nnoremap <silent> <buffer><silent> <leader>so :Telescope coc document_symbols<cr>
-    autocmd FileType tex nnoremap <silent> <buffer><silent><leader>so :FZFTexToc<cr>
-    autocmd FileType tex nnoremap <silent> <buffer><silent><leader>sb :Telescope bibtex<cr>
+  autocmd!
+  autocmd FileType c,h,cpp,hpp,python,lua,vim nnoremap <silent> <buffer><silent> <leader>so :Telescope lsp_document_symbols<cr>
+  autocmd FileType tex nnoremap <silent> <buffer><silent><leader>so :FZFTexToc<cr>
+  autocmd FileType tex nnoremap <silent> <buffer><silent><leader>sb :Telescope bibtex<cr>
 augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LSP related
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> gd :Telescope lsp_definitions<cr>
+nnoremap <silent> gr :Telescope lsp_references<cr>
+nnoremap <silent> gi :Telescope lsp_implementations<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " P-group: Project related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search for my projects
-" nnoremap <silent> <Leader>pp :FZFProject <cr> // change to telescope/project
-nnoremap <silent> <Leader>pp :lua require'telescope'.extensions.project.project{}<cr>
+nnoremap <silent> <Leader>pp :lua require('telescope').extensions.project.project{}<cr>
 nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,13 +96,9 @@ nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search files under current project
 nnoremap <silent> <Leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
-" save the file
-" nnoremap <silent> <leader>fs :w<cr>
 " fuzzy search most recent file
 nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
 " open defx file tree
-" nnoremap <silent> <Leader>ft :execute'CocCommand explorer --preset splitLeft ' . expand('%:p:h')<cr>
-" nnoremap <silent> <Leader>fh :execute'CocCommand explorer --preset floatingRightside ' . expand('%:p:h')<cr>
 nnoremap <silent> <Leader>ft :NvimTreeFindFile<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,15 +140,15 @@ nnoremap <silent> <leader>lc :ccl\|lcl<cr>
 noremap <silent> <F3> :copen<cr>
 noremap <silent> <F4> :lopen<cr>
 augroup close_win
-    autocmd!
-    autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list,fugitiveblame nnoremap <buffer> <C-c> :close<cr>
-    autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list inoremap <buffer> <C-c> :close<cr>
-    autocmd FileType list inoremap <buffer> <C-c> :close<cr>
-    autocmd FileType floaterm tnoremap <buffer> <C-g> <C-\><C-n>:close<cr>
-    autocmd FileType floaterm inoremap <buffer> <C-g> <C-\><C-n>:close<cr>
-    autocmd FileType floaterm nnoremap <buffer> <C-g> :close<cr>
-    autocmd FileType floaterm nnoremap <buffer> <C-c> :close<cr>
-    autocmd FileType floaterm nnoremap <buffer> q :close<cr>
+  autocmd!
+  autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list,fugitiveblame nnoremap <buffer> <C-c> :close<cr>
+  autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list inoremap <buffer> <C-c> :close<cr>
+  autocmd FileType list inoremap <buffer> <C-c> :close<cr>
+  autocmd FileType floaterm tnoremap <buffer> <C-g> <C-\><C-n>:close<cr>
+  autocmd FileType floaterm inoremap <buffer> <C-g> <C-\><C-n>:close<cr>
+  autocmd FileType floaterm nnoremap <buffer> <C-g> :close<cr>
+  autocmd FileType floaterm nnoremap <buffer> <C-c> :close<cr>
+  autocmd FileType floaterm nnoremap <buffer> q :close<cr>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,9 +160,9 @@ nnoremap <leader>tn :FloatermNew<cr>
 nnoremap <leader>ts :MyFloatermSplit<cr>
 
 augroup floaterm
-    autocmd!
-    autocmd FileType floaterm nnoremap <buffer> [t :call <SID>floaterm_navigate('FloatermPrev')<cr> 
-    autocmd FileType floaterm nnoremap <buffer> ]t :call <SID>floaterm_navigate('FloatermNext')<cr> 
+  autocmd!
+  autocmd FileType floaterm nnoremap <buffer> [t :call <SID>floaterm_navigate('FloatermPrev')<cr> 
+  autocmd FileType floaterm nnoremap <buffer> ]t :call <SID>floaterm_navigate('FloatermNext')<cr> 
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -205,39 +204,26 @@ nmap <silent> <leader>ec :ALEResetBuffer<cr>
 nmap <leader>fm :ALEFix<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" coc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" augroup rename
-"     autocmd!
-"     autocmd FileType c,h,cpp,hpp,javascript,css,php,html nmap <buffer> \r  <Plug>(coc-rename)
-augroup END
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " utilities
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>ud :UndotreeToggle<cr>
 augroup my_file_type_map
-    autocmd!
-    " execute command
-    autocmd FileType lua nnoremap <buffer> <leader>ee :execute 'write<bar>luafile %'<cr>
-    autocmd FileType vim nnoremap <buffer> <leader>ee :execute 'write<bar>source %'<cr>
-    autocmd FileType zsh nnoremap <buffer> <leader>ee :execute 'write<bar>!source ~/.zshrc'<cr>
-    autocmd FileType tex nmap <buffer> <leader>ee :execute 'write<bar>VimtexCompile'<cr>
-    autocmd FileType python noremap <buffer><silent> <leader>ee :AsyncTask file-run<cr>
-    autocmd FileType c,cpp,h,cpp noremap <buffer><silent> <leader>ee :AsyncTask file-build<cr>
-    " locate for vimtex
-    autocmd FileType tex nnoremap <buffer> <leader>vv :VimtexView<cr>
-    autocmd FileType tex nnoremap <buffer> <leader>vc :VimtexTocToggle<cr>
-    autocmd FileType tex nnoremap <buffer> <leader>cc :VimtexClean<cr>
-    autocmd FileType lua nnoremap <buffer> <leader>fm :call LuaFormat()<cr>
-    autocmd Filetype markdown,html,typescript,javascript,json,css,yaml nnoremap <buffer> <leader>fm :Prettier<cr>
-    autocmd FileType coc-explorer nnoremap <buffer> <leader>ff :lua require('telescope_script').coc_explorer_git()<cr>
-    autocmd FileType coc-explorer nnoremap <buffer> f :lua require('telescope_script').coc_explorer()<cr>
-    autocmd Filetype markdown nmap <C-j> <Plug>(spelunker-jump-next)
-    autocmd Filetype markdown nmap <C-k> <Plug>(spelunker-jump-prev)
+  autocmd!
+  " execute command
+  autocmd FileType lua nnoremap <buffer> <leader>ee :execute 'write<bar>luafile %'<cr>
+  autocmd FileType vim nnoremap <buffer> <leader>ee :execute 'write<bar>source %'<cr>
+  autocmd FileType zsh nnoremap <buffer> <leader>ee :execute 'write<bar>!source ~/.zshrc'<cr>
+  autocmd FileType tex nmap <buffer> <leader>ee :execute 'write<bar>VimtexCompile'<cr>
+  autocmd FileType python noremap <buffer><silent> <leader>ee :AsyncTask file-run<cr>
+  autocmd FileType c,cpp,h,cpp noremap <buffer><silent> <leader>ee :AsyncTask file-build<cr>
+  " locate for vimtex
+  autocmd FileType tex nnoremap <buffer> <leader>vv :VimtexView<cr>
+  autocmd FileType tex nnoremap <buffer> <leader>vc :VimtexTocToggle<cr>
+  autocmd FileType tex nnoremap <buffer> <leader>cc :VimtexClean<cr>
+  autocmd FileType lua nnoremap <buffer> <leader>fm :call LuaFormat()<cr>
+  autocmd Filetype markdown,html,typescript,javascript,json,css,yaml nnoremap <buffer> <leader>fm :Prettier<cr>
+  autocmd Filetype markdown nmap <C-j> <Plug>(spelunker-jump-next)
+  autocmd Filetype markdown nmap <C-k> <Plug>(spelunker-jump-prev)
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -260,37 +246,28 @@ fun! s:floaterm_navigate(cmd)
   call feedkeys("\<C-\>\<C-n>", 'i')
 endf
 
-" show documentation
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
-endfunction
-
 " script for closing the floating window
 fun! s:closefloatingwin()
-    if &filetype ==# 'floaterm'
-        execute 'close'
-    elseif &filetype ==# 'fzf'
-        execute 'close'
-    elseif &filetype ==# 'undotree'
-        execute 'close'
-    elseif &filetype ==# 'defx'
-        execute 'close'
-    endif
+  if &filetype ==# 'floaterm'
+    execute 'close'
+  elseif &filetype ==# 'fzf'
+    execute 'close'
+  elseif &filetype ==# 'undotree'
+    execute 'close'
+  elseif &filetype ==# 'defx'
+    execute 'close'
+  endif
 endf
 
 " close all hidden buffers
 if !exists('*DeleteHiddenBuffers') " Clear all hidden buffers when running
-    function DeleteHiddenBuffers() " Vim with the 'hidden' option
-        let tpbl=[]
-        call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
-        for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
-            silent execute 'bwipeout!' buf
-        endfor
-    endfunction
+  function DeleteHiddenBuffers() " Vim with the 'hidden' option
+    let tpbl=[]
+    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+    for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+      silent execute 'bwipeout!' buf
+    endfor
+  endfunction
 endif
 
 " cd the path of current buffer

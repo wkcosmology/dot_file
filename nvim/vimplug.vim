@@ -44,7 +44,7 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " matchup
 Plug 'andymass/vim-matchup'
 " tagbar
-Plug 'liuchengxu/vista.vim'
+Plug 'simrat39/symbols-outline.nvim'
 " undo tree visualizer
 Plug 'mbbill/undotree', { 'on': ['UndotreeToggle', 'UndotreeShow'] }
 " vim for vim
@@ -57,20 +57,17 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-dispatch'
 
 " ---------------------------------------------------------------------------
-" coc/fzf
+" fzf
 " ---------------------------------------------------------------------------
-" coc plugin
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " fzf plugin
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " fzf vim plugin
 Plug 'junegunn/fzf.vim'
-" using fzf window for coc, current for coc-yank
-" Plug 'antoinemadec/coc-fzf'
 " fzf for floaterm
 Plug 'voldikss/fzf-floaterm', { 'on': ['FloatermNew', 'Floaterms', 'FloatermToggle']}
 " git branched
 Plug 'stsewd/fzf-checkout.vim'
+" fzf history
 Plug 'pbogut/fzf-mru.vim'
 
 " ---------------------------------------------------------------------------
@@ -89,8 +86,6 @@ Plug 'xolox/vim-session', { 'on':  ['OpenSession', 'SaveSession', 'ViewSession']
 " Plug 'gruvbox-community/gruvbox'
 " Plug 'sainnhe/edge'
 Plug 'bluz71/vim-moonfly-colors'
-" show the doc on echo, deprecated since coc is better
-Plug 'Shougo/echodoc.vim'
 " let the cursor stay away from ceil and bottom
 Plug 'drzel/vim-scrolloff-fraction'
 " statusline
@@ -111,8 +106,6 @@ Plug 'mhinz/vim-startify'
 " ---------------------------------------------------------------------------
 " C/C++ related
 " ---------------------------------------------------------------------------
-" GDB
-" Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh', 'for': ['c', 'cpp', 'h', 'hpp']}
 " switch header and source file
 Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
 
@@ -159,17 +152,13 @@ Plug 'RishabhRD/nvim-cheat.sh', { 'on': ['Cheat', 'CheatList'] }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
-" highlight color code
-" Plug 'norcalli/nvim-colorizer.lua'
-" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " lua for vim development
 Plug 'tjdevries/nlua.nvim'
-" Plug 'chimay/wheel'
 " filetree in lua
 Plug 'kyazdani42/nvim-tree.lua'
 
 " ---------------------------------------------------------------------------
-" Lsp and completion
+" Lsp and related
 " ---------------------------------------------------------------------------
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -192,7 +181,7 @@ Plug 'mattn/emmet-vim'
 Plug 'AndrewRadev/tagalong.vim'
 
 " ---------------------------------------------------------------------------
-" Telescope
+" Telescope and related
 " ---------------------------------------------------------------------------
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
@@ -202,7 +191,6 @@ Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
-" Plug 'fannheyward/telescope-coc.nvim'
 
 
 call plug#end()

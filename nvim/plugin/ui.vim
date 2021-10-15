@@ -1,5 +1,5 @@
 scriptencoding utf-8
-set cmdheight=2
+set cmdheight=1
 syntax enable
 set background=dark
 set signcolumn=yes

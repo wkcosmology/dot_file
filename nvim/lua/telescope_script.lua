@@ -57,12 +57,6 @@ function M.grep_current_string()
   M.grep_string(str)
 end
 
--- grep in coc-explorer
-function M.coc_explorer_git()
-  local path = vim.fn.CocAction('runCommand', 'explorer.getNodeInfo', 0)['fullpath']
-  require('telescope.builtin').find_files({cwd = path})
-end
-
 -- wrap git status
 function M.git_status()
   if vim.fn["fugitive#head"]() == "" then

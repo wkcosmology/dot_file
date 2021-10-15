@@ -7,8 +7,6 @@ set wrap
 filetype plugin indent on
 " hybrid line number
 set number relativenumber
-" set cmdheight
-set cmdheight=2
 " set cursorline!
 set cursorline
 " set filetype
