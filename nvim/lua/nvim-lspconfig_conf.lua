@@ -9,8 +9,9 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   local opts = {noremap = true, silent = true}
   buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  buf_set_keymap("n", "\r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  buf_set_keymap("n", "\\r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 
 end
 
@@ -22,8 +23,7 @@ nvim_lsp['texlab'].setup {on_attach = on_attach}
 nvim_lsp['clangd'].setup {
   on_attach = on_attach,
   cmd = {
-    "/usr/local/opt/llvm/bin/clangd", "--background-index", "-j=12", "--query-driver=/usr/bin/clang++",
-    "--completion-style=detailed"
+    "clangd", "--background-index", "--completion-style=detailed", "--all-scopes-completion"
   },
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }

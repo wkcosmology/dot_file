@@ -164,7 +164,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'kdheepak/cmp-latex-symbols'
+Plug 'kdheepak/cmp-latex-symbols', { 'for': ['tex'] }
 
 " ---------------------------------------------------------------------------
 " Lua
@@ -177,7 +177,7 @@ Plug 'wkcosmology/vim-lua-format', { 'for': ['lua'] }
 " ---------------------------------------------------------------------------
 Plug 'tamago324/vim-browsersync'
 Plug 'tyru/open-browser.vim'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'AndrewRadev/tagalong.vim'
 
 " ---------------------------------------------------------------------------

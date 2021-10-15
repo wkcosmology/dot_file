@@ -21,14 +21,14 @@ require'nvim-treesitter.configs'.setup {
             }
         }
     },
-    refactor = {
-        smart_rename = {
-            enable = true,
-            keymaps = {
-                smart_rename = "\\r",
-            },
-        },
-    },
+    -- refactor = {
+    --     smart_rename = {
+    --         enable = true,
+    --         keymaps = {
+    --             smart_rename = "\\r",
+    --         },
+    --     },
+    -- },
 }
 
 -- for issue https://github.com/nvim-treesitter/nvim-treesitter/issues/78
