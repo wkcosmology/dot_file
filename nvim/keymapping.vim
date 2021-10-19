@@ -63,7 +63,7 @@ nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string(
 " fuzzy search terminal
 nnoremap <silent> <leader>sg :Floaterms<cr>
 " yank history
-nnoremap <silent> <space>sy  :Telescope registers<cr>
+nnoremap <silent> <space>sy  :Telescope neoclip<cr>
 " Symbols
 nnoremap <silent> <space>se  :lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
 " command history
@@ -183,9 +183,11 @@ nnoremap <leader>gs :lua require('telescope_script').git_status()<cr>
 nnoremap <leader>gc :lua require('script').git_clean()<cr>
 
 " hunk related
-nmap <leader>hp <Plug>(GitGutterPreviewHunk)
-nmap <leader>hs <Plug>(GitGutterStageHunk)
-nmap <leader>hu <Plug>(GitGutterUndoHunk)
+" nmap <leader>hp <Plug>(GitGutterPreviewHunk)
+" nmap <leader>hs <Plug>(GitGutterStageHunk)
+" nmap <leader>hu <Plug>(GitGutterUndoHunk)
+" nmap ]h <Plug>(GitGutterNextHunk)
+" nmap [h <Plug>(GitGutterPrevHunk)
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

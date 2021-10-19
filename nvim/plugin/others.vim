@@ -5,6 +5,8 @@ set completeopt=menu,menuone,noselect
 set wrap
 " simple vim setting
 filetype plugin indent on
+" update time: for vim-gitgutter
+" set updatetime=100
 " hybrid line number
 set number relativenumber
 " set cursorline!
@@ -15,7 +17,9 @@ filetype plugin indent on
 set expandtab
 " set colorcolumn
 set colorcolumn=120
-autocmd BufEnter *.tex set colorcolumn=79
+augroup texcolumn
+  autocmd BufEnter *.tex set colorcolumn=79
+augroup END
 " https://github.com/bfrg/vim-cpp-modern
 let c_no_curly_error = 1
 " set hidden
@@ -32,9 +36,9 @@ vnoremap < <gv
 vnoremap > >gv
 " let the cursor in the previous place
 augroup keepcursorpos
-    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                \ execute "normal! g`\"" |
-                \ endif
+  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+        \ execute "normal! g`\"" |
+        \ endif
 augroup END
 " CC for tree-sitter
 let $CC = '(which clang)'

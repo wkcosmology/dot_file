@@ -17,13 +17,13 @@ end
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-nvim_lsp['jedi_language_server'].setup {on_attach = on_attach}
+nvim_lsp['pyright'].setup {on_attach = on_attach}
 nvim_lsp['vimls'].setup {on_attach = on_attach}
 nvim_lsp['texlab'].setup {on_attach = on_attach}
 nvim_lsp['clangd'].setup {
   on_attach = on_attach,
   cmd = {
-    "clangd", "--background-index", "--completion-style=detailed", "--all-scopes-completion"
+    "clangd", "--background-index", "--completion-style=detailed", "--all-scopes-completion", "--header-insertion=iwyu"
   },
   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }

@@ -113,7 +113,8 @@ Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
 " Git
 " ---------------------------------------------------------------------------
 " show git modified line in the state column
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 " powerful git tool
 Plug 'tpope/vim-fugitive'
 " tree like git browser
@@ -165,6 +166,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'kdheepak/cmp-latex-symbols', { 'for': ['tex'] }
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " ---------------------------------------------------------------------------
 " Lua
@@ -191,6 +193,8 @@ Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
+Plug 'tami5/sqlite.lua'
+Plug 'AckslD/nvim-neoclip.lua'
 
 
 call plug#end()

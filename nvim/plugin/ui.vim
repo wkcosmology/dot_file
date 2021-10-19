@@ -29,6 +29,8 @@ let g:indentLine_fileType = ['python', 'c', 'cpp', 'h', 'hpp', 'html', 'css', 'j
 let g:moonflyTransparent = 1
 let g:moonflyUndercurls = 0
 colorscheme moonfly
+" highlight Pmenu for auto completion
+hi Pmenu ctermfg=251 ctermbg=235 guifg=#bab8b8 guibg=#363535
 " Shougo/echodoc
 let g:echodoc_enable_at_startup = 1
 let g:echodoc#type = 'signature'

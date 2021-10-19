@@ -53,15 +53,16 @@ cmp.setup({
   },
   completion = {
     -- autocomplete = false,
-    keyword_length = 2,
+    keyword_length = 2
   },
+  -- documentation = {border = "rounded", maxwidth = 80},
+  documentation = false,
+  completion = {completeopt = 'menu,menuone,noselect'},
   mapping = {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-e>'] = cmp.mapping.close(),
+    ['<C-n>'] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Insert}),
+    ['<C-p>'] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Insert}),
+    ['<C-e>'] = cmp.mapping.close()
   },
-  sources = {
-    {name = 'nvim_lsp'}, -- For ultisnips user.
-    {name = 'ultisnips'}, {name = 'buffer'}
-  }
+  sources = {{name = 'nvim_lsp'}, {name = 'ultisnips'}, {name = 'buffer'}, {name = 'ultisnips'}},
+  preselect = cmp.PreselectMode.None
 })
