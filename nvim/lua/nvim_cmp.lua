@@ -61,8 +61,11 @@ cmp.setup({
   mapping = {
     ['<C-n>'] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Insert}),
     ['<C-p>'] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Insert}),
-    ['<C-e>'] = cmp.mapping.close()
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<C-y>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true})
   },
-  sources = {{name = 'nvim_lsp'}, {name = 'ultisnips'}, {name = 'buffer'}, {name = 'ultisnips'}},
-  preselect = cmp.PreselectMode.None
+  -- the order matters when the priorities are the same
+  sources = {{name = 'nvim_lsp'}, {name = 'ultisnips'}, {name = 'path'}},
+  preselect = cmp.PreselectMode.None,
+  experimental = {native_menu = true, ghost_text = true}
 })

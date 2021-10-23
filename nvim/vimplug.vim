@@ -167,6 +167,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'kdheepak/cmp-latex-symbols', { 'for': ['tex'] }
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lua'
 
 " ---------------------------------------------------------------------------
 " Lua
