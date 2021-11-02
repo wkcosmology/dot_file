@@ -18,7 +18,7 @@ set expandtab
 " set colorcolumn
 set colorcolumn=120
 augroup texcolumn
-  autocmd BufEnter *.tex set colorcolumn=79
+  autocmd BufEnter *.tex,*.md set colorcolumn=79
 augroup END
 " https://github.com/bfrg/vim-cpp-modern
 let c_no_curly_error = 1

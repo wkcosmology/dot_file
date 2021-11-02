@@ -182,14 +182,6 @@ nnoremap <leader>gi :Gista list<cr>
 nnoremap <leader>gs :lua require('telescope_script').git_status()<cr>
 nnoremap <leader>gc :lua require('script').git_clean()<cr>
 
-" hunk related
-" nmap <leader>hp <Plug>(GitGutterPreviewHunk)
-" nmap <leader>hs <Plug>(GitGutterStageHunk)
-" nmap <leader>hu <Plug>(GitGutterUndoHunk)
-" nmap ]h <Plug>(GitGutterNextHunk)
-" nmap [h <Plug>(GitGutterPrevHunk)
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " M-group: Marks
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -275,11 +267,11 @@ endif
 " cd the path of current buffer
 fun! s:CdPwd()
   if FugitiveHead() ==# ''
-    execute 'lcd %:p:h'
+    execute 'cd %:p:h'
     echo 'Enter path >> ' . expand('%:p:h')
   else
     let path = FugitiveGitDir()[0:-6]
-    execute 'lcd' . path
+    execute 'cd' . path
     echo 'Enter path >> ' . path
   end
 endf

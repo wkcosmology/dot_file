@@ -83,8 +83,6 @@ Plug 'xolox/vim-session', { 'on':  ['OpenSession', 'SaveSession', 'ViewSession']
 " ui
 " ---------------------------------------------------------------------------
 " color theme
-" Plug 'gruvbox-community/gruvbox'
-" Plug 'sainnhe/edge'
 Plug 'bluz71/vim-moonfly-colors'
 " let the cursor stay away from ceil and bottom
 Plug 'drzel/vim-scrolloff-fraction'
@@ -113,7 +111,6 @@ Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
 " Git
 " ---------------------------------------------------------------------------
 " show git modified line in the state column
-" Plug 'airblade/vim-gitgutter'
 Plug 'lewis6991/gitsigns.nvim'
 " powerful git tool
 Plug 'tpope/vim-fugitive'
@@ -169,6 +166,8 @@ Plug 'kdheepak/cmp-latex-symbols', { 'for': ['tex'] }
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'lukas-reineke/cmp-under-comparator'
+Plug 'hrsh7th/cmp-cmdline'
 
 " ---------------------------------------------------------------------------
 " Lua
@@ -197,7 +196,6 @@ Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'tami5/sqlite.lua'
 Plug 'AckslD/nvim-neoclip.lua'
-
 
 call plug#end()
 " end of vim plugins manager:vim-plug------------------------------------------
