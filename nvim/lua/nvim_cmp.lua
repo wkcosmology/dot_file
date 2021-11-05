@@ -84,27 +84,21 @@
 
  cmp.setup.cmdline('/', {
    sources = {
-     { name = 'buffer' },
+     { name = 'buffer' , keyword_length = 3 },
    },
  })
 
  cmp.setup.cmdline('?', {
    sources = {
-     { name = 'buffer' },
+     { name = 'buffer' , keyword_length = 3 },
    },
  })
 
  -- Use cmdline & path source for ':'.
  cmp.setup.cmdline(':', {
-  completion = {
-    keyword_length = 2, -- avoid keyword completion 
-    get_trigger_characters = function(default_trigger_characters)
-      return default_trigger_characters -- you can modify the trigger characters
-    end
-  },
   sources = cmp.config.sources({
-    { name = 'path' },
+    { name = 'path' , keyword_length = 3 },
   }, {
-    { name = 'cmdline' },
+    { name = 'cmdline', keyword_length = 3 },
   })
 })

@@ -19,7 +19,8 @@ Plug 'tpope/vim-repeat'
 " lua version of easymotion
 Plug 'phaazon/hop.nvim'
 " for quick commentary
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 " abbreviation substitution and Coerion
 Plug 'tpope/vim-abolish'
 " add more text object
@@ -55,6 +56,8 @@ Plug 'kshenoy/vim-signature'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " dispatch run the tasks
 Plug 'tpope/vim-dispatch'
+" powerful replacement tool
+Plug 'windwp/nvim-spectre'
 
 " ---------------------------------------------------------------------------
 " fzf
@@ -126,12 +129,10 @@ Plug 'pwntester/octo.nvim'
 Plug 'nvim-lua/plenary.nvim'
 " Great terminal tool
 Plug 'voldikss/vim-floaterm', { 'on': ['FloatermNew', 'Floaterms', 'FloatermToggle']}
-" asynchronously check error
-Plug 'dense-analysis/ale'
 " add head information
 Plug 'alpertuna/vim-header', { 'on': 'AddHeader'}
 " run the test file, support many filetypes, including python
-" Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
+Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
 " task control
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
@@ -168,6 +169,9 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'lukas-reineke/cmp-under-comparator'
 Plug 'hrsh7th/cmp-cmdline'
+Plug 'nvim-lua/lsp-status.nvim'
+Plug 'sbdchd/neoformat'
+Plug 'mhartington/formatter.nvim'
 
 " ---------------------------------------------------------------------------
 " Lua

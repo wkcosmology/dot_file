@@ -40,7 +40,8 @@ cnoremap <C-e> <End>
 " Clear highlight
 nnoremap <silent> <C-l> :nohlsearch<cr>
 " keymapping for hop
-nmap <silent> <leader>jj :call MyHop('char1')<cr>
+nmap <silent> <leader>jj :call MyHop('char2')<cr>
+nmap <silent> <leader>jk :call MyHop('char1')<cr>
 nmap <silent> <leader>jw :call MyHop('word')<cr>
 nmap <silent> <leader>jl :call MyHop('line')<cr>
 xmap ga <Plug>(EasyAlign)
@@ -83,6 +84,7 @@ augroup END
 nnoremap <silent> gd :Telescope lsp_definitions<cr>
 nnoremap <silent> gr :Telescope lsp_references<cr>
 nnoremap <silent> gi :Telescope lsp_implementations<cr>
+autocmd CursorHold lua print(vim.lsp.diagnostic.show_line_diagnostics())<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " P-group: Project related
@@ -189,13 +191,14 @@ nnoremap <silent> <leader>mm :Telescope marks<cr>
 nnoremap <leader>mc :delmarks!<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ALE key mapping
+" Diagnostic key mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nnoremap <silent> <C-k> :lua vim.lsp.diagnostic.goto_prev()<cr>
+nnoremap <silent> <C-j> :lua vim.lsp.diagnostic.goto_next()<cr>
 " clear all the diagnostic 
-nmap <silent> <leader>ec :ALEResetBuffer<cr>
-nmap <leader>fm :ALEFix<cr>
+nmap <silent> <leader>ec :lua vim.lsp.diagnostic.clear()<cr>
+" nmap <leader>fm :lua vim.lsp.buf.formatting()<cr>
+nmap <leader>fm :Format<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " utilities

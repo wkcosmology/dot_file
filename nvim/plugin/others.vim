@@ -54,8 +54,8 @@ let g:gist_edit_with_buffers = 1
 let g:gist_clip_command = 'pbcopy'
 " doge
 let g:doge_enable_mappings=0
-let g:doge_mapping_comment_jump_forward='<C-j>'
-let g:doge_mapping_comment_jump_backward='<C-k>'
+" let g:doge_mapping_comment_jump_forward='<C-j>'
+" let g:doge_mapping_comment_jump_backward='<C-k>'
 let g:doge_doc_standard_python='numpy'
 " alpertuna/vim-header config
 let g:header_auto_add_header = 0

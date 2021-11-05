@@ -84,12 +84,10 @@ highlight HopNextKey2 guifg=#0af1f5 gui=bold,underline
 highlight HopUnmatched guifg=#666666
 " sign column and related (ale, gitgutter)
 highlight SignColumn guibg=Normal
-highligh ALEErrorSign guibg=none guifg=Red
-highligh ALEWarningSign guibg=none guifg=Yellow
-highligh GitGutterAdd guibg=none guifg=#3efa3e
-highligh GitGutterChange guibg=none guifg=#64dffa
-highligh GitGutterDelete guibg=none guifg=#f07a84
-highligh GitGutterChangeDelete guibg=none guifg=#f07a84
+" highligh GitGutterAdd guibg=none guifg=#3efa3e
+" highligh GitGutterChange guibg=none guifg=#64dffa
+" highligh GitGutterDelete guibg=none guifg=#f07a84
+" highligh GitGutterChangeDelete guibg=none guifg=#f07a84
 " fzf highlight
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
