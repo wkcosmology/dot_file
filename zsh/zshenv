@@ -119,6 +119,7 @@ export KCORRECT_DIR=/Users/wangk/Documents/Project/library/libsource/kcorrect
 export PATH=$KCORRECT_DIR/bin:$PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$KCORRECT_DIR/lib
 
+# useful export
 export EDITOR='nvim'
 export CC='/usr/local/bin/g++-9'
 export MPICC='/Users/wangk/Documents/Project/library/bin/mpic++'

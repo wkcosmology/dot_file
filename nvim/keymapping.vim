@@ -40,8 +40,8 @@ cnoremap <C-e> <End>
 " Clear highlight
 nnoremap <silent> <C-l> :nohlsearch<cr>
 " keymapping for hop
-nmap <silent> <leader>jj :call MyHop('char2')<cr>
-nmap <silent> <leader>jk :call MyHop('char1')<cr>
+nmap <silent> <leader>jj :call MyHop('char1')<cr>
+nmap <silent> <leader>jk :call MyHop('char2')<cr>
 nmap <silent> <leader>jw :call MyHop('word')<cr>
 nmap <silent> <leader>jl :call MyHop('line')<cr>
 xmap ga <Plug>(EasyAlign)
@@ -61,8 +61,6 @@ nnoremap <silent> <leader>sh :Telescope help_tags<cr>
 nnoremap <silent> <leader>sq :Telescope quickfix<cr>
 " grep word under cursor
 nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
-" fuzzy search terminal
-nnoremap <silent> <leader>sg :Floaterms<cr>
 " yank history
 nnoremap <silent> <space>sy  :Telescope neoclip<cr>
 " Symbols
@@ -128,6 +126,17 @@ nmap <C-t>] :tabnext<cr>
 nmap <C-t>[ :tabprevious<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" harpoon
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>ha :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
+
+nnoremap <C-h> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <C-g> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <C-n> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <C-s> :lua require("harpoon.ui").nav_file(4)<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " window related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " toggle zoom
@@ -146,26 +155,17 @@ augroup close_win
   autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list,fugitiveblame nnoremap <buffer> <C-c> :close<cr>
   autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list inoremap <buffer> <C-c> :close<cr>
   autocmd FileType list inoremap <buffer> <C-c> :close<cr>
-  autocmd FileType floaterm tnoremap <buffer> <C-g> <C-\><C-n>:close<cr>
-  autocmd FileType floaterm inoremap <buffer> <C-g> <C-\><C-n>:close<cr>
-  autocmd FileType floaterm nnoremap <buffer> <C-g> :close<cr>
-  autocmd FileType floaterm nnoremap <buffer> <C-c> :close<cr>
-  autocmd FileType floaterm nnoremap <buffer> q :close<cr>
+  autocmd FileType toggleterm tnoremap <buffer> <C-g> <C-\><C-n>:close<cr>
+  autocmd FileType toggleterm inoremap <buffer> <C-g> <C-\><C-n>:close<cr>
+  autocmd FileType toggleterm nnoremap <buffer> <C-g> :close<cr>
+  autocmd FileType toggleterm nnoremap <buffer> <C-c> :close<cr>
+  autocmd FileType toggleterm nnoremap <buffer> q :close<cr>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " T-group terminal/test
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> <leader>tf :AsyncTaskFzf<cr>
-nnoremap <leader>tt :FloatermToggle<cr>
-nnoremap <leader>tn :FloatermNew<cr>
-nnoremap <leader>ts :MyFloatermSplit<cr>
-
-augroup floaterm
-  autocmd!
-  autocmd FileType floaterm nnoremap <buffer> [t :call <SID>floaterm_navigate('FloatermPrev')<cr> 
-  autocmd FileType floaterm nnoremap <buffer> ]t :call <SID>floaterm_navigate('FloatermNext')<cr> 
-augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " G-group: Git
@@ -196,7 +196,7 @@ nnoremap <leader>mc :delmarks!<cr>
 nnoremap <silent> <C-k> :lua vim.lsp.diagnostic.goto_prev()<cr>
 nnoremap <silent> <C-j> :lua vim.lsp.diagnostic.goto_next()<cr>
 " clear all the diagnostic 
-nmap <silent> <leader>ec :lua vim.lsp.diagnostic.clear()<cr>
+nmap <silent> <leader>ec :lua vim.lsp.diagnostic.clear(0, nil, nil, nil)<cr>
 " nmap <leader>fm :lua vim.lsp.buf.formatting()<cr>
 nmap <leader>fm :Format<cr>
 
@@ -231,27 +231,20 @@ command! DeleteHiddenBuffers call DeleteHiddenBuffers()
 " trim space
 command! TrimSpace execute':%s/\s\+$//e'
 command! -bar -bang Trash :Move<bang> ~/.Trash | bdelete<bang>
-command! MyFloatermSplit FloatermNew --height=0.2 --wintype=split
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " scripts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" navigate floaterm
-fun! s:floaterm_navigate(cmd)
-  execute('FloatermToggle')
-  execute(a:cmd)
-  call feedkeys("\<C-\>\<C-n>", 'i')
-endf
 
 " script for closing the floating window
 fun! s:closefloatingwin()
-  if &filetype ==# 'floaterm'
+  if &filetype ==# 'toggleterm'
     execute 'close'
   elseif &filetype ==# 'fzf'
     execute 'close'
   elseif &filetype ==# 'undotree'
     execute 'close'
-  elseif &filetype ==# 'defx'
+  elseif &filetype ==# 'NvimTree'
     execute 'close'
   endif
 endf

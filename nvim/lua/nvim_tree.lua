@@ -2,9 +2,9 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 -- following options are the default
 require'nvim-tree'.setup {
   -- disables netrw completely
-  disable_netrw = true,
+  disable_netrw = false,
   -- hijack netrw window on startup
-  hijack_netrw = true,
+  hijack_netrw = false,
   -- open the tree when running this setup function
   open_on_setup = false,
   -- will not open on setup if the filetype is in this list
@@ -45,7 +45,7 @@ require'nvim-tree'.setup {
 
   view = {
     -- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
-    width = 30,
+    width = 25,
     -- height of the window, can be either a number (columns) or a string in `%`, for top or bottom side placement
     height = 30,
     -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'

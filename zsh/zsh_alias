@@ -7,6 +7,8 @@ export EXA_COLORS="di=36"
 alias lg=lazygit
 # for a safe rm
 alias rm='safe-rm'
+# colorful ls
+alias ls=exa
 # for python
 # alias python='/Users/wangk/anaconda3/bin/python3'
 # alias python3='/Users/wangk/anaconda3/bin/python3'

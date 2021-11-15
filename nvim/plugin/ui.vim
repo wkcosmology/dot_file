@@ -13,7 +13,7 @@ set termguicolors
 set shiftwidth=4
 " indetLine config
 let g:indentLine_enabled = 1
-let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#777a54'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_fileType = ['python', 'c', 'cpp', 'h', 'hpp', 'html', 'css', 'javascript'] " conceallevel related
 " edge config
@@ -29,6 +29,7 @@ let g:indentLine_fileType = ['python', 'c', 'cpp', 'h', 'hpp', 'html', 'css', 'j
 let g:moonflyTransparent = 1
 let g:moonflyUndercurls = 0
 colorscheme moonfly
+highlight Visual guibg=#4A555A
 " highlight Pmenu for auto completion
 hi Pmenu ctermfg=251 ctermbg=235 guifg=#bab8b8 guibg=#363535
 " Shougo/echodoc
@@ -45,23 +46,6 @@ let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_ShortIndicators = 1
 " scrolloff_fraction
 let g:scrolloff_fraction = 0.15
-" floaterm
-let g:floaterm_width = 0.9
-let g:floaterm_height = 0.7
-let g:floaterm_wintype = 'float'
-let g:floaterm_position = 'center'
-let g:floaterm_title = 'Terminal($1/$2)'
-let g:floaterm_autoinsert = v:true
-hi FloatermBorder guibg=Normal guifg=DarkYellow
-hi Floaterm guibg=Normal
-let g:fzf_floaterm_newentries = {
-  \ '+terminal' : {
-    \ 'title': 'Terminal',
-    \ 'cmd': '' },
-  \ '+ipython' : {
-    \ 'title': 'IPython',
-    \ 'cmd': 'ipython' },
-  \ }
 " highligh current line number
 hi! link CursorLineNr Constant
 " tabline highlight

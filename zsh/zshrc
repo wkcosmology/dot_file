@@ -76,7 +76,7 @@ source ~/.zsh/vscode/vscode.plugin.zsh
 # User configuration
 
 # autosuggestion
-bindkey '^k' autosuggest-accept
+bindkey '^j' autosuggest-accept
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#948d8d,bg=none"
 # export MANPATH="/usr/local/man:$MANPATH"
 

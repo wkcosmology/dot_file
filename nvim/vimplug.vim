@@ -51,13 +51,15 @@ Plug 'mbbill/undotree', { 'on': ['UndotreeToggle', 'UndotreeShow'] }
 " vim for vim
 Plug 'tpope/vim-scriptease'
 " mark the mark
-Plug 'kshenoy/vim-signature'
+" Plug 'kshenoy/vim-signature'
 " prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " dispatch run the tasks
 Plug 'tpope/vim-dispatch'
 " powerful replacement tool
 Plug 'windwp/nvim-spectre'
+" quick navi the working files
+Plug 'ThePrimeagen/harpoon'
 
 " ---------------------------------------------------------------------------
 " fzf
@@ -66,8 +68,6 @@ Plug 'windwp/nvim-spectre'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " fzf vim plugin
 Plug 'junegunn/fzf.vim'
-" fzf for floaterm
-Plug 'voldikss/fzf-floaterm', { 'on': ['FloatermNew', 'Floaterms', 'FloatermToggle']}
 " git branched
 Plug 'stsewd/fzf-checkout.vim'
 " fzf history
@@ -101,8 +101,6 @@ Plug 'gcmt/taboo.vim'
 Plug 'ryanoasis/vim-devicons'
 " choose the window
 Plug 't9md/vim-choosewin', 
-" start up window
-Plug 'mhinz/vim-startify'
 
 " ---------------------------------------------------------------------------
 " C/C++ related
@@ -128,7 +126,7 @@ Plug 'pwntester/octo.nvim'
 " useful plugin for lua
 Plug 'nvim-lua/plenary.nvim'
 " Great terminal tool
-Plug 'voldikss/vim-floaterm', { 'on': ['FloatermNew', 'Floaterms', 'FloatermToggle']}
+Plug 'akinsho/toggleterm.nvim'
 " add head information
 Plug 'alpertuna/vim-header', { 'on': 'AddHeader'}
 " run the test file, support many filetypes, including python
@@ -155,6 +153,7 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'tjdevries/nlua.nvim'
 " filetree in lua
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'karb94/neoscroll.nvim'
 
 " ---------------------------------------------------------------------------
 " Lsp and related
@@ -170,7 +169,6 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'lukas-reineke/cmp-under-comparator'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'nvim-lua/lsp-status.nvim'
-Plug 'sbdchd/neoformat'
 Plug 'mhartington/formatter.nvim'
 
 " ---------------------------------------------------------------------------

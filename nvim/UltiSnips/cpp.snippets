@@ -53,19 +53,12 @@ snippet vvec "vector" b
 vector<vector<${1:T}>> ${2}
 endsnippet
 
-snippet tryh5 "try and catch in hdf5" b
-try {
-Exception::dontPrint();
-${0}
-} catch (FileIException error) {
-error.printErrorStack();
-} catch (DataSetIException error) {
-error.printErrorStack();
-} catch (DataSpaceIException error) {
-error.printErrorStack();
-} catch (DataTypeIException error) {
-error.printErrorStack();
-}
+snippet h5r "Read HDF5" b
+${1:grp}.open_dataset("${2:dataset}").read(${3:des});
+endsnippet
+
+snippet h5w "Write HDF5" b
+${1:grp}.create_dataset<${2:type}>("${3:dataset}", {${4:shape}}).write(${5:data});
 endsnippet
 
 # vim-snippets
@@ -105,12 +98,11 @@ endsnippet
 snippet cls "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
-public:
-	explicit ${1/(\w+).*/$1/} (${2:arguments});
-	virtual ~${1/(\w+).*/$1/} ();
+   public:
+    explicit ${1/(\w+).*/$1/} (${2:arguments});
 
-private:
-	${0:/* data */}
+   private:
+    ${0:/* data */}
 };
 endsnippet
 

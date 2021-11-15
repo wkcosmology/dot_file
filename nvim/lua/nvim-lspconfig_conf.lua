@@ -28,14 +28,14 @@ end
 -- diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = false,
-  virtual_text = {spacing = 4, prefix='●', severity_limit = "Warning"},
+  virtual_text = {spacing = 4, prefix = '●', severity_limit = "Warning"},
   signs = {severity_limit = "Warning"},
   update_in_insert = false
 })
 local signs = {Error = " ", Warn = " ", Hint = " ", Info = " "}
 for type, icon in pairs(signs) do
   local hl = "LspDiagnosticsSign" .. type
-  vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+  vim.fn.sign_define(hl, {text = icon, texthl = hl})
 end
 -- If we want to disable the diagnostic
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end

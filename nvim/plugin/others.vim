@@ -16,12 +16,7 @@ filetype plugin indent on
 " On pressing tab, insert 4 spaces
 set expandtab
 " set colorcolumn
-set colorcolumn=120
-augroup texcolumn
-  autocmd BufEnter *.tex,*.md set colorcolumn=79
-augroup END
-" https://github.com/bfrg/vim-cpp-modern
-let c_no_curly_error = 1
+set colorcolumn=79
 " set hidden
 set hidden
 " no backup
@@ -52,11 +47,6 @@ let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr lb ar ab lB Ar aB Ab AB'
 let g:gist_show_privates = 1
 let g:gist_edit_with_buffers = 1
 let g:gist_clip_command = 'pbcopy'
-" doge
-let g:doge_enable_mappings=0
-" let g:doge_mapping_comment_jump_forward='<C-j>'
-" let g:doge_mapping_comment_jump_backward='<C-k>'
-let g:doge_doc_standard_python='numpy'
 " alpertuna/vim-header config
 let g:header_auto_add_header = 0
 let g:header_field_modified_timestamp = 0
