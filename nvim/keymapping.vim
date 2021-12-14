@@ -198,7 +198,11 @@ nnoremap <silent> <C-j> :lua vim.lsp.diagnostic.goto_next()<cr>
 " clear all the diagnostic 
 nmap <silent> <leader>ec :lua vim.lsp.diagnostic.clear(0, nil, nil, nil)<cr>
 " nmap <leader>fm :lua vim.lsp.buf.formatting()<cr>
-nmap <leader>fm :Format<cr>
+augroup FormatFiletype
+  autocmd!
+  autocmd BufEnter * nmap <leader>fm :Format<cr>
+  autocmd BufEnter *.tex nmap <leader>fm gqap
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " utilities

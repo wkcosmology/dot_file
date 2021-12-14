@@ -34,14 +34,14 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 })
 local signs = {Error = " ", Warn = " ", Hint = " ", Info = " "}
 for type, icon in pairs(signs) do
-  local hl = "LspDiagnosticsSign" .. type
+  local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, {text = icon, texthl = hl})
 end
 -- If we want to disable the diagnostic
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 
 -- config for each language
-nvim_lsp['pyright'].setup {on_attach = on_attach}
+nvim_lsp['jedi_language_server'].setup {on_attach = on_attach}
 nvim_lsp['vimls'].setup {on_attach = on_attach}
 nvim_lsp['texlab'].setup {on_attach = on_attach}
 nvim_lsp['clangd'].setup {

@@ -101,6 +101,8 @@ Plug 'gcmt/taboo.vim'
 Plug 'ryanoasis/vim-devicons'
 " choose the window
 Plug 't9md/vim-choosewin', 
+" improve the default vim.ui interfaces
+Plug 'stevearc/dressing.nvim'
 
 " ---------------------------------------------------------------------------
 " C/C++ related
@@ -170,6 +172,7 @@ Plug 'lukas-reineke/cmp-under-comparator'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'mhartington/formatter.nvim'
+Plug 'onsails/lspkind-nvim'
 
 " ---------------------------------------------------------------------------
 " Lua

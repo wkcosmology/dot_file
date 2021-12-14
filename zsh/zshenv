@@ -9,6 +9,8 @@ export PATH="$PATH:/usr/local/opt/llvm/bin/"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # config python path
 export PATH="$PATH:/Users/wangk/anaconda3/bin"
+# config neovim
+export PATH="$PATH:/Users/wangk/Documents/Project/library/libsource/nvim-osx64/bin"
 # add my package path
 export PYTHONPATH="$PYTHONPATH:/Users/wangk/anaconda3/lib/python3.7/site-packages/"
 export PYTHONPATH="$PYTHONPATH:/Users/wangk/Documents/Project/9.GalaxyGroup/"
@@ -101,6 +103,7 @@ export LIBRARY_PATH=$MYLIB_PATH/lib/fftw3/:$LIBRARY_PATH
 export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/hipp/include/:$CPLUS_INCLUDE_PATH
 export LD_LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LD_LIBRARY_PATH
 export LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LIBRARY_PATH
+export LD_RUNPATH_SEARCH_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LD_RUNPATH_SEARCH_PATH
 
 # spdlog
 export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/spdlog/include/:$CPLUS_INCLUDE_PATH
