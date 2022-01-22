@@ -1,19 +1,13 @@
 # config neovim
-alias vi=nvim
+alias vi=vim
 alias vim=nvim
 # replace ls with exa
+alias ls=exa
 export EXA_COLORS="di=36"
 # alias the lazygit
 alias lg=lazygit
 # for a safe rm
 alias rm='safe-rm'
-# colorful ls
-alias ls=exa
-# for python
-# alias python='/Users/wangk/anaconda3/bin/python3'
-# alias python3='/Users/wangk/anaconda3/bin/python3'
-# alias pip='/Users/wangk/anaconda3/bin/pip'
-# alias pip3='/Users/wangk/anaconda3/bin/pip'
 
 # server related
 alias sgalileo='ssh wangk@202.127.24.125'
@@ -23,29 +17,16 @@ alias svenusx='ssh -X wangk@166.111.131.54'
 alias pvenus='ssh -p 2222 wangk@166.111.131.54'
 alias pvenusx='ssh -p 2222 -X wangk@166.111.131.54'
 alias porion='ssh -p6622 wangk@58.192.69.130'
-
 # alias for gcc
 alias gcc='gcc-11'
-alias cc='gcc-11'
 alias g++='g++-11 -std=c++17'
-alias c++='g++-11 -std=c++17'
-alias CC='g++-11 -std=c++17'
-alias mpiCC='/Users/wangk/Documents/Project/library/bin/mpiCC'
-alias mpic++='/Users/wangk/Documents/Project/library/bin/mpic++ -std=c++17'
-alias mpicc='/Users/wangk/Documents/Project/library/bin/mpicc -std=c++17'
-alias mpicxx='/Users/wangk/Documents/Project/library/bin/mpicxx'
-alias mpirun='/Users/wangk/Documents/Project/library/bin/mpirun'
-alias mpiexec='/Users/wangk/Documents/Project/library/bin/mpiexec'
-
 # tmux
 TMUX_CONFIG='/Users/wangk/.config/tmux/tmux.conf'
-alias tn='/usr/local/bin/tmux -u -f $TMUX_CONFIG new'
-alias ta='/usr/local/bin/tmux -u -f $TMUX_CONFIG attach'
-alias tl='/usr/local/bin/tmux list-sessions'
-
+alias tn='/opt/homebrew/bin/tmux -u -f $TMUX_CONFIG new'
+alias ta='/opt/homebrew/bin/tmux -u -f $TMUX_CONFIG attach'
+alias tl='/opt/homebrew/bin/tmux list-sessions'
+# FZF config
 export FZF_DEFAULT_COMMAND='fd --type f'
-
-
 # Rsync
 function sync_lib {
     echo "Sync begins:"
@@ -55,22 +36,21 @@ function sync_lib {
         --delete \
         --exclude-from="$1.gitignore" \
         --exclude=".git/*" \
-        --info=progress2 --info=name0 \
+        --info=name0 \
         -e "ssh -p$5" \
         -rz \
         $1 \
         $2@$3:$4
     echo "Sync Finished!"
     }
-
-alias sync_group_venus="sync_lib /Users/wangk/Documents/Project/9.GalaxyGroup/ wangk 166.111.131.54 /home/wangk/9.GalaxyGroup 2222"
-alias sync_halo_venus="sync_lib /Users/wangk/Documents/Project/10.HaloMassProxy/ wangk 166.111.131.54 /home/wangk/10.HaloMassProxy 2222"
-alias sync_vel_venus="sync_lib /Users/wangk/Documents/Project/11.PeculiarVelocity/ wangk 166.111.131.54 /home/wangk/11.PeculiarVelocity 2222"
-alias sync_pc_venus="sync_lib /Users/wangk/Documents/Project/12.ProtoCluster/ wangk 166.111.131.54 /home/wangk/12.ProtoCluster 2222"
-alias sync_pc_orion="sync_lib /Users/wangk/Documents/Project/12.ProtoCluster/ wangk 58.192.69.130 /home/wangk/12.ProtoCluster 6622"
-alias sync_group_orion="sync_lib /Users/wangk/Documents/Project/9.GalaxyGroup/ wangk 58.192.69.130 /home/wangk/9.GalaxyGroup 6622"
-alias sync_halo_orion="sync_lib /Users/wangk/Documents/Project/10.HaloMassProxy/ wangk 58.192.69.130 /home/wangk/10.HaloMassProxy 6622"
-alias sync_enhance_venus="sync_lib /Users/wangk/Documents/Project/mylib/enhanced/ wangk 166.111.131.54 /home/wangk/mylib/enhanced 2222"
-alias sync_gez_venus="sync_lib /Users/wangk/Documents/Project/13.GalaxyEvolutionZcosmos/ wangk 166.111.131.54 /home/wangk/13.GalaxyEvolutionZcosmos 2222"
-alias sync_cgpc_orion="sync_lib /Users/wangk/Documents/Project/14.ConnectGalaxyInPC/ wangk 58.192.69.130 /home/wangk/14.ConnectGalaxyInPC 6622"
-alias sync_cgpc_venus="sync_lib /Users/wangk/Documents/Project/14.ConnectGalaxyInPC/ wangk 166.111.131.54 /home/wangk/14.ConnectGalaxyInPC 2222"
+alias sync_group_venus="sync_lib /Users/wangk/Project/9.GalaxyGroup/ wangk 166.111.131.54 /home/wangk/9.GalaxyGroup 2222"
+alias sync_halo_venus="sync_lib /Users/wangk/Project/10.HaloMassProxy/ wangk 166.111.131.54 /home/wangk/10.HaloMassProxy 2222"
+alias sync_vel_venus="sync_lib /Users/wangk/Project/11.PeculiarVelocity/ wangk 166.111.131.54 /home/wangk/11.PeculiarVelocity 2222"
+alias sync_pc_venus="sync_lib /Users/wangk/Project/12.ProtoCluster/ wangk 166.111.131.54 /home/wangk/12.ProtoCluster 2222"
+alias sync_pc_orion="sync_lib /Users/wangk/Project/12.ProtoCluster/ wangk 58.192.69.130 /home/wangk/12.ProtoCluster 6622"
+alias sync_group_orion="sync_lib /Users/wangk/Project/9.GalaxyGroup/ wangk 58.192.69.130 /home/wangk/9.GalaxyGroup 6622"
+alias sync_halo_orion="sync_lib /Users/wangk/Project/10.HaloMassProxy/ wangk 58.192.69.130 /home/wangk/10.HaloMassProxy 6622"
+alias sync_enhance_venus="sync_lib /Users/wangk/Project/mylib/enhanced/ wangk 166.111.131.54 /home/wangk/mylib/enhanced 2222"
+alias sync_gez_venus="sync_lib /Users/wangk/Project/13.GalaxyEvolutionZcosmos/ wangk 166.111.131.54 /home/wangk/13.GalaxyEvolutionZcosmos 2222"
+alias sync_cgpc_orion="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk 58.192.69.130 /home/wangk/14.ConnectGalaxyInPC 6622"
+alias sync_cgpc_venus="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk 166.111.131.54 /home/wangk/14.ConnectGalaxyInPC 2222"

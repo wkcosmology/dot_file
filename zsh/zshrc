@@ -142,8 +142,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-conda deactivate
-conda activate base
+# conda deactivate
+# conda activate base
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then

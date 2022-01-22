@@ -16,7 +16,7 @@ filetype plugin indent on
 " On pressing tab, insert 4 spaces
 set expandtab
 " set colorcolumn
-set colorcolumn=79
+set colorcolumn=89
 " set hidden
 set hidden
 " no backup

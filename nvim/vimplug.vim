@@ -1,3 +1,4 @@
+set rtp+=~/.vim
 " vim plugins manager:vim-plug-----------------------------------------------
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -79,8 +80,7 @@ Plug 'pbogut/fzf-mru.vim'
 " kill the buffer while keep the window
 Plug 'moll/vim-bbye'
 " the following two plugs is for session
-Plug 'xolox/vim-misc', { 'on':  ['OpenSession', 'SaveSession', 'ViewSession'] }
-Plug 'xolox/vim-session', { 'on':  ['OpenSession', 'SaveSession', 'ViewSession'] }
+Plug 'rmagatti/auto-session'
 
 " ---------------------------------------------------------------------------
 " ui
@@ -194,7 +194,7 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make CC=/usr/local/bin/gcc-9' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make CC=/opt/homebrew/bin/gcc-11' }
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
