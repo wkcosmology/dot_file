@@ -6,7 +6,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fast editing
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set the leader to space
+" set  the leader to space
 let mapleader=' '
 " use Esc to exit terminal
 tnoremap <Esc> <C-\><C-n><cr>
