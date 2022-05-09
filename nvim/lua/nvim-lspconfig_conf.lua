@@ -41,6 +41,9 @@ end
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 
 -- config for each language
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 nvim_lsp['jedi_language_server'].setup {on_attach = on_attach}
 nvim_lsp['vimls'].setup {on_attach = on_attach}
 nvim_lsp['texlab'].setup {on_attach = on_attach}
@@ -50,11 +53,11 @@ nvim_lsp['clangd'].setup {
     "clangd", "--clang-tidy", "--compile-commands-dir=/Users/wangk/.config/clang/", "--background-index",
     "--completion-style=detailed", "--all-scopes-completion", "--header-insertion=iwyu"
   },
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  capabilities = capabilities,
 }
 
 -- Setting for the lua lsp
-local system_name
+-- local system_name
 if vim.fn.has("mac") == 1 then
   system_name = "macOS"
 elseif vim.fn.has("unix") == 1 then
@@ -65,7 +68,7 @@ else
   print("Unsupported system for sumneko")
 end
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = "/Users/wangk/Documents/Project/library/libsource/lua-language-server"
+local sumneko_root_path = "/Users/wangk/MyLibrary/libsource/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
 require"lspconfig".sumneko_lua.setup {
   on_attach = on_attach,

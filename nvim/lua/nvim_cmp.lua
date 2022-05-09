@@ -13,8 +13,10 @@ cmp.setup({
     completeopt = 'menu,menuone,noselect',
     keyword_length = 2
   },
-  -- documentation = {border = "rounded", maxwidth = 80},
-  documentation = false,
+  window = {
+      -- completion = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(),
+    },
   mapping = {
     ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 'c'}),
     ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 'c'}),
@@ -41,5 +43,6 @@ cmp.setup.cmdline('?', {sources = {{name = 'buffer', keyword_length = 3}}})
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({{name = 'path', keyword_length = 3}}, {{name = 'cmdline', keyword_length = 3}})
+  sources = cmp.config.sources({{name = 'path', keyword_length = 3}}, {{name = 'cmdline', keyword_length = 3}}),
+
 })

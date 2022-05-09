@@ -66,3 +66,5 @@ export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/hipp/include/:$CPLUS_INCLUDE_PAT
 export LD_LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LD_LIBRARY_PATH
 export LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LIBRARY_PATH
 export LD_RUNPATH_SEARCH_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LD_RUNPATH_SEARCH_PATH
+# npm access problem, see https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
+export PATH=~/.npm-global/bin:$PATH

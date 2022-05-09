@@ -177,3 +177,5 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias luamake=/Users/wangk/MyLibrary/libsource/lua-language-server/3rd/luamake/luamake

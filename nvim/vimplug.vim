@@ -80,7 +80,7 @@ Plug 'pbogut/fzf-mru.vim'
 " kill the buffer while keep the window
 Plug 'moll/vim-bbye'
 " the following two plugs is for session
-Plug 'rmagatti/auto-session'
+" Plug 'rmagatti/auto-session'
 
 " ---------------------------------------------------------------------------
 " ui
