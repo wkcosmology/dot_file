@@ -10,6 +10,9 @@ set nocursorline
 set conceallevel=0
 set termguicolors
 set shiftwidth=4
+" winbar and global status line
+set laststatus=3
+set winbar=%=%m\ %f
 " indetLine config
 let g:indentLine_enabled = 1
 let g:indentLine_color_gui = '#777a54'

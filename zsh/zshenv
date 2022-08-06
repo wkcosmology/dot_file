@@ -1,6 +1,8 @@
 export XDG_CONFIG_HOME="/Users/wangk/.config/"
 # using Exuberant ctags
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# using cargo
+export PATH="/Users/wangk/.cargo/bin:$PATH"
 # go package
 export PATH="/Users/wangk/go/bin:$PATH"
 # config node_module path
@@ -33,7 +35,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 export BETTER_EXCEPTIONS=1
 # useful export
 export EDITOR='nvim'
-export CC='/usr/local/bin/g++-11'
+export CC='/opt/homebrew/bin/g++-11'
 
 # alias
 export MYLIB_PATH=/Users/wangk/MyLibrary
@@ -68,3 +70,7 @@ export LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LIBRARY_PATH
 export LD_RUNPATH_SEARCH_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LD_RUNPATH_SEARCH_PATH
 # npm access problem, see https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 export PATH=~/.npm-global/bin:$PATH
+# for eigen
+export CPLUS_INCLUDE_PATH=/usr/local/include/eigen3/:$CPLUS_INCLUDE_PATH
+# for boost
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/boost_1_79_0/:$CPLUS_INCLUDE_PATH

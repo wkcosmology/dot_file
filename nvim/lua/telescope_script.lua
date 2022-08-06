@@ -27,7 +27,7 @@ function M.git_branches()
   end
   local repo = vim.fn["FugitiveGitDir"]()
   repo = string.match(repo, "/([^/]+)/.git$")
-  opt = {prompt_prefix = " " .. repo .. " > "}
+  local opt = {prompt_prefix = " " .. repo .. " > "}
   require("telescope.builtin").git_branches(opt)
 end
 
@@ -60,9 +60,9 @@ end
 -- wrap git status
 function M.git_status()
   if vim.fn["fugitive#head"]() == "" then
-    echo "Not in git repo!"
+    print("Not in git repo!")
   else
-    opt = {}
+    local opt = {}
     opt.cwd = string.sub(vim.fn['FugitiveGitDir'](), 1, -6)
     require("telescope.builtin").git_status(opt)
   end

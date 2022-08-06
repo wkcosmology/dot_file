@@ -53,7 +53,7 @@ vmap ga <Plug>(EasyAlign)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy searching command
 nnoremap <silent> <leader>: :Telescope commands<cr>
-" fuzzy search content
+" fuzzy search snippet
 nnoremap <silent> <leader>ss :Telescope ultisnips ultisnips<cr>
 " fuzzy search help
 nnoremap <silent> <leader>sh :Telescope help_tags<cr>
@@ -99,7 +99,7 @@ nnoremap <silent> <Leader>ff :lua require('telescope_script').files(vim.fn.expan
 " fuzzy search most recent file
 nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
 " open defx file tree
-nnoremap <silent> <Leader>ft :NvimTreeFindFile<cr>
+nnoremap <silent> <Leader>ft :Neotree<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " B-group: buffers
@@ -107,7 +107,7 @@ nnoremap <silent> <Leader>ft :NvimTreeFindFile<cr>
 " fuzzy search buffers
 nnoremap <silent> <leader>bb :Telescope buffers<cr>
 " close current buffer
-nmap <silent> <leader>bd :Bdelete<cr>
+nmap <silent> <leader>bd :Bwipeout<cr>
 " close other buffers except the current one
 nmap <silent> <leader>bD :DeleteHiddenBuffers<cr>
 " buffer switch, switch header/source
@@ -144,8 +144,8 @@ nnoremap <C-s> :lua require("harpoon.ui").nav_file(4)<CR>
 let g:maximizer_set_default_mapping = 0
 nnoremap <silent><C-w>m :MaximizerToggle<cr>
 " choose the window
-nnoremap <silent> <C-w>w :ChooseWin<cr>
-nnoremap <silent> <C-w>e :ChooseWinSwap<cr>
+" nnoremap <silent> <C-w>w :ChooseWin<cr>
+" nnoremap <silent> <C-w>e :ChooseWinSwap<cr>
 " close the location list and quickfix window
 nnoremap <silent> <leader>lc :ccl\|lcl<cr>
 noremap <silent> <F3> :copen<cr>
@@ -196,7 +196,8 @@ nnoremap <leader>mc :delmarks!<cr>
 nnoremap <silent> <C-k> :lua vim.diagnostic.goto_prev()<cr>
 nnoremap <silent> <C-j> :lua vim.diagnostic.goto_next()<cr>
 " clear all the diagnostic 
-nmap <silent> <leader>ec :lua vim.diagnostic.clear(0, nil, nil, nil)<cr>
+nmap <silent> <leader>ec :lua vim.diagnostic.hide()<cr>
+nmap <silent> <leader>et :Trouble<cr>
 " nmap <leader>fm :lua vim.buf.formatting()<cr>
 augroup FormatFiletype
   autocmd!
@@ -221,7 +222,7 @@ augroup my_file_type_map
   autocmd FileType tex nnoremap <buffer> <leader>vv :VimtexView<cr>
   autocmd FileType tex nnoremap <buffer> <leader>vc :VimtexTocToggle<cr>
   autocmd FileType tex nnoremap <buffer> <leader>cc :VimtexClean<cr>
-  autocmd FileType lua nnoremap <buffer> <leader>fm :call LuaFormat()<cr>
+  " autocmd FileType lua nnoremap <buffer> <leader>fm :call LuaFormat()<cr>
   autocmd Filetype markdown,html,typescript,javascript,json,css,yaml nnoremap <buffer> <leader>fm :Prettier<cr>
   autocmd Filetype markdown nmap <C-j> <Plug>(spelunker-jump-next)
   autocmd Filetype markdown nmap <C-k> <Plug>(spelunker-jump-prev)

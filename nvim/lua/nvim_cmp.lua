@@ -44,5 +44,4 @@ cmp.setup.cmdline('?', {sources = {{name = 'buffer', keyword_length = 3}}})
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
   sources = cmp.config.sources({{name = 'path', keyword_length = 3}}, {{name = 'cmdline', keyword_length = 3}}),
-
 })

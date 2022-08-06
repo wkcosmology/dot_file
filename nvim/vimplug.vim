@@ -99,10 +99,10 @@ Plug 'szw/vim-maximizer'
 Plug 'gcmt/taboo.vim'
 " devicons
 Plug 'ryanoasis/vim-devicons'
-" choose the window
-Plug 't9md/vim-choosewin', 
 " improve the default vim.ui interfaces
 Plug 'stevearc/dressing.nvim'
+" colors for diagnostics highlight
+Plug 'folke/lsp-colors.nvim'
 
 " ---------------------------------------------------------------------------
 " C/C++ related
@@ -154,8 +154,10 @@ Plug 'nvim-treesitter/nvim-treesitter-refactor'
 " lua for vim development
 Plug 'tjdevries/nlua.nvim'
 " filetree in lua
-Plug 'kyazdani42/nvim-tree.lua'
 Plug 'karb94/neoscroll.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v2.x' }
+Plug 's1n7ax/nvim-window-picker', { 'tag': 'v1.*' }
 
 " ---------------------------------------------------------------------------
 " Lsp and related
@@ -173,12 +175,12 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'mhartington/formatter.nvim'
 Plug 'onsails/lspkind-nvim'
+Plug 'folke/trouble.nvim'
 
 " ---------------------------------------------------------------------------
 " Lua
 " ---------------------------------------------------------------------------
 Plug 'RishabhRD/popfix', { 'for': ['lua'] }
-Plug 'wkcosmology/vim-lua-format', { 'for': ['lua'] }
 
 " ---------------------------------------------------------------------------
 " web development
@@ -200,7 +202,8 @@ Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'tami5/sqlite.lua'
-Plug 'AckslD/nvim-neoclip.lua'
+" Plug 'hrsh7th/nvim-pasta'
+" Plug 'AckslD/nvim-neoclip.lua'
 
 call plug#end()
 " end of vim plugins manager:vim-plug------------------------------------------

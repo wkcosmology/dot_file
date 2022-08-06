@@ -1,29 +1,21 @@
 {
     "InternalPDFViewer": {
         "Embedded": true,
-        "File": "../../Project/Thesis/thuthesis-example.pdf"
+        "File": "../../Project/Paper/5_connecting_galaxy/main.pdf"
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "../../Project/Thesis/data/chap01.tex",
+        "CurrentFile": "../../Project/Paper/5_connecting_galaxy/main.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 15,
+                "Col": 0,
                 "EditorGroup": 0,
-                "FileName": "../../Project/Thesis/thuthesis-example.tex",
-                "FirstLine": 0,
+                "FileName": "../../Project/Paper/5_connecting_galaxy/main.tex",
+                "FirstLine": 567,
                 "FoldedLines": "",
-                "Line": 9
-            },
-            {
-                "Col": 435,
-                "EditorGroup": 0,
-                "FileName": "../../Project/Thesis/data/chap01.tex",
-                "FirstLine": 26,
-                "FoldedLines": "",
-                "Line": 50
+                "Line": 634
             }
         ],
         "MasterFile": ""

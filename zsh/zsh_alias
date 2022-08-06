@@ -12,10 +12,9 @@ alias rm='safe-rm'
 # server related
 alias sgalileo='ssh wangk@202.127.24.125'
 alias ssdss4='ssh kaiwang@119.78.226.70'
-alias svenus='ssh wangk@166.111.131.54'
+alias svenus='ssh wangk@166.111.30.104'
 alias svenusx='ssh -X wangk@166.111.131.54'
-alias pvenus='ssh -p 2222 wangk@166.111.131.54'
-alias pvenusx='ssh -p 2222 -X wangk@166.111.131.54'
+alias pvenus='ssh -p 2222 wangk@166.111.30.104'
 alias porion='ssh -p6622 wangk@58.192.69.130'
 # alias for gcc
 alias gcc='gcc-11'
@@ -25,6 +24,33 @@ TMUX_CONFIG='/Users/wangk/.config/tmux/tmux.conf'
 alias tn='/opt/homebrew/bin/tmux -u -f $TMUX_CONFIG new'
 alias ta='/opt/homebrew/bin/tmux -u -f $TMUX_CONFIG attach'
 alias tl='/opt/homebrew/bin/tmux list-sessions'
+# Attach or create tmux session named the same as current directory.
+
+create_if_needed_and_attach() {
+    path_name="$(basename "$PWD" | tr . -)"
+    session_name=${1-$path_name}
+
+    not_in_tmux() {
+      [ -z "$TMUX" ]
+    }
+
+    session_exists() {
+      tmux has-session -t "=$session_name"
+    }
+
+    create_detached_session() {
+      (TMUX='' tmux new-session -Ad -s "$session_name")
+    }
+  if not_in_tmux; then
+    tmux new-session -As "$session_name"
+  else
+    if ! session_exists; then
+      create_detached_session
+    fi
+    tmux switch-client -t "$session_name"
+  fi
+}
+alias tat='create_if_needed_and_attach'
 # FZF config
 export FZF_DEFAULT_COMMAND='fd --type f'
 # Rsync
