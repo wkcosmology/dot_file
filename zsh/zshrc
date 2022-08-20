@@ -21,7 +21,7 @@ export DISABLE_AUTO_TITLE='true'
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -65,9 +65,8 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git web-search osx extract tmux
-        wd python copydir fzf zsh-autosuggestions
-        zsh-z k zsh_reload)
+plugins=(git web-search macos extract tmux
+    wd python fzf zsh-autosuggestions)
 # autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 # auto complete, using the Ctrl-SPC to auto accept the suggestion
@@ -180,3 +179,4 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias luamake=/Users/wangk/MyLibrary/libsource/lua-language-server/3rd/luamake/luamake
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme

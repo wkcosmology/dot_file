@@ -1,3 +1,6 @@
+lua << EOF
+require'hop'.setup()
+EOF
 function! MyHop(mode)
     echohl Yellow
   if a:mode ==# 'char1'
