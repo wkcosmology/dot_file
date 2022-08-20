@@ -20,7 +20,7 @@ Plug 'tpope/vim-repeat'
 " lua version of easymotion
 Plug 'phaazon/hop.nvim'
 " for quick commentary
-" Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 Plug 'numToStr/Comment.nvim'
 " abbreviation substitution and Coerion
 Plug 'tpope/vim-abolish'
@@ -46,7 +46,7 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " matchup
 Plug 'andymass/vim-matchup'
 " tagbar
-Plug 'stevearc/aerial.nvim'
+" Plug 'stevearc/aerial.nvim'
 " undo tree visualizer
 Plug 'mbbill/undotree'
 " vim for vim
@@ -155,7 +155,6 @@ Plug 'tjdevries/nlua.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v2.x' }
-Plug 's1n7ax/nvim-window-picker', { 'tag': 'v1.*' }
 
 " ---------------------------------------------------------------------------
 " Lsp and related
