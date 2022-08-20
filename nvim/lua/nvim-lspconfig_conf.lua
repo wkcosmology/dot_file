@@ -1,20 +1,5 @@
 local nvim_lsp = require("lspconfig")
 
--- attach to language server
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
-  end
-  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-  local opts = { noremap = true, silent = true }
-  buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  buf_set_keymap("n", "\\r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-end
-
 -- border config
 vim.cmd([[autocmd ColorScheme * highlight NormalFloat guibg=#20282E]])
 vim.cmd([[autocmd ColorScheme * highlight FloatBorder guifg=#73777A guibg=#20282E]])
@@ -53,6 +38,24 @@ end
 -- config for each language
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
+-- Attach to all the languages
+local on_attach = function(client, bufnr)
+
+  local function buf_set_keymap(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...)
+  end
+
+  local function buf_set_option(...)
+    vim.api.nvim_buf_set_option(bufnr, ...)
+  end
+
+  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+  local opts = { noremap = true, silent = true }
+  -- buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  -- buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  -- buf_set_keymap("n", "\\r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+end
 
 nvim_lsp["jedi_language_server"].setup({ on_attach = on_attach })
 nvim_lsp["vimls"].setup({ on_attach = on_attach })

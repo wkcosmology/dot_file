@@ -2,23 +2,25 @@
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-vim.fn.sign_define("DiagnosticSignError",
-  {text = " ", texthl = "DiagnosticSignError"})
-vim.fn.sign_define("DiagnosticSignWarn",
-  {text = " ", texthl = "DiagnosticSignWarn"})
-vim.fn.sign_define("DiagnosticSignInfo",
-  {text = " ", texthl = "DiagnosticSignInfo"})
-vim.fn.sign_define("DiagnosticSignHint",
-  {text = "", texthl = "DiagnosticSignHint"})
+vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 -- in the form "LspDiagnosticsSignWarning"
 
 require("neo-tree").setup({
+  sources = {
+    "filesystem",
+    "buffers",
+    "git_status",
+    "diagnostics",
+  },
   close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
   popup_border_style = "rounded",
   enable_git_status = true,
   enable_diagnostics = true,
   sort_case_insensitive = false, -- used when sorting files and directories in the tree
-  sort_function = nil , -- use a custom function for sorting files and directories in the tree
+  sort_function = nil, -- use a custom function for sorting files and directories in the tree
   -- sort_function = function (a,b)
   --       if a.type == b.type then
   --           return a.path > b.path
@@ -28,7 +30,7 @@ require("neo-tree").setup({
   --   end , -- this sorts files and directories descendantly
   default_component_configs = {
     container = {
-      enable_character_fade = true
+      enable_character_fade = true,
     },
     indent = {
       indent_size = 2,
@@ -51,7 +53,7 @@ require("neo-tree").setup({
       -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
       -- then these will never be used.
       default = "*",
-      highlight = "NeoTreeFileIcon"
+      highlight = "NeoTreeFileIcon",
     },
     modified = {
       symbol = "[+]",
@@ -65,17 +67,17 @@ require("neo-tree").setup({
     git_status = {
       symbols = {
         -- Change type
-        added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-        modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-        deleted   = "✖",-- this can only be used in the git_status source
-        renamed   = "",-- this can only be used in the git_status source
+        added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+        modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+        deleted = "✖", -- this can only be used in the git_status source
+        renamed = "", -- this can only be used in the git_status source
         -- Status type
         untracked = "",
-        ignored   = "",
-        unstaged  = "",
-        staged    = "",
-        conflict  = "",
-      }
+        ignored = "",
+        unstaged = "",
+        staged = "",
+        conflict = "",
+      },
     },
   },
   window = {
@@ -87,8 +89,8 @@ require("neo-tree").setup({
     },
     mappings = {
       ["<space>"] = {
-          "toggle_node",
-          nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
+        "toggle_node",
+        nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
       },
       ["o"] = "open",
       ["l"] = "open",
@@ -105,8 +107,8 @@ require("neo-tree").setup({
         "add",
         -- some commands may take optional config options, see `:h neo-tree-mappings` for details
         config = {
-          show_path = "none" -- "none", "relative", "absolute"
-        }
+          show_path = "none", -- "none", "relative", "absolute"
+        },
       },
       ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add".
       ["d"] = "delete",
@@ -127,7 +129,7 @@ require("neo-tree").setup({
       ["?"] = "show_help",
       ["<"] = "prev_source",
       [">"] = "next_source",
-    }
+    },
   },
   nesting_rules = {},
   filesystem = {
@@ -144,19 +146,19 @@ require("neo-tree").setup({
       },
       never_show = { -- remains hidden even if visible is toggled to true
         ".DS_Store",
-        "thumbs.db"
+        "thumbs.db",
       },
     },
     follow_current_file = false, -- This will find and focus the file in the active buffer every
-                                 -- time the current file is changed while the tree is open.
+    -- time the current file is changed while the tree is open.
     group_empty_dirs = false, -- when true, empty folders will be grouped together
     hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
-                                            -- in whatever position is specified in window.position
-                          -- "open_current",  -- netrw disabled, opening a directory opens within the
-                                            -- window like netrw would, regardless of window.position
-                          -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
+    -- in whatever position is specified in window.position
+    -- "open_current",  -- netrw disabled, opening a directory opens within the
+    -- window like netrw would, regardless of window.position
+    -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
     use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
-                                    -- instead of relying on nvim autocmd events.
+    -- instead of relying on nvim autocmd events.
     window = {
       mappings = {
         ["<bs>"] = "navigate_up",
@@ -168,12 +170,12 @@ require("neo-tree").setup({
         ["<c-x>"] = "clear_filter",
         ["[g"] = "prev_git_modified",
         ["]g"] = "next_git_modified",
-      }
-    }
+      },
+    },
   },
   buffers = {
     follow_current_file = true, -- This will find and focus the file in the active buffer every
-                                 -- time the current file is changed while the tree is open.
+    -- time the current file is changed while the tree is open.
     group_empty_dirs = true, -- when true, empty folders will be grouped together
     show_unloaded = true,
     window = {
@@ -181,23 +183,55 @@ require("neo-tree").setup({
         ["bd"] = "buffer_delete",
         ["<bs>"] = "navigate_up",
         ["."] = "set_root",
-      }
+      },
     },
   },
   git_status = {
     window = {
       position = "float",
       mappings = {
-        ["A"]  = "git_add_all",
+        ["A"] = "git_add_all",
         ["gu"] = "git_unstage_file",
         ["ga"] = "git_add_file",
         ["gr"] = "git_revert_file",
         ["gc"] = "git_commit",
         ["gp"] = "git_push",
         ["gg"] = "git_commit_and_push",
-      }
-    }
-  }
+      },
+    },
+  },
+  diagnostics = {
+    components = {
+      linenr = function(config, node)
+        local lnum = tostring(node.extra.diag_struct.lnum + 1)
+        local pad = string.rep(" ", 4 - #lnum)
+        return {
+          {
+            text = pad .. lnum,
+            highlight = "LineNr",
+          },
+          {
+            text = "▕ ",
+            highlight = "NeoTreeDimText",
+          },
+        }
+      end,
+    },
+    renderers = {
+      file = {
+        { "indent" },
+        { "icon" },
+        { "grouped_path" },
+        { "name", highlight = "NeoTreeFileNameOpened" },
+        { "split_diagnostic_counts", highlight = "NeoTreeDimText" },
+        { "clipboard" },
+      },
+      diagnostic = {
+        { "indent" },
+        { "icon" },
+        { "lnum", min_width = 4, right = { text = "▕ ", highlight = "NeoTreeDimText" } },
+        { "message" },
+      },
+    },
+  },
 })
-
-vim.cmd([[nnoremap \ :Neotree reveal<cr>]])

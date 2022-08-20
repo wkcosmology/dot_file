@@ -46,9 +46,9 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " matchup
 Plug 'andymass/vim-matchup'
 " tagbar
-Plug 'simrat39/symbols-outline.nvim'
+Plug 'stevearc/aerial.nvim'
 " undo tree visualizer
-Plug 'mbbill/undotree', { 'on': ['UndotreeToggle', 'UndotreeShow'] }
+Plug 'mbbill/undotree'
 " vim for vim
 Plug 'tpope/vim-scriptease'
 " mark the mark
@@ -101,8 +101,6 @@ Plug 'gcmt/taboo.vim'
 Plug 'ryanoasis/vim-devicons'
 " improve the default vim.ui interfaces
 Plug 'stevearc/dressing.nvim'
-" colors for diagnostics highlight
-Plug 'folke/lsp-colors.nvim'
 
 " ---------------------------------------------------------------------------
 " C/C++ related
@@ -162,7 +160,9 @@ Plug 's1n7ax/nvim-window-picker', { 'tag': 'v1.*' }
 " ---------------------------------------------------------------------------
 " Lsp and related
 " ---------------------------------------------------------------------------
+" lsp config
 Plug 'neovim/nvim-lspconfig'
+" cmp related
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
@@ -172,10 +172,16 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'lukas-reineke/cmp-under-comparator'
 Plug 'hrsh7th/cmp-cmdline'
+" lsp UI
 Plug 'nvim-lua/lsp-status.nvim'
-Plug 'mhartington/formatter.nvim'
 Plug 'onsails/lspkind-nvim'
-Plug 'folke/trouble.nvim'
+" diagnostic
+Plug 'mrbjarksen/neo-tree-diagnostics.nvim'
+" colors for diagnostics highlight
+Plug 'folke/lsp-colors.nvim'
+" formatter
+Plug 'mhartington/formatter.nvim'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 " ---------------------------------------------------------------------------
 " Lua

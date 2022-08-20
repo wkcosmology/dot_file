@@ -1,0 +1,7 @@
+session_name: SateQuenching
+start_directory: '~/Project/17.SateQuenching/'
+windows:
+  - window_name: Terminal
+  - window_name: Coding
+  - window_name: Jupyter
+  - window_name: Server

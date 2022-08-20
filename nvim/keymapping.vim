@@ -13,7 +13,7 @@ tnoremap <Esc> <C-\><C-n><cr>
 " Let Y yank to the line end
 nnoremap Y y$
 " tagbar
-nnoremap <silent> <leader>vv :SymbolsOutline<cr>
+nnoremap <silent> <leader>vv :AerialToggle<cr>
 " subversive
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
@@ -197,7 +197,7 @@ nnoremap <silent> <C-k> :lua vim.diagnostic.goto_prev()<cr>
 nnoremap <silent> <C-j> :lua vim.diagnostic.goto_next()<cr>
 " clear all the diagnostic 
 nmap <silent> <leader>ec :lua vim.diagnostic.hide()<cr>
-nmap <silent> <leader>et :Trouble<cr>
+nmap <silent> <leader>et :Neotree diagnostics reveal bottom<cr>
 " nmap <leader>fm :lua vim.buf.formatting()<cr>
 augroup FormatFiletype
   autocmd!
