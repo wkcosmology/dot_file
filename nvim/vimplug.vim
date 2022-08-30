@@ -46,7 +46,7 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " matchup
 Plug 'andymass/vim-matchup'
 " tagbar
-" Plug 'stevearc/aerial.nvim'
+Plug 'stevearc/aerial.nvim'
 " undo tree visualizer
 Plug 'mbbill/undotree'
 " vim for vim
@@ -201,7 +201,7 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make CC=/opt/homebrew/bin/gcc-11' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make CC=/opt/homebrew/bin/gcc-12' }
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'

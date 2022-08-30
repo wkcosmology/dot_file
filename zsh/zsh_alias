@@ -17,8 +17,8 @@ alias svenusx='ssh -X wangk@166.111.131.54'
 alias pvenus='ssh -p 2222 wangk@166.111.30.104'
 alias porion='ssh -p6622 wangk@58.192.69.130'
 # alias for gcc
-alias gcc='gcc-11'
-alias g++='g++-11 -std=c++17'
+alias gcc='gcc-12'
+alias g++='g++-12 -std=c++17'
 # tmux
 TMUX_CONFIG='/Users/wangk/.config/tmux/tmux.conf'
 alias tn='/opt/homebrew/bin/tmux -u -f $TMUX_CONFIG new'
