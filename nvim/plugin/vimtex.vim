@@ -53,7 +53,8 @@ let g:vimtex_toc_config = {
       \ 'refresh_always': 1,
       \ 'split_width': 50,
       \ 'tocdepth': 3,
-      \ 'todo_sorted': 1
+      \ 'todo_sorted': 1,
+      \ 'split_pos': 'vert rightbelow',
       \ }
 
 augroup vimtex
