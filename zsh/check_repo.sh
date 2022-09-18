@@ -10,12 +10,13 @@ Repos=(\
 )
 
 for r in ${Repos[*]}; do
-    gitstatus=$(git -C $r status --short)
-    if [ "$gitstatus" != "" ] 
-    then
-        printf "Repo: \e[36m$r\e[0m\nStatus:\n"
-        printf "\e[31m"
-        git -C $r status --short | sed -e "s|^|    |g"
-        printf "\e[0m\n"
-    fi
+    cd $r
+    printf "Repo: \e[36m$r\n      Fetching......  \e[0m"
+    git remote update > /dev/null
+    printf "\e[32mDone\e[0m\n"
+    printf "Status:\n"
+    printf "\e[32m"
+    git -C $r status -uno | sed -e "s|^|    |g"
+    printf "\e[0m\n"
+    echo "----------------------------------------------------------------"
 done
