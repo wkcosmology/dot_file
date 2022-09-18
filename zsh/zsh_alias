@@ -81,3 +81,6 @@ alias sync_gez_venus="sync_lib /Users/wangk/Project/13.GalaxyEvolutionZcosmos/ w
 alias sync_cgpc_orion="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk 58.192.69.130 /home/wangk/14.ConnectGalaxyInPC 6622"
 alias sync_sate_orion="sync_lib /Users/wangk/Project/17.SateQuenching/ wangk 58.192.69.130 /home/wangk/17.SateQuenching 6622"
 alias sync_cgpc_venus="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk 166.111.131.54 /home/wangk/14.ConnectGalaxyInPC 2222"
+
+# My script
+alias gp="sh ~/.config/zsh/check_repo.sh"
