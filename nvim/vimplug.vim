@@ -208,7 +208,7 @@ Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'tami5/sqlite.lua'
 " Plug 'hrsh7th/nvim-pasta'
-" Plug 'AckslD/nvim-neoclip.lua'
+Plug 'AckslD/nvim-neoclip.lua'
 
 call plug#end()
 " end of vim plugins manager:vim-plug------------------------------------------
