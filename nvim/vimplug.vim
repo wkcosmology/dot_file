@@ -20,7 +20,7 @@ Plug 'tpope/vim-repeat'
 " lua version of easymotion
 Plug 'phaazon/hop.nvim'
 " for quick commentary
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
 Plug 'numToStr/Comment.nvim'
 " abbreviation substitution and Coerion
 Plug 'tpope/vim-abolish'

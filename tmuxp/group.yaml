@@ -1,0 +1,6 @@
+session_name: GroupFinder
+start_directory: '~/Project/group_finder/'
+windows:
+  - window_name: Terminal
+  - window_name: Coding
+  - window_name: Jupyter
