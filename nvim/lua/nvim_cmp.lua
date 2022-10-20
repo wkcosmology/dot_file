@@ -15,17 +15,16 @@ cmp.setup({
   },
   window = {
       -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
   mapping = {
     ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 'c'}),
     ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 'c'}),
     ['<C-e>'] = cmp.mapping(cmp.mapping.close(), {'i', 'c'}),
     ['<C-y>'] = cmp.mapping.confirm({behavior = cmp.ConfirmBehavior.Replace, select = true}),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'})
   },
   -- the order matters when the priorities are the same
-  sources = {{name = 'nvim_lsp'}, {name = 'ultisnips'}, {name = 'path'}},
+  sources = {{name = 'nvim_lsp'}, {name = 'buffer'}, {name = 'ultisnips'}, {name = 'path'}},
   preselect = cmp.PreselectMode.None,
   experimental = {native_menu = false, ghost_text = true},
   sorting = {
