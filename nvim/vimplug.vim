@@ -81,6 +81,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'moll/vim-bbye'
 " the following two plugs is for session
 " Plug 'rmagatti/auto-session'
+Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 
 " ---------------------------------------------------------------------------
 " ui

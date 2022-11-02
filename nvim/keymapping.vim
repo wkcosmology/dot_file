@@ -145,7 +145,7 @@ nnoremap <C-s> :lua require("harpoon.ui").nav_file(4)<CR>
 let g:maximizer_set_default_mapping = 0
 nnoremap <silent><C-w>m :MaximizerToggle<cr>
 " choose the window
-" nnoremap <silent> <C-w>w :ChooseWin<cr>
+nnoremap <silent> <C-w>w :lua require('nvim-window').pick()<cr>
 " nnoremap <silent> <C-w>e :ChooseWinSwap<cr>
 " close the location list and quickfix window
 nnoremap <silent> <leader>lc :ccl\|lcl<cr>
