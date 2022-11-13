@@ -83,7 +83,7 @@ augroup END
 nnoremap <silent> gd :Telescope lsp_definitions<cr>
 nnoremap <silent> gr :Telescope lsp_references<cr>
 nnoremap <silent> gi :Telescope lsp_implementations<cr>
-autocmd CursorHold lua print(vim.lsp.diagnostic.show_line_diagnostics())<cr>
+" autocmd CursorHold lua print(vim.lsp.diagnostic.show_line_diagnostics())<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " P-group: Project related
@@ -180,6 +180,7 @@ nnoremap <leader>gv :GV<cr>
 nnoremap <silent> <leader>gb :GBranches checkout<cr>
 nnoremap <leader>gm :Git blame<cr>
 nnoremap <leader>gP :Git push<cr>
+nnoremap <leader>gp :Git pull<cr>
 nnoremap <leader>gf :Git fetch<cr>
 nnoremap <leader>gi :Gista list<cr>
 nnoremap <leader>gs :lua require('telescope_script').git_status()<cr>
