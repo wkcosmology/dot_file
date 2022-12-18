@@ -106,7 +106,7 @@ nnoremap <silent> <Leader>ft :Neotree<cr>
 " B-group: buffers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search buffers
-nnoremap <silent> <leader>bb :Telescope buffers<cr>
+nnoremap <silent> <leader>bb :lua require("buffer_manager.ui").toggle_quick_menu()<cr>
 " close current buffer
 nmap <silent> <leader>bd :Bwipeout<cr>
 " close other buffers except the current one
@@ -146,7 +146,7 @@ let g:maximizer_set_default_mapping = 0
 nnoremap <silent><C-w>m :MaximizerToggle<cr>
 " choose the window
 nnoremap <silent> <C-w>w :lua require('nvim-window').pick()<cr>
-" nnoremap <silent> <C-w>e :ChooseWinSwap<cr>
+nnoremap <silent> <C-w>e :lua require("swap-split").swap()<cr>
 " close the location list and quickfix window
 nnoremap <silent> <leader>lc :ccl\|lcl<cr>
 noremap <silent> <F3> :copen<cr>

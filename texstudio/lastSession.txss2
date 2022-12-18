@@ -1,21 +1,21 @@
 {
     "InternalPDFViewer": {
         "Embedded": true,
-        "File": "../../Project/Paper/5_connecting_galaxy/main.pdf"
+        "File": "../../Project/Paper/lyu/halo.pdf"
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "../../Project/Paper/5_connecting_galaxy/main.tex",
+        "CurrentFile": "../../Project/Paper/lyu/halo.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 0,
+                "Col": 833,
                 "EditorGroup": 0,
-                "FileName": "../../Project/Paper/5_connecting_galaxy/main.tex",
-                "FirstLine": 567,
+                "FileName": "../../Project/Paper/lyu/halo.tex",
+                "FirstLine": 218,
                 "FoldedLines": "",
-                "Line": 634
+                "Line": 228
             }
         ],
         "MasterFile": ""

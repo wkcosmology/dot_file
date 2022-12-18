@@ -82,6 +82,8 @@ Plug 'moll/vim-bbye'
 " the following two plugs is for session
 " Plug 'rmagatti/auto-session'
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
+Plug 'j-morano/buffer_manager.nvim'
+Plug 'xorid/swap-split.nvim'
 
 " ---------------------------------------------------------------------------
 " ui
