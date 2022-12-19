@@ -83,7 +83,13 @@ augroup END
 nnoremap <silent> gd :Telescope lsp_definitions<cr>
 nnoremap <silent> gr :Telescope lsp_references<cr>
 nnoremap <silent> gi :Telescope lsp_implementations<cr>
-" autocmd CursorHold lua print(vim.lsp.diagnostic.show_line_diagnostics())<cr>
+nnoremap <silent> gh :Lspsaga lsp_finder<cr>
+nnoremap <silent> gr :Lspsaga rename<cr>
+nnoremap <silent> <Leader>ca :Lspsaga code_action<cr>
+nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<cr>
+nnoremap <silent> [e :Lspsaga diagnostic_jump_next<cr>
+nnoremap <silent> <leader>vv :Lspsaga outline<cr>
+nnoremap <silent> K :Lspsaga hover_doc<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " P-group: Project related

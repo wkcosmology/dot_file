@@ -184,6 +184,8 @@ Plug 'folke/lsp-colors.nvim'
 " formatter
 Plug 'mhartington/formatter.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
 " ---------------------------------------------------------------------------
 " Lua
