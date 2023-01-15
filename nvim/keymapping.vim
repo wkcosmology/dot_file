@@ -86,8 +86,8 @@ nnoremap <silent> gi :Telescope lsp_implementations<cr>
 nnoremap <silent> gh :Lspsaga lsp_finder<cr>
 nnoremap <silent> gr :Lspsaga rename<cr>
 nnoremap <silent> <Leader>ca :Lspsaga code_action<cr>
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<cr>
-nnoremap <silent> [e :Lspsaga diagnostic_jump_next<cr>
+nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
+nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
 nnoremap <silent> <leader>vv :Lspsaga outline<cr>
 nnoremap <silent> K :Lspsaga hover_doc<cr>
 
@@ -204,6 +204,7 @@ nnoremap <leader>mc :delmarks!<cr>
 " nnoremap <silent> <C-k> :lua vim.diagnostic.goto_prev()<cr>
 " nnoremap <silent> <C-j> :lua vim.diagnostic.goto_next()<cr>
 " clear all the diagnostic 
+nmap <silent> <leader>ed :lua vim.diagnostic.disable()<cr>
 nmap <silent> <leader>ec :lua vim.diagnostic.hide()<cr>
 nmap <silent> <leader>et :Neotree diagnostics reveal bottom<cr>
 " nmap <leader>fm :lua vim.buf.formatting()<cr>
