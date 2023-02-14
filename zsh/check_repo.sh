@@ -3,6 +3,7 @@
 Repos=(\
     "/Users/wangk/Project/14.ConnectGalaxyInPC" \
     "/Users/wangk/Project/17.SateQuenching" \
+    "/Users/wangk/Project/22.WeakLensing" \
     "/Users/wangk/Project/paper/paper_old" \
     "/Users/wangk/Project/paper/6_Conformity" \
     "/Users/wangk/Project/homepage" \
