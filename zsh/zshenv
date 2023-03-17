@@ -41,7 +41,7 @@ export CC='/opt/homebrew/bin/g++-12'
 export MYLIB_PATH=/Users/wangk/MyLibrary
 # path
 export PATH=$MYLIB_PATH/bin:$PATH
-export PATH=$MYLIB_PATH/libsource/hdf/HDF_Group/HDF5/1.12.1/bin:$PATH
+export PATH=$PATH:$MYLIB_PATH/libsource/hdf/HDF_Group/HDF5/1.12.1/bin:$PATH
 # local package
 export C_INCLUDE_PATH=/usr/local/include/:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=/usr/local/include/:$CPLUS_INCLUDE_PATH
