@@ -78,7 +78,7 @@ export CPLUS_INCLUDE_PATH=/usr/local/include/eigen3/:$CPLUS_INCLUDE_PATH
 # for boost
 export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/boost_1_79_0/:$CPLUS_INCLUDE_PATH
 # HIPP
-HIPP_PATH=/Users/wangk/MyLibrary/libsource/hipp/install/
+HIPP_PATH=/Users/wangk/MyLibrary/package/hipp/
 export CPLUS_INCLUDE_PATH=$HIPP_PATH/include/:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=$HIPP_PATH/lib/:$LIBRARY_PATH
 export DL_LIBRARY_PATH=$HIPP_PATH/lib/:$DL_LIBRARY_PATH
