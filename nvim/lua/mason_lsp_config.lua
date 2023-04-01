@@ -50,7 +50,7 @@ require("lsp-colors").setup({
 })
 
 -- lspsaga
-require("lspsaga").init_lsp_saga({
+require("lspsaga").setup({
   border_style = "rounded",
   saga_winblend = 0,
   move_in_saga = { prev = "<C-p>", next = "<C-n>" },

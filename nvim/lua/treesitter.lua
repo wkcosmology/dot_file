@@ -22,8 +22,8 @@ require'nvim-treesitter.configs'.setup {
         }
     },
 }
-
+--
 -- for issue https://github.com/nvim-treesitter/nvim-treesitter/issues/78
-require "nvim-treesitter.highlight"
-local hlmap = vim.treesitter.highlighter.hl_map
-hlmap.error = nil
+-- require "nvim-treesitter.highlight"
+-- local hlmap = vim.treesitter.highlighter.hl_map
+-- hlmap.error = nil
