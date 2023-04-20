@@ -82,6 +82,11 @@ end
 nvim_lsp["jedi_language_server"].setup({ on_attach = on_attach })
 nvim_lsp["vimls"].setup({ on_attach = on_attach })
 nvim_lsp["texlab"].setup({ on_attach = on_attach })
+nvim_lsp["ltex"].setup({
+  on_attach = on_attach,
+  filetypes = { "markdown", "text", "tex" },
+  flags = { debounce_text_changes = 300 }
+})
 nvim_lsp["clangd"].setup({
   on_attach = on_attach,
   cmd = {
