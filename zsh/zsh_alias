@@ -82,7 +82,7 @@ alias sync_cgpc_orion="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk
 alias sync_sate_orion="sync_lib /Users/wangk/Project/17.SateQuenching/ wangk 58.192.69.130 /home/wangk/17.SateQuenching 6622"
 alias sync_wl_orion="sync_lib /Users/wangk/Project/22.WeakLensing/ wangk 58.192.69.130 /home/wangk/22.WeakLensing 6622"
 alias sync_cgpc_venus="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk 166.111.131.54 /home/wangk/14.ConnectGalaxyInPC 2222"
-alias sync_pcie_orion="sync_lib /Users/wangk/Project/19.ProtoclusterInELUCID/ wangk 58.192.69.130 /home/wangk/19.ProtoclusterInELUCID 6622"
+alias sync_gpc_orion="sync_lib /Users/wangk/Project/23.GeneralPC/ wangk 58.192.69.130 /home/wangk/23.GeneralPC 6622"
 
 # My script
 alias gp="sh ~/.config/zsh/check_repo.sh"

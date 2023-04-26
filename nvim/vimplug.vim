@@ -138,7 +138,7 @@ Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 " vimtex
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 " spell check
 Plug 'kamykn/spelunker.vim', { 'for': ['tex', 'markdown', 'html', 'json'] }
 " gist

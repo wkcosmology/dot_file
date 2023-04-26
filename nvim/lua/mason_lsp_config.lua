@@ -58,7 +58,7 @@ require("lspsaga").setup({
   max_preview_lines = 10,
   code_action_icon = "💡",
   code_action_num_shortcut = true,
-  code_action_lightbulb = {
+  lightbulb = {
     enable = false,
   },
   finder_icons = {
