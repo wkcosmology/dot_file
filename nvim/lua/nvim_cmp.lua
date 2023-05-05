@@ -50,7 +50,6 @@ cmp.setup({
     }),
   },
 })
-
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline("/", { sources = { { name = "buffer", keyword_length = 3 } } })
 cmp.setup.cmdline("?", { sources = { { name = "buffer", keyword_length = 3 } } })
@@ -82,6 +81,7 @@ end
 nvim_lsp["jedi_language_server"].setup({ on_attach = on_attach })
 nvim_lsp["vimls"].setup({ on_attach = on_attach })
 nvim_lsp["texlab"].setup({ on_attach = on_attach })
+nvim_lsp["lua_ls"].setup({ on_attach = on_attach })
 nvim_lsp["clangd"].setup({
   on_attach = on_attach,
   cmd = {
@@ -95,30 +95,3 @@ nvim_lsp["clangd"].setup({
   },
   capabilities = capabilities,
 })
-
--- Setting for the lua lsp
--- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
--- local sumneko_root_path = "/Users/wangk/MyLibrary/libsource/lua-language-server"
--- local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
--- nvim_lsp["sumneko_lua"].setup({
---   on_attach = on_attach,
---   cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
---   settings = {
---     Lua = {
---       runtime = {
---         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
---         version = "LuaJIT",
---         -- Setup your lua path
---         path = vim.split(package.path, ";"),
---       },
---       diagnostics = {
---         -- Get the language server to recognize the `vim` global
---         globals = { "vim" },
---       },
---       workspace = {
---         -- Make the server aware of Neovim runtime files
---         library = { [vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true },
---       },
---     },
---   },
--- })
