@@ -81,7 +81,15 @@ end
 nvim_lsp["jedi_language_server"].setup({ on_attach = on_attach })
 nvim_lsp["vimls"].setup({ on_attach = on_attach })
 nvim_lsp["texlab"].setup({ on_attach = on_attach })
-nvim_lsp["lua_ls"].setup({ on_attach = on_attach })
+nvim_lsp["lua_ls"].setup({
+  on_attach = on_attach,
+  Lua = {
+    diagnostics = {
+      -- Get the language server to recognize the `vim` global
+      globals = { "vim" },
+    },
+  },
+})
 nvim_lsp["clangd"].setup({
   on_attach = on_attach,
   cmd = {
