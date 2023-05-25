@@ -1,0 +1,7 @@
+session_name: Metallicity
+start_directory: '~/Project/24.Metallicity/
+windows:
+  - window_name: Terminal
+  - window_name: Coding
+  - window_name: Jupyter
+  - window_name: Server
