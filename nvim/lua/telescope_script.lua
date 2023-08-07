@@ -10,7 +10,7 @@ function M.files(buf_path)
     return nil
   end
 
-  if vim.fn["fugitive#head"]() ~= "" then
+  if vim.fn["FugitiveHead"]() ~= "" then
     opt.cwd = string.sub(vim.fn['FugitiveGitDir'](), 1, -6)
     require("telescope.builtin").find_files(opt)
   else
@@ -39,7 +39,7 @@ function M.grep_string(str)
     print("Do not grep in home directory!")
     return nil
   end
-  if vim.fn["fugitive#head"]() ~= "" then
+  if vim.fn["FugitiveHead"]() ~= "" then
     local cmd = "cd " .. buf_path .. " && git rev-parse --show-toplevel 2> /dev/null"
     opt.cwd = string.sub(vim.fn["system"](cmd), 1, -2)
   else
@@ -59,7 +59,7 @@ end
 
 -- wrap git status
 function M.git_status()
-  if vim.fn["fugitive#head"]() == "" then
+  if vim.fn["FugitiveHead"]() == "" then
     print("Not in git repo!")
   else
     local opt = {}
