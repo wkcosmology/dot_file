@@ -44,10 +44,10 @@ cmp.setup({
     },
   },
   formatting = {
-    format = lspkind.cmp_format({
-      mode = "symbol", -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-    }),
+    format = function(entry, vim_item)
+      vim_item.kind = string.format('[%s]', string.sub(vim_item.kind, 1, 4))
+      return vim_item
+    end
   },
 })
 -- Use cmdline & path source for ':'.
