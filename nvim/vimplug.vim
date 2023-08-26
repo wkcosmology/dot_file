@@ -44,7 +44,7 @@ Plug 'plasticboy/vim-markdown', { 'for': ['markdown'] }
 " document
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " matchup
-Plug 'andymass/vim-matchup'
+" Plug 'andymass/vim-matchup'
 " tagbar
 Plug 'stevearc/aerial.nvim'
 " undo tree visualizer
@@ -82,7 +82,7 @@ Plug 'moll/vim-bbye'
 " the following two plugs is for session
 " Plug 'rmagatti/auto-session'
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
-Plug 'j-morano/buffer_manager.nvim'
+" Plug 'j-morano/buffer_manager.nvim'
 Plug 'xorid/swap-split.nvim'
 
 " ---------------------------------------------------------------------------

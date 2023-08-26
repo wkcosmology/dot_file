@@ -16,7 +16,7 @@ cmp.setup({
     keyword_length = 2,
   },
   window = {
-    -- completion = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
   mapping = {
@@ -44,22 +44,10 @@ cmp.setup({
     },
   },
 
-  -- formatting = {
-  --   fields = { "kind", "abbr", "menu" },
-  --   format = function(entry, vim_item)
-  --     local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-  --     local strings = vim.split(kind.kind, "%s", { trimempty = true })
-  --     kind.kind = " " .. (strings[1] or "") .. " "
-  --     kind.menu = "    (" .. (strings[2] or "") .. ")"
-  --
-  --     return kind
-  --   end,
-  -- },
-
   formatting = {
     fields = { "abbr", "kind",  "menu" },
     format = function(entry, vim_item)
-      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 30 })(entry, vim_item)
+      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
       kind.menu = "[" .. (string.sub(strings[2], 1, 4) or "") .. "]"
       kind.kind = ""
@@ -68,12 +56,7 @@ cmp.setup({
     end,
   },
 
-  -- formatting = {
-  --   format = function(entry, vim_item)
-  --     vim_item.kind = string.format('[%s]', string.sub(vim_item.kind, 1, 4))
-  --     return vim_item
-  --   end
-  -- },
+  
 })
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline("/", { sources = { { name = "buffer", keyword_length = 3 } } })

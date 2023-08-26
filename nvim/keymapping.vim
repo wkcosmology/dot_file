@@ -90,6 +90,8 @@ nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
 nnoremap <silent> <leader>vv :Lspsaga outline<cr>
 nnoremap <silent> K :Lspsaga hover_doc<cr>
+" nnoremap <silent> <C-u> lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>
+" nnoremap <silent> <C-d> :lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " P-group: Project related
@@ -112,7 +114,7 @@ nnoremap <silent> <Leader>ft :Neotree<cr>
 " B-group: buffers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search buffers
-nnoremap <silent> <leader>bb :lua require("buffer_manager.ui").toggle_quick_menu()<cr>
+nnoremap <silent> <leader>bb :Buffers<cr>
 " close current buffer
 nmap <silent> <leader>bd :Bwipeout<cr>
 " close other buffers except the current one
