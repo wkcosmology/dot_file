@@ -152,8 +152,8 @@ Plug 'RishabhRD/nvim-cheat.sh', { 'on': ['Cheat', 'CheatList'] }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
-" lua for vim development
-Plug 'tjdevries/nlua.nvim'
+" " lua for vim development
+" Plug 'tjdevries/nlua.nvim'
 " filetree in lua
 Plug 'karb94/neoscroll.nvim'
 Plug 'MunifTanjim/nui.nvim'
