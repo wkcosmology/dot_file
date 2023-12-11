@@ -16,12 +16,23 @@ cmp.setup({
     keyword_length = 2,
   },
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered({
+      border = "rounded",
+      scrollbar = false,
+      winhighlight = 'Normal:Normal,FloatBorder:None,CursorLine:Visual,Search:None',
+    }),
+    documentation = cmp.config.window.bordered({
+      border = "rounded",
+      scrollbar = true,
+      winhighlight = 'Normal:Normal,FloatBorder:None,CursorLine:Visual,Search:None',
+    }),
   },
+
   mapping = {
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-u>"] = cmp.mapping.scroll_docs(4),
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+    ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
@@ -45,18 +56,15 @@ cmp.setup({
   },
 
   formatting = {
-    fields = { "abbr", "kind",  "menu" },
+    fields = { "abbr", "kind", "menu" },
     format = function(entry, vim_item)
       local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
       kind.menu = "[" .. (string.sub(strings[2], 1, 4) or "") .. "]"
       kind.kind = ""
-
       return kind
     end,
   },
-
-  
 })
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline("/", { sources = { { name = "buffer", keyword_length = 3 } } })
