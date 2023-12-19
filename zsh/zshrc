@@ -120,24 +120,6 @@ if [ -n "$INSIDE_EMACS" ]; then
     print -P "\033AnSiTc %d"
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/wangk/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/wangk/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/wangk/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/wangk/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# conda deactivate
-# conda activate base
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -173,3 +155,22 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 alias luamake=/Users/wangk/MyLibrary/libsource/lua-language-server/3rd/luamake/luamake
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/wangk/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/wangk/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/wangk/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/wangk/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+#
+# conda deactivate
+# conda activate base
+

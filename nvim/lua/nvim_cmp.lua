@@ -19,20 +19,20 @@ cmp.setup({
     completion = cmp.config.window.bordered({
       border = "rounded",
       scrollbar = false,
-      winhighlight = 'Normal:Normal,FloatBorder:None,CursorLine:Visual,Search:None',
+      winhighlight = "Normal:Normal,FloatBorder:None,CursorLine:Visual,Search:None",
     }),
     documentation = cmp.config.window.bordered({
       border = "rounded",
       scrollbar = true,
-      winhighlight = 'Normal:Normal,FloatBorder:None,CursorLine:Visual,Search:None',
+      winhighlight = "Normal:Normal,FloatBorder:None,CursorLine:Visual,Search:None",
     }),
   },
 
   mapping = {
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
-    ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+    -- ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+    -- ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
@@ -95,6 +95,7 @@ local on_attach = function(client, bufnr)
 end
 
 nvim_lsp["jedi_language_server"].setup({ on_attach = on_attach })
+-- nvim_lsp["pyright"].setup({ on_attach = on_attach})
 nvim_lsp["vimls"].setup({ on_attach = on_attach })
 nvim_lsp["texlab"].setup({ on_attach = on_attach })
 nvim_lsp["lua_ls"].setup({

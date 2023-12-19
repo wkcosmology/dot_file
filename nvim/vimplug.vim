@@ -41,8 +41,6 @@ Plug 'junegunn/vim-easy-align'
 " markdown
 Plug 'godlygeek/tabular', { 'for': ['markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['markdown'] }
-" document
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 " matchup
 " Plug 'andymass/vim-matchup'
 " tagbar

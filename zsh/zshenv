@@ -8,11 +8,11 @@ export PATH="/Users/wangk/go/bin:$PATH"
 # config node_module path
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # add my package path
-export PYTHONPATH="$PYTHONPATH:/Users/wangk/anaconda3/lib/python3.9/site-packages/"
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/anaconda3/lib/python3.11/site-packages/"
 export PYTHONPATH="$PYTHONPATH:/Users/wangk/MyLibrary/libsource/"
 export PYTHONPATH="$PYTHONPATH:/Users/wangk/MyLibrary/enhanced/"
 # for the correctly running of cython compile
-export CFLAGS="-I /Users/wangk/anaconda3/lib/python3.9/site-packages/numpy/core/include $CFLAGS"
+export CFLAGS="-I /Users/wangk/anaconda3/lib/python3.11/site-packages/numpy/core/include $CFLAGS"
 # for zathura in vimtex, see *vimtex-faq-zathura-macos* in vimtex document
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 # MacPorts Installer addition on 2017-09-06_at_21:58:33: adding an appropriate PATH variable for use with MacPorts.
