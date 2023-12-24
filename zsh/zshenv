@@ -11,6 +11,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PYTHONPATH="$PYTHONPATH:/Users/wangk/anaconda3/lib/python3.11/site-packages/"
 export PYTHONPATH="$PYTHONPATH:/Users/wangk/MyLibrary/libsource/"
 export PYTHONPATH="$PYTHONPATH:/Users/wangk/MyLibrary/enhanced/"
+export PYTHONPATH="$PYTHONPATH:/Users/wangk/MyLibrary/libsource/SatGen/"
 # for the correctly running of cython compile
 export CFLAGS="-I /Users/wangk/anaconda3/lib/python3.11/site-packages/numpy/core/include $CFLAGS"
 # for zathura in vimtex, see *vimtex-faq-zathura-macos* in vimtex document
