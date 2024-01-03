@@ -36,7 +36,7 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 export BETTER_EXCEPTIONS=1
 # useful export
 export EDITOR='nvim'
-export CC='/opt/homebrew/bin/g++-12'
+export CC='/opt/homebrew/bin/g++-13'
 
 # alias
 export MYLIB_PATH=/Users/wangk/MyLibrary
