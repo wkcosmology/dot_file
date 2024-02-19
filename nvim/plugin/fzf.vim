@@ -24,8 +24,8 @@ let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 " fzf floating window setting
 let g:fzf_layout = { 'window': 'call Centered_floating_window()' }
 function! Centered_floating_window()
-    let width = min([&columns - 4, max([80, &columns * 95 / 100])])
-    let height = min([&lines - 4, max([40, &lines - 10])])
+    let width = min([&columns - 4, min([120, &columns * 95 / 100])])
+    let height = min([&lines - 4, min([30, &lines - 10])])
     let top = ((&lines - height) / 2) - 1
     let left = (&columns - width) / 2
     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}

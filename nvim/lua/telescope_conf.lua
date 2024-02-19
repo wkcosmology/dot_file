@@ -18,10 +18,11 @@ require('telescope').setup {
     file_sorter = require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = {},
     generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-    winblend = 0,
+    winblend = 10,
     border = {},
     borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-    color_devicons = false,
+    border_hl = "Normal",
+    color_devicons = true,
     use_less = true,
     path_display = {},
     set_env = {['COLORTERM'] = 'truecolor'}, -- default = nil,
@@ -46,6 +47,6 @@ local Telescope = require("telescope")
 Telescope.load_extension("bibtex")
 Telescope.load_extension('octo')
 Telescope.load_extension('ultisnips')
--- Telescope.load_extension('fzf')
+Telescope.load_extension('fzf')
 Telescope.load_extension('project')
 Telescope.load_extension('neoclip')
