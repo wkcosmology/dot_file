@@ -1,6 +1,7 @@
 local util = require("formatter.util")
 require("formatter").setup({
   filetype = {
+
     cpp = {
       -- clang-format
       function()
@@ -12,6 +13,7 @@ require("formatter").setup({
         }
       end,
     },
+
     lua = {
       -- "formatter.filetypes.lua" defines default configurations for the
       -- "lua" filetype
@@ -35,6 +37,7 @@ require("formatter").setup({
         }
       end,
     },
+
     python = {
       -- Configuration for psf/black
       function()
