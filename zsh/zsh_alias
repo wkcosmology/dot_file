@@ -16,6 +16,7 @@ alias svenus='ssh wangk@166.111.30.104'
 alias svenusx='ssh -X wangk@166.111.131.54'
 alias pvenus='ssh -p 2222 wangk@166.111.30.104'
 alias porion='ssh -p6622 wangk@58.192.69.130'
+alias psirius='ssh -p2222 wangk@166.111.121.192'
 # alias for gcc
 alias gcc='gcc-13'
 alias g++='g++-13'
@@ -71,19 +72,21 @@ function sync_lib {
         $2@$3:$4
     echo "Sync Finished!"
     }
+# venus
 alias sync_group_venus="sync_lib /Users/wangk/Project/9.GalaxyGroup/ wangk 166.111.131.54 /home/wangk/9.GalaxyGroup 2222"
 alias sync_halo_venus="sync_lib /Users/wangk/Project/10.HaloMassProxy/ wangk 166.111.131.54 /home/wangk/10.HaloMassProxy 2222"
 alias sync_vel_venus="sync_lib /Users/wangk/Project/11.PeculiarVelocity/ wangk 166.111.131.54 /home/wangk/11.PeculiarVelocity 2222"
 alias sync_pc_venus="sync_lib /Users/wangk/Project/12.ProtoCluster/ wangk 166.111.131.54 /home/wangk/12.ProtoCluster 2222"
+alias sync_enhance_venus="sync_lib /Users/wangk/Project/mylib/enhanced/ wangk 166.111.131.54 /home/wangk/mylib/enhanced 2222"
+alias sync_gez_venus="sync_lib /Users/wangk/Project/13.GalaxyEvolutionZcosmos/ wangk 166.111.131.54 /home/wangk/13.GalaxyEvolutionZcosmos 2222"
+alias sync_cgpc_venus="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk 166.111.131.54 /home/wangk/14.ConnectGalaxyInPC 2222"
+# orion
 alias sync_pc_orion="sync_lib /Users/wangk/Project/12.ProtoCluster/ wangk 58.192.69.130 /home/wangk/12.ProtoCluster 6622"
 alias sync_group_orion="sync_lib /Users/wangk/Project/9.GalaxyGroup/ wangk 58.192.69.130 /home/wangk/9.GalaxyGroup 6622"
 alias sync_halo_orion="sync_lib /Users/wangk/Project/10.HaloMassProxy/ wangk 58.192.69.130 /home/wangk/10.HaloMassProxy 6622"
-alias sync_enhance_venus="sync_lib /Users/wangk/Project/mylib/enhanced/ wangk 166.111.131.54 /home/wangk/mylib/enhanced 2222"
-alias sync_gez_venus="sync_lib /Users/wangk/Project/13.GalaxyEvolutionZcosmos/ wangk 166.111.131.54 /home/wangk/13.GalaxyEvolutionZcosmos 2222"
 alias sync_cgpc_orion="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk 58.192.69.130 /home/wangk/14.ConnectGalaxyInPC 6622"
 alias sync_sate_orion="sync_lib /Users/wangk/Project/17.SateQuenching/ wangk 58.192.69.130 /home/wangk/17.SateQuenching 6622"
 alias sync_wl_orion="sync_lib /Users/wangk/Project/22.WeakLensing/ wangk 58.192.69.130 /home/wangk/22.WeakLensing 6622"
-alias sync_cgpc_venus="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk 166.111.131.54 /home/wangk/14.ConnectGalaxyInPC 2222"
 alias sync_gpc_orion="sync_lib /Users/wangk/Project/23.GeneralPC/ wangk 58.192.69.130 /home/wangk/23.GeneralPC 6622"
 alias sync_metal_orion="sync_lib /Users/wangk/Project/24.Metallicity/ wangk 58.192.69.130 /home/wangk/24.Metallicity 6622"
 

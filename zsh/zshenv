@@ -16,12 +16,6 @@ export PYTHONPATH="$PYTHONPATH:/Users/wangk/MyLibrary/libsource/SatGen/"
 export CFLAGS="-I /Users/wangk/anaconda3/lib/python3.11/site-packages/numpy/core/include $CFLAGS"
 # for zathura in vimtex, see *vimtex-faq-zathura-macos* in vimtex document
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
-# MacPorts Installer addition on 2017-09-06_at_21:58:33: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# limit the threads of numpy lib
-# export MKL_NUM_THREADS=1
-# export NUMEXPR_NUM_THREADS=1
-# export OMP_NUM_THREADS=1
 # toggle true color
 export TERM="xterm-256color"
 # high light the mannul
@@ -40,46 +34,59 @@ export CC='/opt/homebrew/bin/g++-13'
 
 # alias
 export MYLIB_PATH=/Users/wangk/MyLibrary
-# path
-export PATH=$MYLIB_PATH/bin:$PATH
-export PATH=$PATH:$MYLIB_PATH/libsource/hdf/HDF_Group/HDF5/1.12.1/bin:$PATH
 # local package
+export PATH=$MYLIB_PATH/bin:$PATH
 export C_INCLUDE_PATH=/usr/local/include/:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=/usr/local/include/:$CPLUS_INCLUDE_PATH
 export LD_LIBRARY_PATH=/usr/local/lib/:$LD_LIBRARY_PATH
 export LIBRARY_PATH=/usr/local/lib/:$LIBRARY_PATH
-# My library
-export C_INCLUDE_PATH=$MYLIB_PATH/include/:$C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=$MYLIB_PATH/include/:$CPLUS_INCLUDE_PATH
-export LD_LIBRARY_PATH=$MYLIB_PATH/lib/:$LD_LIBRARY_PATH
-export LIBRARY_PATH=$MYLIB_PATH/lib/:$LIBRARY_PATH
-# gsl
-export C_INCLUDE_PATH=$MYLIB_PATH/include/gsl/:$C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=$MYLIB_PATH/include/gsl/:$CPLUS_INCLUDE_PATH
 # yaml-cpp path
 export C_INCLUDE_PATH=$MYLIB_PATH/libsource/yaml-cpp/include/:$C_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/yaml-cpp/include/:$CPLUS_INCLUDE_PATH
-# hdf5
-export C_INCLUDE_PATH=$MYLIB_PATH/include/hdf5/:$C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=$MYLIB_PATH/include/hdf5/:$CPLUS_INCLUDE_PATH
-export LD_LIBRARY_PATH=$MYLIB_PATH/lib/hdf5/:$LD_LIBRARY_PATH
-export LIBRARY_PATH=$MYLIB_PATH/lib/hdf5/:$LIBRARY_PATH
-# hipp
-export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/hipp/include/:$CPLUS_INCLUDE_PATH
-export LD_LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LD_LIBRARY_PATH
-export LIBRARY_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LIBRARY_PATH
-export LD_RUNPATH_SEARCH_PATH=$MYLIB_PATH/libsource/hipp/lib/:$LD_RUNPATH_SEARCH_PATH
 # boost
 export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/boost_1_80_0/:$CPLUS_INCLUDE_PATH
 export LIBRARY_PATH=$MYLIB_PATH/libsource/boost_1_80_0/:$LIBRARY_PATH
+# eigen
+export CPLUS_INCLUDE_PATH=/usr/local/include/eigen3/:$CPLUS_INCLUDE_PATH
+# libevent
+export PATH=$MYLIB_PATH/libevent/bin/:$PATH
+export C_INCLUDE_PATH=$MYLIB_PATH/libevent/include/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libevent/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/libevent/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/libevent/lib/:$LIBRARY_PATH
+# openmpi
+export PATH=$MYLIB_PATH/openmpi/bin/:$PATH
+export C_INCLUDE_PATH=$MYLIB_PATH/openmpi/include/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/openmpi/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/openmpi/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/openmpi/lib/:$LIBRARY_PATH
+# gsl
+export PATH=$MYLIB_PATH/gsl/bin/:$PATH
+export C_INCLUDE_PATH=$MYLIB_PATH/gsl/include/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/gsl/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/gsl/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/gsl/lib/:$LIBRARY_PATH
+# fftw3
+export PATH=$MYLIB_PATH/fftw3/bin/:$PATH
+export C_INCLUDE_PATH=$MYLIB_PATH/fftw3/include/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/fftw3/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/fftw3/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/fftw3/lib/:$LIBRARY_PATH
+# hdf5
+export PATH=$MYLIB_PATH/hdf5/bin/:$PATH
+export C_INCLUDE_PATH=$MYLIB_PATH/hdf5/include/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/hdf5/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/hdf5/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/hdf5/lib/:$LIBRARY_PATH
+# hwloc
+export PATH=$MYLIB_PATH/hwloc/bin/:$PATH
+export C_INCLUDE_PATH=$MYLIB_PATH/hwloc/include/:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=$MYLIB_PATH/hwloc/include/:$CPLUS_INCLUDE_PATH
+export LD_LIBRARY_PATH=$MYLIB_PATH/hwloc/lib/:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$MYLIB_PATH/hwloc/lib/:$LIBRARY_PATH
+# hipp
+export GSL_INCLUDE_DIR=$MYLIB_PATH/gsl/include/
+export GSL_LIBRARY=$MYLIB_PATH/gsl/lib/
+
 # npm access problem, see https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 export PATH=~/.npm-global/bin:$PATH
-# for eigen
-export CPLUS_INCLUDE_PATH=/usr/local/include/eigen3/:$CPLUS_INCLUDE_PATH
-# for boost
-export CPLUS_INCLUDE_PATH=$MYLIB_PATH/libsource/boost_1_79_0/:$CPLUS_INCLUDE_PATH
-# HIPP
-HIPP_PATH=/Users/wangk/MyLibrary/package/hipp/
-export CPLUS_INCLUDE_PATH=$HIPP_PATH/include/:$CPLUS_INCLUDE_PATH
-export LIBRARY_PATH=$HIPP_PATH/lib/:$LIBRARY_PATH
-export DL_LIBRARY_PATH=$HIPP_PATH/lib/:$DL_LIBRARY_PATH
