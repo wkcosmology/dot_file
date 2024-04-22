@@ -72,6 +72,21 @@ function sync_lib {
         $2@$3:$4
     echo "Sync Finished!"
     }
+# Rsync
+function sync_lib_nondelete {
+    echo "Sync begins:"
+    echo "From: $1"
+    echo "To: $2@$3:$4"
+    rsync \
+        --exclude-from="$1.gitignore" \
+        --exclude=".git/*" \
+        --info=name0 \
+        -e "ssh -p$5" \
+        -rz \
+        $1 \
+        $2@$3:$4
+    echo "Sync Finished!"
+    }
 # venus
 alias sync_group_venus="sync_lib /Users/wangk/Project/9.GalaxyGroup/ wangk 166.111.131.54 /home/wangk/9.GalaxyGroup 2222"
 alias sync_halo_venus="sync_lib /Users/wangk/Project/10.HaloMassProxy/ wangk 166.111.131.54 /home/wangk/10.HaloMassProxy 2222"
@@ -89,6 +104,7 @@ alias sync_sate_orion="sync_lib /Users/wangk/Project/17.SateQuenching/ wangk 58.
 alias sync_wl_orion="sync_lib /Users/wangk/Project/22.WeakLensing/ wangk 58.192.69.130 /home/wangk/22.WeakLensing 6622"
 alias sync_gpc_orion="sync_lib /Users/wangk/Project/23.GeneralPC/ wangk 58.192.69.130 /home/wangk/23.GeneralPC 6622"
 alias sync_metal_orion="sync_lib /Users/wangk/Project/24.Metallicity/ wangk 58.192.69.130 /home/wangk/24.Metallicity 6622"
+alias sync_sim_sirius="sync_lib_nondelete /Users/wangk/Project/RunSim/ wangk 166.111.121.192 /home/wangk/RunSim 2222"
 
 # My script
 alias gp="sh ~/.config/zsh/check_repo.sh"
