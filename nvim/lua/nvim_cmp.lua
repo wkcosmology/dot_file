@@ -41,7 +41,7 @@ cmp.setup({
   -- the order matters when the priorities are the same
   sources = { { name = "nvim_lsp" }, { name = "buffer" }, { name = "ultisnips" }, { name = "path" } },
   preselect = cmp.PreselectMode.None,
-  experimental = { native_menu = false, ghost_text = true },
+  experimental = { native_menu = false, ghost_text = false },
   sorting = {
     comparators = {
       cmp.config.compare.offset,
