@@ -103,8 +103,13 @@ alias sync_cgpc_orion="sync_lib /Users/wangk/Project/14.ConnectGalaxyInPC/ wangk
 alias sync_sate_orion="sync_lib /Users/wangk/Project/17.SateQuenching/ wangk 58.192.69.130 /home/wangk/17.SateQuenching 6622"
 alias sync_wl_orion="sync_lib /Users/wangk/Project/22.WeakLensing/ wangk 58.192.69.130 /home/wangk/22.WeakLensing 6622"
 alias sync_gpc_orion="sync_lib /Users/wangk/Project/23.GeneralPC/ wangk 58.192.69.130 /home/wangk/23.GeneralPC 6622"
+alias sync_gg_orion="sync_lib /Users/wangk/Project/GeneralGroup/ wangk 58.192.69.130 /home/wangk/GeneralGroup 6622"
 alias sync_metal_orion="sync_lib /Users/wangk/Project/24.Metallicity/ wangk 58.192.69.130 /home/wangk/24.Metallicity 6622"
 alias sync_sim_sirius="sync_lib_nondelete /Users/wangk/Project/RunSim/ wangk 166.111.121.192 /home/wangk/RunSim 2222"
+# cosma
+alias sync_gg_cosma="sync_lib /Users/wangk/Project/GeneralGroup/ dc-wang11 login8.cosma.dur.ac.uk /cosma/home/do012/dc-wang11/GeneralGroup 22"
+alias pcosma="ssh dc-wang11@login8.cosma.dur.ac.uk"
+alias pnersc="ssh kosmos@perlmutter-p1.nersc.gov"
 
 # My script
 alias gp="sh ~/.config/zsh/check_repo.sh"
