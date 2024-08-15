@@ -39,7 +39,7 @@ augroup END
 let $CC = '(which clang)'
 " python 
 let g:python3_host_prog = '/Users/wangk/anaconda3/bin/python3'
-let g:python_host_prog = ''
+let g:python_host_prog = '/Users/wangk/anaconda3/bin/python'
 let g:lua_format_config = '/Users/wangk/.config/nvim/lua-format'
 " vim-targets, disable nearby surround operation
 let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr lb ar ab lB Ar aB Ab AB'

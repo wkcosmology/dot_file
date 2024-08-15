@@ -154,7 +154,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias luamake=/Users/wangk/MyLibrary/libsource/lua-language-server/3rd/luamake/luamake
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /Users/wangk/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
