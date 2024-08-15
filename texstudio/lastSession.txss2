@@ -1,21 +1,29 @@
 {
     "InternalPDFViewer": {
-        "Embedded": false,
-        "File": ""
+        "Embedded": true,
+        "File": "../../Project/Paper/PKU_postdoc_report/Report.pdf"
     },
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "../../Desktop/report/ISCS2023.tex",
+        "CurrentFile": "../../Project/Paper/PKU_postdoc_report/Report.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 44,
+                "Col": 0,
                 "EditorGroup": 0,
-                "FileName": "../../Desktop/report/ISCS2023.tex",
+                "FileName": "../../Project/Paper/PKU_postdoc_report/Report.tex",
                 "FirstLine": 0,
                 "FoldedLines": "",
-                "Line": 46
+                "Line": 0
+            },
+            {
+                "Col": 166,
+                "EditorGroup": 0,
+                "FileName": "../../Project/Paper/PKU_postdoc_report/Acknowledgements.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 3
             }
         ],
         "MasterFile": ""
