@@ -108,6 +108,7 @@ alias sync_metal_orion="sync_lib /Users/wangk/Project/24.Metallicity/ wangk 58.1
 alias sync_sim_sirius="sync_lib_nondelete /Users/wangk/Project/RunSim/ wangk 166.111.121.192 /home/wangk/RunSim 2222"
 # cosma
 alias sync_gg_cosma="sync_lib /Users/wangk/Project/GeneralGroup/ dc-wang11 login8.cosma.dur.ac.uk /cosma/home/do012/dc-wang11/GeneralGroup 22"
+alias sync_sim_cosma="sync_lib /Users/wangk/Project/RunSim/ dc-wang11 login8.cosma.dur.ac.uk /cosma/home/do012/dc-wang11/RunSim 22"
 alias pcosma="ssh dc-wang11@login8.cosma.dur.ac.uk"
 alias pnersc="ssh kosmos@perlmutter-p1.nersc.gov"
 
