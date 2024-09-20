@@ -35,6 +35,8 @@ augroup keepcursorpos
         \ execute "normal! g`\"" |
         \ endif
 augroup END
+" cursor blinking
+set guicursor=a:blinkon100
 " CC for tree-sitter
 let $CC = '(which clang)'
 " python 
