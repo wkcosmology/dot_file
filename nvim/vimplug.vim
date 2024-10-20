@@ -20,14 +20,9 @@ Plug 'tpope/vim-repeat'
 " lua version of easymotion
 Plug 'phaazon/hop.nvim'
 " for quick commentary
-" Plug 'tpope/vim-commentary'
 Plug 'numToStr/Comment.nvim'
-" abbreviation substitution and Coerion
-Plug 'tpope/vim-abolish'
 " add more text object
 Plug 'wellle/targets.vim'
-" auto add pairs
-" Plug 'windwp/nvim-autopairs'
 " display number of matchings
 Plug 'google/vim-searchindex'
 " define s as substitution
@@ -41,22 +36,17 @@ Plug 'junegunn/vim-easy-align'
 " markdown
 Plug 'godlygeek/tabular', { 'for': ['markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['markdown'] }
-" matchup
-" Plug 'andymass/vim-matchup'
 " tagbar
 Plug 'stevearc/aerial.nvim'
+Plug 'hedyhli/outline.nvim'
 " undo tree visualizer
 Plug 'mbbill/undotree'
 " vim for vim
 Plug 'tpope/vim-scriptease'
-" mark the mark
-" Plug 'kshenoy/vim-signature'
 " prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " dispatch run the tasks
 Plug 'tpope/vim-dispatch'
-" powerful replacement tool
-Plug 'windwp/nvim-spectre'
 " quick navi the working files
 Plug 'ThePrimeagen/harpoon'
 
@@ -77,10 +67,7 @@ Plug 'pbogut/fzf-mru.vim'
 " ---------------------------------------------------------------------------
 " kill the buffer while keep the window
 Plug 'moll/vim-bbye'
-" the following two plugs is for session
-" Plug 'rmagatti/auto-session'
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
-" Plug 'j-morano/buffer_manager.nvim'
 Plug 'xorid/swap-split.nvim'
 
 " ---------------------------------------------------------------------------

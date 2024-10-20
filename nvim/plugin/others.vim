@@ -67,3 +67,5 @@ let g:matchup_matchparen_offscreen = {}
 " vim-session
 let g:session_autosave='no'
 let g:session_autoload='no'
+set listchars+=eol:↲
+set list
