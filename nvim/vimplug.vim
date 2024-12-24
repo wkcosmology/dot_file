@@ -69,6 +69,7 @@ Plug 'pbogut/fzf-mru.vim'
 Plug 'moll/vim-bbye'
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 Plug 'xorid/swap-split.nvim'
+Plug 's1n7ax/nvim-window-picker'
 
 " ---------------------------------------------------------------------------
 " ui
@@ -119,26 +120,14 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'alpertuna/vim-header', { 'on': 'AddHeader'}
 " run the test file, support many filetypes, including python
 Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
-" task control
-Plug 'skywind3000/asynctasks.vim'
-Plug 'skywind3000/asyncrun.vim'
 " vimtex
 Plug 'lervag/vimtex'
 " spell check
 Plug 'kamykn/spelunker.vim', { 'for': ['tex', 'markdown', 'html', 'json'] }
-" gist
-Plug 'lambdalisue/vim-gista', { 'on': ['Gista'] }
-" Cheatsheet for vim
-Plug 'lifepillar/vim-cheat40', { 'on': ['Cheat'] }
-" cheat
-Plug 'RishabhRD/popfix', { 'on': ['Cheat', 'CheatList'] }
-Plug 'RishabhRD/nvim-cheat.sh', { 'on': ['Cheat', 'CheatList'] }
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
-" " lua for vim development
-" Plug 'tjdevries/nlua.nvim'
 " filetree in lua
 Plug 'karb94/neoscroll.nvim'
 Plug 'MunifTanjim/nui.nvim'
@@ -198,7 +187,6 @@ Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'tami5/sqlite.lua'
-" Plug 'hrsh7th/nvim-pasta'
 Plug 'AckslD/nvim-neoclip.lua'
 
 call plug#end()

@@ -45,10 +45,6 @@ let g:python_host_prog = '/Users/wangk/anaconda3/bin/python'
 let g:lua_format_config = '/Users/wangk/.config/nvim/lua-format'
 " vim-targets, disable nearby surround operation
 let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr lb ar ab lB Ar aB Ab AB'
-" gist_vim
-let g:gist_show_privates = 1
-let g:gist_edit_with_buffers = 1
-let g:gist_clip_command = 'pbcopy'
 " alpertuna/vim-header config
 let g:header_auto_add_header = 0
 let g:header_field_modified_timestamp = 0

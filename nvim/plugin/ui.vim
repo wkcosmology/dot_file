@@ -5,8 +5,6 @@ set background=dark
 set signcolumn=yes
 set shortmess+=c
 " Cursor column and line
-set nocursorcolumn
-set nocursorline
 set conceallevel=0
 set termguicolors
 set shiftwidth=4
