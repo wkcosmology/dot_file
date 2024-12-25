@@ -19,20 +19,18 @@ cmp.setup({
     completion = cmp.config.window.bordered({
       border = "rounded",
       scrollbar = false,
-      winhighlight = "Normal:Normal,FloatBorder:None,CursorLine:Visual,Search:None",
+      winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
     }),
     documentation = cmp.config.window.bordered({
       border = "rounded",
       scrollbar = true,
-      winhighlight = "Normal:Normal,FloatBorder:None,CursorLine:Visual,Search:None",
+      winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
     }),
   },
 
   mapping = {
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    -- ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
-    -- ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
