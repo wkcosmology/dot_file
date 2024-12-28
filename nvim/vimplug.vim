@@ -133,6 +133,8 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v2.x' }
 Plug 'karb94/neoscroll.nvim'
+" generating document
+Plug 'danymat/neogen'
 
 " ---------------------------------------------------------------------------
 " Lsp and related

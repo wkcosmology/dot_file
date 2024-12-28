@@ -120,7 +120,7 @@ nmap <silent> <leader>bd :Bwipeout<cr>
 " close other buffers except the current one
 nmap <silent> <leader>bD :DeleteHiddenBuffers<cr>
 " buffer switch, switch header/source
-nmap <leader>bs :FSHere<cr>
+nmap <leader>bs :ClangdSwitchSourceHeader<cr>
 " nmap cd call
 nmap cd :call <SID>CdPwd()<cr>
 

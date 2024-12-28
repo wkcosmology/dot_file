@@ -51,21 +51,28 @@ for (${1:auto} ${2:i} = ${3:container}.begin(); $2 != $3.end(); ++$2) {
 }
 endsnippet
 
-snippet vec "vector" b
-vector<${1:T}> ${2}
+snippet singleton "singleton" b
+class $1{
+  public:
+    static $1* instance();
+
+  private:
+    $1() = default;
+    $1(const $1 &) = delete;
+    void operator=(const $1 &) = delete;
+    ~$1() = delete;
+    static $1 *$2;
+    static std::once_flag once_flag_;
+};
+
+$1* $1::$2 = nullptr;
+$1* $1::instance(){
+    if ($2 == nullptr)
+	std::call_once(once_flag_, []{ $2 = new ${1:Data}(); });
+    return ${2:pdata_};
+}
 endsnippet
 
-snippet vvec "vector" b
-vector<vector<${1:T}>> ${2}
-endsnippet
-
-snippet h5r "Read HDF5" b
-${1:grp}.open_dataset("${2:dataset}").read(${3:des});
-endsnippet
-
-snippet h5w "Write HDF5" b
-${1:grp}.create_dataset<${2:type}>("${3:dataset}", {${4:shape}}).write(${5:data});
-endsnippet
 
 # vim-snippets
 
