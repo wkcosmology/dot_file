@@ -93,6 +93,8 @@ export LIBRARY_PATH=$MYLIB_PATH/package/hipp/lib/:$LIBRARY_PATH
 export SPS_HOME=/Users/wangk/MyLibrary/libsource/fsps/
 # toml++
 export CPLUS_INCLUDE_PATH=$MYLIB_PATH/package/tomlplusplus/include/:$CPLUS_INCLUDE_PATH
+# galform
+export CPLUS_INCLUDE_PATH=/Users/wangk/Project/galform/galform/include/:$CPLUS_INCLUDE_PATH
 
 
 # npm access problem, see https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally

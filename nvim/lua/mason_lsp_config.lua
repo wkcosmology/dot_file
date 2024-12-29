@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
     "texlab",
     "clangd",
     "fortls",
-    "cmake-language-server",
+    "cmake",
   },
 })
 

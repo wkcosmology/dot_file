@@ -45,9 +45,6 @@ nmap <silent> <leader>jj :call MyHop('char1')<cr>
 nmap <silent> <leader>jk :call MyHop('char2')<cr>
 nmap <silent> <leader>jw :call MyHop('word')<cr>
 nmap <silent> <leader>jl :call MyHop('line')<cr>
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-vmap ga <Plug>(EasyAlign)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " S-group: fuzzy search
