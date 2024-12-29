@@ -20,10 +20,10 @@ nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
 nmap S <plug>(SubversiveSubstituteToEndOfLine)
 " vim-asterisk
-map *  <Plug>(asterisk-z*)
-map #  <Plug>(asterisk-z#)
-map g* <Plug>(asterisk-gz*)
-map g# <Plug>(asterisk-gz#)
+nmap *  <Plug>(asterisk-z*)
+nmap #  <Plug>(asterisk-z#)
+nmap g* <Plug>(asterisk-gz*)
+nmap g# <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
 " alias to left and right in insert mode
 inoremap <C-f> <Right>
