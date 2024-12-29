@@ -93,9 +93,9 @@ local on_attach = function(client, bufnr)
 end
 
 nvim_lsp["jedi_language_server"].setup({ on_attach = on_attach })
--- nvim_lsp["pyright"].setup({ on_attach = on_attach})
 nvim_lsp["vimls"].setup({ on_attach = on_attach })
 nvim_lsp["texlab"].setup({ on_attach = on_attach })
+nvim_lsp["cmake"].setup({ on_attach = on_attach })
 nvim_lsp["fortls"].setup({ on_attach = on_attach })
 nvim_lsp["lua_ls"].setup({
   on_attach = on_attach,

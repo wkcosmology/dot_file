@@ -48,5 +48,16 @@ require("formatter").setup({
         }
       end,
     },
+
+    cmake = {
+      function()
+        return {
+          exe = "cmake-format", -- this should be available on your $PATH
+          args = { "-" },
+          stdin = true,
+        }
+      end,
+    },
+
   },
 })
