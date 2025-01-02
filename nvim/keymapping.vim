@@ -52,7 +52,7 @@ nmap <silent> <leader>jl :call MyHop('line')<cr>
 " fuzzy searching command
 nnoremap <silent> <leader>: :Telescope commands<cr>
 " fuzzy search snippet
-nnoremap <silent> <leader>ss :Telescope ultisnips ultisnips<cr>
+nnoremap <silent> <leader>ss :Telescope luasnip<cr>
 " fuzzy search help
 nnoremap <silent> <leader>sh :Telescope help_tags<cr>
 " quickfix

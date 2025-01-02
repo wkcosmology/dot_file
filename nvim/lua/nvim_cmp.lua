@@ -3,14 +3,15 @@ local cmp = require("cmp")
 local nvim_lsp = require("lspconfig")
 local lspkind = require("lspkind")
 
-require("luasnip.loaders.from_snipmate").load({paths = "~/.config/nvim/UltiSnips/cpp.snippets"})
+require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/snippets" })
+vim.keymap.set({ "i" }, "<C-J>", function()
+  ls.expand()
+end, { silent = true })
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      -- For `ultisnips` user.
-      -- vim.fn["UltiSnips#Anon"](args.body)
-      require('luasnip').lsp_expand(args.body)
+      require("luasnip").lsp_expand(args.body)
     end,
   },
   completion = {
