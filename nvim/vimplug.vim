@@ -28,7 +28,9 @@ Plug 'google/vim-searchindex'
 " define s as substitution
 Plug 'svermeulen/vim-subversive'
 " Great snippet tool, need backend source
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 " Useful UNIX command
 Plug 'tpope/vim-eunuch'
 " align
@@ -187,7 +189,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make CC=/opt/homebrew/
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
-Plug 'fhill2/telescope-ultisnips.nvim'
+" Plug 'fhill2/telescope-ultisnips.nvim'
 Plug 'tami5/sqlite.lua'
 Plug 'AckslD/nvim-neoclip.lua'
 

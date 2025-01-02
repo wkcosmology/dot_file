@@ -34,7 +34,7 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
-cnoremap <C-j> <Down>
+" cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>

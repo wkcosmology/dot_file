@@ -3,11 +3,14 @@ local cmp = require("cmp")
 local nvim_lsp = require("lspconfig")
 local lspkind = require("lspkind")
 
+require("luasnip.loaders.from_snipmate").load({paths = "~/.config/nvim/UltiSnips/cpp.snippets"})
+
 cmp.setup({
   snippet = {
     expand = function(args)
       -- For `ultisnips` user.
-      vim.fn["UltiSnips#Anon"](args.body)
+      -- vim.fn["UltiSnips#Anon"](args.body)
+      require('luasnip').lsp_expand(args.body)
     end,
   },
   completion = {
@@ -37,7 +40,7 @@ cmp.setup({
     ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
   },
   -- the order matters when the priorities are the same
-  sources = { { name = "nvim_lsp" }, { name = "buffer" }, { name = "ultisnips" }, { name = "path" } },
+  sources = { { name = "nvim_lsp" }, { name = "buffer" }, { name = "luasnip" }, { name = "path" } },
   preselect = cmp.PreselectMode.None,
   experimental = { native_menu = false, ghost_text = false },
   sorting = {

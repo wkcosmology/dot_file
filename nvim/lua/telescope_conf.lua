@@ -46,7 +46,7 @@ require('telescope').setup {
 local Telescope = require("telescope")
 Telescope.load_extension("bibtex")
 Telescope.load_extension('octo')
-Telescope.load_extension('ultisnips')
+-- Telescope.load_extension('ultisnips')
 Telescope.load_extension('fzf')
 Telescope.load_extension('project')
 Telescope.load_extension('neoclip')
