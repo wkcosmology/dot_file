@@ -266,17 +266,17 @@
         "body": ["fscanf($1, \"$2\"$0);"],
         "description": "Generic fscanf() snippet"
     },
-    "#inc": {
+    "inc": {
         "prefix": "inc",
-        "body": ["#include <{$1:iostream}>"],
+        "body": ["#include <${1:iostream}>"],
         "description": "Code snippet for #include <iostream>"
     },
-    "#inc<": {
+    "inc<": {
         "prefix": "incu",
         "body": ["#include \"$1\""],
         "description": "Code snippet for #include \" \""
     },
-    "#def": {
+    "def": {
         "prefix": "def",
         "body": ["#define $0"],
         "description": "Code snippet for #define \" \""

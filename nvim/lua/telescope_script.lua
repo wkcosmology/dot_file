@@ -11,7 +11,7 @@ function M.files(buf_path)
   end
 
   if vim.fn["FugitiveHead"]() ~= "" then
-    opt.cwd = string.sub(vim.fn['FugitiveGitDir'](), 1, -6)
+    opt.cwd = string.sub(vim.fn["FugitiveGitDir"](), 1, -6)
     require("telescope.builtin").find_files(opt)
   else
     opt.cwd = buf_path
@@ -27,7 +27,7 @@ function M.git_branches()
   end
   local repo = vim.fn["FugitiveGitDir"]()
   repo = string.match(repo, "/([^/]+)/.git$")
-  local opt = {prompt_prefix = " " .. repo .. " > "}
+  local opt = { prompt_prefix = " " .. repo .. " > " }
   require("telescope.builtin").git_branches(opt)
 end
 
@@ -47,8 +47,11 @@ function M.grep_string(str)
   end
 
   opt.search = str or vim.fn.input("Grep For > ")
-  if opt.search == "" then return nil end
-  require("telescope.builtin").grep_string(opt)
+  if opt.search == "" then
+    return nil
+  else
+    require("telescope.builtin").grep_string(opt)
+  end
 end
 
 -- grep word under cursor in the project
@@ -63,7 +66,7 @@ function M.git_status()
     print("Not in git repo!")
   else
     local opt = {}
-    opt.cwd = string.sub(vim.fn['FugitiveGitDir'](), 1, -6)
+    opt.cwd = string.sub(vim.fn["FugitiveGitDir"](), 1, -6)
     require("telescope.builtin").git_status(opt)
   end
 end

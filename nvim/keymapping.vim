@@ -34,6 +34,7 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
+cnoremap <C-c> <C-c>
 " cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-a> <Home>
@@ -77,18 +78,15 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> gd :Telescope lsp_definitions<cr>
-nnoremap <silent> gr :Telescope lsp_references<cr>
+nnoremap <silent> gd :Lspsaga goto_definition<cr>
 nnoremap <silent> gi :Telescope lsp_implementations<cr>
-nnoremap <silent> gh :Lspsaga lsp_finder<cr>
-nnoremap <silent> gr :Lspsaga rename<cr>
+nnoremap <silent> gh :Lspsaga finder<cr>
+nnoremap <silent> gr :Lspsaga rename ++project<cr>
 nnoremap <silent> <Leader>ca :Lspsaga code_action<cr>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
 nnoremap <silent> <leader>vv :Lspsaga outline<cr>
 nnoremap <silent> K :Lspsaga hover_doc<cr>
-" nnoremap <silent> <C-u> lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>
-" nnoremap <silent> <C-d> :lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " P-group: Project related
@@ -111,7 +109,7 @@ nnoremap <silent> <Leader>ft :Neotree<cr>
 " B-group: buffers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search buffers
-nnoremap <silent> <leader>bb :Buffers<cr>
+nnoremap <silent> <leader>bb :Telescope buffers<cr>
 " close current buffer
 nmap <silent> <leader>bd :Bwipeout<cr>
 " close other buffers except the current one
@@ -187,7 +185,6 @@ nnoremap <leader>gm :Git blame<cr>
 nnoremap <leader>gP :Git push<cr>
 nnoremap <leader>gp :Git pull<cr>
 nnoremap <leader>gf :Git fetch<cr>
-nnoremap <leader>gi :Gista list<cr>
 nnoremap <leader>gs :lua require('telescope_script').git_status()<cr>
 nnoremap <leader>gc :lua require('script').git_clean()<cr>
 
@@ -200,8 +197,6 @@ nnoremap <leader>mc :delmarks!<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Diagnostic key mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nnoremap <silent> <C-k> :lua vim.diagnostic.goto_prev()<cr>
-" nnoremap <silent> <C-j> :lua vim.diagnostic.goto_next()<cr>
 " clear all the diagnostic 
 nmap <silent> <leader>ed :lua vim.diagnostic.disable()<cr>
 nmap <silent> <leader>ec :lua vim.diagnostic.hide()<cr>

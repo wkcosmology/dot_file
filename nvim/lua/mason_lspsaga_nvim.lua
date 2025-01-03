@@ -37,6 +37,7 @@ end
 -- diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = false,
+  virtual_text = false,
   -- virtual_text = { spacing = 4, prefix = "●", severity_limit = "Warning" },
   -- signs = { vim.diagnostic.severity = "Warning" },
   update_in_insert = false,
@@ -60,57 +61,75 @@ require("lsp-colors").setup({
 -- lspsaga
 require("lspsaga").setup({
   border_style = "rounded",
+  border = "single",
+  title = true,
   saga_winblend = 0,
-  move_in_saga = { prev = "<C-p>", next = "<C-n>" },
-  diagnostic_header = { " ", " ", " ", "ﴞ " },
   max_preview_lines = 10,
-  code_action_icon = "💡",
   code_action_num_shortcut = true,
+  beacon = {
+    enable = true,
+  },
+  scroll_preview = {
+    scroll_down = "<C-f>",
+    scroll_up = "<C-b>",
+  },
+  diagnostic = {
+    max_height = 0.8,
+    keys = {
+      quit = { "q", "<ESC>" },
+    },
+  },
+  hover = {
+    max_width = 0.9,
+    max_height = 0.8,
+    open_link = "gx",
+  },
   lightbulb = {
     enable = false,
+    virtual_text = false,
   },
-  finder_icons = {
-    def = "  ",
-    ref = "諭 ",
-    link = "  ",
+  finder = {
+    max_height = 0.5,
+    left_width = 0.3,
+    right_width = 0.3,
+    layout = "float",
+    keys = {
+      edit = "o",
+      vsplit = "v",
+      split = "s",
+      quit = { "<C-g>", "<C-c>" },
+    },
   },
-  finder_request_timeout = 1500,
-  finder_action_keys = {
-    open = "o",
-    vsplit = "s",
-    split = "i",
-    tabe = "t",
-    quit = "q",
-  },
-  code_action_keys = {
-    quit = "q",
-    exec = "<CR>",
+  symbol_in_winbar = {
+    enable = true,
+    separator = ' › ',
+    show_file = false,
+    folder_level = 0,
   },
   definition_action_keys = {
     edit = "o",
     vsplit = "v",
-    split = "i",
-    tabe = "t",
-    quit = "q",
+    split = "s",
+    quit = { "<C-g>", "<C-c>" },
   },
-  rename_action_quit = "<C-c>",
-  rename_in_select = true,
-  -- show symbols in winbar must nightly
-  symbol_in_winbar = {
-    in_custom = false,
-    enable = false,
-    separator = " ",
-    show_file = true,
-    click_support = false,
+  rename = {
+    in_select = false,
+    quit = "<C-c>",
   },
-  show_outline = {
+  outline = {
     win_position = "right",
     win_with = "",
     win_width = 30,
     auto_enter = true,
+    auto_close = true,
     auto_preview = false,
+    close_after_jump = false,
     virt_text = "┃",
     jump_key = "o",
     auto_refresh = true,
+    keys = {
+      toggle_or_jump = 'o',
+      quit = 'q',
+    },
   },
 })
