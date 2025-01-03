@@ -91,6 +91,9 @@ Plug 'gcmt/taboo.vim'
 Plug 'ryanoasis/vim-devicons'
 " improve the default vim.ui interfaces
 Plug 'stevearc/dressing.nvim'
+" winbar
+Plug 'SmiteshP/nvim-navic'
+Plug 'utilyre/barbecue.nvim'
 
 " ---------------------------------------------------------------------------
 " C/C++ related

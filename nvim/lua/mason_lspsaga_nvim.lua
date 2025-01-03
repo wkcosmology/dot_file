@@ -101,8 +101,8 @@ require("lspsaga").setup({
     },
   },
   symbol_in_winbar = {
-    enable = true,
-    separator = ' › ',
+    enable = false,
+    separator = " › ",
     show_file = false,
     folder_level = 0,
   },
@@ -128,8 +128,12 @@ require("lspsaga").setup({
     jump_key = "o",
     auto_refresh = true,
     keys = {
-      toggle_or_jump = 'o',
-      quit = 'q',
+      toggle_or_jump = "o",
+      quit = "q",
     },
+  },
+  custom_kind = {
+    Field = { "F", "#000000" },
+    Method = { "M" },
   },
 })
