@@ -28,7 +28,7 @@ Plug 'google/vim-searchindex'
 " define s as substitution
 Plug 'svermeulen/vim-subversive'
 " Great snippet tool, need backend source
-Plug 'L3MON4D3/LuaSnip'
+Plug 'L3MON4D3/LuaSnip', { 'do': 'make install_jsregexp CC=/opt/homebrew/bin/gcc-14' }
 Plug 'saadparwaiz1/cmp_luasnip'
 " Useful UNIX command
 Plug 'tpope/vim-eunuch'
@@ -50,6 +50,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'tpope/vim-dispatch'
 " quick navi the working files
 Plug 'ThePrimeagen/harpoon'
+" case preserving substitute
+Plug 'tpope/vim-abolish'
 
 " ---------------------------------------------------------------------------
 " fzf

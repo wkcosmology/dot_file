@@ -43,7 +43,7 @@
         "description": "Display Math"
     },
     "Equation": {
-        "prefix": "equation",
+        "prefix": "eq",
         "body": [
             "\\begin{equation}",
             "\t$0",
@@ -219,36 +219,36 @@
     "Section": {
         "prefix": "sec",
         "body": [
-            "\\section{$1}\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
-            "${0:$TM_SELECTED_TEXT}",
-            "% section $1 (end)"
+            "\\section{$1}",
+            "\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "${0:$TM_SELECTED_TEXT}"
         ],
         "description": "Section"
     },
     "Sub Paragraph": {
         "prefix": "subp",
         "body": [
-            "\\subparagraph{$1}\\label{subp:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
-            "${0:$TM_SELECTED_TEXT}",
-            "% subparagraph $1 (end)"
+            "\\subparagraph{$1}",
+            "\\label{subp:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
+            "${0:$TM_SELECTED_TEXT}"
         ],
         "description": "Sub Paragraph"
     },
     "Sub Section": {
         "prefix": "sub",
         "body": [
-            "\\subsection{$1}\\label{sub:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
-            "${0:$TM_SELECTED_TEXT}",
-            "% subsection $1 (end)"
+            "\\subsection{$1}",
+            "\\label{sub:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
+            "${0:$TM_SELECTED_TEXT}"
         ],
         "description": "Sub Section"
     },
     "Sub Sub Section": {
-        "prefix": "subs",
+        "prefix": "ssub",
         "body": [
-            "\\subsubsection{${1:subsubsection name}}\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
-            "${0:$TM_SELECTED_TEXT}",
-            "% subsubsection $1 (end)"
+            "\\subsubsection{${1:subsubsection name}}",
+            "\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
+            "${0:$TM_SELECTED_TEXT}"
         ],
         "description": "Sub Sub Section"
     },
@@ -275,14 +275,29 @@
         ],
         "description": "Begin - End"
     },
+    "Figure*": {
+        "prefix": "fig*",
+        "body": [
+            "\\begin{figure*}",
+            "\t\\begin{center}",
+            "\t\t\\includegraphics[width=0.95\\textwidth]{figure/$1}",
+            "\t\\end{center}",
+            "\t\\caption{$3}",
+            "\t\\label{fig:$4}",
+            "\\end{figure*}",
+            "$0"
+        ],
+        "description": "Add a figure"
+    },
     "Figure": {
-        "prefix": "figure",
+        "prefix": "fig",
         "body": [
             "\\begin{figure}",
             "\t\\begin{center}",
-            "\t\t\\includegraphics[width=0.95\\textwidth]{figures/$1}",
+            "\t\t\\includegraphics[width=0.95\\textwidth]{figure/$1}",
             "\t\\end{center}",
-            "\t\\caption{$3}\\label{fig:$4}",
+            "\t\\caption{$3}",
+            "\t\\label{fig:$4}",
             "\\end{figure}",
             "$0"
         ],

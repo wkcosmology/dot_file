@@ -101,7 +101,8 @@ nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
 " fuzzy search files under current project
 nnoremap <silent> <Leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
 " fuzzy search most recent file
-nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
+" nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
+nnoremap <silent> <leader>fr :Telescope oldfiles<cr>
 " open defx file tree
 nnoremap <silent> <Leader>ft :Neotree<cr>
 
@@ -165,11 +166,6 @@ augroup close_win
   autocmd FileType toggleterm nnoremap <buffer> <C-c> :close<cr>
   autocmd FileType toggleterm nnoremap <buffer> q :close<cr>
 augroup END
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" T-group terminal/test
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <silent> <leader>tf :AsyncTaskFzf<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " G-group: Git

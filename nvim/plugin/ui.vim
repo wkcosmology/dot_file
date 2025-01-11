@@ -8,8 +8,9 @@ set shortmess+=c
 set conceallevel=0
 set termguicolors
 set shiftwidth=4
-" winbar and global status line
-set laststatus=3
+" winbar and no global status line
+set laststatus=2
+lua vim.opt.winbar = " "
 " set winbar=%=%m\ %f
 " indetLine config
 let g:indentLine_enabled = 1
