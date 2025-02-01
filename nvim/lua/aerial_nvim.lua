@@ -9,7 +9,7 @@ require("aerial").setup({
     -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     -- min_width and max_width can be a list of mixed types.
     -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
-    max_width = { 40, 0.2 },
+    max_width = { 60, 0.4 },
     width = nil,
     min_width = 15,
 
@@ -23,7 +23,7 @@ require("aerial").setup({
     --   edge   - open aerial at the far right/left of the editor
     --   group  - open aerial to the right/left of the group of windows containing the current buffer
     --   window - open aerial to the right/left of the current window
-    placement = "window",
+    placement = "edge",
   },
 
   -- Enum: persist, close, auto, global

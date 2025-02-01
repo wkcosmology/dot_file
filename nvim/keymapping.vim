@@ -24,12 +24,6 @@ nmap g* <Plug>(asterisk-gz*)
 nmap g# <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
 " alias to left and right in insert mode
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-inoremap <C-p> <Up>
-inoremap <C-n> <Down>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <C-c> <C-c>
@@ -83,8 +77,8 @@ nnoremap <silent> gr :Lspsaga rename ++project<cr>
 nnoremap <silent> <Leader>ca :Lspsaga code_action<cr>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
-nnoremap <silent> <leader>vc :Lspsaga outline<cr>
-" nnoremap <silent> <leader>vc :AerialToggle<cr>
+" nnoremap <silent> <leader>vc :Lspsaga outline<cr>
+nnoremap <silent> <leader>vc :AerialToggle<cr>
 nnoremap <silent> K :Lspsaga hover_doc<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
