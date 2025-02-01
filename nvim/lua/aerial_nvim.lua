@@ -157,10 +157,10 @@ require("aerial").setup({
   post_jump_cmd = "normal! zz",
 
   -- When true, aerial will automatically close after jumping to a symbol
-  close_on_select = false,
+  close_on_select = true,
 
   -- Show box drawing characters for the tree hierarchy
-  show_guides = false,
+  show_guides = true,
 
   -- The autocmds that trigger symbols update (not used for LSP backend)
   update_events = "TextChanged,InsertLeave",
@@ -224,5 +224,67 @@ require("aerial").setup({
   markdown = {
     -- How long to wait (in ms) after a buffer change before updating
     update_delay = 300,
+  },
+
+  nav = {
+    border = "rounded",
+    max_height = 0.9,
+    min_height = { 10, 0.4 },
+    max_width = 0.9,
+    min_width = { 0.3, 20 },
+    win_opts = {
+      cursorline = true,
+      winblend = 10,
+    },
+    -- Jump to symbol in source window when the cursor moves
+    autojump = false,
+    -- Show a preview of the code in the right column, when there are no child symbols
+    preview = false,
+    -- Keymaps in the nav window
+    keymaps = {
+      ["<CR>"] = "actions.jump",
+      ["o"] = "actions.jump",
+      ["<C-v>"] = "actions.jump_vsplit",
+      ["<C-s>"] = "actions.jump_split",
+      ["h"] = "actions.left",
+      ["l"] = "actions.right",
+      ["<C-c>"] = "actions.close",
+      ["q"] = "actions.close",
+    },
+  },
+
+  keymaps = {
+    ["?"] = "actions.show_help",
+    ["g?"] = "actions.show_help",
+    ["<CR>"] = "actions.jump",
+    ["<2-LeftMouse>"] = "actions.jump",
+    ["<C-v>"] = "actions.jump_vsplit",
+    ["<C-s>"] = "actions.jump_split",
+    ["p"] = "actions.scroll",
+    ["<C-j>"] = "actions.down_and_scroll",
+    ["<C-k>"] = "actions.up_and_scroll",
+    ["{"] = "actions.prev",
+    ["}"] = "actions.next",
+    ["[["] = "actions.prev_up",
+    ["]]"] = "actions.next_up",
+    ["q"] = "actions.close",
+    ["o"] = "actions.jump",
+    ["za"] = "actions.tree_toggle",
+    ["O"] = "actions.tree_toggle_recursive",
+    ["zA"] = "actions.tree_toggle_recursive",
+    ["l"] = "actions.tree_open",
+    ["zo"] = "actions.tree_open",
+    ["L"] = "actions.tree_open_recursive",
+    ["zO"] = "actions.tree_open_recursive",
+    ["h"] = "actions.tree_close",
+    ["zc"] = "actions.tree_close",
+    ["H"] = "actions.tree_close_recursive",
+    ["zC"] = "actions.tree_close_recursive",
+    ["zr"] = "actions.tree_increase_fold_level",
+    ["zR"] = "actions.tree_open_all",
+    ["zm"] = "actions.tree_decrease_fold_level",
+    ["zM"] = "actions.tree_close_all",
+    ["zx"] = "actions.tree_sync_folds",
+    ["zX"] = "actions.tree_sync_folds",
   },
 })

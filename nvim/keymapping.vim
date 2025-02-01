@@ -13,8 +13,6 @@ tnoremap <Esc> <C-\><C-n><cr>
 " Let Y yank to the line end
 nnoremap Y y$
 xnoremap <leader>p "_dP
-" tagbar
-nnoremap <silent> <leader>vv :AerialToggle<cr>
 " subversive
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
@@ -85,7 +83,8 @@ nnoremap <silent> gr :Lspsaga rename ++project<cr>
 nnoremap <silent> <Leader>ca :Lspsaga code_action<cr>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
-nnoremap <silent> <leader>vv :Lspsaga outline<cr>
+nnoremap <silent> <leader>vc :Lspsaga outline<cr>
+" nnoremap <silent> <leader>vc :AerialToggle<cr>
 nnoremap <silent> K :Lspsaga hover_doc<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -219,7 +218,7 @@ augroup my_file_type_map
   autocmd FileType c,cpp,h,cpp noremap <buffer><silent> <leader>ee :AsyncTask file-build<cr>
   " locate for vimtex
   autocmd FileType tex nnoremap <buffer> <leader>vv :VimtexView<cr>
-  autocmd FileType tex nnoremap <buffer> <leader>vc :VimtexTocToggle<cr>
+  autocmd FileType tex nnoremap <buffer> <leader>vc :VimtexTocOpen<cr>
   autocmd FileType tex nnoremap <buffer> <leader>cc :VimtexClean<cr>
   " autocmd FileType lua nnoremap <buffer> <leader>fm :call LuaFormat()<cr>
   autocmd Filetype markdown,html,typescript,javascript,json,css,yaml nnoremap <buffer> <leader>fm :Prettier<cr>

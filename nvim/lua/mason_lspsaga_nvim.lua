@@ -123,7 +123,7 @@ require("lspsaga").setup({
     auto_enter = true,
     auto_close = true,
     auto_preview = false,
-    close_after_jump = false,
+    close_after_jump = true,
     virt_text = "┃",
     jump_key = "o",
     auto_refresh = true,
