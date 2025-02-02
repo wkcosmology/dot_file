@@ -194,7 +194,7 @@ nmap <silent> <leader>et :Neotree diagnostics reveal bottom<cr>
 augroup FormatFiletype
   autocmd!
   autocmd BufEnter * nmap <silent> <leader>fm :Format<cr>
-  autocmd BufEnter *.tex nmap <leader>fm gqap
+  " autocmd BufEnter *.tex nmap <leader>fm gqap
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

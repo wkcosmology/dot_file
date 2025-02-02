@@ -192,7 +192,16 @@
     },
     "figure": {
         "prefix": "BFI",
-        "body": "\\begin{figure}[${1:htbp}]\n\t\\centering\n\t${0:${TM_SELECTED_TEXT}}\n\t\\caption{${2:<caption>}}\\label{${3:<label>}}\n\\end{figure}",
+        "body": [
+            "\\begin{figure}[${1:htbp}]\n",
+            "\t\\centering\n",
+            "\t${0:${TM_SELECTED_TEXT}}\n",
+            "\t\\caption{\n",
+            "\t\t${2:<caption>}\n",
+            "\t}",
+            "\\label{${3:<label>}}\n",
+            "\\end{figure}"
+        ],
         "description": "figure"
     },
     "table": {

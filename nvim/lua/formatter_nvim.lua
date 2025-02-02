@@ -38,6 +38,16 @@ require("formatter").setup({
       end,
     },
 
+    tex = {
+      -- Configuration for psf/black
+      function()
+        return {
+          exe = "tex-fmt --stdin --tabsize=2",
+          stdin = true,
+        }
+      end,
+    },
+
     python = {
       -- Configuration for psf/black
       function()
@@ -58,6 +68,5 @@ require("formatter").setup({
         }
       end,
     },
-
   },
 })
