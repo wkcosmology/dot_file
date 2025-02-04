@@ -95,7 +95,7 @@ nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
 nnoremap <silent> <Leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
 " fuzzy search most recent file
 " nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
-nnoremap <silent> <leader>fr :Telescope oldfiles<cr>
+nnoremap <silent> <leader>fr :Telescope frecency<cr>
 " open defx file tree
 nnoremap <silent> <Leader>ft :Neotree<cr>
 
@@ -122,17 +122,6 @@ nmap <C-t>r :TabooRename
 nmap <C-t>c :tabclose<cr>
 nmap <C-t>] :tabnext<cr>
 nmap <C-t>[ :tabprevious<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" harpoon
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>ha :lua require("harpoon.mark").add_file()<CR>
-nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
-
-nnoremap <C-h> :lua require("harpoon.ui").nav_file(1)<CR>
-nnoremap <C-g> :lua require("harpoon.ui").nav_file(2)<CR>
-nnoremap <C-n> :lua require("harpoon.ui").nav_file(3)<CR>
-nnoremap <C-s> :lua require("harpoon.ui").nav_file(4)<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " window related

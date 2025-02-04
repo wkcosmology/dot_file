@@ -280,9 +280,11 @@
         "body": [
             "\\begin{figure*}",
             "\t\\begin{center}",
-            "\t\t\\includegraphics[width=0.95\\textwidth]{figure/$1}",
+            "\t\t\\includegraphics[width=0.95\\linewidth]{figure/$1}",
             "\t\\end{center}",
-            "\t\\caption{$3}",
+            "\t\\caption{",
+            "\t\t$3",
+            "\t}",
             "\t\\label{fig:$4}",
             "\\end{figure*}",
             "$0"
@@ -294,9 +296,11 @@
         "body": [
             "\\begin{figure}",
             "\t\\begin{center}",
-            "\t\t\\includegraphics[width=0.95\\textwidth]{figure/$1}",
+            "\t\t\\includegraphics[width=0.95\\linewidth]{figure/$1}",
             "\t\\end{center}",
-            "\t\\caption{$3}",
+            "\t\\caption{",
+            "\t\t$3",
+            "\t}",
             "\t\\label{fig:$4}",
             "\\end{figure}",
             "$0"

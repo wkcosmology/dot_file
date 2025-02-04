@@ -20,7 +20,7 @@ Plug 'tpope/vim-repeat'
 " lua version of easymotion
 Plug 'phaazon/hop.nvim'
 " for quick commentary
-Plug 'numToStr/Comment.nvim'
+" Plug 'numToStr/Comment.nvim'
 " add more text object
 Plug 'wellle/targets.vim'
 " display number of matchings
@@ -49,7 +49,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " dispatch run the tasks
 Plug 'tpope/vim-dispatch'
 " quick navi the working files
-Plug 'ThePrimeagen/harpoon'
+Plug 'ThePrimeagen/harpoon', { 'branch': 'harpoon2'}
 " case preserving substitute
 Plug 'tpope/vim-abolish'
 
@@ -192,6 +192,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make CC=/opt/homebrew/
 Plug 'nvim-telescope/telescope-project.nvim'
 Plug 'nvim-telescope/telescope-bibtex.nvim'
 Plug 'nvim-telescope/telescope-symbols.nvim'
+Plug 'nvim-telescope/telescope-frecency.nvim'
 Plug 'benfowler/telescope-luasnip.nvim'
 Plug 'tami5/sqlite.lua'
 Plug 'AckslD/nvim-neoclip.lua'
