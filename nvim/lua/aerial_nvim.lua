@@ -17,7 +17,7 @@ require("aerial").setup({
     -- Determines the default direction to open the aerial window. The 'prefer'
     -- options will open the window in the other direction *if* there is a
     -- different buffer in the way of the preferred direction
-    default_direction = "prefer_right",
+    default_direction = "float",
 
     -- Enum: edge, group, window
     --   edge   - open aerial at the far right/left of the editor
@@ -186,17 +186,23 @@ require("aerial").setup({
     --   cursor - Opens float on top of the cursor
     --   editor - Opens float centered in the editor
     --   win    - Opens float centered in the window
-    relative = "cursor",
+    relative = "editor",
 
     -- These control the height of the floating window.
     -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
     -- min_height and max_height can be a list of mixed types.
     -- min_height = {8, 0.1} means "the greater of 8 rows or 10% of total"
     max_height = 0.9,
-    height = nil,
-    min_height = { 8, 0.1 },
+    min_height = { 20, 0.1 },
 
     override = function(conf)
+      local win_width = vim.o.columns
+      conf.width = 100
+      conf.col = win_width / 2 - conf.width / 2
+      conf.style = "minimal"
+      conf.border = "double"
+      conf.title = "Outline"
+      conf.title_pos = "center"
       -- This is the config that will be passed to nvim_open_win.
       -- Change values here to customize the layout
       return conf
@@ -234,12 +240,12 @@ require("aerial").setup({
     min_width = { 0.3, 20 },
     win_opts = {
       cursorline = true,
-      winblend = 10,
+      winblend = 5,
     },
     -- Jump to symbol in source window when the cursor moves
     autojump = false,
     -- Show a preview of the code in the right column, when there are no child symbols
-    preview = false,
+    preview = true,
     -- Keymaps in the nav window
     keymaps = {
       ["<CR>"] = "actions.jump",

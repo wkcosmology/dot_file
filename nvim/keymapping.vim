@@ -97,7 +97,7 @@ nnoremap <silent> <Leader>ff :lua require('telescope_script').files(vim.fn.expan
 " nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
 nnoremap <silent> <leader>fr :Telescope frecency<cr>
 " open defx file tree
-nnoremap <silent> <Leader>ft :Neotree<cr>
+nnoremap <silent> <Leader>ft :Neotree action=focus source=filesystem position=left reveal<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " B-group: buffers

@@ -25,7 +25,9 @@ nnoremap <silent> [t :<C-u>call <SID>cnt_cmd('tabprevious')<cr>
 nnoremap <silent> ]t :<C-u>call <SID>cnt_cmd('tabnext')<cr>
 nnoremap <silent> [T :tabfirst<cr>
 nnoremap <silent> ]T :tablast<cr>
-nnoremap <silent> [f :<C-u>lua require('script').next_file(vim.v.count1, true)<cr>
-nnoremap <silent> ]f :<C-u>lua require('script').next_file(vim.v.count1, false)<cr>
+nnoremap <silent> [f :AerialPrev<cr>
+nnoremap <silent> ]f :AerialNext<cr>
+"nnoremap <silent> [f :<C-u>lua require('script').next_file(vim.v.count1, true)<cr>
+"nnoremap <silent> ]f :<C-u>lua require('script').next_file(vim.v.count1, false)<cr>
 nnoremap <expr> [<space> 'm`' . v:count1 . 'O<Esc>``'
 nnoremap <expr> ]<space> 'm`' . v:count1 . 'o<Esc>``'
