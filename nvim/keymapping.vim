@@ -10,6 +10,8 @@
 let mapleader=' '
 " use Esc to exit terminal
 tnoremap <Esc> <C-\><C-n><cr>
+inoremap <C-B> <Left>
+inoremap <C-F> <Right>
 " Let Y yank to the line end
 nnoremap Y y$
 xnoremap <leader>p "_dP
@@ -97,7 +99,7 @@ nnoremap <silent> <Leader>ff :lua require('telescope_script').files(vim.fn.expan
 " nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
 nnoremap <silent> <leader>fr :Telescope frecency<cr>
 " open defx file tree
-nnoremap <silent> <Leader>ft :Neotree action=focus source=filesystem position=left reveal<cr>
+nnoremap <silent> <Leader>ft :Neotree action=focus source=filesystem position=float reveal<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " B-group: buffers

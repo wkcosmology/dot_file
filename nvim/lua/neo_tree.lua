@@ -70,13 +70,14 @@ require("neo-tree").setup({
         unstaged = "U",
         staged = "S",
         conflict = "X",
-
       },
     },
   },
   window = {
-    position = "left",
-    width = 40,
+    position = "float",
+    width = "fit_content",
+    min_width = 40,
+    max_width = 60,
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -104,21 +105,17 @@ require("neo-tree").setup({
           show_path = "none", -- "none", "relative", "absolute"
         },
       },
-      ["A"] = "add_directory", -- also accepts the optional config.show_path option like "add".
       ["d"] = "delete",
       ["r"] = "rename",
       ["y"] = "copy_to_clipboard",
       ["x"] = "cut_to_clipboard",
       ["p"] = "paste_from_clipboard",
-      ["c"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
-      -- ["c"] = {
-      --  "copy",
-      --  config = {
-      --    show_path = "none" -- "none", "relative", "absolute"
-      --  }
-      --}
+      ["y"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
       ["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
       ["q"] = "close_window",
+      ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = false } },
+      ["<C-g>"] = "close_window",
+      ["<C-c>"] = "close_window",
       ["R"] = "refresh",
       ["?"] = "show_help",
       ["<"] = "prev_source",

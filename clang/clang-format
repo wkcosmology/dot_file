@@ -40,7 +40,7 @@ SpacesInContainerLiterals : true
 SpaceBeforeAssignmentOperators : true
 SpaceBeforeCpp11BracedList : false
 SpaceBeforeRangeBasedForLoopColon : false
-ColumnLimit : 100
+ColumnLimit : 0
 AccessModifierOffset : -1
 AlignEscapedNewlinesLeft : true
 AlignOperands : true
