@@ -53,7 +53,8 @@ nnoremap <silent> <leader>sh :Telescope help_tags<cr>
 " quickfix
 nnoremap <silent> <leader>sq :Telescope quickfix<cr>
 " grep word under cursor
-nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
+"nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
+nnoremap <silent> <leader>sw :lua require("telescope-live-grep-args.shortcuts").grep_word_under_cursor()<cr>
 " yank history
 nnoremap <silent> <space>sy  :Telescope neoclip<cr>
 " Symbols
@@ -76,30 +77,32 @@ nnoremap <silent> gd :Lspsaga goto_definition<cr>
 nnoremap <silent> gi :Telescope lsp_implementations<cr>
 nnoremap <silent> gh :Lspsaga finder<cr>
 nnoremap <silent> gr :Lspsaga rename ++project<cr>
-nnoremap <silent> <Leader>ca :Lspsaga code_action<cr>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
 " nnoremap <silent> <leader>vc :Lspsaga outline<cr>
 nnoremap <silent> <leader>vc :AerialToggle<cr>
 nnoremap <silent> K :Lspsaga hover_doc<cr>
+nnoremap <silent> <leader>ca :lua vim.lsp.buf.code_action()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " P-group: Project related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search for my projects
-nnoremap <silent> <Leader>pp :lua require('telescope').extensions.project.project{}<cr>
-nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
+nnoremap <silent> <leader>pp :lua require('telescope').extensions.project.project{}<cr>
+"nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
+nnoremap <silent> <leader>ps :lua require("telescope").extensions.live_grep_args.live_grep_args()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " F-group: File related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search files under current project
-nnoremap <silent> <Leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
+nnoremap <silent> <leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
 " fuzzy search most recent file
 " nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
 nnoremap <silent> <leader>fr :Telescope frecency<cr>
 " open defx file tree
-nnoremap <silent> <Leader>ft :Neotree action=focus source=filesystem position=float reveal<cr>
+nnoremap <silent> <leader>ft :Neotree action=focus source=filesystem position=float reveal<cr>
+nnoremap <silent> <leader>fs :Telescope file_browser<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " B-group: buffers

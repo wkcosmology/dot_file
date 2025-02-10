@@ -1,6 +1,7 @@
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 local utils = require("telescope.utils")
+local lga_actions = require("telescope-live-grep-args.actions")
 
 require("telescope").setup({
   defaults = {
@@ -20,7 +21,7 @@ require("telescope").setup({
     selection_strategy = "reset",
     sorting_strategy = "descending",
     layout_strategy = "horizontal",
-    layout_config = { height = 80, width = 200 },
+    layout_config = { height = 60, width = 200 },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = {},
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
@@ -46,6 +47,20 @@ require("telescope").setup({
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
+    file_browser = {
+      theme = "ivy",
+      prompt_path = true,
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+    },
+    live_grep_args = {
+      auto_quoting = true,
+      mappings = { -- extend mappings
+        i = {
+          ["<C-k>"] = lga_actions.quote_prompt({ postfix = " -t" }),
+        },
+      },
+    },
   },
 })
 
@@ -57,3 +72,6 @@ Telescope.load_extension("fzf")
 Telescope.load_extension("project")
 Telescope.load_extension("neoclip")
 Telescope.load_extension("frecency")
+Telescope.load_extension("file_browser")
+Telescope.load_extension("ui-select")
+Telescope.load_extension("live_grep_args")
