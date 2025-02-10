@@ -9,6 +9,9 @@ vim.keymap.set({ "i" }, "<C-J>", function()
 end, { silent = true })
 
 cmp.setup({
+  performance = {
+    debounce = 10,
+  },
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
@@ -17,7 +20,7 @@ cmp.setup({
   completion = {
     -- autocomplete = false,
     completeopt = "menu,menuone,noselect",
-    keyword_length = 2,
+    keyword_length = 1,
   },
   window = {
     completion = cmp.config.window.bordered({
@@ -41,7 +44,13 @@ cmp.setup({
     ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
   },
   -- the order matters when the priorities are the same
-  sources = { { name = "nvim_lsp" }, { name = "buffer" }, { name = "luasnip" }, { name = "path" } },
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "luasnip" },
+    { name = "path" },
+    { name = "nvim_lsp_signature_help" },
+  },
   preselect = cmp.PreselectMode.None,
   experimental = { native_menu = false, ghost_text = false },
   sorting = {

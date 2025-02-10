@@ -57,7 +57,7 @@ require("telescope").setup({
       auto_quoting = true,
       mappings = { -- extend mappings
         i = {
-          ["<C-k>"] = lga_actions.quote_prompt({ postfix = " -t" }),
+          ["<C-k>"] = lga_actions.quote_prompt({ postfix = " --iglob *" }),
         },
       },
     },
