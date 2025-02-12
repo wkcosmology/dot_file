@@ -27,6 +27,8 @@ alias ta='/opt/homebrew/bin/tmux -u -f $TMUX_CONFIG attach'
 alias tl='/opt/homebrew/bin/tmux list-sessions'
 # python
 alias ipython='/Users/wangk/anaconda3/bin/ipython'
+# luamake
+alias luamake=/Users/wangk/MyLibrary/libsource/lua-language-server/3rd/luamake/luamake
 # Attach or create tmux session named the same as current directory.
 
 create_if_needed_and_attach() {
