@@ -99,7 +99,8 @@ nnoremap <silent> <leader>ps :lua require("telescope").extensions.live_grep_args
 nnoremap <silent> <leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
 " fuzzy search most recent file
 " nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
-nnoremap <silent> <leader>fr :Telescope frecency<cr>
+" deal with a bug where launching frecency first time always has non-empty prompt
+nnoremap <silent> <leader>fr :Telescope frecency<cr><C-h>
 " open defx file tree
 nnoremap <silent> <leader>ft :Neotree action=focus source=filesystem position=float reveal<cr>
 nnoremap <silent> <leader>fs :Telescope file_browser<cr>
