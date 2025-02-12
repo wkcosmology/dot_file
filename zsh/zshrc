@@ -65,12 +65,54 @@ if [[ ! "$PATH" == */Users/wangk/.fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/Users/wangk/.fzf/bin"
 fi
 source <(fzf --zsh)
+export FZF_COMPLETION_TRIGGER='**'
+export FZF_COMPLETION_OPTS='--border --info=inline'
+export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
+export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments ($@) to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+  case "$command" in
+    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
+  esac
+}
+# CTRL-R: command history
+export FZF_CTRL_R_OPTS="
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --layout reverse
+  --header 'Press CTRL-Y to copy command into clipboard'
+  --border"
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 # fzf color
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
---color=fg:#c5cdd9,bg:#262729,hl:#6cb6eb 
---color=fg+:#c5cdd9,bg+:#262729,hl+:#5dbbc1 
---color=info:#88909f,prompt:#ec7279,pointer:#d38aea 
---color=marker:#a0c980,spinner:#ec7279,header:#5dbbc1'
+export FZF_DEFAULT_OPTS="
+--color 'bg+:#3B4252,bg:#2E3440,spinner:#81A1C1,hl:#616E88,fg:#D8DEE9,header:#616E88,info:#81A1C1,pointer:#81A1C1,marker:#81A1C1,fg+:#D8DEE9,prompt:#81A1C1,hl+:#81A1C1'
+--layout reverse
+--border"
+# autojump activation and integration with fzf
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+j() {
+    local preview_cmd="ls {2..}"
+    if command -v exa &> /dev/null; then
+        preview_cmd="exa -l {2}"
+    fi
+
+    if [[ $# -eq 0 ]]; then
+                 cd "$(autojump -s | sort -k1gr | awk -F : '$1 ~ /[0-9]/ && $2 ~ /^\s*\// {print $1 $2}' | fzf --height 40% --reverse --inline-info --preview "$preview_cmd" --preview-window down:50% | cut -d$'\t' -f2- | sed 's/^\s*//')"
+    else
+        cd $(autojump $@)
+    fi
+}
+
 
 ###############################################################################################
 # zinit: zsh plugin manager
@@ -122,3 +164,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
