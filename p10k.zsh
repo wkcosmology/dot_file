@@ -940,7 +940,7 @@
 
   #####################[ anaconda: conda environment (https://conda.io/) ]######################
   # Anaconda environment color.
-  typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND="blue"
+  typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND='cyan3'
 
   # Anaconda segment format. The following parameters are available within the expansion.
   #
@@ -1637,7 +1637,7 @@
 
   ####################################[ time: current time ]####################################
   # Current time color.
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND='blue'
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND='cyan3'
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='[%D{%H:%M:%S}]'
   # If set to true, time will update when you hit enter. This way prompts for the past
@@ -1660,7 +1660,7 @@
 
   function prompt_mydir() {
     local dir=${(%):-%/}
-    p10k segment -f "blue" -t "[${dir}]"
+    p10k segment -f "cyan3" -t "[${dir}]"
   }
 
   function instant_prompt_mydir() {
