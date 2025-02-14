@@ -7,6 +7,9 @@ alias ls=exa
 alias lg=lazygit
 # for a safe rm
 alias rm='safe-rm'
+# alias for gcc
+alias gcc='gcc-14'
+alias g++='g++-14'
 
 # server related
 alias sgalileo='ssh wangk@202.127.24.125'
@@ -16,47 +19,10 @@ alias svenusx='ssh -X wangk@166.111.131.54'
 alias pvenus='ssh -p 2222 wangk@166.111.30.104'
 alias porion='ssh -p6622 wangk@58.192.69.130'
 alias psirius='ssh -p2222 wangk@166.111.121.192'
-# alias for gcc
-alias gcc='gcc-14'
-alias g++='g++-14'
-# tmux
-TMUX_CONFIG='/Users/wangk/.config/tmux/tmux.conf'
-alias tn='/opt/homebrew/bin/tmux -u -f $TMUX_CONFIG new'
-alias ta='/opt/homebrew/bin/tmux -u -f $TMUX_CONFIG attach'
-alias tl='/opt/homebrew/bin/tmux list-sessions'
 # python
 alias ipython='/Users/wangk/anaconda3/bin/ipython'
 # luamake
 alias luamake=/Users/wangk/MyLibrary/libsource/lua-language-server/3rd/luamake/luamake
-# Attach or create tmux session named the same as current directory.
-
-create_if_needed_and_attach() {
-    path_name="$(basename "$PWD" | tr . -)"
-    session_name=${1-$path_name}
-
-    not_in_tmux() {
-      [ -z "$TMUX" ]
-    }
-
-    session_exists() {
-      tmux has-session -t "=$session_name"
-    }
-
-    create_detached_session() {
-      (TMUX='' tmux new-session -Ad -s "$session_name")
-    }
-  if not_in_tmux; then
-    tmux new-session -As "$session_name"
-  else
-    if ! session_exists; then
-      create_detached_session
-    fi
-    tmux switch-client -t "$session_name"
-  fi
-}
-alias tat='create_if_needed_and_attach'
-# FZF config
-export FZF_DEFAULT_COMMAND='fd --type f'
 # Rsync
 function sync_lib {
     echo "Sync begins:"

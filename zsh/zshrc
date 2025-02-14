@@ -45,11 +45,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="mm/dd/yyyy"
 
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(z git extract tmux wd fzf zsh-autosuggestions)
-# autosuggestion
-bindkey '^j' autosuggest-accept
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#948d8d,bg=none"
 
 # prevent C-d to close shell
 set -o ignoreeof  # Same as setting IGNOREEOF=10
@@ -65,6 +60,7 @@ if [[ ! "$PATH" == */Users/wangk/.fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/Users/wangk/.fzf/bin"
 fi
 source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_COMPLETION_TRIGGER='**'
 export FZF_COMPLETION_OPTS='--border --info=inline'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
@@ -113,19 +109,9 @@ j() {
     fi
 }
 
-
 ###############################################################################################
-# zinit: zsh plugin manager
+# zsh plugin and zinit: zsh plugin manager
 ###############################################################################################
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -138,6 +124,19 @@ zinit light-mode for \
     zinit-zsh/z-a-patch-dl \
     zinit-zsh/z-a-bin-gem-node
 
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(z git extract tmux wd fzf zsh-autosuggestions)
+
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
 ###############################################################################################
 # Source zsh env, alias, and plugin
 ###############################################################################################
@@ -145,7 +144,6 @@ source $ZSH/oh-my-zsh.sh
 source ~/.config/zsh/zshenv
 source ~/.config/zsh/zsh_alias
 source ~/.config/zsh/zsh_plugin
-
 
 ###############################################################################################
 # Anaconda
@@ -164,5 +162,9 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# autosuggestion, put it here to avoid being over-written by omz
+bindkey '^j' autosuggest-accept
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#948d8d,bg=none"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
