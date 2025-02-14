@@ -3,7 +3,6 @@ alias vi=vim
 alias vim=nvim
 # replace ls with exa
 alias ls=exa
-export EXA_COLORS="di=93*.md=38;5;121:*.log=38;5;248"
 # alias the lazygit
 alias lg=lazygit
 # for a safe rm
