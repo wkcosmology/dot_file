@@ -38,9 +38,9 @@
     mydir                     # current directory
     vcs                     # git status
     anaconda                # conda environment (https://conda.io/)
-    virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
-    pyenv                   # python environment (https://github.com/pyenv/pyenv)
-    command_execution_time  # duration of the last command
+    # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
+    # pyenv                   # python environment (https://github.com/pyenv/pyenv)
+    # command_execution_time  # duration of the last command
     # =========================[ Line #2 ]=========================
     newline                 # \n
     prompt_char             # prompt symbol
@@ -99,9 +99,9 @@
     # nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
     # chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
     # vpn_ip                # virtual private network indicator
-    load                  # CPU load
+    # load                  # CPU load
     # disk_usage            # disk usage
-    ram                   # free RAM
+    # ram                   # free RAM
     # swap                  # used swap
     # todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     # timewarrior             # timewarrior tracking status (https://timewarrior.net/)
@@ -966,7 +966,7 @@
   # The default value of POWERLEVEL9K_ANACONDA_CONTENT_EXPANSION expands to $CONDA_PROMPT_MODIFIER
   # without the surrounding parentheses, or to the last path component of CONDA_PREFIX if the former
   # is empty.
-  typeset -g POWERLEVEL9K_ANACONDA_CONTENT_EXPANSION='[${${${${CONDA_PROMPT_MODIFIER#\(}% }%\)}:-${CONDA_PREFIX:t}}]'
+  typeset -g POWERLEVEL9K_ANACONDA_CONTENT_EXPANSION='[Conda: ${${${${CONDA_PROMPT_MODIFIER#\(}% }%\)}:-${CONDA_PREFIX:t}}]'
 
   # Custom icon.
   typeset -g POWERLEVEL9K_ANACONDA_VISUAL_IDENTIFIER_EXPANSION=''
