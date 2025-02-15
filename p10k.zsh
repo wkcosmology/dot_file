@@ -36,8 +36,8 @@
     # dir                     # current directory
     time                    # current time
     mydir                     # current directory
-    vcs                     # git status
     anaconda                # conda environment (https://conda.io/)
+    vcs                     # git status
     # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     # pyenv                   # python environment (https://github.com/pyenv/pyenv)
     # command_execution_time  # duration of the last command
@@ -1659,7 +1659,7 @@
   }
 
   function prompt_mydir() {
-    local dir=${(%):-%/}
+    local dir=${(%):-%~}
     p10k segment -f "cyan3" -t "[${dir}]"
   }
 
