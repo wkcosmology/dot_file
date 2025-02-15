@@ -71,4 +71,15 @@ function M.git_status()
   end
 end
 
+local live_grep_args = require("telescope").extensions.live_grep_args
+function M.grep_word_under_cursor(opts)
+  opts = opts or {}
+  local value = '"\\<' .. vim.trim(vim.fn.expand("<cword>")) .. '\\>" '
+  if opts.postfix then
+    value = value .. opts.postfix
+  end
+  opts["default_text"] = value
+  live_grep_args.live_grep_args(opts)
+end
+
 return M
