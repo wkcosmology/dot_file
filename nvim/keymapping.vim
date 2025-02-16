@@ -45,7 +45,7 @@ nmap <silent> <leader>jl :call MyHop('line')<cr>
 " S-group: fuzzy search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy searching command
-nnoremap <silent> <leader>: :Telescope commands<cr>
+nnoremap <silent> <leader>s: :Telescope commands<cr>
 " fuzzy search snippet
 nnoremap <silent> <leader>ss :Telescope luasnip<cr>
 " fuzzy search help

@@ -2,9 +2,13 @@ local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 local utils = require("telescope.utils")
 local lga_actions = require("telescope-live-grep-args.actions")
+local pickers = require("telescope.pickers")
 
 require("telescope").setup({
   defaults = {
+    mappings = {
+      i = { ["<C-q>"] = actions.send_to_qflist },
+    },
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -36,7 +40,6 @@ require("telescope").setup({
     file_previewer = require("telescope.previewers").vim_buffer_cat.new,
     grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
     qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
   },
