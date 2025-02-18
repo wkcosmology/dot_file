@@ -3,6 +3,7 @@ local action_state = require("telescope.actions.state")
 local utils = require("telescope.utils")
 local lga_actions = require("telescope-live-grep-args.actions")
 local pickers = require("telescope.pickers")
+local telescope_script = require("telescope_script")
 
 require("telescope").setup({
   defaults = {
@@ -60,7 +61,7 @@ require("telescope").setup({
       auto_quoting = true,
       mappings = { -- extend mappings
         i = {
-          ["<C-k>"] = lga_actions.quote_prompt({ postfix = " --iglob *" }),
+          ["<C-l>"] = lga_actions.quote_prompt({ postfix = " --iglob *" }),
         },
       },
     },

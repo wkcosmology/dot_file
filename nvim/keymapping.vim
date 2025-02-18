@@ -55,7 +55,7 @@ nnoremap <silent> <leader>sq :Telescope quickfix<cr>
 " grep word under cursor
 "nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
 "nnoremap <silent> <leader>sw :lua require("telescope-live-grep-args.shortcuts").grep_word_under_cursor()<cr>
-nnoremap <silent> <leader>sw :lua require("telescope_script").grep_word_under_cursor({postfix="--iglob *"})<cr>
+nnoremap <silent> <leader>sw :lua require("telescope_script").grep_word_under_cursor({})<cr>
 " yank history
 nnoremap <silent> <space>sy  :Telescope neoclip<cr>
 " Symbols
