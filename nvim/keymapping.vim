@@ -53,9 +53,9 @@ nnoremap <silent> <leader>sh :Telescope help_tags<cr>
 " quickfix
 nnoremap <silent> <leader>sq :Telescope quickfix<cr>
 " grep word under cursor
-"nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
+nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
 "nnoremap <silent> <leader>sw :lua require("telescope-live-grep-args.shortcuts").grep_word_under_cursor()<cr>
-nnoremap <silent> <leader>sw :lua require("telescope_script").grep_word_under_cursor({})<cr>
+"nnoremap <silent> <leader>sw :lua require("telescope_script").grep_word_under_cursor({})<cr>
 " yank history
 nnoremap <silent> <space>sy  :Telescope neoclip<cr>
 " Symbols
@@ -90,8 +90,8 @@ nnoremap <silent> <leader>ca :lua vim.lsp.buf.code_action()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search for my projects
 nnoremap <silent> <leader>pp :lua require('telescope').extensions.project.project{}<cr>
-"nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
-nnoremap <silent> <leader>ps :lua require("telescope").extensions.live_grep_args.live_grep_args()<cr>
+nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
+"nnoremap <silent> <leader>ps :lua require("telescope").extensions.live_grep_args.live_grep_args()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " F-group: File related

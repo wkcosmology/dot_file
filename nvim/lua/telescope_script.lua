@@ -32,8 +32,8 @@ function M.git_branches()
 end
 
 -- grep input string from the git repo or the current path
-function M.grep_string(str)
-  local opt = {}
+function M.grep_string(str, opt)
+  local opt = opt or {}
   local buf_path = vim.fn.expand("%:p:h")
   if buf_path == vim.env.HOME then
     print("Do not grep in home directory!")
@@ -56,8 +56,8 @@ end
 
 -- grep word under cursor in the project
 function M.grep_current_string()
-  local str = vim.fn.expand("<cword>")
-  M.grep_string(str)
+  local str = "" .. vim.fn.expand("<cword>") .. ""
+  M.grep_string(str, { ["word_match"] = "-w" })
 end
 
 -- wrap git status
