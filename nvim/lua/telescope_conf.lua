@@ -57,14 +57,6 @@ require("telescope").setup({
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
     },
-    live_grep_args = {
-      auto_quoting = true,
-      mappings = { -- extend mappings
-        i = {
-          ["<C-l>"] = lga_actions.quote_prompt({ postfix = " --iglob *" }),
-        },
-      },
-    },
   },
 })
 
@@ -78,4 +70,3 @@ Telescope.load_extension("neoclip")
 Telescope.load_extension("frecency")
 Telescope.load_extension("file_browser")
 Telescope.load_extension("ui-select")
-Telescope.load_extension("live_grep_args")
