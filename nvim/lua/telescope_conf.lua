@@ -1,7 +1,6 @@
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 local utils = require("telescope.utils")
-local lga_actions = require("telescope-live-grep-args.actions")
 local pickers = require("telescope.pickers")
 local telescope_script = require("telescope_script")
 
@@ -56,6 +55,9 @@ require("telescope").setup({
       prompt_path = true,
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
+    },
+    frecency = {
+      auto_validate = true,
     },
   },
 })

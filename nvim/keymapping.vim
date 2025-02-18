@@ -99,9 +99,9 @@ nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
 " fuzzy search files under current project
 nnoremap <silent> <leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
 " fuzzy search most recent file
-" nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
+ nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
 " deal with a bug where launching frecency first time always has non-empty prompt
-nnoremap <silent> <leader>fr :Telescope frecency<cr><C-h>
+"nnoremap <silent> <leader>fr :Telescope frecency<cr><C-h>
 " open defx file tree
 nnoremap <silent> <leader>ft :Neotree action=focus source=filesystem position=float reveal<cr>
 nnoremap <silent> <leader>fs :Telescope file_browser<cr>
@@ -224,6 +224,13 @@ command! DeleteHiddenBuffers call DeleteHiddenBuffers()
 " trim space
 command! TrimSpace execute':%s/\s\+$//e'
 command! -bar -bang Trash :Move<bang> ~/.Trash | bdelete<bang>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fugitive specific
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup my_fugitive_mapping
+  autocmd FileType fugitive nnoremap <buffer> fP :Git push --force-with-lease<cr>
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " scripts

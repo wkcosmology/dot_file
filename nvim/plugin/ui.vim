@@ -45,25 +45,20 @@ hi TabLineSel guibg=#191f24 guifg=#51b0ef
 hi TabLine guibg=#191f24 guifg=#757574
 " treesitter
 hi! TSUnderline guibg=none gui=none
-" highlight for matchup
-" hi MatchWord guibg=white gui=NONE guifg=black
-" hi MatchWordCur guibg=white gui=NONE guifg=black
-" hi MatchParen guibg=white gui=NONE guifg=black
-" hi MatchParenCur guibg=white gui=NONE guifg=black
 " highligh hop
-highlight HopNextKey guifg=#fcf908
-highlight HopNextKey1 guifg=#0af1f5
-highlight HopNextKey2 guifg=#0af1f5
-highlight HopUnmatched guifg=#666666
+hi HopNextKey guifg=#fcf908
+hi HopNextKey1 guifg=#0af1f5
+hi HopNextKey2 guifg=#0af1f5
+hi HopUnmatched guifg=#666666
 " sign column and related (ale, gitgutter)
-highlight SignColumn guibg=Normal
+hi SignColumn guibg=Normal
 " fzf highlight
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
             \ 'bg':      ['bg', 'Normal'],
             \ 'hl':      ['fg', 'Comment'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Constant'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn', 'Cursor'],
             \ 'hl+':     ['fg', 'Statement'],
             \ 'info':    ['fg', 'PreProc'],
             \ 'border':  ['fg', 'Normal'],

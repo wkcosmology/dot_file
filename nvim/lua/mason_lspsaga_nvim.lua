@@ -97,7 +97,7 @@ require("lspsaga").setup({
       edit = "o",
       vsplit = "v",
       split = "s",
-      quit = { "<C-g>", "<C-c>" },
+      quit = { "<C-g>", "<C-c>", "q" },
     },
   },
   symbol_in_winbar = {
