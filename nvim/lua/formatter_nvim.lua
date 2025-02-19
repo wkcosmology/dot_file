@@ -68,5 +68,15 @@ require("formatter").setup({
         }
       end,
     },
+
+    fortran = {
+      function()
+        return {
+          exe = "fprettify",
+          args = { "-" },
+          stdin = true,
+        }
+      end,
+    },
   },
 })

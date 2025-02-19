@@ -62,8 +62,6 @@ nnoremap <silent> <space>sy  :Telescope neoclip<cr>
 nnoremap <silent> <space>se  :lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
 " command history
 nnoremap <silent> <space>cr  :Telescope command_history<cr>
-" marks
-nnoremap <silent> <space>sm :Marks<cr>
 augroup search
   autocmd!
   autocmd FileType c,h,cpp,hpp,python,lua,vim nnoremap <silent> <buffer><silent> <leader>so :Telescope lsp_document_symbols<cr>
