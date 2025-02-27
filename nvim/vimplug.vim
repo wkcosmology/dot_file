@@ -186,7 +186,7 @@ Plug 'AndrewRadev/tagalong.vim'
 " ---------------------------------------------------------------------------
 " Telescope and related
 " ---------------------------------------------------------------------------
-Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
