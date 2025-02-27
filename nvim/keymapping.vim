@@ -74,7 +74,7 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> gd :Lspsaga goto_definition<cr>
 nnoremap <silent> gi :Telescope lsp_implementations<cr>
-nnoremap <silent> gh :Lspsaga finder<cr>
+nnoremap <silent> gh :Telescope lsp_references include_current_line=true}<cr>
 nnoremap <silent> gr :Lspsaga rename ++project<cr>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
@@ -97,7 +97,8 @@ nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
 " fuzzy search files under current project
 nnoremap <silent> <leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
 " fuzzy search most recent file
- nnoremap <silent> <leader>fr :FZFMru --prompt "MRU> "<cr>
+ nnoremap <silent> <leader>fr :Telescope fzf_mru<cr>
+"nnoremap <silent> <leader>fr :Telescope oldfiles<cr><C-h>
 " deal with a bug where launching frecency first time always has non-empty prompt
 "nnoremap <silent> <leader>fr :Telescope frecency<cr><C-h>
 " open defx file tree
@@ -108,7 +109,7 @@ nnoremap <silent> <leader>fs :Telescope file_browser<cr>
 " B-group: buffers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search buffers
-nnoremap <silent> <leader>bb :Telescope buffers<cr>
+nnoremap <silent> <leader>bb :Telescope buffers theme=ivy<cr>
 " close current buffer
 nmap <silent> <leader>bd :Bwipeout<cr>
 " close other buffers except the current one

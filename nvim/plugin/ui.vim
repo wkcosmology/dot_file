@@ -52,6 +52,11 @@ hi HopNextKey2 guifg=#0af1f5
 hi HopUnmatched guifg=#666666
 " sign column and related (ale, gitgutter)
 hi SignColumn guibg=Normal
+" telescope highlight
+hi TelescopeNormal guifg=Comment
+hi TelescopeSelection guifg=#F08000
+hi TelescopeMatching guifg=#F08000 guibg=Visual
+hi TelescopeBorder guifg=#fffafa
 " fzf highlight
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],

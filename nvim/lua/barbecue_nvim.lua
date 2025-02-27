@@ -2,7 +2,7 @@ require("barbecue").setup({
   show_basename = false,
   show_dirname = false,
   theme = {
-    normal = { fg = "#c0caf5", bg = "#23272e" },
+    normal = { fg = "#c0caf5", bg = "#484848" },
   },
   kinds = {
     File = " ",
