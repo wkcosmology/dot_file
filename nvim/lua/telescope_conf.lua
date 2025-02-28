@@ -9,10 +9,35 @@ require("telescope").setup({
     mappings = {
       i = {
         ["<C-q>"] = actions.send_to_qflist,
+        -- scroll
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
+        -- scroll preview
+        ["<C-u>"] = actions.preview_scrolling_up,
+        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<C-f>"] = actions.preview_scrolling_left,
+        ["<C-k>"] = actions.preview_scrolling_right,
+        -- history
         ["<C-n>"] = require("telescope.actions").cycle_history_next,
         ["<C-p>"] = require("telescope.actions").cycle_history_prev,
+        -- split
+        ["<C-s>"] = actions.select_horizontal,
+        ["<C-v>"] = actions.select_vertical,
+        -- selection
+        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+        -- insert word or file
+        ["<C-r><C-w>"] = actions.insert_original_cword,
+        ["<C-r><C-a>"] = actions.insert_original_cWORD,
+        ["<C-r><C-f>"] = actions.insert_original_cfile,
+        ["<C-r><C-l>"] = actions.insert_original_cline,
+      },
+      n = {
+        ["<esc>"] = actions.close,
+        ["<CR>"] = actions.select_default,
+        ["<C-s>"] = actions.select_horizontal,
+        ["<C-v>"] = actions.select_vertical,
+        ["<C-t>"] = actions.select_tab,
       },
     },
     vimgrep_arguments = {
