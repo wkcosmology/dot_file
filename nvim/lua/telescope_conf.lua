@@ -10,16 +10,16 @@ require("telescope").setup({
       i = {
         ["<C-q>"] = actions.send_to_qflist,
         -- scroll
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-n>"] = actions.move_selection_next,
+        ["<C-p>"] = actions.move_selection_previous,
         -- scroll preview
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
         ["<C-h>"] = actions.preview_scrolling_left,
         ["<C-l>"] = actions.preview_scrolling_right,
         -- history
-        ["<C-n>"] = require("telescope.actions").cycle_history_next,
-        ["<C-p>"] = require("telescope.actions").cycle_history_prev,
+        ["<C-j>"] = require("telescope.actions").cycle_history_next,
+        ["<C-k>"] = require("telescope.actions").cycle_history_prev,
         -- split
         ["<C-s>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
