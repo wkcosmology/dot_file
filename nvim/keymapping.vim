@@ -80,6 +80,7 @@ nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
 " nnoremap <silent> <leader>vc :Lspsaga outline<cr>
 nnoremap <silent> <leader>vc :AerialToggle<cr>
+nnoremap <silent> <leader>fc :Telescope aerial<cr>
 nnoremap <silent> K :Lspsaga hover_doc<cr>
 nnoremap <silent> <leader>ca :lua vim.lsp.buf.code_action()<cr>
 

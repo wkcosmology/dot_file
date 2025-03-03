@@ -274,6 +274,8 @@ require("aerial").setup({
     ["[["] = "actions.prev_up",
     ["]]"] = "actions.next_up",
     ["q"] = "actions.close",
+    ["<C-c>"] = "actions.close",
+    ["<C-g>"] = "actions.close",
     ["o"] = "actions.jump",
     ["za"] = "actions.tree_toggle",
     ["O"] = "actions.tree_toggle_recursive",

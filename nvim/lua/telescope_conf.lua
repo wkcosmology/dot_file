@@ -15,8 +15,8 @@ require("telescope").setup({
         -- scroll preview
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
-        ["<C-f>"] = actions.preview_scrolling_left,
-        ["<C-k>"] = actions.preview_scrolling_right,
+        ["<C-h>"] = actions.preview_scrolling_left,
+        ["<C-l>"] = actions.preview_scrolling_right,
         -- history
         ["<C-n>"] = require("telescope.actions").cycle_history_next,
         ["<C-p>"] = require("telescope.actions").cycle_history_prev,
