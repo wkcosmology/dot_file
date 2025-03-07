@@ -73,12 +73,10 @@ augroup END
 " LSP related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> gd :Lspsaga goto_definition<cr>
-nnoremap <silent> gi :Telescope lsp_implementations<cr>
 nnoremap <silent> gh :Telescope lsp_references include_current_line=true}<cr>
 nnoremap <silent> gr :Lspsaga rename ++project<cr>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_next<cr>
 nnoremap <silent> [e :Lspsaga diagnostic_jump_prev<cr>
-" nnoremap <silent> <leader>vc :Lspsaga outline<cr>
 nnoremap <silent> <leader>vc :AerialToggle<cr>
 nnoremap <silent> <leader>fc :Telescope aerial<cr>
 nnoremap <silent> K :Lspsaga hover_doc<cr>
