@@ -2,7 +2,7 @@
 set adjust-open "best-fit"
 # One page per row by default
 set pages-per-row 1
-#zoom settings
+# zoom settings
 set zoom-min 10
 set guioptions "
 # See man `man zathurarc'
@@ -15,3 +15,5 @@ map R rotate
 unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
+set selection-clipboard clipboard
+
