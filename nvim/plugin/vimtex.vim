@@ -70,6 +70,7 @@ let g:vimtex_view_general_viewer
         \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:vimtex_view_skim_activate = 0
+let g:vimtex_view_skim_sync = 1
 let g:vimtex_view_skim_reading_bar = 1
 
 " (under testing) use zathura
