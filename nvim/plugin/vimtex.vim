@@ -42,7 +42,8 @@ let g:vimtex_toc_config = {
       \ 'mode' : 1,
       \ 'fold_enable': 0,
       \ 'hide_line_numbers': 0,
-      \ 'hotkeys_enabled': 0,
+      \ 'hotkeys_enabled': 1,
+      \ 'hotkeys_leader': "",
       \ 'layer_status': {
       \ 'content': 1,
       \ 'label': 0,
