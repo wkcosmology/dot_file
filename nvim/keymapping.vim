@@ -225,6 +225,8 @@ augroup my_file_type_map
   autocmd Filetype markdown nmap <C-k> <Plug>(spelunker-jump-prev)
 augroup END
 
+nnoremap <leader>dg :Neogen<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
