@@ -16,9 +16,9 @@ inoremap <C-F> <Right>
 nnoremap Y y$
 xnoremap <leader>p "_dP
 " subversive
-nmap s <plug>(SubversiveSubstitute)
-nmap ss <plug>(SubversiveSubstituteLine)
-nmap S <plug>(SubversiveSubstituteToEndOfLine)
+nmap x <plug>(SubversiveSubstitute)
+nmap xx <plug>(SubversiveSubstituteLine)
+nmap X <plug>(SubversiveSubstituteToEndOfLine)
 " vim-asterisk
 nmap *  <Plug>(asterisk-z*)
 nmap #  <Plug>(asterisk-z#)
@@ -96,7 +96,7 @@ nnoremap <silent> <leader>ps :lua require('telescope_script').grep_string()<cr>
 " fuzzy search files under current project
 nnoremap <silent> <leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
 " fuzzy search most recent file
- nnoremap <silent> <leader>fr :Telescope fzf_mru<cr>
+nnoremap <silent> <leader>fr :Telescope fzf_mru<cr>
 "nnoremap <silent> <leader>fr :Telescope oldfiles<cr><C-h>
 " deal with a bug where launching frecency first time always has non-empty prompt
 "nnoremap <silent> <leader>fr :Telescope frecency<cr><C-h>
@@ -264,7 +264,7 @@ endf
 if !exists('*DeleteHiddenBuffers') " Clear all hidden buffers when running
   function DeleteHiddenBuffers() " Vim with the 'hidden' option
     let tpbl=[]
-    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+    call map(range(1, tabpagenr('$')), 'exten(tpbl, tabpagebuflist(v:val))')
     for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
       silent execute 'bwipeout!' buf
     endfor
