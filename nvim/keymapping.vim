@@ -136,7 +136,9 @@ nmap <C-t>[ :tabprevious<cr>
 let g:maximizer_set_default_mapping = 0
 nnoremap <silent><C-w>m :MaximizerToggle<cr>
 " choose the window
-nnoremap <silent> <C-w>w :lua require('nvim-window').pick()<cr>
+for i in [1, 2, 3, 4, 5, 6]
+  execute 'nnoremap <leader>'.i.' '.i.'<C-w>w'
+endfor
 nnoremap <silent> <C-w>e :lua require("swap-split").swap()<cr>
 " close the location list and quickfix window
 nnoremap <silent> <leader>lc :ccl\|lcl<cr>
@@ -176,6 +178,14 @@ nnoremap <leader>gc :lua require('script').git_clean()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>mm :Telescope marks<cr>
 nnoremap <leader>mc :delmarks!<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" X-group: Copy
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>xn :let @+=@%<cr>
+nnoremap <leader>xf :let @+=expand("%:t")<cr>
+nnoremap <leader>xw "+yiw
+vnoremap <leader>xx "+y
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Diagnostic key mapping
