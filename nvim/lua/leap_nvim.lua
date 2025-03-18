@@ -46,22 +46,24 @@ function leap_line_start(skip_range)
 end
 
 -- For maximum comfort, force linewise selection in the mappings:
-vim.keymap.set("x", "|", function()
+vim.keymap.set("x", "S", function()
   -- Only force V if not already in it (otherwise it would exit Visual mode).
   if vim.fn.mode(1) ~= "V" then
     vim.cmd("normal! V")
   end
-  leap_line_start()
+  leap_line_start(0)
 end)
-vim.keymap.set("o", "|", "V<cmd>lua leap_line_start()<cr>")
+vim.keymap.set("o", "S", "V<cmd>lua leap_line_start(0)<cr>")
 
 -- keymapping
 vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
-vim.keymap.set("n", "S", "<cmd>lua leap_line_start()<cr>")
+vim.keymap.set("n", "S", "<cmd>lua leap_line_start(0)<cr>")
 vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
 require("leap").opts.equivalence_classes = { " \t\r\n", "([{", ")]}", "'\"`" }
 require("leap.user").set_repeat_keys("<enter>", "<backspace>")
 -- config
 -- Disable auto-jumping to the first match
-require('leap').opts.safe_labels = {}
-require('leap').opts.preview_filter = function () return false end
+require("leap").opts.safe_labels = {}
+require("leap").opts.preview_filter = function()
+  return false
+end
