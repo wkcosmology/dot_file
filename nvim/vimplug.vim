@@ -18,7 +18,7 @@ Plug 'tpope/vim-surround'
 " enhance . operate, support more like vim-surround
 Plug 'tpope/vim-repeat'
 " lua version of easymotion
-Plug 'phaazon/hop.nvim'
+"Plug 'phaazon/hop.nvim'
 Plug 'ggandor/leap.nvim'
 " for quick commentary
 " Plug 'numToStr/Comment.nvim'
@@ -26,8 +26,6 @@ Plug 'ggandor/leap.nvim'
 Plug 'wellle/targets.vim'
 " display number of matchings
 Plug 'google/vim-searchindex'
-" define s as substitution
-Plug 'svermeulen/vim-subversive'
 " Great snippet tool, need backend source
 Plug 'L3MON4D3/LuaSnip', { 'do': 'make install_jsregexp CC=/opt/homebrew/bin/gcc-14' }
 Plug 'saadparwaiz1/cmp_luasnip'
@@ -85,7 +83,7 @@ Plug 'drzel/vim-scrolloff-fraction'
 " statusline
 Plug 'wkcosmology/statusline'
 " show the vertical lines to represent the indent
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 " maximum and restore current window, powerful!!!
 Plug 'szw/vim-maximizer'
 " pretty tab line

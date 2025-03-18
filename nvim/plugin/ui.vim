@@ -12,15 +12,9 @@ set shiftwidth=4
 set laststatus=2
 lua vim.opt.winbar = " "
 " set winbar=%=%m\ %f
-" indetLine config
-let g:indentLine_enabled = 1
-let g:indentLine_color_gui = '#777a54'
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_fileType = ['python', 'c', 'cpp', 'h', 'hpp', 'html', 'css', 'javascript'] " conceallevel related
 " moonfly config
 let g:moonflyTransparent = 1
 let g:moonflyUndercurls = 0
-colorscheme moonfly
 highlight Visual guibg=#4A555A
 " highlight Pmenu for auto completion
 hi Pmenu ctermfg=251 ctermbg=235 guifg=#bab8b8 guibg=#363535
@@ -50,6 +44,9 @@ hi HopNextKey guifg=#fcf908
 hi HopNextKey1 guifg=#0af1f5
 hi HopNextKey2 guifg=#0af1f5
 hi HopUnmatched guifg=#666666
+" leap highlight
+hi LeapLabelPrimary guifg=#fcf908
+hi! link LeapBackdrop Comment
 " sign column and related (ale, gitgutter)
 hi SignColumn guibg=Normal
 " telescope highlight

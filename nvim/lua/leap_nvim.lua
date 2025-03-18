@@ -57,6 +57,7 @@ vim.keymap.set("o", "|", "V<cmd>lua leap_line_start()<cr>")
 
 -- keymapping
 vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
+vim.keymap.set("n", "S", "<cmd>lua leap_line_start()<cr>")
 vim.keymap.set({ "n", "x", "o" }, "gs", "<Plug>(leap-from-window)")
 require("leap").opts.equivalence_classes = { " \t\r\n", "([{", ")]}", "'\"`" }
 require("leap.user").set_repeat_keys("<enter>", "<backspace>")

@@ -15,10 +15,10 @@ inoremap <C-F> <Right>
 " Let Y yank to the line end
 nnoremap Y y$
 xnoremap <leader>p "_dP
-" subversive
-nmap x <plug>(SubversiveSubstitute)
-nmap xx <plug>(SubversiveSubstituteLine)
-nmap X <plug>(SubversiveSubstituteToEndOfLine)
+" subversive: deprecated using register 0
+"nmap x <plug>(SubversiveSubstitute)
+"nmap xx <plug>(SubversiveSubstituteLine)
+"nmap X <plug>(SubversiveSubstituteToEndOfLine)
 " vim-asterisk
 nmap *  <Plug>(asterisk-z*)
 nmap #  <Plug>(asterisk-z#)
@@ -36,10 +36,12 @@ cnoremap <C-e> <End>
 " Clear highlight
 nnoremap <silent> <C-l> :nohlsearch<cr>
 " keymapping for hop
-nmap <silent> <leader>jj :call MyHop('char1')<cr>
-nmap <silent> <leader>jk :call MyHop('char2')<cr>
-nmap <silent> <leader>jw :call MyHop('word')<cr>
-nmap <silent> <leader>jl :call MyHop('line')<cr>
+"nmap <silent> <leader>jj :call MyHop('char1')<cr>
+"nmap <silent> <leader>jk :call MyHop('char2')<cr>
+"nmap <silent> <leader>jw :call MyHop('word')<cr>
+"nmap <silent> <leader>jl :call MyHop('line')<cr>
+nnoremap H ^
+nnoremap L $
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " S-group: fuzzy search
