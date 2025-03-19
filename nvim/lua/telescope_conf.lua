@@ -8,6 +8,7 @@ require("telescope").setup({
   defaults = require("telescope.themes").get_ivy({
     mappings = {
       i = {
+        ["<C-c>"] = actions.close,
         ["<C-q>"] = actions.send_to_qflist,
         -- scroll
         ["<C-n>"] = actions.move_selection_next,
@@ -85,6 +86,13 @@ require("telescope").setup({
   },
 })
 
+require("telescope-toggleterm").setup({
+  telescope_mappings = {
+    ["<C-t>"] = require("telescope-toggleterm").actions.exit_terminal,
+    ["<C-c>"] = actions.close,
+  },
+})
+
 local Telescope = require("telescope")
 Telescope.load_extension("bibtex")
 Telescope.load_extension("octo")
@@ -95,3 +103,4 @@ Telescope.load_extension("neoclip")
 Telescope.load_extension("file_browser")
 Telescope.load_extension("ui-select")
 Telescope.load_extension("fzf_mru")
+Telescope.load_extension("toggleterm")

@@ -10,6 +10,8 @@ alias rm='safe-rm'
 # alias for gcc
 alias gcc='gcc-14'
 alias g++='g++-14'
+# alias ipython
+alias ipython='/Users/wangk/anaconda3/bin/ipython -i ~/.config/ipython/startup.py'
 
 # server related
 alias sgalileo='ssh wangk@202.127.24.125'
@@ -19,8 +21,6 @@ alias svenusx='ssh -X wangk@166.111.131.54'
 alias pvenus='ssh -p 2222 wangk@166.111.30.104'
 alias porion='ssh -p6622 wangk@58.192.69.130'
 alias psirius='ssh -p2222 wangk@166.111.121.192'
-# python
-alias ipython='/Users/wangk/anaconda3/bin/ipython'
 # luamake
 alias luamake=/Users/wangk/MyLibrary/libsource/lua-language-server/3rd/luamake/luamake
 # Rsync

@@ -199,6 +199,7 @@ Plug 'nvim-telescope/telescope-ui-select.nvim'
 Plug 'benfowler/telescope-luasnip.nvim'
 Plug 'tami5/sqlite.lua'
 Plug 'AckslD/nvim-neoclip.lua'
+Plug 'da-moon/telescope-toggleterm.nvim'
 
 call plug#end()
 " end of vim plugins manager:vim-plug------------------------------------------
