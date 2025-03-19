@@ -20,6 +20,7 @@ Plug 'tpope/vim-repeat'
 " lua version of easymotion
 "Plug 'phaazon/hop.nvim'
 Plug 'ggandor/leap.nvim'
+Plug 'folke/flash.nvim'
 " for quick commentary
 " Plug 'numToStr/Comment.nvim'
 " add more text object
