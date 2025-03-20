@@ -220,7 +220,7 @@ augroup my_file_type_map
   autocmd FileType tex nnoremap <buffer> <leader>vv :VimtexView<cr>
   autocmd FileType tex nnoremap <buffer> <leader>vc :VimtexTocOpen<cr>
   autocmd FileType tex nnoremap <buffer> <leader>cc :VimtexClean<cr>
-  autocmd FileType tex nnoremap <silent> <leader>fm gqap:Format<cr>
+  autocmd FileType tex nnoremap <buffer> <leader>fm gqap:Format<cr>
   " autocmd FileType lua nnoremap <buffer> <leader>fm :call LuaFormat()<cr>
   autocmd Filetype markdown,html,typescript,javascript,json,css,yaml nnoremap <buffer> <leader>fm :Prettier<cr>
   autocmd Filetype markdown nmap <C-j> <Plug>(spelunker-jump-next)

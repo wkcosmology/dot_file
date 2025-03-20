@@ -41,7 +41,7 @@ SpaceBeforeAssignmentOperators : true
 SpaceBeforeCpp11BracedList : false
 SpaceBeforeRangeBasedForLoopColon : false
 ColumnLimit : 0
-AccessModifierOffset : -1
+AccessModifierOffset : -2
 AlignEscapedNewlinesLeft : true
 AlignOperands : true
 AlignTrailingComments : true

@@ -14,20 +14,13 @@ require("neo-tree").setup({
   enable_diagnostics = true,
   sort_case_insensitive = false, -- used when sorting files and directories in the tree
   sort_function = nil, -- use a custom function for sorting files and directories in the tree
-  -- sort_function = function (a,b)
-  --       if a.type == b.type then
-  --           return a.path > b.path
-  --       else
-  --           return a.type > b.type
-  --       end
-  --   end , -- this sorts files and directories descendantly
   default_component_configs = {
     container = {
       enable_character_fade = true,
     },
     indent = {
       indent_size = 2,
-      padding = 1, -- extra padding on left hand side
+      padding = 2, -- extra padding on left hand side
       -- indent guides
       with_markers = true,
       indent_marker = "|",
@@ -48,10 +41,10 @@ require("neo-tree").setup({
       default = "*",
       highlight = "NeoTreeFileIcon",
     },
-    -- modified = {
-    --   symbol = "~~",
-    --   highlight = "NeoTreeModified",
-    -- },
+    modified = {
+      symbol = "[+]",
+      highlight = "NeoTreeModified",
+    },
     name = {
       trailing_slash = false,
       use_git_status_colors = true,
@@ -60,21 +53,33 @@ require("neo-tree").setup({
     git_status = {
       symbols = {
         -- Change type
-        added = "", -- or "", but this is redundant info if you use git_status_colors on the name
-        modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
-        deleted = "-",
-        renamed = "~",
+        added = "[+]", -- or "", but this is redundant info if you use git_status_colors on the name
+        modified = "[+]", -- or "", but this is redundant info if you use git_status_colors on the name
+        deleted = "[-]",
+        renamed = "[~]",
         -- Status type
-        untracked = "N",
-        ignored = "*",
-        unstaged = "U",
-        staged = "S",
-        conflict = "X",
+        untracked = "",
+        ignored = "",
+        unstaged = "",
+        staged = "",
+        conflict = "",
+      },
+    },
+    window = {
+      -- position = "float",
+      mappings = {
+        ["A"] = "git_add_all",
+        ["gu"] = "git_unstage_file",
+        ["ga"] = "git_add_file",
+        ["gr"] = "git_revert_file",
+        ["gc"] = "git_commit",
+        ["gp"] = "git_push",
+        ["gg"] = "git_commit_and_push",
       },
     },
   },
   window = {
-    position = "float",
+    -- position = "float",
     width = "fit_content",
     min_width = 40,
     max_width = 60,
@@ -109,7 +114,6 @@ require("neo-tree").setup({
       ["y"] = "copy_to_clipboard",
       ["x"] = "cut_to_clipboard",
       ["p"] = "paste_from_clipboard",
-      ["y"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
       ["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
       ["q"] = "close_window",
       ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = false } },
@@ -176,52 +180,27 @@ require("neo-tree").setup({
       },
     },
   },
-  git_status = {
-    window = {
-      position = "float",
-      mappings = {
-        ["A"] = "git_add_all",
-        ["gu"] = "git_unstage_file",
-        ["ga"] = "git_add_file",
-        ["gr"] = "git_revert_file",
-        ["gc"] = "git_commit",
-        ["gp"] = "git_push",
-        ["gg"] = "git_commit_and_push",
-      },
-    },
+  file_size = {
+    enabled = true,
+    width = 12, -- width of the column
+    required_width = 64, -- min width of window required to show this column
   },
-  diagnostics = {
-    components = {
-      linenr = function(config, node)
-        local lnum = tostring(node.extra.diag_struct.lnum + 1)
-        local pad = string.rep(" ", 4 - #lnum)
-        return {
-          {
-            text = pad .. lnum,
-            highlight = "LineNr",
-          },
-          {
-            text = "▕ ",
-            highlight = "NeoTreeDimText",
-          },
-        }
-      end,
-    },
-    renderers = {
-      file = {
-        { "indent" },
-        { "icon" },
-        { "grouped_path" },
-        { "name", highlight = "NeoTreeFileNameOpened" },
-        { "split_diagnostic_counts", highlight = "NeoTreeDimText" },
-        { "clipboard" },
-      },
-      diagnostic = {
-        { "indent" },
-        { "icon" },
-        { "lnum", min_width = 4, right = { text = "▕ ", highlight = "NeoTreeDimText" } },
-        { "message" },
-      },
-    },
+  type = {
+    enabled = true,
+    width = 10, -- width of the column
+    required_width = 122, -- min width of window required to show this column
+  },
+  last_modified = {
+    enabled = true,
+    width = 20, -- width of the column
+    required_width = 88, -- min width of window required to show this column
+  },
+  created = {
+    enabled = true,
+    width = 20, -- width of the column
+    required_width = 110, -- min width of window required to show this column
+  },
+  symlink_target = {
+    enabled = false,
   },
 })
