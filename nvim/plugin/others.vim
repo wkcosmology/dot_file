@@ -18,6 +18,12 @@ set expandtab
 " set colorcolumn
 set colorcolumn=80
 hi ColorColumn guibg=#47475d
+" textwidth for cpp and hpp
+augroup CppFormatting
+  autocmd!
+  autocmd FileType cpp,hpp,c,h setlocal formatexpr=
+  autocmd FileType cpp,hpp,c,h setlocal textwidth=80
+augroup END
 " set hidden
 set hidden
 " no backup
