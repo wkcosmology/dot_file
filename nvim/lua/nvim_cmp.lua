@@ -55,9 +55,9 @@ cmp.setup({
   experimental = { native_menu = false, ghost_text = false },
   sorting = {
     comparators = {
-      cmp.config.compare.offset,
-      cmp.config.compare.exact,
       cmp.config.compare.score,
+      cmp.config.compare.exact,
+      cmp.config.compare.offset,
       require("cmp-under-comparator").under,
       cmp.config.compare.kind,
       cmp.config.compare.sort_text,
@@ -71,8 +71,9 @@ cmp.setup({
     format = function(entry, vim_item)
       local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
-      kind.menu = "[" .. (string.sub(strings[2], 1, 4) or "") .. "]"
-      kind.kind = ""
+      vim_item.abbr = vim_item.abbr:gsub("•", ""):gsub("^%s+", "")
+      kind.kind = "    [" .. (string.sub(strings[2], 1, 10) or "") .. "]"
+      kind.menu = ""
       return kind
     end,
   },
@@ -100,9 +101,6 @@ local on_attach = function(client, bufnr)
 
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
   local opts = { noremap = true, silent = true }
-  -- buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  -- buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  -- buf_set_keymap("n", "\\r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 end
 
 nvim_lsp["jedi_language_server"].setup({ on_attach = on_attach })
@@ -124,7 +122,7 @@ nvim_lsp["clangd"].setup({
   cmd = {
     "clangd",
     "--clang-tidy",
-    "--compile-commands-dir=/Users/wangk/.config/clang/",
+    "--compile-commands-dir=~/.config/clang/",
     "--background-index",
     "--completion-style=detailed",
     "--all-scopes-completion",

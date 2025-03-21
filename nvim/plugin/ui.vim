@@ -51,9 +51,31 @@ hi! link LeapBackdrop Comment
 hi SignColumn guibg=Normal
 " telescope highlight
 hi TelescopeNormal guifg=Comment
-hi TelescopeSelection guifg=#F08000
-hi TelescopeMatching guifg=#F08000 guibg=Visual
-hi TelescopeBorder guifg=#fffafa
+hi TelescopeSelection guifg=#F08000 guibg=#2d2e2d
+hi TelescopeMatching guifg=#F08000 guibg=none
+hi TelescopeBorder guifg=#c6c6c6 guibg=none
+" cmp floating window
+hi NormalFloat guifg=#c6c6c6 guibg=none
+hi FloatBorder guifg=#73777a guibg=none
+hi CmpItemAbbrMatch guibg=NONE guifg=#F08000
+" gray
+hi CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+" gray white
+hi CmpItemAbbrMatchFuzzy guibg=NONE guifg=#d4d4cf
+hi link CmpItemKindText CmpItemAbbrMatchFuzzy
+" light blue
+hi CmpItemKindFunction guibg=NONE guifg=#9CDCFE
+hi link CmpItemKindMethod CmpItemKindFunction
+hi link CmpItemKindField CmpItemKindFunction
+" blue
+hi CmpItemKindVariable guibg=NONE guifg=#569CD6
+hi link CmpItemKindInterface CmpItemKindVariable
+" front
+hi CmpItemKindKeyword guibg=NONE guifg=#d9d650
+hi link CmpItemKindProperty CmpItemKindKeyword
+hi link CmpItemKindUnit CmpItemKindKeyword
+" snippet
+hi CmpItemKindSnippet guifg=#FF8C00 guibg=None
 " fzf highlight
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],
