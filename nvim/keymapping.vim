@@ -40,6 +40,9 @@ nnoremap <silent> <C-l> :nohlsearch<cr>
 "nmap <silent> <leader>jk :call MyHop('char2')<cr>
 "nmap <silent> <leader>jw :call MyHop('word')<cr>
 "nmap <silent> <leader>jl :call MyHop('line')<cr>
+" keymapping for flash
+nmap s <cmd>lua require("flash").jump()<cr>
+"nmap S <cmd>lua require("flash").jump({ search = { mode = "search", max_length = 0 }, label = { after = { 0, 0 } }, pattern = "^" })<cr>
 nnoremap H ^
 nnoremap L $
 

@@ -11,9 +11,6 @@ require("mason-lspconfig").setup({
   },
 })
 
--- lspconfig
-local nvim_lsp = require("lspconfig")
-
 -- border config
 vim.cmd([[autocmd ColorScheme * highlight NormalFloat guibg=#20282E]])
 vim.cmd([[autocmd ColorScheme * highlight FloatBorder guifg=#73777A guibg=#20282E]])
