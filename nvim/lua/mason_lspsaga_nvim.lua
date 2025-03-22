@@ -58,6 +58,15 @@ require("lsp-colors").setup({
   Hint = "#10B981",
 })
 
+require("lsp_signature").setup({
+  max_width = 80,
+  bind = false,
+  hint_enable = false,
+  close_timeout = 4000,
+  hi_parameter = "LspSignatureActiveParameter",
+  always_trigger = false,
+})
+
 -- lspsaga
 require("lspsaga").setup({
   border_style = "rounded",
@@ -70,8 +79,8 @@ require("lspsaga").setup({
     enable = true,
   },
   scroll_preview = {
-    scroll_down = "<C-f>",
-    scroll_up = "<C-b>",
+    scroll_down = "<C-d>",
+    scroll_up = "<C-u>",
   },
   diagnostic = {
     max_height = 0.8,

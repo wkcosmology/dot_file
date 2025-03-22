@@ -54,6 +54,8 @@ hi TelescopeNormal guifg=Comment
 hi TelescopeSelection guifg=#F08000 guibg=#2d2e2d
 hi TelescopeMatching guifg=#F08000 guibg=none
 hi TelescopeBorder guifg=#c6c6c6 guibg=none
+" lsp signature
+hi LspSignatureActiveParameter guibg=none guifg=#F08000
 " cmp floating window
 hi NormalFloat guifg=#c6c6c6 guibg=none
 hi FloatBorder guifg=#73777a guibg=none

@@ -36,8 +36,8 @@ cmp.setup({
   },
 
   mapping = {
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-d>"] = cmp.mapping.scroll_docs(4),
     ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
@@ -49,7 +49,6 @@ cmp.setup({
     { name = "buffer" },
     { name = "luasnip" },
     { name = "path" },
-    { name = "nvim_lsp_signature_help" },
   },
   preselect = cmp.PreselectMode.None,
   experimental = { native_menu = false, ghost_text = false },
@@ -71,7 +70,7 @@ cmp.setup({
     format = function(entry, vim_item)
       local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
-      vim_item.abbr = vim_item.abbr:gsub("•", ""):gsub("^%s+", "")
+      -- vim_item.abbr = vim_item.abbr:gsub("•", ""):gsub("^%s+", "")
       kind.kind = "    [" .. (string.sub(strings[2], 1, 10) or "") .. "]"
       kind.menu = ""
       return kind
