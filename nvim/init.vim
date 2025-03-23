@@ -8,4 +8,5 @@ endfor
 for file in split(glob('~/.config/nvim/lua/*.lua'), '\n')
   execute 'luafile ' file
 endfor
-colorscheme moonfly
+"colorscheme moonfly
+colorscheme catppuccin-mocha

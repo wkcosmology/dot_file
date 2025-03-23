@@ -5,7 +5,7 @@ M.__index = M
 function M.files(buf_path)
   local opt = {}
 
-  if buf_path == "/Users/wangk" then
+  if buf_path == "~" then
     print("Do not grep in home directory!")
     return nil
   end

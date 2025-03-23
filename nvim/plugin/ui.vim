@@ -35,23 +35,23 @@ let g:scrolloff_fraction = 0.15
 " highligh current line number
 hi! link CursorLineNr Constant
 " tabline highlight
-hi TabLineSel guibg=#191f24 guifg=#51b0ef
-hi TabLine guibg=#191f24 guifg=#757574
+"hi TabLineSel guibg=#191f24 guifg=#51b0ef
+"hi TabLine guibg=#191f24 guifg=#757574
 " treesitter
 hi! TSUnderline guibg=none gui=none
 " highligh hop
-hi HopNextKey guifg=#fcf908
-hi HopNextKey1 guifg=#0af1f5
-hi HopNextKey2 guifg=#0af1f5
-hi HopUnmatched guifg=#666666
+"hi HopNextKey guifg=#fcf908
+"hi HopNextKey1 guifg=#0af1f5
+"hi HopNextKey2 guifg=#0af1f5
+"hi HopUnmatched guifg=#666666
 " leap highlight
-hi LeapLabelPrimary guifg=#fcf908
-hi! link LeapBackdrop Comment
+"hi LeapLabelPrimary guifg=#fcf908
+"hi! link LeapBackdrop Comment
 " flash highligh
-hi FlashMatch guifg=Normal guibg=none
-hi FlashLabel guifg=#fcf908 guibg=none
+"hi FlashMatch guifg=Normal guibg=none
+"hi FlashLabel guifg=#fcf908 guibg=none
 " sign column and related (ale, gitgutter)
-hi SignColumn guibg=Normal
+"hi SignColumn guibg=Normal
 " telescope highlight
 hi TelescopeNormal guifg=#c6c6c6
 hi TelescopeSelection guifg=#F08000 guibg=#2d2e2d
@@ -59,28 +59,6 @@ hi TelescopeMatching guifg=#F08000 guibg=none
 hi TelescopeBorder guifg=#c6c6c6 guibg=none
 " lsp signature
 hi LspSignatureActiveParameter guibg=none guifg=#F08000
-" cmp floating window
-hi NormalFloat guifg=#c6c6c6 guibg=none
-hi FloatBorder guifg=#73777a guibg=none
-hi CmpItemAbbrMatch guibg=NONE guifg=#F08000
-" gray
-hi CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-" gray white
-hi CmpItemAbbrMatchFuzzy guibg=NONE guifg=#d4d4cf
-hi link CmpItemKindText CmpItemAbbrMatchFuzzy
-" light blue
-hi CmpItemKindFunction guibg=NONE guifg=#9CDCFE
-hi link CmpItemKindMethod CmpItemKindFunction
-hi link CmpItemKindField CmpItemKindFunction
-" blue
-hi CmpItemKindVariable guibg=NONE guifg=#569CD6
-hi link CmpItemKindInterface CmpItemKindVariable
-" front
-hi CmpItemKindKeyword guibg=NONE guifg=#d9d650
-hi link CmpItemKindProperty CmpItemKindKeyword
-hi link CmpItemKindUnit CmpItemKindKeyword
-" snippet
-hi CmpItemKindSnippet guifg=#FF8C00 guibg=None
 " fzf highlight
 let g:fzf_colors = {
             \ 'fg':      ['fg', 'Normal'],

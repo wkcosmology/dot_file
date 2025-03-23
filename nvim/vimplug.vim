@@ -79,6 +79,7 @@ Plug 's1n7ax/nvim-window-picker'
 " ---------------------------------------------------------------------------
 " color theme
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'catppuccin/nvim'
 " let the cursor stay away from ceil and bottom
 Plug 'drzel/vim-scrolloff-fraction'
 " statusline
@@ -146,6 +147,9 @@ Plug 'danymat/neogen'
 " ---------------------------------------------------------------------------
 " lsp config
 Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 " cmp related
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -157,7 +161,6 @@ Plug 'lukas-reineke/cmp-under-comparator'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'ray-x/lsp_signature.nvim'
-
 " lsp UI
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'onsails/lspkind-nvim'
@@ -167,9 +170,6 @@ Plug 'mrbjarksen/neo-tree-diagnostics.nvim'
 Plug 'folke/lsp-colors.nvim'
 " formatter
 Plug 'mhartington/formatter.nvim'
-Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
 
 " ---------------------------------------------------------------------------
 " Lua

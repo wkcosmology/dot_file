@@ -1,9 +1,10 @@
 require("barbecue").setup({
+  theme = "catppuccin-mocha",
   show_basename = false,
   show_dirname = false,
-  theme = {
-    normal = { fg = "#c0caf5", bg = "#484848" },
-  },
+  -- theme = {
+  --   normal = { fg = "#c0caf5", bg = "#484848" },
+  -- },
   kinds = {
     File = " ",
     Module = " ",
