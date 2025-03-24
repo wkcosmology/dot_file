@@ -65,8 +65,10 @@ nnoremap <silent> <leader>sw :lua require'telescope_script'.grep_current_string(
 nnoremap <silent> <space>sy  :Telescope neoclip<cr>
 " Symbols
 nnoremap <silent> <space>se  :lua require'telescope.builtin'.symbols{ sources = {'math'} }<cr>
+" Symbols
+nnoremap <silent> <space>sf  <cmd>:Telescope spell_suggest<cr>
 " command history
-nnoremap <silent> <space>cr  :Telescope command_history<cr>
+nnoremap <silent> <space>sr  :Telescope command_history<cr>
 augroup search
   autocmd!
   autocmd FileType c,h,cpp,hpp,python,lua,vim nnoremap <silent> <buffer><silent> <leader>so :Telescope lsp_document_symbols<cr>

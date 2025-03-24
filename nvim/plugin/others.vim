@@ -24,6 +24,10 @@ augroup CppFormatting
   autocmd FileType cpp,hpp,c,h setlocal formatexpr=
   autocmd FileType cpp,hpp,c,h setlocal textwidth=80
 augroup END
+" spell for latex
+augroup CppFormatting
+  autocmd!
+  autocmd FileType tex,markdown setlocal spell spelllang=en_us
 " set hidden
 set hidden
 " no backup

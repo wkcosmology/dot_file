@@ -74,6 +74,11 @@ let g:vimtex_view_skim_activate = 0
 let g:vimtex_view_skim_sync = 1
 let g:vimtex_view_skim_reading_bar = 1
 
+let g:vimtex_grammar_textidote = {
+            \ 'jar': '',
+            \ 'args': '',
+            \}
+
 " (under testing) use zathura
 " let g:vimtex_view_method = 'zathura'
 " let g:vimtex_view_forward_search_on_start = 1

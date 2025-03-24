@@ -61,7 +61,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " fzf vim plugin
 Plug 'junegunn/fzf.vim'
 " git branched
-Plug 'stsewd/fzf-checkout.vim'
+"Plug 'stsewd/fzf-checkout.vim'
 " fzf history
 Plug 'pbogut/fzf-mru.vim'
 
@@ -70,9 +70,9 @@ Plug 'pbogut/fzf-mru.vim'
 " ---------------------------------------------------------------------------
 " kill the buffer while keep the window
 Plug 'moll/vim-bbye'
-Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
+"Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 Plug 'xorid/swap-split.nvim'
-Plug 's1n7ax/nvim-window-picker'
+"Plug 's1n7ax/nvim-window-picker'
 
 " ---------------------------------------------------------------------------
 " ui
@@ -126,11 +126,11 @@ Plug 'akinsho/toggleterm.nvim'
 " add head information
 Plug 'alpertuna/vim-header', { 'on': 'AddHeader'}
 " run the test file, support many filetypes, including python
-Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
+"Plug 'vim-test/vim-test', {'on': ['TestNearest', 'TestFile']}
 " vimtex
 Plug 'lervag/vimtex'
 " spell check
-Plug 'kamykn/spelunker.vim', { 'for': ['tex', 'markdown', 'html', 'json'] }
+"Plug 'kamykn/spelunker.vim', { 'for': ['tex', 'markdown', 'html', 'json'] }
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -159,7 +159,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'lukas-reineke/cmp-under-comparator'
 Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+"Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'ray-x/lsp_signature.nvim'
 " lsp UI
 Plug 'nvim-lua/lsp-status.nvim'
