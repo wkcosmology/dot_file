@@ -154,8 +154,8 @@ augroup close_win
   autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list,fugitiveblame nnoremap <buffer> <C-c> :close<cr>
   autocmd FileType fzf,help,qf,defx,fugitive,list,git,gista-list inoremap <buffer> <C-c> :close<cr>
   autocmd FileType list inoremap <buffer> <C-c> :close<cr>
-  autocmd FileType toggleterm tnoremap <buffer> <C-g> <C-\><C-n>:close<cr>
-  autocmd FileType toggleterm inoremap <buffer> <C-g> <C-\><C-n>:close<cr>
+  autocmd FileType toggleterm tnoremap <buffer> <C-g> <cmd>:close<cr>
+  autocmd FileType toggleterm inoremap <buffer> <C-g> <cmd>:close<cr>
   autocmd FileType toggleterm nnoremap <buffer> <C-g> :close<cr>
   autocmd FileType toggleterm nnoremap <buffer> <C-c> :close<cr>
   autocmd FileType toggleterm nnoremap <buffer> q :close<cr>
