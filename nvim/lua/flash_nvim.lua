@@ -264,6 +264,6 @@ vim.keymap.set("n", "S",
     })
   end
 )
-vim.keymap.set({"n", "x", "o"}, "s", function() require("flash").jump() end)
+vim.keymap.set({"n", "x", "o"}, "s", function() require("flash").jump({label={min_pattern_length=1}}) end)
 vim.keymap.set("o", "r", function() require("flash").remote() end)
 vim.keymap.set("c", "<c-s>", function() require("flash").toggle() end)
