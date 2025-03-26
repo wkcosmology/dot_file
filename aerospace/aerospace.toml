@@ -215,3 +215,7 @@ automatically-unhide-macos-hidden-apps = true
 [[on-window-detected]]
     if.app-id = 'com.google.Chrome'
     run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+    if.app-id = 'com.devon-technologies.think3'
+    run = 'move-node-to-workspace w'
