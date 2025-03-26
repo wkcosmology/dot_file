@@ -156,7 +156,6 @@ augroup close_win
   autocmd FileType toggleterm tnoremap <buffer> <C-g> <cmd>:close<cr>
   autocmd FileType toggleterm inoremap <buffer> <C-g> <cmd>:close<cr>
   autocmd FileType toggleterm nnoremap <buffer> <C-g> :close<cr>
-  autocmd FileType toggleterm nnoremap <buffer> <C-c> :close<cr>
   autocmd FileType toggleterm nnoremap <buffer> q :close<cr>
 augroup END
 

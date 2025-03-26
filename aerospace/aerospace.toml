@@ -9,7 +9,9 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = [
+    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -96,9 +98,14 @@ automatically-unhide-macos-hidden-apps = true
     # end tell'
     # '''
 
+    # disable useless hide feature
+    cmd-h = [] # Disable "hide application"
+    cmd-alt-h = [] # Disable "hide others"
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-rightSquareBracket = 'layout tiles horizontal vertical'
     alt-leftSquareBracket = 'layout accordion horizontal vertical'
+    alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
     alt-h = 'focus left'
@@ -123,24 +130,23 @@ automatically-unhide-macos-hidden-apps = true
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
-    alt-4 = 'workspace 4'
-    alt-5 = 'workspace 5'
     alt-q = 'workspace q'
     alt-w = 'workspace w'
     alt-e = 'workspace e'
-    alt-r = 'workspace r'
-    alt-t = 'workspace t'
+    alt-a = 'workspace a'
+    alt-s = 'workspace s'
+    alt-d = 'workspace d'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
     alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
     alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
-    alt-shift-4 = 'move-node-to-workspace --focus-follows-window 4'
-    alt-shift-5 = 'move-node-to-workspace --focus-follows-window 5'
-    alt-shift-6 = 'move-node-to-workspace --focus-follows-window 6'
-    alt-shift-7 = 'move-node-to-workspace --focus-follows-window 7'
-    alt-shift-8 = 'move-node-to-workspace --focus-follows-window 8'
-    alt-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
+    alt-shift-q = 'move-node-to-workspace --focus-follows-window q'
+    alt-shift-w = 'move-node-to-workspace --focus-follows-window w'
+    alt-shift-e = 'move-node-to-workspace --focus-follows-window e'
+    alt-shift-a = 'move-node-to-workspace --focus-follows-window a'
+    alt-shift-s = 'move-node-to-workspace --focus-follows-window s'
+    alt-shift-d = 'move-node-to-workspace --focus-follows-window d'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -154,13 +160,12 @@ automatically-unhide-macos-hidden-apps = true
     1 = 'main'
     2 = 'main'
     3 = 'main'
-    4 = 'main'
-    5 = 'main'
-    q = 'secondary'
-    w = 'secondary'
-    e = 'secondary'
-    r = 'secondary'
-    t = 'secondary'
+    q = 'main'
+    w = 'main'
+    e = 'main'
+    a = 'secondary'
+    s = 'secondary'
+    d = 'secondary'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -181,3 +186,23 @@ automatically-unhide-macos-hidden-apps = true
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+[[on-window-detected]]
+    if.app-id = 'com.eusoft.eudic'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.kapeli.dashdoc'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'net.kovidgoyal.kitty'
+    run = 'move-node-to-workspace --focus-follows-window 3'
+
+[[on-window-detected]]
+    if.app-id = 'com.jinghaoshe.qspace.pro'
+    run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = 'move-node-to-workspace 2'
