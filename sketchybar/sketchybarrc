@@ -96,8 +96,6 @@ sketchybar --add item clock right \
             background.corner_radius=10 background.height=23 background.border_width=1 \
             --add item battery right \
             --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-            background.border_color=0xffcdd6f4 background.color=0x10cdd6f4 \
-            background.corner_radius=10 background.height=23 background.border_width=1 \
             --subscribe battery system_woke power_source_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
