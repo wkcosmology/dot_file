@@ -6,5 +6,8 @@
 # https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
 
 if [ "$SENDER" = "front_app_switched" ]; then
-  sketchybar --set "$NAME" label="$INFO" icon=" " icon.color=0xfffab387 label.color=0xfffab387
+  sketchybar --set "$NAME" label="$INFO" icon=" " icon.color=0xfffab387 label.color=0xfffab387 \
+        background.border_color=0xfffab387 background.color=0x10fab387 \
+        icon.padding_left=10 label.padding_right=10 \
+        background.corner_radius=10 background.height=23 background.border_width=1
 fi

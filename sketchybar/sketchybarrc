@@ -83,13 +83,22 @@ sketchybar --add item front_app center \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
-           --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
-           --subscribe volume volume_change \
-           # --add item battery right \
-           # --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           # --subscribe battery system_woke power_source_change
+            --set clock update_freq=10 icon=󰃭  script="$PLUGIN_DIR/clock.sh" icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
+            --add item volume right \
+            --set volume script="$PLUGIN_DIR/volume.sh" icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
+            --subscribe volume volume_change \
+            --add item weather right \
+            --set weather icon.color=0xffcdd6f4 label.color=0xffcdd6f4 padding_left=5 padding_right=5 \
+            update_freq=600 \
+            script="$PLUGIN_DIR/weather.sh" \
+            background.drawing=on \
+            background.border_color=0xffcdd6f4 background.color=0x10cdd6f4 \
+            background.corner_radius=10 background.height=23 background.border_width=1 \
+            --add item battery right \
+            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+            background.border_color=0xffcdd6f4 background.color=0x10cdd6f4 \
+            background.corner_radius=10 background.height=23 background.border_width=1 \
+            --subscribe battery system_woke power_source_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
