@@ -22,13 +22,13 @@ sketchybar --bar position=top height=30 blur_radius=30 color=0xff444443
 default=(
   padding_left=0
   padding_right=0
-  icon.font="Hack Nerd Font:Regular:17.0"
-  label.font="Iosevka:Bold:14.0"
+  icon.font="Hack Nerd Font:Regular:16"
+  label.font="Iosevka:SemiBold:13.0"
   icon.color=0xffF08000
   label.color=0xffF08000
-  icon.padding_left=10
-  icon.padding_right=3
-  label.padding_left=3
+  icon.padding_left=5
+  icon.padding_right=2
+  label.padding_left=2
   label.padding_right=10
   label.align=center
 )
@@ -44,12 +44,30 @@ sketchybar --default "${default[@]}"
 # only the properties deviating from the current defaults need to be set
 
 sketchybar --add item chevron left \
-           --set chevron icon="󱓞 " label.drawing=off \
+           --set chevron icon="󱓞 " label.drawing=off icon.color=0xffcba6f7 icon.padding_right=10\
+
+sketchybar --add event aerospace_workspace_change
+
+CUSTOM_ORDER=("QSpace" "Chrome" "Kitty" "Zotero" "DEVONthink" "VSCode" "Preview" )
+
+for sid in "${CUSTOM_ORDER[@]}"; do
+  # Check if workspace exists
+  if aerospace list-workspaces --all | grep -q "$sid"; then
+    sketchybar --add item space.$sid left \
+      --subscribe space.$sid aerospace_workspace_change \
+      --set space.$sid \
+        background.drawing=off \
+        label="$sid" label.color=0xffcba6f7 \
+        icon="○" icon.color=0xffcba6f7 icon.font="Iosevka:SemiBold:13.0" \
+        click_script="aerospace workspace $sid" \
+        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+  fi
+done
 
 ##### Adding Center Items #####
 
 sketchybar --add item front_app center \
-           --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
+           --set front_app icon.drawing=on script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
@@ -65,9 +83,9 @@ sketchybar --add item front_app center \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
+           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
            --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --set volume script="$PLUGIN_DIR/volume.sh" icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
            --subscribe volume volume_change \
            # --add item battery right \
            # --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
@@ -76,20 +94,3 @@ sketchybar --add item clock right \
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
 
-sketchybar --add event aerospace_workspace_change
-
-CUSTOM_ORDER=("1" "2" "3" "q" "w" "e" "a" "s" "d")
-
-for sid in "${CUSTOM_ORDER[@]}"; do
-  # Check if workspace exists
-  if aerospace list-workspaces --all | grep -q "$sid"; then
-    sketchybar --add item space.$sid left \
-      --subscribe space.$sid aerospace_workspace_change \
-      --set space.$sid \
-        background.drawing=off \
-        label="$sid" \
-        icon="○" \
-        click_script="aerospace workspace $sid" \
-        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
-  fi
-done

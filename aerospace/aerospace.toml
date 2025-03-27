@@ -10,7 +10,8 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    'exec-and-forget sketchybar'
+    'exec-and-forget sketchybar',
+    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
 ]
 
 # Notify Sketchybar about workspace change
@@ -108,8 +109,10 @@ automatically-unhide-macos-hidden-apps = true
     cmd-alt-h = [] # Disable "hide others"
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-    alt-rightSquareBracket = 'layout tiles horizontal vertical'
-    alt-leftSquareBracket = 'layout accordion horizontal vertical'
+    alt-leftSquareBracket = 'layout tiles horizontal'
+    alt-rightSquareBracket = 'layout tiles vertical'
+    alt-semicolon = 'layout accordion horizontal'
+    alt-quote = 'layout accordion vertical'
     alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -132,24 +135,24 @@ automatically-unhide-macos-hidden-apps = true
     alt-equal = 'balance-sizes'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace 1'
-    alt-2 = 'workspace 2'
-    alt-3 = 'workspace 3'
-    alt-q = 'workspace q'
-    alt-w = 'workspace w'
-    alt-e = 'workspace e'
-    alt-a = 'workspace a'
+    alt-1 = 'workspace QSpace'
+    alt-2 = 'workspace Chrome'
+    alt-3 = 'workspace Kitty'
+    alt-q = 'workspace Zotero'
+    alt-w = 'workspace DEVONthink'
+    alt-e = 'workspace VSCode'
+    alt-a = 'workspace Preview'
     alt-s = 'workspace s'
     alt-d = 'workspace d'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    alt-shift-1 = 'move-node-to-workspace --focus-follows-window 1'
-    alt-shift-2 = 'move-node-to-workspace --focus-follows-window 2'
-    alt-shift-3 = 'move-node-to-workspace --focus-follows-window 3'
-    alt-shift-q = 'move-node-to-workspace --focus-follows-window q'
-    alt-shift-w = 'move-node-to-workspace --focus-follows-window w'
-    alt-shift-e = 'move-node-to-workspace --focus-follows-window e'
-    alt-shift-a = 'move-node-to-workspace --focus-follows-window a'
+    alt-shift-1 = 'move-node-to-workspace --focus-follows-window QSpace'
+    alt-shift-2 = 'move-node-to-workspace --focus-follows-window Chrome'
+    alt-shift-3 = 'move-node-to-workspace --focus-follows-window Kitty'
+    alt-shift-q = 'move-node-to-workspace --focus-follows-window Zotero'
+    alt-shift-w = 'move-node-to-workspace --focus-follows-window DEVONthink'
+    alt-shift-e = 'move-node-to-workspace --focus-follows-window VSCode'
+    alt-shift-a = 'move-node-to-workspace --focus-follows-window Preview'
     alt-shift-s = 'move-node-to-workspace --focus-follows-window s'
     alt-shift-d = 'move-node-to-workspace --focus-follows-window d'
 
@@ -162,13 +165,13 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-semicolon = 'mode service'
 
 [workspace-to-monitor-force-assignment]
-    1 = 'main'
-    2 = 'main'
-    3 = 'main'
-    q = 'main'
-    w = 'main'
-    e = 'main'
-    a = 'secondary'
+    Finder = 'main'
+    Chrome = 'main'
+    Kitty = 'main'
+    Zotero = 'main'
+    DEVONthink = 'main'
+    VSCode = 'main'
+    Preview = 'secondary'
     s = 'secondary'
     d = 'secondary'
 
@@ -206,16 +209,24 @@ automatically-unhide-macos-hidden-apps = true
 
 [[on-window-detected]]
     if.app-id = 'net.kovidgoyal.kitty'
-    run = 'move-node-to-workspace --focus-follows-window 3'
+    run = 'move-node-to-workspace --focus-follows-window Kitty'
 
 [[on-window-detected]]
     if.app-id = 'com.jinghaoshe.qspace.pro'
-    run = 'move-node-to-workspace 1'
+    run = 'move-node-to-workspace QSpace'
 
 [[on-window-detected]]
     if.app-id = 'com.google.Chrome'
-    run = 'move-node-to-workspace 2'
+    run = 'move-node-to-workspace Chrome'
 
 [[on-window-detected]]
     if.app-id = 'com.devon-technologies.think3'
-    run = 'move-node-to-workspace w'
+    run = 'move-node-to-workspace DEVONthink'
+
+[[on-window-detected]]
+    if.app-id = 'org.zotero.zotero'
+    run = 'move-node-to-workspace Zotero'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Preview'
+    run = 'move-node-to-workspace Preview'
