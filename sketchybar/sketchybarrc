@@ -83,7 +83,7 @@ sketchybar --add item front_app center \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-            --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
+            --set clock update_freq=10 click_script="open -a Calendar" script="$PLUGIN_DIR/clock.sh" \
             --add item volume right \
             --set volume script="$PLUGIN_DIR/volume.sh" \
             --subscribe volume volume_change \
@@ -91,11 +91,11 @@ sketchybar --add item clock right \
             --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
             --subscribe battery system_woke power_source_change \
             --add item cpumem right \
-            --set cpumem update_freq=5 script="$PLUGIN_DIR/cpu_mem.sh" \
+            --set cpumem update_freq=5 click_script="open -a Activity\ Monitor" script="$PLUGIN_DIR/cpu_mem.sh" \
             --add bracket sysinfo cpumem battery volume right\
-            --set sysinfo script="$PLUGIN_DIR/sysinfo.sh" \
+            --set sysinfo  script="$PLUGIN_DIR/sysinfo.sh" \
             --add item weather right \
-            --set weather update_freq=600 script="$PLUGIN_DIR/weather.sh" \
+            --set weather update_freq=600 click_script="open -a Weather" script="$PLUGIN_DIR/weather.sh" \
             --add item inbox right\
             --add item unread right \
             --add bracket mail inbox unread right \

@@ -12,10 +12,13 @@ EOF
 
 sketchybar --set inbox label="${TOTAL}" icon=" " \
     icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
-    icon.padding_left=2
+    icon.padding_left=2\
+    click_script="open -a Mail"
+
 sketchybar --set unread label="${UNREAD}" icon=" " \
     icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
-    icon.padding_left=10
+    icon.padding_left=10\
+    click_script="open -a Mail"
 
 sketchybar --set "$NAME" \
     padding_left=5 padding_right=5 \
