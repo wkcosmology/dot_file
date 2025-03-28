@@ -110,13 +110,14 @@ CITY=$(echo "$CITY" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @
 data=$(curl -s "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$POST")
 condition=$(echo $data | jq -r '.current.condition.code')
 temp=$(echo $data | jq -r '.current.temp_c')
-feelslike=$(echo $data | jq -r '.current.feelslike_f')
 humidity=$(echo $data | jq -r '.current.humidity')
 is_day=$(echo $data | jq -r '.current.is_day')
+name=$(echo $data | jq -r '.location.name')
+tmp_feel=$(echo $data | jq -r '.current.feelslike_c')
 
 [ "$is_day" = "1" ] && icon=$weather_icons_day[$condition] || icon=$weather_icons_night[$condition]
 
-sketchybar -m --set weather  icon="$icon"  label="${temp}°C"\
+sketchybar -m --set weather  icon="$icon"  label="${temp}°C / ${tmp_feel}°C"\
     padding_left=5 padding_right=5 \
     background.drawing=on icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
     background.border_color=0xffcdd6f4 background.color=0x10cdd6f4 \
