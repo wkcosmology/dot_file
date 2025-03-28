@@ -87,6 +87,8 @@ sketchybar --add item clock right \
             --add item volume right \
             --set volume script="$PLUGIN_DIR/volume.sh" icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
             --subscribe volume volume_change \
+            --add item cpumem right \
+            --set cpumem  script="$PLUGIN_DIR/cpu_mem.sh"  update_freq=5  \
             --add item weather right \
             --set weather icon.color=0xffcdd6f4 label.color=0xffcdd6f4 padding_left=5 padding_right=5 \
             update_freq=600 \
