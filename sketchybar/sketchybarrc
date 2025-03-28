@@ -87,15 +87,19 @@ sketchybar --add item clock right \
             --add item volume right \
             --set volume script="$PLUGIN_DIR/volume.sh" \
             --subscribe volume volume_change \
-            --add item cpumem right \
-            --set cpumem update_freq=5 script="$PLUGIN_DIR/cpu_mem.sh" \
-            --add item weather right \
-            --set weather update_freq=600 script="$PLUGIN_DIR/weather.sh" \
-            --add item mail right \
-            --set mail update_freq=300 script="$PLUGIN_DIR/mail.sh" \
             --add item battery right \
             --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-            --subscribe battery system_woke power_source_change
+            --subscribe battery system_woke power_source_change \
+            --add item cpumem right \
+            --set cpumem update_freq=5 script="$PLUGIN_DIR/cpu_mem.sh" \
+            --add bracket sysinfo cpumem battery volume right\
+            --set sysinfo script="$PLUGIN_DIR/sysinfo.sh" \
+            --add item weather right \
+            --set weather update_freq=600 script="$PLUGIN_DIR/weather.sh" \
+            --add item inbox right\
+            --add item unread right \
+            --add bracket mail inbox unread right \
+            --set mail update_freq=300 script="$PLUGIN_DIR/mail.sh" \
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

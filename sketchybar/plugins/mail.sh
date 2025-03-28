@@ -10,9 +10,15 @@ end tell
 EOF
 )
 
+sketchybar --set inbox label="${TOTAL}" icon=" " \
+    icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
+    icon.padding_left=2
+sketchybar --set unread label="${UNREAD}" icon=" " \
+    icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
+    icon.padding_left=10
+
 sketchybar --set "$NAME" \
-    label="${UNREAD}:${TOTAL}"  icon=" " \
     padding_left=5 padding_right=5 \
     background.drawing=on icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
     background.border_color=0xffcdd6f4 background.color=0x10cdd6f4 \
-    background.corner_radius=10 background.height=23 background.border_width=1 \
+    background.corner_radius=10 background.height=23 background.border_width=1
