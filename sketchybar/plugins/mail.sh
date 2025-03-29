@@ -10,18 +10,25 @@ end tell
 EOF
 )
 
-sketchybar --set inbox label="${TOTAL}" icon=" " \
-    icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
-    icon.padding_left=2\
-    click_script="open -a Mail"
+if [ "${UNREAD}" -eq 0 ]; then
+    sketchybar --set unread drawing=off
+else
+    sketchybar --set unread label="${UNREAD}" icon=" " \
+        icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
+        label.padding_right=2 icon.padding_left=10\
+        click_script="open -a Mail"
+fi
 
-sketchybar --set unread label="${UNREAD}" icon=" " \
-    icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
-    icon.padding_left=10\
-    click_script="open -a Mail"
+if [ "${TOTAL}" -eq 0 ]; then
+    sketchybar --set inbox drawing=off
+else
+    sketchybar --set inbox label="${TOTAL}" icon=" " \
+        icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
+        icon.padding_left=8\
+        click_script="open -a Mail"
+fi
 
 sketchybar --set "$NAME" \
-    padding_left=5 padding_right=5 \
     background.drawing=on icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
     background.border_color=0xffcdd6f4 background.color=0x10cdd6f4 \
-    background.corner_radius=10 background.height=23 background.border_width=1
+    background.corner_radius=10 background.height=23 background.border_width=1 \
