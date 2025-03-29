@@ -99,7 +99,7 @@ sketchybar --add item clock right \
             --add item inbox right\
             --add item unread right \
             --add bracket mail inbox unread right \
-            --set mail script="$PLUGIN_DIR/mail.sh" \
+            --set mail update_freq=300 script="$PLUGIN_DIR/mail.sh" \
             --subscribe mail \
                 system_woke \
                 com.apple.notificationcenter.didDeliverNotification \
