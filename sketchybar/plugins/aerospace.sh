@@ -12,6 +12,6 @@ if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
         background.corner_radius=10 background.height=23 background.border_width=1
 else
     sketchybar --set $NAME label="$1" icon="○" \
-        label.color=0x8fcba6f7 icon.color=0x8fcba6f7 \
+        label.color=0xdfcba6f7 icon.color=0x8fcba6f7 \
         background.drawing=off
 fi
