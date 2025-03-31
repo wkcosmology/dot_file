@@ -98,13 +98,10 @@ sketchybar --add item clock right \
             --set weather update_freq=600 click_script="open -a Weather" script="$PLUGIN_DIR/weather.sh" \
             --add item inbox right\
             --add item unread right \
+            --set inbox update_freq=300 script="$PLUGIN_DIR/mail.inbox.sh" \
+            --set unread update_freq=300 script="$PLUGIN_DIR/mail.inbox.sh" \
             --add bracket mail inbox unread right \
-            --set mail update_freq=300 script="$PLUGIN_DIR/mail.sh" \
-            --subscribe mail \
-                system_woke \
-                com.apple.notificationcenter.didDeliverNotification \
-                com.apple.Mail.MessageStoreChanged \
-                com.apple.mail.newmail \
+            --set mail update_freq=3 script="$PLUGIN_DIR/mail.sh"
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
