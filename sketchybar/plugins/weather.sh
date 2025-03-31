@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 API_KEY="b0eea4855e0c4d83815150057252703"
-ip_data=$(curl -s "https://ipinfo.io/json")
+ip_data=$(curl -s "ifconfig.co/json")
 CITY=$(echo $ip_data | jq -r '.city')
 POST=$(echo $ip_data | jq -r '.post')
 
