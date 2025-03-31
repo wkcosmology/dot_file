@@ -1,7 +1,9 @@
 #!/bin/zsh
 
-API_KEY="b0eea4855e0c4d83815150057252703" # insert api key here
-POST="dh13le" # insert city here
+API_KEY="b0eea4855e0c4d83815150057252703"
+ip_data=$(curl -s "https://ipinfo.io/json")
+CITY=$(echo $ip_data | jq -r '.city')
+POST=$(echo $ip_data | jq -r '.post')
 
 # first comment is description, second is icon number
 weather_icons_day=(
@@ -106,7 +108,6 @@ weather_icons_night=(
     [1282]=  # Moderate or heavy snow with thunder/395
 )
 
-CITY=$(echo "$CITY" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3- || true)
 data=$(curl -s "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$POST")
 condition=$(echo $data | jq -r '.current.condition.code')
 temp=$(echo $data | jq -r '.current.temp_c')
@@ -117,7 +118,7 @@ tmp_feel=$(echo $data | jq -r '.current.feelslike_c')
 
 [ "$is_day" = "1" ] && icon=$weather_icons_day[$condition] || icon=$weather_icons_night[$condition]
 
-sketchybar -m --set weather  icon="$icon"  label="${temp}°C / ${tmp_feel}°C"\
+sketchybar -m --set weather  icon="$icon"  label="${temp}°C / ${tmp_feel}°C ${CITY}"\
     padding_left=5 padding_right=5 \
     background.drawing=on icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
     background.border_color=0xffcdd6f4 background.color=0x10cdd6f4 \
