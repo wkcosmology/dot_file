@@ -244,6 +244,10 @@ automatically-unhide-macos-hidden-apps = true
     if.app-id = 'com.apple.mail'
     run = 'move-node-to-workspace QSpace'
 
+[[on-window-detected]]
+    if.app-id = 'com.tencent.xinWeChat'
+    run = 'move-node-to-workspace QSpace'
+
 # Chrome windows
 
 [[on-window-detected]]
