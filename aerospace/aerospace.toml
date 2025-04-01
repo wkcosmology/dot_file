@@ -195,13 +195,12 @@ automatically-unhide-macos-hidden-apps = true
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
 
+
+# Floating windows
+
 [[on-window-detected]]
     if.app-id = 'com.eusoft.eudic'
     run = 'layout floating'
-
-# [[on-window-detected]]
-#     if.app-id = 'com.apple.mail'
-#     run = 'layout floating'
 
 [[on-window-detected]]
     if.app-id = 'com.kapeli.dashdoc'
@@ -227,26 +226,54 @@ automatically-unhide-macos-hidden-apps = true
     if.app-id = 'com.apple.weather'
     run = 'layout floating'
 
-[[on-window-detected]]
-    if.app-id = 'net.kovidgoyal.kitty'
-    run = 'move-node-to-workspace --focus-follows-window Kitty'
+# QSpace windows
 
 [[on-window-detected]]
     if.app-id = 'com.jinghaoshe.qspace.pro'
     run = 'move-node-to-workspace QSpace'
 
 [[on-window-detected]]
+    if.app-id = 'com.omnigroup.OmniFocus4'
+    run = 'move-node-to-workspace QSpace'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Notes'
+    run = 'move-node-to-workspace QSpace'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.mail'
+    run = 'move-node-to-workspace QSpace'
+
+# Chrome windows
+
+[[on-window-detected]]
     if.app-id = 'com.google.Chrome'
     run = 'move-node-to-workspace Chrome'
 
+# Kitty windows
+[[on-window-detected]]
+    if.app-id = 'net.kovidgoyal.kitty'
+    run = 'move-node-to-workspace --focus-follows-window Kitty'
+
+# DEVONthink windows
 [[on-window-detected]]
     if.app-id = 'com.devon-technologies.think3'
     run = 'move-node-to-workspace DEVONthink'
 
+# Zotero windows
 [[on-window-detected]]
     if.app-id = 'org.zotero.zotero'
     run = 'move-node-to-workspace Zotero'
 
+# Preview windows
 [[on-window-detected]]
     if.app-id = 'com.apple.Preview'
+    run = 'move-node-to-workspace Preview'
+
+[[on-window-detected]]
+    if.app-id = 'net.sourceforge.skim-app.skim'
+    run = 'move-node-to-workspace Preview'
+
+[[on-window-detected]]
+    if.app-id = 'com.readdle.PDFExpert-Mac'
     run = 'move-node-to-workspace Preview'
