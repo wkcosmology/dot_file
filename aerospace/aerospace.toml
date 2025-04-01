@@ -210,9 +210,9 @@ automatically-unhide-macos-hidden-apps = true
     if.app-id = 'com.netease.163music'
     run = 'layout floating'
 
-[[on-window-detected]]
-    if.app-id = 'com.tencent.xinWeChat'
-    run = 'layout floating'
+# [[on-window-detected]]
+#     if.app-id = 'com.tencent.xinWeChat'
+#     run = 'layout floating'
 
 [[on-window-detected]]
     if.app-id = 'com.apple.iCal'
