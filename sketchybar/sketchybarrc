@@ -99,8 +99,10 @@ sketchybar --add item clock right \
             --set weather update_freq=600 click_script="open -a Weather" script="$PLUGIN_DIR/weather.sh" \
             --add item inbox right\
             --add item unread right \
-            --set inbox update_freq=300 script="$PLUGIN_DIR/mail.inbox.sh" \
-            --set unread update_freq=300 script="$PLUGIN_DIR/mail.inbox.sh" \
+            --set inbox script="$PLUGIN_DIR/mail.inbox.sh" \
+            --subscribe inbox front_app_switched \
+            --set unread script="$PLUGIN_DIR/mail.inbox.sh" \
+            --subscribe unread front_app_switched \
             --add bracket mail inbox unread right \
             --set mail update_freq=3 script="$PLUGIN_DIR/mail.sh"
 
