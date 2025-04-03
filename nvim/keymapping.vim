@@ -46,6 +46,8 @@ nmap gV `[v`]
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " S-group: fuzzy search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fuzzy search bibtex
+nnoremap <silent> <leader>sb :Telescope bibtex<cr>
 " fuzzy searching command
 nnoremap <silent> <leader>s: :Telescope commands<cr>
 " fuzzy search snippet

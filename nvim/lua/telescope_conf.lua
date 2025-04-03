@@ -3,6 +3,7 @@ local action_state = require("telescope.actions.state")
 local utils = require("telescope.utils")
 local pickers = require("telescope.pickers")
 local telescope_script = require("telescope_script")
+local bibtex_actions = require("telescope-bibtex.actions")
 
 require("telescope").setup({
   defaults = require("telescope.themes").get_ivy({
@@ -83,6 +84,19 @@ require("telescope").setup({
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
     },
+    bibtex = {
+      global_files = { "~/.zotero_library.bib" },
+      mappings = {
+        i = {
+          ["<CR>"] = function(prompt_bufnr)
+            local entry = action_state.get_selected_entry().id.content
+            actions.close(prompt_bufnr)
+            table.insert(entry, "")
+            vim.fn.setreg('', entry)
+          end,
+        },
+      },
+    },
   },
 })
 
@@ -104,3 +118,4 @@ Telescope.load_extension("file_browser")
 Telescope.load_extension("ui-select")
 Telescope.load_extension("fzf_mru")
 Telescope.load_extension("toggleterm")
+Telescope.load_extension("bibtex")
