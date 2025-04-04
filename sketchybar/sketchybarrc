@@ -104,7 +104,7 @@ sketchybar --add item clock right \
             --set unread script="$PLUGIN_DIR/mail.inbox.sh" \
             --subscribe unread front_app_switched \
             --add bracket mail inbox unread right \
-            --set mail update_freq=3 script="$PLUGIN_DIR/mail.sh"
+            --set mail script="$PLUGIN_DIR/mail.sh"
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
