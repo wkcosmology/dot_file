@@ -13,7 +13,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 # sketchybar --bar position=top height=30 blur_radius=30 color=0xff444443
-sketchybar --bar position=top height=30 blur_radius=30 color=0xff000000
+sketchybar --bar position=top height=35 blur_radius=30 color=0xff000000
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
