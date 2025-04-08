@@ -34,12 +34,7 @@ cnoremap <C-k> <Up>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 " Clear highlight
-nnoremap <silent> <C-l> :nohlsearch<cr>
-" keymapping for hop
-"nmap <silent> <leader>jj :call MyHop('char1')<cr>
-"nmap <silent> <leader>jk :call MyHop('char2')<cr>
-"nmap <silent> <leader>jw :call MyHop('word')<cr>
-"nmap <silent> <leader>jl :call MyHop('line')<cr>
+nnoremap <C-l> :nohlsearch<cr>
 " select last paste area
 nmap gV `[v`]
 
@@ -74,9 +69,9 @@ nnoremap <leader>sc :Telescope aerial<cr>
 nnoremap <leader>cm :delmarks!<cr>
 augroup search
   autocmd!
-  autocmd FileType c,h,cpp,hpp,python,lua,vim nnoremap <silent> <buffer><silent> <leader>so :Telescope lsp_document_symbols<cr>
-  autocmd FileType tex nnoremap <silent> <buffer><silent><leader>so :FZFTexToc<cr>
-  autocmd FileType tex nnoremap <silent> <buffer><silent><leader>sb :Telescope bibtex<cr>
+  autocmd FileType c,h,cpp,hpp,python,lua,vim nnoremap <buffer> <leader>so :Telescope lsp_document_symbols<cr>
+  autocmd FileType tex nnoremap <buffer><silent><leader>so :FZFTexToc<cr>
+  autocmd FileType tex nnoremap <buffer><silent><leader>sb :Telescope bibtex<cr>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -134,7 +129,7 @@ nnoremap cd :call <SID>CdPwd()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " toggle zoom
 let g:maximizer_set_default_mapping = 0
-nnoremap <silent><C-w>m :MaximizerToggle<cr>
+nnoremap <C-w>m :MaximizerToggle<cr>
 " choose the window
 for i in [1, 2, 3, 4, 5, 6]
   execute 'nnoremap <leader>'.i.' '.i.'<C-w>w'
@@ -178,12 +173,12 @@ vnoremap <leader>xx "+y
 " Diagnostic key mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " clear all the diagnostic 
-nmap <silent> <leader>ed :lua vim.diagnostic.disable()<cr>
-nmap <silent> <leader>ec :lua vim.diagnostic.hide()<cr>
-nmap <silent> <leader>et :Neotree diagnostics reveal bottom<cr>
+nmap <leader>ed :lua vim.diagnostic.disable()<cr>
+nmap <leader>ec :lua vim.diagnostic.hide()<cr>
+nmap <leader>et :Neotree diagnostics reveal bottom<cr>
 augroup FormatFiletype
   autocmd!
-  autocmd BufEnter * nnoremap <silent> == :Format<cr>
+  autocmd BufEnter * nnoremap gj :Format<cr>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -203,7 +198,7 @@ augroup my_file_type_map
   autocmd FileType tex nnoremap <buffer> <leader>vv :VimtexView<cr>
   autocmd FileType tex nnoremap <buffer> <leader>vc :VimtexTocOpen<cr>
   autocmd FileType tex nnoremap <buffer> <leader>cc :VimtexClean<cr>
-  autocmd FileType tex nnoremap <buffer> == gqap:Format<cr>
+  autocmd FileType tex nnoremap <buffer> gj gqap:Format<cr>
   autocmd Filetype markdown,html,typescript,javascript,json,css,yaml nnoremap <buffer> <leader>fm :Prettier<cr>
   autocmd Filetype markdown nmap <C-j> <Plug>(spelunker-jump-next)
   autocmd Filetype markdown nmap <C-k> <Plug>(spelunker-jump-prev)
