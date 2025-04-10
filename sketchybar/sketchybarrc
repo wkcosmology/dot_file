@@ -98,18 +98,15 @@ sketchybar --add item clock right \
             --add item weather right \
             --set weather update_freq=600 click_script="open -a Weather" script="$PLUGIN_DIR/weather.sh" \
             --add item inbox right\
-            --add item unread right \
             --set inbox script="$PLUGIN_DIR/mail.inbox.sh" \
             --subscribe inbox front_app_switched \
-            --set unread script="$PLUGIN_DIR/mail.inbox.sh" \
-            --subscribe unread front_app_switched \
-            --add bracket mail inbox unread right \
+            --add bracket mail inbox right \
             --set mail script="$PLUGIN_DIR/mail.sh" \
             --add item take_a_break left \
             --set take_a_break label="WORK~" icon="󰍹 "\
                       script="$PLUGIN_DIR/take_a_break.sh" \
-                      update_freq=1200 \
-                      click_script="$PLUGIN_DIR/take_a_break_click.sh" \
+                      click_script="$PLUGIN_DIR/take_a_break.sh" \
+            --subscribe take_a_break system_woke
 
 
 ##### Force all scripts to run the first time (never do this in a script) #####
