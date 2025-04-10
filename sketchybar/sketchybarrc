@@ -104,10 +104,9 @@ sketchybar --add item clock right \
             --set unread script="$PLUGIN_DIR/mail.inbox.sh" \
             --subscribe unread front_app_switched \
             --add bracket mail inbox unread right \
-            --set mail script="$PLUGIN_DIR/mail.sh"
-
-sketchybar --add item take_a_break right \
-           --set take_a_break label="WORK~" icon="󰍹 "\
+            --set mail script="$PLUGIN_DIR/mail.sh" \
+            --add item take_a_break left \
+            --set take_a_break label="WORK~" icon="󰍹 "\
                       script="$PLUGIN_DIR/take_a_break.sh" \
                       update_freq=1200 \
                       click_script="$PLUGIN_DIR/take_a_break_click.sh" \
