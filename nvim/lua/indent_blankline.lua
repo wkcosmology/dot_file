@@ -5,7 +5,7 @@ end)
 
 require("ibl").setup({
   debounce = 100,
-  indent = { char = "▍", highlight = { "IndentLine" } },
+  indent = { char = "│", highlight = { "IndentLine" } },
   whitespace = { remove_blankline_trail = false },
   scope = { show_start = false, show_end = false },
 })
