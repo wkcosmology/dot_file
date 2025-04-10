@@ -106,6 +106,13 @@ sketchybar --add item clock right \
             --add bracket mail inbox unread right \
             --set mail script="$PLUGIN_DIR/mail.sh"
 
+sketchybar --add item take_a_break right \
+           --set take_a_break label="WORK~" icon="󰍹 "\
+                      script="$PLUGIN_DIR/take_a_break.sh" \
+                      update_freq=1200 \
+                      click_script="$PLUGIN_DIR/take_a_break_click.sh" \
+
+
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
 
