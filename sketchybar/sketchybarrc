@@ -103,7 +103,7 @@ sketchybar --add item clock right \
             --add bracket mail inbox right \
             --set mail script="$PLUGIN_DIR/mail.sh" \
             --add item take_a_break left \
-            --set take_a_break label="WORK~" icon="󰍹 "\
+            --set take_a_break \
                       script="$PLUGIN_DIR/take_a_break.sh" \
                       click_script="$PLUGIN_DIR/take_a_break.sh" \
             --subscribe take_a_break system_woke
