@@ -30,7 +30,7 @@ default=(
   icon.padding_left=5
   icon.padding_right=2
   label.padding_left=2
-  label.padding_right=5
+  label.padding_right=10
   label.align=center
 )
 sketchybar --default "${default[@]}"
@@ -59,6 +59,7 @@ for sid in "${CUSTOM_ORDER[@]}"; do
       --set space.$sid \
         background.drawing=off \
         label="$sid" label.color=0xffcba6f7 \
+        label.padding_right=5 \
         icon="○" icon.color=0xffcba6f7 icon.font="Iosevka:SemiBold:13.0" \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
@@ -101,7 +102,7 @@ sketchybar --add item clock right \
             --set inbox script="$PLUGIN_DIR/mail.inbox.sh" \
             --subscribe inbox front_app_switched \
             --add bracket mail inbox right \
-            --set mail script="$PLUGIN_DIR/mail.sh" \
+            --set mail script="$PLUGIN_DIR/mail.sh" align=center\
             --add item take_a_break left \
             --set take_a_break \
                       script="$PLUGIN_DIR/take_a_break.sh" \
