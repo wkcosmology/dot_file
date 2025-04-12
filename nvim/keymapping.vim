@@ -8,17 +8,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set  the leader to space
 let mapleader=' '
-" use Esc to exit terminal
+" use Esc and C-[ to swith from insert mode to normal mode in terminal
 tnoremap <Esc> <C-\><C-n><cr>
-inoremap <C-B> <Left>
-inoremap <C-F> <Right>
 " Let Y yank to the line end
 nnoremap Y y$
 xnoremap <leader>p "_dP
-" subversive: deprecated using register 0
-"nmap x <plug>(SubversiveSubstitute)
-"nmap xx <plug>(SubversiveSubstituteLine)
-"nmap X <plug>(SubversiveSubstituteToEndOfLine)
 " vim-asterisk
 nmap *  <Plug>(asterisk-z*)
 nmap #  <Plug>(asterisk-z#)
@@ -26,17 +20,18 @@ nmap g* <Plug>(asterisk-gz*)
 nmap g# <Plug>(asterisk-gz#)
 let g:asterisk#keeppos = 1
 " alias to left and right in insert mode
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 cnoremap <C-c> <C-c>
-" cnoremap <C-j> <Down>
-cnoremap <C-k> <Up>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
 " Clear highlight
 nnoremap <C-l> :nohlsearch<cr>
 " select last paste area
 nmap gV `[v`]
+" open another terminal
+autocmd TermEnter term://*toggleterm#*
+      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " S-group: fuzzy search
@@ -65,6 +60,8 @@ nnoremap <space>s:  :Telescope command_history<cr>
 nnoremap <leader>sm :Telescope marks<cr>
 " symbols
 nnoremap <leader>sc :Telescope aerial<cr>
+" terminal
+nnoremap <leader>st :Telescope toggleterm<cr>
 " delete marks
 nnoremap <leader>cm :delmarks!<cr>
 augroup search
