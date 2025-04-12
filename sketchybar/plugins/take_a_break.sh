@@ -2,7 +2,7 @@
 
 (
 
-for i in {20..0}
+for i in {20..1}
     do
         if [ $i -eq 20 ] || [ $(sketchybar --query take_a_break | grep -Eo 'WORK [0-9]+ mins' | grep -Eo '[0-9]+') -le $((i + 1)) ]
         then
