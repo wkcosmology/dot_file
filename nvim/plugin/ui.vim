@@ -44,14 +44,6 @@ hi! TSUnderline guibg=none gui=none
 "hi HopNextKey1 guifg=#0af1f5
 "hi HopNextKey2 guifg=#0af1f5
 "hi HopUnmatched guifg=#666666
-" leap highlight
-"hi LeapLabelPrimary guifg=#fcf908
-"hi! link LeapBackdrop Comment
-" flash highligh
-"hi FlashMatch guifg=Normal guibg=none
-"hi FlashLabel guifg=#fcf908 guibg=none
-" sign column and related (ale, gitgutter)
-"hi SignColumn guibg=Normal
 " telescope highlight
 hi TelescopeNormal guifg=#c6c6c6
 hi TelescopeSelection guifg=#F08000 guibg=#2d2e2d

@@ -10,8 +10,7 @@ require("toggleterm").setup({
   open_mapping = [[<c-\>]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_filetypes = {},
-  shade_terminals = true,
-  shading_factor = "1", -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+  shade_terminals = false,
   start_in_insert = true,
   insert_mappings = false, -- whether or not the open mapping applies in insert mode
   terminal_mapping = false,
@@ -24,9 +23,14 @@ require("toggleterm").setup({
     border = "single",
     width = math.floor(vim.o.columns * 0.8),
     height = math.floor(vim.o.lines * 0.7),
-    winblend = 0,
-    title_pos = "left",
-    highlights = { border = "Label", background = "Label" },
+    winblend = 30,
+    title_pos = "center",
+  },
+  highlights = {
+    FloatBorder = {
+      guifg = "#c6c6c6",
+      guibg = "none",
+    },
   },
 })
 
