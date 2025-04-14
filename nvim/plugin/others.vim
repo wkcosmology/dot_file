@@ -21,13 +21,14 @@ hi ColorColumn guibg=#47475d
 " textwidth for cpp and hpp
 augroup CppFormatting
   autocmd!
-  autocmd FileType cpp,hpp,c,h setlocal formatexpr=
-  autocmd FileType cpp,hpp,c,h setlocal textwidth=80
+  autocmd BufEnter *.cpp,*.hpp,*.c,*.h setlocal formatexpr=<cr>
+  autocmd BufEnter *.cpp,*.hpp,*.c,*.h setlocal textwidth=80
 augroup END
 " spell for latex
-augroup CppFormatting
+augroup Spelling
   autocmd!
   autocmd FileType tex,markdown setlocal spell spelllang=en_us
+augroup END
 " set hidden
 set hidden
 " no backup
