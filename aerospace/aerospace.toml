@@ -213,9 +213,9 @@ automatically-unhide-macos-hidden-apps = true
 #     if.app-id = 'com.tencent.xinWeChat'
 #     run = 'layout floating'
 
-[[on-window-detected]]
-    if.app-id = 'com.apple.iCal'
-    run = 'layout floating'
+# [[on-window-detected]]
+#     if.app-id = 'com.apple.iCal'
+#     run = 'layout floating'
 
 [[on-window-detected]]
     if.app-id = 'com.apple.ActivityMonitor'
