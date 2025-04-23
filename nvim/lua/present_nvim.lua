@@ -1,0 +1,2 @@
+require("present").setup {
+}

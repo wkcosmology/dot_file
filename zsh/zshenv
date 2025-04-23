@@ -86,7 +86,7 @@ export SPS_HOME=/Users/wangk/MyLibrary/libsource/fsps/
 # toml++
 export CPLUS_INCLUDE_PATH=$MYLIB_PATH/package/tomlplusplus/include/:$CPLUS_INCLUDE_PATH
 # galform
-export CPLUS_INCLUDE_PATH=/Users/wangk/Project/galformpp/galformpp/include/:$CPLUS_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/Users/wangk/Project/galformpp/galformpp_code/include/:$CPLUS_INCLUDE_PATH
 export CPLUS_INCLUDE_PATH=/Users/wangk/Project/shark/include:$CPLUS_INCLUDE_PATH
 
 

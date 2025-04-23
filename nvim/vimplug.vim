@@ -141,6 +141,8 @@ Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v2.x' }
 Plug 'karb94/neoscroll.nvim'
 " generating document
 Plug 'danymat/neogen'
+" presentation
+Plug 'tjdevries/present.nvim'
 
 " ---------------------------------------------------------------------------
 " Lsp and related
