@@ -1,11 +1,11 @@
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
-        disable = { "tex", "cpp", "lua", "vim"}
+        disable = { "latex", "lua", "vim"}
     },
     indent = {
         enable = false,
-        disable = { "tex" }
+        disable = { "latex" }
     },
     textobjects = {
         select = {
