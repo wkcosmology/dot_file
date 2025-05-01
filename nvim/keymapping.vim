@@ -114,16 +114,16 @@ nnoremap cd :call <SID>CdPwd()<cr>
 " <C-t>-group: tabs
 " Tab is deprecated
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"nmap <C-t> <Nop>
-"nmap <C-t>n :TabooOpen 
-"nmap <C-t>r :TabooRename 
-"nmap <C-t>c :tabclose<cr>
-"nmap <C-t>] :tabnext<cr>
-"nmap <C-t>[ :tabprevious<cr>
+nmap <C-t> <Nop>
+nmap <C-t>n :TabooOpen 
+nmap <C-t>r :TabooRename 
+nmap <C-t>c :tabclose<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " window related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" windowshift
+nnoremap <C-w>e <cmd>SwapSplit<CR>
 " toggle zoom
 let g:maximizer_set_default_mapping = 0
 nnoremap <C-w>m :MaximizerToggle<cr>
