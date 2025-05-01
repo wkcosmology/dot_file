@@ -77,3 +77,5 @@ let g:session_autosave='no'
 let g:session_autoload='no'
 set listchars+=eol:↲
 set list
+" junegunn/vim-easy-align
+xmap ga <Plug>(EasyAlign)
