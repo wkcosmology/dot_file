@@ -39,11 +39,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   -- signs = { vim.diagnostic.severity = "Warning" },
   update_in_insert = false,
 })
-local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.diagnostic.config(hl, { text = icon, texthl = hl })
-end
 -- If we want to disable the diagnostic
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 
