@@ -195,7 +195,6 @@ augroup my_file_type_map
   autocmd FileType tex nnoremap <buffer> <leader>vv :VimtexView<cr>
   autocmd FileType tex nnoremap <buffer> <leader>vc :VimtexTocOpen<cr>
   autocmd FileType tex nnoremap <buffer> <leader>cc :VimtexClean<cr>
-  autocmd FileType tex nnoremap <buffer> gj gqap:Format<cr>
   autocmd Filetype markdown,html,typescript,javascript,json,css,yaml nnoremap <buffer> <leader>fm :Prettier<cr>
   autocmd Filetype markdown nmap <C-j> <Plug>(spelunker-jump-next)
   autocmd Filetype markdown nmap <C-k> <Plug>(spelunker-jump-prev)
