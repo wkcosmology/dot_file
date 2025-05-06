@@ -60,8 +60,6 @@ Plug 'tpope/vim-abolish'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " fzf vim plugin
 Plug 'junegunn/fzf.vim'
-" git branched
-"Plug 'stsewd/fzf-checkout.vim'
 " fzf history
 Plug 'pbogut/fzf-mru.vim'
 
@@ -70,9 +68,8 @@ Plug 'pbogut/fzf-mru.vim'
 " ---------------------------------------------------------------------------
 " kill the buffer while keep the window
 Plug 'moll/vim-bbye'
-"Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
+" swap and split window
 Plug 'xorid/swap-split.nvim'
-"Plug 's1n7ax/nvim-window-picker'
 
 " ---------------------------------------------------------------------------
 " ui

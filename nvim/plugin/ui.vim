@@ -18,9 +18,6 @@ let g:moonflyUndercurls = 0
 highlight Visual guibg=#4A555A
 " highlight Pmenu for auto completion
 hi Pmenu ctermfg=251 ctermbg=235 guifg=#bab8b8 guibg=#363535
-" Shougo/echodoc
-let g:echodoc_enable_at_startup = 1
-let g:echodoc#type = 'signature'
 " taboo
 set sessionoptions+=tabpages,globals 
 let g:taboo_tab_format=" \uf02b  %N. [Default%m] "
@@ -34,16 +31,10 @@ let g:undotree_ShortIndicators = 1
 let g:scrolloff_fraction = 0.15
 " highligh current line number
 hi! link CursorLineNr Constant
-" tabline highlight
-"hi TabLineSel guibg=#191f24 guifg=#51b0ef
-"hi TabLine guibg=#191f24 guifg=#757574
 " treesitter
 hi! TSUnderline guibg=none gui=none
-" highligh hop
-"hi HopNextKey guifg=#fcf908
-"hi HopNextKey1 guifg=#0af1f5
-"hi HopNextKey2 guifg=#0af1f5
-"hi HopUnmatched guifg=#666666
+"SwapSplit window
+hi SwapSplitStatusLine guifg=#000000 guibg=#ff8383
 " telescope highlight
 hi TelescopeNormal guifg=#c6c6c6
 hi TelescopeSelection guifg=#F08000 guibg=#2d2e2d
