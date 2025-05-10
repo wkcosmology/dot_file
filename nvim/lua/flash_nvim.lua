@@ -66,7 +66,7 @@ require("flash").setup({
   },
   label = {
     -- allow uppercase labels
-    uppercase = true,
+    uppercase = false,
     -- add any labels with the correct case here, that you want to exclude
     exclude = "",
     -- add a label for the first match in the current window.
