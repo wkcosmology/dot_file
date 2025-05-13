@@ -4,14 +4,13 @@ set completeopt=menu,menuone,noselect
 " wrap to prevent word break
 set wrap
 " simple vim setting
-filetype plugin indent on
 " update time: for vim-gitgutter
 " set updatetime=100
 " hybrid line number
 set number relativenumber
 " set cursorline!
 set cursorline
-" set filetype
+" set filetype indent
 filetype plugin indent on
 " On pressing tab, insert 4 spaces
 set expandtab

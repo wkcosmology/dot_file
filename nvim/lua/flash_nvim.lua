@@ -255,15 +255,19 @@ require("flash").setup({
   },
 })
 
-vim.keymap.set({"n", "v"}, "S",
-  function()
-    require("flash").jump({
-      search = { mode = "search", max_length = 0 },
-      label = { after = { 0, 0 } },
-      pattern = "^",
-    })
-  end
-)
-vim.keymap.set({"n", "x", "o"}, "s", function() require("flash").jump({label={min_pattern_length=1}}) end)
-vim.keymap.set("o", "r", function() require("flash").remote() end)
-vim.keymap.set("c", "<c-s>", function() require("flash").toggle() end)
+vim.keymap.set({ "n", "v" }, "S", function()
+  require("flash").jump({
+    search = { mode = "search", max_length = 0 },
+    label = { after = { 0, 0 } },
+    pattern = "^",
+  })
+end)
+vim.keymap.set({ "n", "x", "o" }, "s", function()
+  require("flash").jump({ label = { min_pattern_length = 1 } })
+end)
+vim.keymap.set("o", "r", function()
+  require("flash").remote()
+end)
+vim.keymap.set("c", "<c-s>", function()
+  require("flash").toggle()
+end)
