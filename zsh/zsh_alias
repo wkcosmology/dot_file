@@ -1,8 +1,8 @@
 # config neovim
 alias vi=vim
 alias vim=nvim
-# replace ls with exa
-alias ls=exa
+# replace ls with eza
+alias ls=eza
 # alias the lazygit
 alias lg=lazygit
 # for a safe rm
