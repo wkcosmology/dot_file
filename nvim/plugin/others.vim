@@ -26,7 +26,7 @@ augroup END
 " spell for latex
 augroup Spelling
   autocmd!
-  autocmd FileType tex,markdown setlocal spell spelllang=en_us
+  autocmd FileType tex,markdown setlocal spell spelllang=en_us,en_gb
 augroup END
 " set hidden
 set hidden
