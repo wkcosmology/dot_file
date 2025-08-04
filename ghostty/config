@@ -6,6 +6,8 @@ foreground = ffffff
 # Empty values reset the configuration to the default value
 font-family = MiscFixedSC613
 font-size = 15
+font-thicken = true
+font-thicken-strength = 255
 
 background-opacity = 0.9
 background-blur = 20
