@@ -126,22 +126,22 @@
         "description": "nonumber"
     },
     "equation": {
-        "prefix": "BEQ",
+        "prefix": "eq",
         "body": "\\begin{equation}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{equation}",
         "description": "equation environment"
     },
     "equation*": {
-        "prefix": "BSEQ",
+        "prefix": "eq*",
         "body": "\\begin{equation*}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{equation*}",
         "description": "equation* environment"
     },
     "align": {
-        "prefix": "BAL",
+        "prefix": "align",
         "body": "\\begin{align}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{align}",
         "description": "align environment"
     },
     "align*": {
-        "prefix": "BSAL",
+        "prefix": "align*",
         "body": "\\begin{align*}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{align*}",
         "description": "align* environment"
     },
