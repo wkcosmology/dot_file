@@ -6,10 +6,19 @@
     "Session": {
         "Bookmarks": [
         ],
-        "CurrentFile": "",
+        "CurrentFile": "../../Downloads/arXiv-2508.18369v1/main.tex",
         "FileVersion": 1,
         "Files": [
+            {
+                "Col": 283,
+                "EditorGroup": 0,
+                "FileName": "../../Downloads/arXiv-2508.18369v1/main.tex",
+                "FirstLine": 116,
+                "FoldedLines": "",
+                "Line": 155
+            }
         ],
-        "MasterFile": ""
+        "MasterFile": "",
+        "VerticalSplit": false
     }
 }

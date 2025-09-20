@@ -4,6 +4,7 @@ local utils = require("telescope.utils")
 local pickers = require("telescope.pickers")
 local telescope_script = require("telescope_script")
 local bibtex_actions = require("telescope-bibtex.actions")
+local sorters = require("telescope.sorters")
 
 require("telescope").setup({
   defaults = require("telescope.themes").get_ivy({
@@ -85,7 +86,9 @@ require("telescope").setup({
       hijack_netrw = true,
     },
     bibtex = {
+      depth = 1,
       global_files = { "~/.zotero_library.bib" },
+      search_keys = { 'author', 'year', 'title' },
       mappings = {
         i = {
           ["<CR>"] = function(prompt_bufnr)
@@ -118,4 +121,3 @@ Telescope.load_extension("file_browser")
 Telescope.load_extension("ui-select")
 Telescope.load_extension("fzf_mru")
 Telescope.load_extension("toggleterm")
-Telescope.load_extension("bibtex")

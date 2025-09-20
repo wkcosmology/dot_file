@@ -13,6 +13,9 @@ let g:vimtex_compiler_latexmk = {
         \ 'executable' : 'latexmk',
         \ 'hooks' : [],
         \ 'options' : [
+        \   '-pdf',
+        \   '-cd',
+        \   '-bibtex',
         \   '-verbose',
         \   '-file-line-error',
         \   '-synctex=1',
