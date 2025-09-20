@@ -18,3 +18,7 @@ cursor-style = block
 macos-titlebar-style = hidden
 
 shell-integration = zsh
+
+window-decoration = none
+window-padding-x = 5
+window-padding-color = background
