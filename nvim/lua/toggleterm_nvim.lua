@@ -20,15 +20,19 @@ require("toggleterm").setup({
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'
   float_opts = {
-    border = "single",
+    border = "double",
     width = math.floor(vim.o.columns * 0.8),
     height = math.floor(vim.o.lines * 0.7),
     winblend = 30,
     title_pos = "center",
   },
   highlights = {
-    FloatBorder = {
+    NormalFloat = {
       guifg = "#c6c6c6",
+      guibg = "none",
+    },
+    FloatBorder = {
+      guifg = "none",
       guibg = "none",
     },
   },
