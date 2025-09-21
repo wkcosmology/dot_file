@@ -2,15 +2,16 @@ require("toggleterm").setup({
   -- size can be a number or function which is passed the current terminal
   size = function(term)
     if term.direction == "horizontal" then
-      return 15
+      return 20
     elseif term.direction == "vertical" then
       return vim.o.columns * 0.4
     end
   end,
   open_mapping = [[<c-\>]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
-  shade_filetypes = {},
-  shade_terminals = false,
+  shade_terminals = true,
+  shading_factor = -30,
+  shading_ratio = -3,
   start_in_insert = true,
   insert_mappings = false, -- whether or not the open mapping applies in insert mode
   terminal_mapping = false,
@@ -20,21 +21,12 @@ require("toggleterm").setup({
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'
   float_opts = {
-    border = "double",
-    width = math.floor(vim.o.columns * 0.8),
-    height = math.floor(vim.o.lines * 0.7),
+    border = "curved",
+    width = math.floor(vim.o.columns - 2),
+    height = 25,
+    row = math.floor(vim.o.lines - 25),
     winblend = 30,
     title_pos = "center",
-  },
-  highlights = {
-    NormalFloat = {
-      guifg = "#c6c6c6",
-      guibg = "none",
-    },
-    FloatBorder = {
-      guifg = "none",
-      guibg = "none",
-    },
   },
 })
 
