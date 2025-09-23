@@ -150,13 +150,11 @@ nnoremap <leader>gh :diffget //2<cr>
 nnoremap <leader>gl :diffget //3<cr>
 nnoremap <leader>gg :G<cr>
 nnoremap <leader>gv :GV<cr>
-nnoremap <leader>gb :GBranches checkout<cr>
 nnoremap <leader>gm :Git blame<cr>
 nnoremap <leader>gP :Git push<cr>
 nnoremap <leader>gp :Git pull<cr>
 nnoremap <leader>gf :Git fetch<cr>
 nnoremap <leader>gs :lua require('telescope_script').git_status()<cr>
-nnoremap <leader>gc :lua require('script').git_clean()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " X-group: Copy
