@@ -136,9 +136,9 @@ automatically-unhide-macos-hidden-apps = true
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-1 = 'workspace QSpace'
     alt-2 = 'workspace Chrome'
-    alt-3 = 'workspace Kitty'
+    alt-3 = 'workspace Terminal'
     alt-q = 'workspace Zotero'
-    alt-w = 'workspace DEVONthink'
+    alt-w = 'workspace DEVON'
     alt-e = 'workspace VSCode'
     alt-a = 'workspace Preview'
     alt-s = 'workspace s'
@@ -147,9 +147,9 @@ automatically-unhide-macos-hidden-apps = true
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace --focus-follows-window QSpace'
     alt-shift-2 = 'move-node-to-workspace --focus-follows-window Chrome'
-    alt-shift-3 = 'move-node-to-workspace --focus-follows-window Kitty'
+    alt-shift-3 = 'move-node-to-workspace --focus-follows-window Terminal'
     alt-shift-q = 'move-node-to-workspace --focus-follows-window Zotero'
-    alt-shift-w = 'move-node-to-workspace --focus-follows-window DEVONthink'
+    alt-shift-w = 'move-node-to-workspace --focus-follows-window DEVON'
     alt-shift-e = 'move-node-to-workspace --focus-follows-window VSCode'
     alt-shift-a = 'move-node-to-workspace --focus-follows-window Preview'
     alt-shift-s = 'move-node-to-workspace --focus-follows-window s'
@@ -166,9 +166,9 @@ automatically-unhide-macos-hidden-apps = true
 [workspace-to-monitor-force-assignment]
     Finder = 'main'
     Chrome = 'main'
-    Kitty = 'main'
+    Terminal = 'main'
     Zotero = 'main'
-    DEVONthink = 'main'
+    DEVON = 'main'
     VSCode = 'main'
     Preview = 'secondary'
     s = 'secondary'
@@ -257,15 +257,15 @@ automatically-unhide-macos-hidden-apps = true
     if.app-id = 'com.google.Chrome'
     run = 'move-node-to-workspace Chrome'
 
-# Kitty windows
+# Terminal windows
 [[on-window-detected]]
-    if.app-id = 'net.kovidgoyal.kitty'
-    run = 'move-node-to-workspace --focus-follows-window Kitty'
+    if.app-id = 'dev.ghosst.ghosst'
+    run = 'move-node-to-workspace --focus-follows-window Terminal'
 
-# DEVONthink windows
+# DEVON windows
 [[on-window-detected]]
     if.app-id = 'com.devon-technologies.think3'
-    run = 'move-node-to-workspace DEVONthink'
+    run = 'move-node-to-workspace DEVON'
 
 # Zotero windows
 [[on-window-detected]]

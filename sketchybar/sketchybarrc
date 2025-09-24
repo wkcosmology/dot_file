@@ -49,7 +49,7 @@ sketchybar --add item chevron left \
 
 sketchybar --add event aerospace_workspace_change
 
-CUSTOM_ORDER=("QSpace" "Chrome" "Kitty" "Zotero" "DEVONthink" "VSCode" "Preview" )
+CUSTOM_ORDER=("QSpace" "Chrome" "Terminal" "Zotero" "DEVON" )
 
 for sid in "${CUSTOM_ORDER[@]}"; do
   # Check if workspace exists
@@ -96,8 +96,6 @@ sketchybar --add item clock right \
             --set cpumem update_freq=5 click_script="open -a Activity\ Monitor" script="$PLUGIN_DIR/cpu_mem.sh" \
             --add bracket sysinfo cpumem battery volume right\
             --set sysinfo  script="$PLUGIN_DIR/sysinfo.sh" \
-            --add item weather right \
-            --set weather update_freq=600 click_script="open -a Weather" script="$PLUGIN_DIR/weather.sh" \
             --add item inbox right\
             --set inbox script="$PLUGIN_DIR/mail.inbox.sh" \
             --subscribe inbox front_app_switched \
@@ -108,7 +106,6 @@ sketchybar --add item clock right \
                       script="$PLUGIN_DIR/take_a_break.sh" \
                       click_script="$PLUGIN_DIR/take_a_break.sh" \
             --subscribe take_a_break system_woke
-
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
