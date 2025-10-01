@@ -173,7 +173,7 @@ nmap <leader>ec :lua vim.diagnostic.hide()<cr>
 nmap <leader>et :Neotree diagnostics reveal bottom<cr>
 augroup FormatFiletype
   autocmd!
-  autocmd BufEnter * nnoremap fj :Format<cr>
+  autocmd BufEnter * nnoremap gj :Format<cr>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
