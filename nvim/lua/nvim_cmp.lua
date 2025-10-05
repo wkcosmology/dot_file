@@ -1,7 +1,5 @@
 -- Setup nvim-cmp.
 local cmp = require("cmp")
-local nvim_lsp = require("lspconfig")
-local lspkind = require("lspkind")
 
 require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/snippets" })
 vim.keymap.set({ "i" }, "<C-J>", function()
@@ -102,12 +100,12 @@ local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true }
 end
 
-nvim_lsp["jedi_language_server"].setup({ on_attach = on_attach })
-nvim_lsp["vimls"].setup({ on_attach = on_attach })
-nvim_lsp["texlab"].setup({ on_attach = on_attach })
-nvim_lsp["cmake"].setup({ on_attach = on_attach })
-nvim_lsp["fortls"].setup({ on_attach = on_attach })
-nvim_lsp["lua_ls"].setup({
+vim.lsp.config("jedi_language_server", { on_attach = on_attach })
+vim.lsp.config("vimls", { on_attach = on_attach })
+vim.lsp.config("texlab", { on_attach = on_attach })
+vim.lsp.config("cmake", { on_attach = on_attach })
+vim.lsp.config("fortls", { on_attach = on_attach })
+vim.lsp.config("lua_ls", {
   on_attach = on_attach,
   Lua = {
     diagnostics = {
@@ -116,7 +114,7 @@ nvim_lsp["lua_ls"].setup({
     },
   },
 })
-nvim_lsp["clangd"].setup({
+vim.lsp.config("clangd", {
   on_attach = on_attach,
   cmd = {
     "clangd",
@@ -129,3 +127,10 @@ nvim_lsp["clangd"].setup({
   },
   capabilities = capabilities,
 })
+vim.lsp.enable('jedi_language_server')
+vim.lsp.enable('vimls')
+vim.lsp.enable('texlab')
+vim.lsp.enable('cmake')
+vim.lsp.enable('fortls')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('clangd')
