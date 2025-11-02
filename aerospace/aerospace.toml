@@ -139,7 +139,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-3 = 'workspace Terminal'
     alt-q = 'workspace Zotero'
     alt-w = 'workspace DEVON'
-    alt-e = 'workspace VSCode'
+    alt-e = 'workspace Misc'
     alt-a = 'workspace Preview'
     alt-s = 'workspace s'
     alt-d = 'workspace d'
@@ -150,7 +150,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-3 = 'move-node-to-workspace --focus-follows-window Terminal'
     alt-shift-q = 'move-node-to-workspace --focus-follows-window Zotero'
     alt-shift-w = 'move-node-to-workspace --focus-follows-window DEVON'
-    alt-shift-e = 'move-node-to-workspace --focus-follows-window VSCode'
+    alt-shift-e = 'move-node-to-workspace --focus-follows-window Misc'
     alt-shift-a = 'move-node-to-workspace --focus-follows-window Preview'
     alt-shift-s = 'move-node-to-workspace --focus-follows-window s'
     alt-shift-d = 'move-node-to-workspace --focus-follows-window d'
@@ -169,7 +169,7 @@ automatically-unhide-macos-hidden-apps = true
     Terminal = 'main'
     Zotero = 'main'
     DEVON = 'main'
-    VSCode = 'main'
+    Misc = 'main'
     Preview = 'secondary'
     s = 'secondary'
     d = 'secondary'
@@ -209,14 +209,6 @@ automatically-unhide-macos-hidden-apps = true
     if.app-id = 'com.netease.163music'
     run = 'layout floating'
 
-# [[on-window-detected]]
-#     if.app-id = 'com.tencent.xinWeChat'
-#     run = 'layout floating'
-
-# [[on-window-detected]]
-#     if.app-id = 'com.apple.iCal'
-#     run = 'layout floating'
-
 [[on-window-detected]]
     if.app-id = 'com.apple.ActivityMonitor'
     run = 'layout floating'
@@ -226,36 +218,14 @@ automatically-unhide-macos-hidden-apps = true
     run = 'layout floating'
 
 # QSpace windows
-
 [[on-window-detected]]
     if.app-id = 'com.jinghaoshe.qspace.pro'
-    run = 'move-node-to-workspace QSpace'
-
-[[on-window-detected]]
-    if.app-id = 'com.omnigroup.OmniFocus4'
-    run = 'move-node-to-workspace QSpace'
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.Notes'
-    run = 'move-node-to-workspace QSpace'
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.mail'
-    run = 'move-node-to-workspace QSpace'
-
-[[on-window-detected]]
-    if.app-id = 'com.tencent.xinWeChat'
-    run = 'move-node-to-workspace QSpace'
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.iCal'
-    run = 'move-node-to-workspace QSpace'
+    run = 'move-node-to-workspace --focus-follows-window QSpace'
 
 # Chrome windows
-
 [[on-window-detected]]
     if.app-id = 'com.google.Chrome'
-    run = 'move-node-to-workspace Chrome'
+    run = 'move-node-to-workspace --focus-follows-window Chrome'
 
 # Terminal windows
 [[on-window-detected]]
@@ -265,22 +235,43 @@ automatically-unhide-macos-hidden-apps = true
 # DEVON windows
 [[on-window-detected]]
     if.app-id = 'com.devon-technologies.think3'
-    run = 'move-node-to-workspace DEVON'
+    run = 'move-node-to-workspace --focus-follows-window DEVON'
+
+# Misc windows
+[[on-window-detected]]
+    if.app-id = 'com.omnigroup.OmniFocus4'
+    run = 'move-node-to-workspace --focus-follows-window Misc'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.mail'
+    run = 'move-node-to-workspace --focus-follows-window Misc'
+
+[[on-window-detected]]
+    if.app-id = 'com.tencent.xinWeChat'
+    run = 'move-node-to-workspace --focus-follows-window Misc'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.iCal'
+    run = 'move-node-to-workspace --focus-follows-window QSpace'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Notes'
+    run = 'move-node-to-workspace --focus-follows-window Misc'
 
 # Zotero windows
 [[on-window-detected]]
-    if.app-id = 'org.zotero.zotero'
-    run = 'move-node-to-workspace Zotero'
+    if.app-id = 'org.zotero.zotero-betas'
+    run = 'move-node-to-workspace --focus-follows-window Zotero'
 
 # Preview windows
 [[on-window-detected]]
     if.app-id = 'com.apple.Preview'
-    run = 'move-node-to-workspace Preview'
+    run = 'move-node-to-workspace --focus-follows-window Preview'
 
 [[on-window-detected]]
     if.app-id = 'net.sourceforge.skim-app.skim'
-    run = 'move-node-to-workspace Preview'
+    run = 'move-node-to-workspace --focus-follows-window Preview'
 
 [[on-window-detected]]
     if.app-id = 'com.readdle.PDFExpert-Mac'
-    run = 'move-node-to-workspace Preview'
+    run = 'move-node-to-workspace --focus-follows-window Preview'

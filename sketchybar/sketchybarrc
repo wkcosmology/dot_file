@@ -49,17 +49,32 @@ sketchybar --add item chevron left \
 
 sketchybar --add event aerospace_workspace_change
 
-CUSTOM_ORDER=("QSpace" "Chrome" "Terminal" "Zotero" "DEVON" )
+CUSTOM_ORDER=("QSpace" "Chrome" "Terminal" "Zotero" "DEVON" "Misc" "Preview" "s" "d")
+map_label() {
+  case "$1" in
+    QSpace)   echo "[1]" ;;
+    Chrome)   echo "[2]" ;;
+    Terminal) echo "[3]" ;;
+    Zotero)   echo "[Q]" ;;
+    DEVON)    echo "[W]" ;;
+    Misc)     echo "[E]" ;;
+    Preview)  echo "|A|" ;;
+    s)        echo "|S|" ;;
+    d)        echo "|D|" ;;
+  esac
+}
 
 for sid in "${CUSTOM_ORDER[@]}"; do
   # Check if workspace exists
   if aerospace list-workspaces --all | grep -q "$sid"; then
+  display_name="$(map_label "$sid")"
+
     sketchybar --add item space.$sid left \
       --subscribe space.$sid aerospace_workspace_change \
       --set space.$sid \
         background.drawing=off \
-        label="$sid" label.color=0xffcba6f7 \
-        label.padding_right=5 \
+        label="$display_name" label.color=0xffcba6f7 \
+        label.padding_right=10 \
         icon="○" icon.color=0xffcba6f7 icon.font="Iosevka:SemiBold:13.0" \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
