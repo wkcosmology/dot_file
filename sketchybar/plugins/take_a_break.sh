@@ -4,7 +4,7 @@
 
 for i in {20..1}
     do
-        if [ $i -eq 20 ] || [ $(sketchybar --query take_a_break | grep -Eo 'WORK [0-9]+ mins' | grep -Eo '[0-9]+') -le $((i + 1)) ]
+        if [ $i -eq 20 ] || [ $(sketchybar --query take_a_break | grep -Eo '[0-9]+ MINs' | grep -Eo '[0-9]+') -le $((i + 1)) ]
         then
             sketchybar --set take_a_break padding_left=5 padding_right=5 \
                 background.corner_radius=10 background.height=23 background.border_width=1 \
