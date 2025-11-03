@@ -11,7 +11,7 @@ for i in {20..1}
                 width=80 label="$(printf "%02d" $((i))) MINs" icon="󰍹 " align=center\
                 background.border_color=0x8fcdd6f4 background.color=0x10cdd6f4 background.clip=0.2 \
                 icon.color=0x8fcdd6f4 label.color=0x8fcdd6f4
-            sleep 1
+            sleep 60
         else
             exit
         fi
