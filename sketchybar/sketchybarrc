@@ -74,7 +74,7 @@ for sid in "${CUSTOM_ORDER[@]}"; do
       --set space.$sid \
         background.drawing=off \
         label="$display_name" label.color=0xffcba6f7 \
-        label.padding_right=10 \
+        label.padding_right=8 \
         icon="○" icon.color=0xffcba6f7 icon.font="Iosevka:SemiBold:13.0" \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
@@ -116,7 +116,7 @@ sketchybar --add item clock right \
             --subscribe inbox front_app_switched \
             --add bracket mail inbox right \
             --set mail script="$PLUGIN_DIR/mail.sh" align=center\
-            --add item take_a_break left \
+            --add item take_a_break right \
             --set take_a_break \
                       script="$PLUGIN_DIR/take_a_break.sh" \
                       click_script="$PLUGIN_DIR/take_a_break.sh" \
