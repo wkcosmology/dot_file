@@ -74,7 +74,7 @@ for sid in "${CUSTOM_ORDER[@]}"; do
       --set space.$sid \
         background.drawing=off \
         label="$display_name" label.color=0xffcba6f7 \
-        label.padding_right=8 \
+        label.padding_right=10 \
         icon="○" icon.color=0xffcba6f7 icon.font="Iosevka:SemiBold:13.0" \
         click_script="aerospace workspace $sid" \
         script="$CONFIG_DIR/plugins/aerospace.sh $sid"
