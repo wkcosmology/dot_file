@@ -46,6 +46,7 @@ sketchybar --default "${default[@]}"
 
 sketchybar --add item chevron left \
            --set chevron icon="󱓞 " label.drawing=off icon.color=0xffcba6f7 icon.padding_right=10\
+           click_script="sketchybar --reload"
 
 sketchybar --add event aerospace_workspace_change
 

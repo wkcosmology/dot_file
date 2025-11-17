@@ -99,7 +99,7 @@ Plug 'utilyre/barbecue.nvim'
 " C/C++ related
 " ---------------------------------------------------------------------------
 " switch header and source file
-Plug 'derekwyatt/vim-fswitch', {'for': ['c', 'cpp', 'h', 'hpp']}
+Plug 'p00f/clangd_extensions.nvim', {'for': ['c', 'cpp', 'h', 'hpp']}
 
 " ---------------------------------------------------------------------------
 " Git
