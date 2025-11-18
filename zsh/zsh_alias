@@ -29,6 +29,7 @@ function sync_lib {
     echo "From: $1"
     echo "To: $2@$3:$4"
     rsync \
+        -a \
         --delete \
         --exclude-from="$1.gitignore" \
         --exclude=".git/*" \
@@ -45,6 +46,7 @@ function sync_lib_nondelete {
     echo "From: $1"
     echo "To: $2@$3:$4"
     rsync \
+        -a \
         --exclude-from="$1.gitignore" \
         --exclude=".git/*" \
         --info=name0 \
