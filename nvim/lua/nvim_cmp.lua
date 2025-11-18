@@ -119,7 +119,7 @@ vim.lsp.config("clangd", {
   cmd = {
     "clangd",
     "--clang-tidy",
-    "--compile-commands-dir=~/.config/clang/",
+    "--compile-commands-dir=" .. vim.fn.expand("~/.config/clang"),
     "--background-index",
     "--completion-style=detailed",
     "--all-scopes-completion",
@@ -127,10 +127,10 @@ vim.lsp.config("clangd", {
   },
   capabilities = capabilities,
 })
-vim.lsp.enable('jedi_language_server')
-vim.lsp.enable('vimls')
-vim.lsp.enable('texlab')
-vim.lsp.enable('cmake')
-vim.lsp.enable('fortls')
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('clangd')
+vim.lsp.enable("jedi_language_server")
+vim.lsp.enable("vimls")
+vim.lsp.enable("texlab")
+vim.lsp.enable("cmake")
+vim.lsp.enable("fortls")
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")
