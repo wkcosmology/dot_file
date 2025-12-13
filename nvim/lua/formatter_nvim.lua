@@ -7,7 +7,7 @@ require("formatter").setup({
       function()
         return {
           exe = "clang-format",
-          args = { "--assume-filename", vim.api.nvim_buf_get_name(0), "-style", "file:/Users/wangk/.clang-format"},
+          args = { "--assume-filename", vim.api.nvim_buf_get_name(0), "-style", "file:/Users/wangk/.clang-format" },
           stdin = true,
           cwd = vim.fn.expand("%:p:h"), -- Run clang-format in cwd of the file.
         }
@@ -42,7 +42,7 @@ require("formatter").setup({
       -- Configuration for psf/black
       function()
         return {
-          exe = "tex-fmt --stdin --tabsize=2",
+          exe = "tex-fmt --stdin --tabsize=2 -n",
           stdin = true,
         }
       end,
@@ -80,6 +80,20 @@ require("formatter").setup({
     },
 
     markdown = {
+      function()
+        return {
+          exe = "prettier",
+          args = {
+            "--stdin-filepath",
+            util.escape_path(util.get_current_buffer_file_path()),
+          },
+          stdin = true,
+          try_node_modules = true,
+        }
+      end,
+    },
+
+    html = {
       function()
         return {
           exe = "prettier",

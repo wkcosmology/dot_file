@@ -307,6 +307,7 @@
             "\t\t\\includegraphics[width=0.95\\linewidth]{figure/$1}",
             "\t\\end{center}",
             "\t\\caption{$2",
+            "\t}",
             "\t\\label{fig:${1}}",
             "\\end{figure}",
             "$3"
