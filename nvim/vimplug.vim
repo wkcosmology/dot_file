@@ -94,6 +94,8 @@ Plug 'stevearc/dressing.nvim'
 " winbar
 Plug 'SmiteshP/nvim-navic'
 Plug 'utilyre/barbecue.nvim'
+" plug
+Plug 'sphamba/smear-cursor.nvim'
 
 " ---------------------------------------------------------------------------
 " C/C++ related

@@ -129,7 +129,7 @@ let g:maximizer_set_default_mapping = 0
 nnoremap <C-w>m :MaximizerToggle<cr>
 " choose the window
 for i in [1, 2, 3, 4, 5, 6]
-  execute 'nnoremap <leader>'.i.' '.i.'<C-w>w'
+  execute 'nnoremap <C-w>'.i.' '.i.'<C-w>w'
 endfor
 augroup close_win
   autocmd!

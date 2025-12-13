@@ -10,3 +10,12 @@ require("neoscroll").setup({
   post_hook = nil, -- Function to run after the scrolling animation ends
   performance_mode = false, -- Disable "Performance Mode" on all buffers.
 })
+
+require("smear_cursor").setup({
+  smear_to_cmd = false,
+  smear_between_buffers = false,
+  smear_between_neighbor_lines = false,
+  scroll_buffer_space = true,
+  legacy_computing_symbols_support = false,
+  smear_insert_mode = false,
+})

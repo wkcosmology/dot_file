@@ -78,3 +78,5 @@ set listchars+=eol:↲
 set list
 " junegunn/vim-easy-align
 xmap ga <Plug>(EasyAlign)
+" smear cursor
+lua require('smear_cursor').enabled = true
