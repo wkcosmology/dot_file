@@ -61,7 +61,7 @@ require("telescope").setup({
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     file_ignore_patterns = { "%.ipynb" },
-    winblend = 0,
+    winblend = 1,
     color_devicons = false,
     -- use_less = true,
     path_display = { "truncate" },

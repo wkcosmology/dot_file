@@ -1,30 +1,18 @@
 require("fzf-lua").setup({
   "ivy",
-  keymap = { ... }, -- Neovim keymaps / fzf binds
-  actions = { ... }, -- Fzf "accept" binds
-  fzf_opts = { ... }, -- Fzf CLI flags
-  fzf_colors = { ... }, -- Fzf `--color` specification
-  hls = { ... }, -- Highlights
   winopts = {
-    height = 0.35, -- window height
-    width = 1, -- window width
-    -- border argument passthrough to nvim_open_win()
+    split = nil,
+    height = 0.35,
+    width = 1,
     border = "single",
-    -- Backdrop opacity, 0 is fully opaque, 100 is fully transparent (i.e. disabled)
     backdrop = 0,
-    fullscreen = false, -- start fullscreen?
-    treesitter = {
-      enabled = true,
-      fzf_colors = { ["hl"] = "-1:reverse", ["hl+"] = "-1:reverse" },
-    },
+    fullscreen = false,
     preview = {
       border = "single", -- preview border: accepts both `nvim_open_win`
       wrap = false, -- preview line wrap (fzf's 'wrap|nowrap')
-      hidden = false, -- start preview hidden
       vertical = "down:45%", -- up|down:size
       horizontal = "right:50%", -- right|left:size
       layout = "horizontal", -- horizontal|vertical|flex
-      flip_columns = 100, -- #cols to switch to horizontal on flex
       -- Only used with the builtin previewer:
       title = true, -- preview border title (file/buf)?
       title_pos = "center", -- left|center|right, title alignment
