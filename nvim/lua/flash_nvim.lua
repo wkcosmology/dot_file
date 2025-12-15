@@ -257,7 +257,7 @@ require("flash").setup({
   },
 })
 
-vim.keymap.set({ "n", "v" }, "S", function()
+vim.keymap.set({ "n", "v", "o" }, "S", function()
   require("flash").jump({
     search = { mode = "search", max_length = 0 },
     label = { after = { 0, 0 }, uppercase = true },
