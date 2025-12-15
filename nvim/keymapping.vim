@@ -99,6 +99,7 @@ nnoremap <leader>fr :Telescope fzf_mru<cr>
 nnoremap <leader>fs :Telescope file_browser<cr>
 " symbol layout
 nnoremap <leader>fc :AerialToggle<cr>
+nnoremap <leader>fc :lua require("aerial").fzf_lua_picker()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " B-group: buffers

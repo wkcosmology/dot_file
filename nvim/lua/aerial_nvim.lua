@@ -184,7 +184,7 @@ require("aerial").setup({
   -- Options for opening aerial in a floating win
   float = {
     -- Controls border appearance. Passed to nvim_open_win
-    border = "rounded",
+    border = "single",
 
     -- Enum: cursor, editor, win
     --   cursor - Opens float on top of the cursor
@@ -201,11 +201,11 @@ require("aerial").setup({
 
     override = function(conf)
       local win_width = vim.o.columns
-      conf.width = 100
+      conf.width = 150
       conf.col = win_width / 2 - conf.width / 2
       conf.style = "minimal"
-      conf.border = "double"
-      conf.title = "Outline"
+      conf.border = "single"
+      conf.title = " Outline "
       conf.title_pos = "center"
       -- This is the config that will be passed to nvim_open_win.
       -- Change values here to customize the layout
@@ -244,7 +244,7 @@ require("aerial").setup({
     min_width = { 0.3, 20 },
     win_opts = {
       cursorline = true,
-      winblend = 5,
+      winblend = 0,
     },
     -- Jump to symbol in source window when the cursor moves
     autojump = false,

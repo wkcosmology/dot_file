@@ -16,7 +16,7 @@ let g:fzf_action = {
             \ 'ctrl-s': 'split',
             \ 'ctrl-v': 'vsplit' }
 
-let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+"let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 " for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'

@@ -37,29 +37,22 @@ hi! TSUnderline guibg=none gui=none
 hi SwapSplitStatusLine guifg=#000000 guibg=#ff8383
 " telescope highlight
 hi TelescopeNormal guifg=#c6c6c6
-hi TelescopeSelection guifg=#F08000 guibg=#2d2e2d
-hi TelescopeMatching guifg=#F08000 guibg=none
-hi TelescopeBorder guifg=#c6c6c6 guibg=none
+hi TelescopeSelection guifg=Orange guibg=#232423
+hi TelescopeMatching guifg=Orange guibg=none
+hi TelescopeTitle guibg=none
+" floating window highlight
+hi FloatNormal guibg=NONE
+hi FloatBorder guibg=NONE
+" FZF-lua highlight
+hi link FzfLuaNormal TelescopeNormal
+hi link FzfLuaBorder TelescopeBorder
+hi FzfLuaTitle guibg=NONE
+hi FzfLuaFzfCursorLine guifg=Orange guibg=#232423
+hi FzfLuaFzfMatch guifg=Orange
+hi FzfLuaFzfPointer guifg=Orange
 " lsp signature
-hi LspSignatureActiveParameter guibg=none guifg=#F08000
-" fzf highlight
-let g:fzf_colors = {
-            \ 'fg':      ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Comment'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Constant'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn', 'Cursor'],
-            \ 'hl+':     ['fg', 'Statement'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'border':  ['fg', 'Normal'],
-            \ 'prompt':  ['fg', 'Label'],
-            \ 'pointer': ['fg', 'Exception'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment'] }
+hi LspSignatureActiveParameter guibg=NONE guifg=#F08000
 " for tmux blinking cursor: https://github.com/neovim/neovim/wiki/FAQ#flick-cursor-when-use-neovim-under-tmux
-" hi EndOfBuffer ctermbg=NONE ctermfg=200 cterm=NONE
-" hi Normal ctermbg=NONE ctermfg=200 cterm=NONE
 augroup vimrc_todo
     au!
     au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX):/

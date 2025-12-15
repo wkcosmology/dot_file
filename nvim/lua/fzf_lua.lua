@@ -1,10 +1,9 @@
 require("fzf-lua").setup({
   "ivy",
   winopts = {
-    split = nil,
-    height = 0.35,
+    height = 26,
     width = 1,
-    border = "single",
+    border = { "", "─", "", "", "", "", "", "" },
     backdrop = 0,
     fullscreen = false,
     preview = {
@@ -16,7 +15,7 @@ require("fzf-lua").setup({
       -- Only used with the builtin previewer:
       title = true, -- preview border title (file/buf)?
       title_pos = "center", -- left|center|right, title alignment
-      scrollbar = "float", -- `false` or string:'float|border'
+      scrollbar = false, -- `false` or string:'float|border'
       scrolloff = -1, -- float scrollbar offset from right
       delay = 20, -- delay(ms) displaying the preview
       winopts = { -- builtin previewer window options
@@ -38,13 +37,21 @@ require("fzf-lua").setup({
     end,
   },
 
-  oldfiles = {
-    prompt = "History❯ ",
-    cwd_only = false,
-    stat_file = true, -- verify files exist on disk
-    -- can also be a lua function, for example:
-    -- stat_file = FzfLua.utils.file_is_readable,
-    -- stat_file = function() return true end,
-    include_current_session = false, -- include bufs from current session
+  fzf_colors = true,
+
+  keymap = {
+    fzf = {
+      ["ctrl-g"] = "abort",
+      ["ctrl-f"] = "half-page-down",
+      ["ctrl-b"] = "half-page-up",
+    },
+  },
+
+  actions = {
+    files = {
+      ["enter"] = FzfLua.actions.file_edit_or_qf,
+      ["ctrl-s"] = FzfLua.actions.file_split,
+      ["ctrl-v"] = FzfLua.actions.file_vsplit,
+    },
   },
 })
