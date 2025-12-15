@@ -37,9 +37,9 @@ autocmd TermEnter term://*toggleterm#*
 " S-group: fuzzy search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " grep word under cursor
-nnoremap <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
+"nnoremap <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
 " seach within project
-nnoremap <leader>ss :lua require('telescope_script').grep_string()<cr>
+"nnoremap <leader>ss :lua require('telescope_script').grep_string()<cr>
 " fuzzy search bibtex
 nnoremap <leader>sb :Telescope bibtex<cr>
 " fuzzy searching command
@@ -64,6 +64,9 @@ nnoremap <leader>sc :Telescope aerial<cr>
 nnoremap <leader>st :Telescope toggleterm<cr>
 " delete marks
 nnoremap <leader>cm :delmarks!<cr>
+" grep the word under cursor
+nnoremap <leader>sw :lua require("fzf-lua").grep_cword()<cr>
+nnoremap <leader>ss :lua require("fzf-lua").grep()<cr>
 augroup search
   autocmd!
   autocmd FileType c,h,cpp,hpp,python,lua,vim nnoremap <buffer> <leader>so :Telescope lsp_document_symbols<cr>
@@ -86,7 +89,8 @@ nnoremap <leader>ca :lua vim.lsp.buf.code_action()<cr>
 " F-group: files
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuzzy search files under current project
-nnoremap <leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
+"nnoremap <leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
+nnoremap <leader>ff :lua require("fzf-lua").files()<cr>
 " file tree
 nnoremap <leader>ft :Neotree action=focus source=filesystem position=float reveal<cr>
 " fuzzy search most recent file
