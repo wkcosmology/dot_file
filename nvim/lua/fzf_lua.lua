@@ -3,7 +3,8 @@ require("fzf-lua").setup({
   winopts = {
     height = 26,
     width = 1,
-    border = { "", "─", "", "", "", "", "", "" },
+    row = math.floor(vim.o.lines - 28),
+    border = { "", "─", "", "", "", "─", "", "" },
     backdrop = 0,
     fullscreen = false,
     preview = {
