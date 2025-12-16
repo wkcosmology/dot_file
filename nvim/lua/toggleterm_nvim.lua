@@ -10,8 +10,6 @@ require("toggleterm").setup({
   open_mapping = [[<c-\>]],
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_terminals = true,
-  shading_factor = -30,
-  shading_ratio = -3,
   start_in_insert = true,
   insert_mappings = false, -- whether or not the open mapping applies in insert mode
   terminal_mapping = false,
@@ -21,12 +19,23 @@ require("toggleterm").setup({
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'
   float_opts = {
-    border = "curved",
+    border = { "", "─", "", "", "", "", "", "" },
     width = math.floor(vim.o.columns - 2),
     height = 25,
     row = math.floor(vim.o.lines - 25),
-    winblend = 30,
+    winblend = 0,
     title_pos = "center",
+  },
+  highlights = {
+    Normal = {
+      guibg = "NONE",
+    },
+    NormalFloat = {
+      link = "Normal",
+    },
+    FloatBorder = {
+      link = "TelescopeBorder",
+    },
   },
 })
 
