@@ -36,20 +36,20 @@ hi! TSUnderline guibg=none gui=none
 "SwapSplit window
 hi SwapSplitStatusLine guifg=#000000 guibg=#ff8383
 " telescope highlight
-hi TelescopeNormal guifg=#c6c6c6
-hi TelescopeSelection guifg=Orange guibg=#232423
-hi TelescopeMatching guifg=Orange guibg=none
+hi TelescopeNormal guifg=#c6c6c6 gui=NONE
+hi TelescopeSelection guifg=Orange guibg=#232423 gui=NONE cterm=NONE
+hi TelescopeMatching guifg=Orange guibg=NONE gui=NONE
 hi TelescopeTitle guibg=none
 " floating window highlight
 hi FloatNormal guibg=NONE
 hi FloatBorder guibg=NONE
 " FZF-lua highlight
-hi link FzfLuaNormal TelescopeNormal
-hi link FzfLuaBorder TelescopeBorder
 hi FzfLuaTitle guibg=NONE
-hi FzfLuaFzfCursorLine guifg=Orange guibg=#232423
-hi FzfLuaFzfMatch guifg=Orange
-hi FzfLuaFzfPointer guifg=Orange
+hi FzfLuaFzfPointer guifg=Orange gui=NONE
+hi! link FzfLuaNormal TelescopeNormal
+hi! link FzfLuaBorder TelescopeBorder
+hi! link FzfLuaFzfCursorLine TelescopeSelection
+hi! link FzfLuaFzfMatch TelescopeMatching
 " lsp signature
 hi LspSignatureActiveParameter guibg=NONE guifg=#F08000
 " for tmux blinking cursor: https://github.com/neovim/neovim/wiki/FAQ#flick-cursor-when-use-neovim-under-tmux

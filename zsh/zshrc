@@ -91,8 +91,7 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 # fzf color
 export FZF_DEFAULT_OPTS="
---layout reverse
---border"
+--layout reverse --no-bold --border"
 # autojump activation and integration with fzf
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 j() {
