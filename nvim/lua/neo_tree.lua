@@ -66,7 +66,6 @@ require("neo-tree").setup({
       },
     },
     window = {
-      -- position = "float",
       mappings = {
         ["A"] = "git_add_all",
         ["gu"] = "git_unstage_file",
@@ -79,7 +78,6 @@ require("neo-tree").setup({
     },
   },
   window = {
-    -- position = "float",
     width = "fit_content",
     min_width = 40,
     max_width = 60,

@@ -7,6 +7,11 @@ require("fzf-lua").setup({
     border = "rounded",
     backdrop = 0,
     fullscreen = false,
+    grep = {
+      git_icons = false,
+      no_ignore = false,
+      hidden = false,
+    },
     preview = {
       border = "single", -- preview border: accepts both `nvim_open_win`
       wrap = false, -- preview line wrap (fzf's 'wrap|nowrap')
