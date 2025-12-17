@@ -14,9 +14,6 @@ set cursorline
 filetype plugin indent on
 " On pressing tab, insert 4 spaces
 set expandtab
-" set colorcolumn
-set colorcolumn=80
-hi ColorColumn guibg=#47475d
 " textwidth for cpp and hpp
 augroup CppFormatting
   autocmd!

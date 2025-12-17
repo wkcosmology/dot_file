@@ -32,41 +32,41 @@ nmap gV `[v`]
 " open another terminal
 autocmd TermEnter term://*toggleterm#*
       \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+" disable the command line mode
+nnoremap <leader>q: q:
+nnoremap q: <Nop>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " S-group: fuzzy search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" grep word under cursor
-"nnoremap <leader>sw :lua require'telescope_script'.grep_current_string()<cr>
-" seach within project
-"nnoremap <leader>ss :lua require('telescope_script').grep_string()<cr>
 " fuzzy search bibtex
 nnoremap <leader>sb :Telescope bibtex<cr>
 " fuzzy searching command
-nnoremap <leader>s: :Telescope commands<cr>
+nnoremap <leader>s: :FzfLua commands<cr>
 " fuzzy search snippet
 nnoremap <leader>sn :Telescope luasnip<cr>
 " fuzzy search help
-nnoremap <leader>sh :Telescope help_tags<cr>
+nnoremap <leader>sh :FzfLua help_tags<cr>
 " quickfix
-nnoremap <leader>sq :Telescope quickfix<cr>
+nnoremap <leader>sq :FzfLua quickfix<cr>
 " yank history
 nnoremap <space>sy  :Telescope neoclip<cr>
 " Spell suggest
 nnoremap <space>sj  <cmd>:Telescope spell_suggest<cr>
-" command history
-nnoremap <space>s:  :Telescope command_history<cr>
 " Marks
-nnoremap <leader>sm :Telescope marks<cr>
+nnoremap <leader>sm :FzfLua marks<cr>
 " symbols
 nnoremap <leader>sc :Telescope aerial<cr>
+" diagnostic
+nnoremap <leader>sd :FzfLua lsp_document_diagnostics<cr>
+nnoremap <leader>Sd :FzfLua lsp_workspace_diagnostics<cr>
 " terminal
 nnoremap <leader>st :Telescope toggleterm<cr>
 " delete marks
 nnoremap <leader>cm :delmarks!<cr>
 " grep the word under cursor
-nnoremap <leader>sw :lua require("fzf-lua").grep_cword()<cr>
-nnoremap <leader>ss :lua require("fzf-lua").grep()<cr>
+nnoremap <leader>sw :FzfLua grep_cword<cr>
+nnoremap <leader>ss :FzfLua grep<cr>
 augroup search
   autocmd!
   autocmd FileType c,h,cpp,hpp,python,lua,vim nnoremap <buffer> <leader>so :Telescope lsp_document_symbols<cr>

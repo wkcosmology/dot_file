@@ -65,17 +65,6 @@ require("neo-tree").setup({
         conflict = "",
       },
     },
-    window = {
-      mappings = {
-        ["A"] = "git_add_all",
-        ["gu"] = "git_unstage_file",
-        ["ga"] = "git_add_file",
-        ["gr"] = "git_revert_file",
-        ["gc"] = "git_commit",
-        ["gp"] = "git_push",
-        ["gg"] = "git_commit_and_push",
-      },
-    },
   },
   window = {
     position = "right",
@@ -113,6 +102,8 @@ require("neo-tree").setup({
       ["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
       ["q"] = "close_window",
       ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = false } },
+      ["<C-b>"] = { "scroll_preview", config = { direction = 10 } },
+      ["<C-f>"] = { "scroll_preview", config = { direction = -10 } },
       ["<C-g>"] = "close_window",
       ["<C-c>"] = "close_window",
       ["R"] = "refresh",
@@ -152,7 +143,6 @@ require("neo-tree").setup({
     window = {
       mappings = {
         ["<bs>"] = "navigate_up",
-        -- ["."] = "set_root",
         ["."] = "toggle_hidden",
         ["/"] = "fuzzy_finder",
         ["D"] = "fuzzy_finder_directory",
@@ -176,27 +166,4 @@ require("neo-tree").setup({
       },
     },
   },
-  -- file_size = {
-  --   enabled = true,
-  --   width = 12, -- width of the column
-  --   required_width = 64, -- min width of window required to show this column
-  -- },
-  -- type = {
-  --   enabled = true,
-  --   width = 10, -- width of the column
-  --   required_width = 122, -- min width of window required to show this column
-  -- },
-  -- last_modified = {
-  --   enabled = true,
-  --   width = 20, -- width of the column
-  --   required_width = 88, -- min width of window required to show this column
-  -- },
-  -- created = {
-  --   enabled = true,
-  --   width = 20, -- width of the column
-  --   required_width = 110, -- min width of window required to show this column
-  -- },
-  -- symlink_target = {
-  --   enabled = false,
-  -- },
 })
