@@ -92,7 +92,7 @@ nnoremap <leader>ca :lua vim.lsp.buf.code_action()<cr>
 "nnoremap <leader>ff :lua require('telescope_script').files(vim.fn.expand('%:p:h'))<cr>
 nnoremap <leader>ff :lua require("fzf-lua").files()<cr>
 " file tree
-nnoremap <leader>ft :Neotree action=focus source=filesystem<cr>
+nnoremap <leader>ft :Neotree<cr>
 " fuzzy search most recent file
 nnoremap <leader>fr :FzfLua frecency<cr>
 " file system

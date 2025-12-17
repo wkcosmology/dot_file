@@ -78,9 +78,7 @@ require("neo-tree").setup({
     },
   },
   window = {
-    width = "fit_content",
-    min_width = 40,
-    max_width = 60,
+    position = "right",
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -141,7 +139,7 @@ require("neo-tree").setup({
         "thumbs.db",
       },
     },
-    follow_current_file = false, -- This will find and focus the file in the active buffer every
+    follow_current_file = true, -- This will find and focus the file in the active buffer every
     -- time the current file is changed while the tree is open.
     group_empty_dirs = false, -- when true, empty folders will be grouped together
     hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
@@ -178,27 +176,27 @@ require("neo-tree").setup({
       },
     },
   },
-  file_size = {
-    enabled = true,
-    width = 12, -- width of the column
-    required_width = 64, -- min width of window required to show this column
-  },
-  type = {
-    enabled = true,
-    width = 10, -- width of the column
-    required_width = 122, -- min width of window required to show this column
-  },
-  last_modified = {
-    enabled = true,
-    width = 20, -- width of the column
-    required_width = 88, -- min width of window required to show this column
-  },
-  created = {
-    enabled = true,
-    width = 20, -- width of the column
-    required_width = 110, -- min width of window required to show this column
-  },
-  symlink_target = {
-    enabled = false,
-  },
+  -- file_size = {
+  --   enabled = true,
+  --   width = 12, -- width of the column
+  --   required_width = 64, -- min width of window required to show this column
+  -- },
+  -- type = {
+  --   enabled = true,
+  --   width = 10, -- width of the column
+  --   required_width = 122, -- min width of window required to show this column
+  -- },
+  -- last_modified = {
+  --   enabled = true,
+  --   width = 20, -- width of the column
+  --   required_width = 88, -- min width of window required to show this column
+  -- },
+  -- created = {
+  --   enabled = true,
+  --   width = 20, -- width of the column
+  --   required_width = 110, -- min width of window required to show this column
+  -- },
+  -- symlink_target = {
+  --   enabled = false,
+  -- },
 })
