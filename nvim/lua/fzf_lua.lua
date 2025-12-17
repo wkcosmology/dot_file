@@ -4,7 +4,7 @@ require("fzf-lua").setup({
     height = 26,
     width = 1,
     row = math.floor(vim.o.lines - 28),
-    border = { "", "─", "", "", "", "─", "", "" },
+    border = "rounded",
     backdrop = 0,
     fullscreen = false,
     preview = {
@@ -56,3 +56,5 @@ require("fzf-lua").setup({
     },
   },
 })
+
+require("fzf-lua-frecency").setup()

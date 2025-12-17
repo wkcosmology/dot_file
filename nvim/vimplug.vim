@@ -189,6 +189,8 @@ Plug 'AndrewRadev/tagalong.vim'
 " FZF-lua
 " ---------------------------------------------------------------------------
 Plug 'ibhagwan/fzf-lua'
+Plug 'elanmed/fzf-lua-frecency.nvim'
+Plug 'michel-garcia/fzf-lua-file-browser.nvim'
 
 " ---------------------------------------------------------------------------
 " Telescope and related

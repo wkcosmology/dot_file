@@ -94,11 +94,11 @@ nnoremap <leader>ff :lua require("fzf-lua").files()<cr>
 " file tree
 nnoremap <leader>ft :Neotree action=focus source=filesystem position=float reveal<cr>
 " fuzzy search most recent file
-nnoremap <leader>fr :Telescope fzf_mru<cr>
+nnoremap <leader>fr :FzfLua frecency<cr>
 " file system
 nnoremap <leader>fs :Telescope file_browser<cr>
 " symbol layout
-nnoremap <leader>fc :AerialToggle<cr>
+"nnoremap <leader>fc :AerialToggle<cr>
 nnoremap <leader>fc :lua require("aerial").fzf_lua_picker()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

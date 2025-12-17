@@ -40,12 +40,13 @@ hi TelescopeNormal guifg=#c6c6c6 gui=NONE
 hi TelescopeSelection guifg=Orange guibg=#232423 gui=NONE cterm=NONE
 hi TelescopeMatching guifg=Orange guibg=NONE gui=NONE
 hi TelescopeTitle guibg=none
+hi TelescopeSelectionCaret guifg=Orange
 " floating window highlight
 hi FloatNormal guibg=NONE
 hi FloatBorder guibg=NONE
 " FZF-lua highlight
 hi FzfLuaTitle guibg=NONE
-hi FzfLuaFzfPointer guifg=Orange gui=NONE
+hi! link FzfLuaFzfPointer TelescopeSelectionCaret
 hi! link FzfLuaNormal TelescopeNormal
 hi! link FzfLuaBorder TelescopeBorder
 hi! link FzfLuaFzfCursorLine TelescopeSelection

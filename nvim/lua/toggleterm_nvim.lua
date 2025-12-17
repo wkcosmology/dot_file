@@ -19,7 +19,7 @@ require("toggleterm").setup({
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'
   float_opts = {
-    border = { "", "─", "", "", "", "─", "", "" },
+    border = "rounded",
     width = math.floor(vim.o.columns - 2),
     height = 25,
     row = math.floor(vim.o.lines - 29),

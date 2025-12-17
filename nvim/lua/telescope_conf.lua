@@ -54,10 +54,12 @@ require("telescope").setup({
       "--field-context-separator=-",
     },
     prompt_prefix = "> ",
-    selection_caret = "> ",
+    selection_caret = "▌ ",
     entry_prefix = "  ",
     initial_mode = "insert",
-    results_title = "Results",
+    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    results_title = "",
+    dynamic_preview_title = "",
     selection_strategy = "reset",
     sorting_strategy = "ascending",
     file_ignore_patterns = { "%.ipynb" },
@@ -82,20 +84,19 @@ require("telescope").setup({
     file_browser = {
       theme = "ivy",
       prompt_path = true,
-      -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
     },
     bibtex = {
       depth = 1,
       global_files = { "~/.zotero_library.bib" },
-      search_keys = { 'author', 'year', 'title' },
+      search_keys = { "author", "year", "title" },
       mappings = {
         i = {
           ["<CR>"] = function(prompt_bufnr)
             local entry = action_state.get_selected_entry().id.content
             actions.close(prompt_bufnr)
             table.insert(entry, "")
-            vim.fn.setreg('', entry)
+            vim.fn.setreg("", entry)
           end,
         },
       },
