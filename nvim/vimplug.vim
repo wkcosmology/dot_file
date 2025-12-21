@@ -18,11 +18,7 @@ Plug 'tpope/vim-surround'
 " enhance . operate, support more like vim-surround
 Plug 'tpope/vim-repeat'
 " lua version of easymotion
-"Plug 'phaazon/hop.nvim'
-"Plug 'ggandor/leap.nvim'
 Plug 'folke/flash.nvim'
-" for quick commentary
-" Plug 'numToStr/Comment.nvim'
 " add more text object
 Plug 'wellle/targets.vim'
 " display number of matchings
@@ -37,9 +33,8 @@ Plug 'junegunn/vim-easy-align'
 " markdown
 Plug 'godlygeek/tabular', { 'for': ['markdown'] }
 Plug 'plasticboy/vim-markdown', { 'for': ['markdown'] }
-" tagbar
+" symbols
 Plug 'stevearc/aerial.nvim'
-Plug 'hedyhli/outline.nvim'
 " undo tree visualizer
 Plug 'mbbill/undotree'
 " vim for vim

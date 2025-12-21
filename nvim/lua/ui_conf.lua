@@ -56,10 +56,10 @@ require("smear_cursor").setup({
 vim.opt.showbreak = "↳ "
 
 -- set cursor column
-local W = 80
+local W = 121
 vim.api.nvim_create_autocmd({ "WinEnter", "WinResized" }, {
   callback = function()
-    vim.wo.colorcolumn = vim.api.nvim_win_get_width(0) >= W and "80" or ""
+    vim.wo.colorcolumn = vim.api.nvim_win_get_width(0) >= W and "120" or ""
   end,
 })
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#47475d" })

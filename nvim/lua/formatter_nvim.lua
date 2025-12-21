@@ -39,10 +39,10 @@ require("formatter").setup({
     },
 
     tex = {
-      -- Configuration for psf/black
       function()
         return {
-          exe = "tex-fmt --stdin --tabsize=2 -l 80",
+          exe = "latexindent",
+          args = { "-l", "-y=indentation:indentRules:defaultIndent:\"  \"", "-" }, -- read from stdin, write to stdout
           stdin = true,
         }
       end,

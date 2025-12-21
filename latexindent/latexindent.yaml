@@ -1,0 +1,68 @@
+# =========================================================
+# latexindent.yaml — sentence-per-line style
+# =========================================================
+
+# ---------------------------------------------------------
+# Line breaking
+# ---------------------------------------------------------
+modifyLineBreaks:
+  textWrapOptions:
+    columns: 0                # DO NOT hard-wrap by column count
+    multipleSpacesToSingle: 0
+    removeParagraphLineBreaks: 0
+
+# ---------------------------------------------------------
+# Preserve math and environments
+# ---------------------------------------------------------
+verbatimEnvironments:
+  verbatim: 1
+  verbatim*: 1
+  lstlisting: 1
+  minted: 1
+  equation: 1
+  equation*: 1
+  align: 1
+  align*: 1
+  gather: 1
+  gather*: 1
+  multline: 1
+  multline*: 1
+
+# Do not touch inline math
+specialBeginEnd:
+  inlineMath:
+    begin: '\$'
+    end: '\$'
+    lookForThis: 1
+
+# ---------------------------------------------------------
+# Paragraph handling
+# ---------------------------------------------------------
+removeTrailingWhitespace:
+  beforeProcessing: 1
+  afterProcessing: 1
+
+# Do NOT merge paragraphs
+removeParagraphLineBreaks:
+  all: 0
+
+# ---------------------------------------------------------
+# Indentation (minimal, stable)
+# ---------------------------------------------------------
+
+indentPreamble: 1
+
+indentation:
+  defaultIndent: "  "          # 2 spaces everywhere by default
+  indentRules:
+    environments:
+      default: "  "
+    commands:
+      default: "  "
+
+# ---------------------------------------------------------
+# Logging (useful when debugging)
+# ---------------------------------------------------------
+logFilePreferences:
+  showEveryYamlRead: 0
+  showAmalgamatedSettings: 0

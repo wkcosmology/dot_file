@@ -35,6 +35,7 @@ autocmd TermEnter term://*toggleterm#*
 " disable the command line mode
 nnoremap <leader>q: q:
 nnoremap q: <Nop>
+nnoremap <C-w>0 :vertical resize 120<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " S-group: fuzzy search
@@ -78,7 +79,7 @@ augroup END
 " LSP related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap gd :Lspsaga goto_definition<cr>
-nnoremap gh :Telescope lsp_references include_current_line=true}<cr>
+nnoremap gh :FzfLua lsp_references<cr>
 nnoremap gr :Lspsaga rename ++project<cr>
 nnoremap gk :Lspsaga hover_doc<cr>
 nnoremap ]e :Lspsaga diagnostic_jump_next<cr>
@@ -262,3 +263,7 @@ fun! s:CdPwd()
     echo 'Enter path >> ' . path
   end
 endf
+
+command! -range=% NormalizeSentences silent
+  \ <line1>,<line2>s/\v([a-z0-9,])\n\s*([a-z0-9])/\1 \2/ge |
+  \ <line1>,<line2>s/\v([.!?])\s+\ze([A-Z]|\\[A-Za-z])/\1\r/ge

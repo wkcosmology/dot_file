@@ -8,14 +8,13 @@ let g:vimtex_parser_bib_backend = 'lua'
 let g:vimtex_compiler_method = 'latexmk'
 let g:vimtex_compiler_latexmk = {
         \ 'build_dir' : '',
-        \ 'callback' : 0,
+        \ 'callback' : 1,
         \ 'continuous' : 0,
         \ 'executable' : 'latexmk',
         \ 'hooks' : [],
         \ 'options' : [
         \   '-pdf',
         \   '-cd',
-        \   '-bibtex',
         \   '-verbose',
         \   '-file-line-error',
         \   '-synctex=1',
@@ -30,7 +29,7 @@ let g:vimtex_quickfix_autoclose_after_keystrokes = 2
 " Disable custom warnings based on regexp
 let g:vimtex_quickfix_ignore_filters = []
 " auto formatting
-let g:vimtex_format_enabled = 1
+let g:vimtex_format_enabled = 0
 " disable matchparen, using vim-matchup instead.
 let g:matchup_override_vimtex = 1
 let g:matchup_matchparen_enabled = 1

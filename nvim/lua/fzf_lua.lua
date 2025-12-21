@@ -9,7 +9,7 @@ require("fzf-lua").setup({
     fullscreen = false,
     grep = {
       git_icons = false,
-      no_ignore = false,
+      no_ignore = true,
       hidden = false,
     },
     preview = {
