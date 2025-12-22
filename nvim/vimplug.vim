@@ -166,6 +166,7 @@ Plug 'mrbjarksen/neo-tree-diagnostics.nvim'
 Plug 'folke/lsp-colors.nvim'
 " formatter
 Plug 'mhartington/formatter.nvim'
+Plug 'stevearc/conform.nvim'
 
 " ---------------------------------------------------------------------------
 " Lua
@@ -209,4 +210,3 @@ Plug 'nvim-telescope/telescope-bibtex.nvim'
 call plug#end()
 " end of vim plugins manager:vim-plug------------------------------------------
 " :setlocal foldmethod=marker
-"

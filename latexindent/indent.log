@@ -1,10 +1,12 @@
 INFO:  latexindent.pl version 3.24.7, 2025-08-15, a script to indent .tex files
        latexindent.pl lives here: /opt/homebrew/Cellar/latexindent/3.24.7/libexec/bin/
-       Mon Dec 22 15:13:22 2025
-       Reading input from STDIN
+       Sun Dec 21 16:49:49 2025
+       Filename: test.tex
 INFO:  Processing switches:
-INFO:  Directory for backup files and log file indent.log:
-       .
+       -w|--overwrite: Overwrite mode active, will make a back up before overwriting
+       -c|--cruft: cruft directory
+INFO:  Directory for backup files and log file /Users/wangk/.config/latexindent/indent.log:
+       /Users/wangk/.config/latexindent/
 INFO:  Perl modules are being loaded from the following directories:
        /opt/homebrew/opt/perl/lib/perl5/5.40/FindBin.pm
        /opt/homebrew/Cellar/latexindent/3.24.7/libexec/lib/perl5/YAML/Tiny.pm
@@ -29,12 +31,17 @@ WARN:  yaml file not found: localSettings.yaml not found. Proceeding without it.
 WARN:  yaml file not found: latexindent.yaml not found. Proceeding without it.
 WARN:  yaml file not found: .localSettings.yaml not found. Proceeding without it.
 WARN:  yaml file not found: .latexindent.yaml not found. Proceeding without it.
+INFO:  Backup procedure (-w flag active):
+       /Users/wangk/.config/latexindent/test.bak0 already exists, incrementing by 1 (see maxNumberOfBackUps)
+       /Users/wangk/.config/latexindent/test.bak1 already exists, incrementing by 1 (see maxNumberOfBackUps)
+       Backing up test.tex to /Users/wangk/.config/latexindent/test.bak2...
+       test.tex will be overwritten after indentation
 INFO:  Phase 1: searching for objects
 INFO:  Phase 2: finding surrounding indentation
 INFO:  Phase 3: indenting objects
 INFO:  Phase 4: final indentation check
 INFO:  Output routine:
-       Not outputting to file; see -w and -o switches for more options.
+       Overwriting file test.tex
        --------------
 INFO:  Please direct all communication/issues to:
         https://github.com/cmhughes/latexindent.pl

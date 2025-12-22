@@ -1,7 +1,7 @@
 {
     "item": {
         "prefix": "it",
-        "body": ["\t\\item "],
+        "body": ["\t\\item\n\t\t\t\t"],
         "description": "item"
     },
     "Begin": {
@@ -293,7 +293,7 @@
             "\t\\end{center}",
             "\t\\caption{$2",
             "\t}",
-            "\t\\label{fig:${1}}",
+            "\t\\label{fig:${1/.*\\/(.*)|(\\.[^.]+)$/$1/}}",
             "\\end{figure*}",
             "$3"
         ],
@@ -308,33 +308,11 @@
             "\t\\end{center}",
             "\t\\caption{$2",
             "\t}",
-            "\t\\label{fig:${1}}",
+            "\t\\label{fig:${1/.*\\/(.*)|(\\.[^.]+)$/$1/}}",
             "\\end{figure}",
             "$3"
         ],
         "description": "Add a figure"
-    },
-    "Figure:ACM": {
-        "prefix": "figure:acm",
-        "body": [
-            "\\begin{figure}",
-            "\t\\includegraphics[width=0.45\\textwidth]{figures/$1}",
-            "\t\\caption{$2}\\label{fig:$3}",
-            "\\end{figure}",
-            "$0"
-        ],
-        "description": "Add a figure (ACM)"
-    },
-    "Figure:ACM:*": {
-        "prefix": "figure:acm:*",
-        "body": [
-            "\\begin{figure*}",
-            "\t\\includegraphics[width=0.45\\textwidth]{figures/$1}",
-            "\t\\caption{$2}\\label{fig:$3}",
-            "\\end{figure*}",
-            "$0"
-        ],
-        "description": "Add a figure (ACM)"
     },
     "Table": {
         "prefix": "table",

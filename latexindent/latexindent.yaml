@@ -6,10 +6,16 @@
 # Line breaking
 # ---------------------------------------------------------
 modifyLineBreaks:
+  preserveBlankLines: false       # collapse multiple blank lines
+  condenseMultipleBlankLinesInto: 1
   textWrapOptions:
     columns: 0                # DO NOT hard-wrap by column count
     multipleSpacesToSingle: 0
     removeParagraphLineBreaks: 0
+
+removeTrailingWhitespace:
+  beforeProcessing: 1
+  afterProcessing: 1
 
 # ---------------------------------------------------------
 # Preserve math and environments
@@ -53,12 +59,7 @@ removeParagraphLineBreaks:
 indentPreamble: 1
 
 indentation:
-  defaultIndent: "  "          # 2 spaces everywhere by default
-  indentRules:
-    environments:
-      default: "  "
-    commands:
-      default: "  "
+  defaultIndent: ">>>>"
 
 # ---------------------------------------------------------
 # Logging (useful when debugging)
