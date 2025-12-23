@@ -1,4 +1,4 @@
-vim.cmd("source ~/.config/nvim/vimplug.vim")
+require("vimplug")
 vim.cmd("colorscheme catppuccin-mocha")
 vim.cmd("filetype plugin indent on")
 

@@ -80,9 +80,11 @@ cmp.setup.cmdline(":", {
 -- config for each language
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+local navic = require("nvim-navic")
 
 -- Attach to all the languages
 local on_attach = function(client, bufnr)
+  navic.attach(client, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end

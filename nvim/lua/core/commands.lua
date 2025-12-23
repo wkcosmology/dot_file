@@ -57,38 +57,3 @@ local function delete_hidden_buffers()
 end
 
 vim.api.nvim_create_user_command("DeleteHiddenBuffers", delete_hidden_buffers, {})
-
-vim.api.nvim_create_user_command("TexTocFzf", function()
-  local get = vim.fn["vimtex#toc#get_entries"]
-  if type(get) ~= "function" then
-    return vim.notify("VimTeX ToC not available", vim.log.levels.WARN)
-  end
-
-  local items, jump = {}, {}
-  for _, e in ipairs(get() or {}) do
-    local title = e.title
-    if title and e.type == "label" then
-      local lnum = tonumber(e.line or e.lnum or 1) or 1
-      local file = e.file or e.filename or vim.fn.expand("%:p")
-      local key = string.format("%s", title) -- no filename
-      items[#items + 1] = key
-      jump[key] = { file = file, lnum = lnum }
-    end
-  end
-
-  require("fzf-lua").fzf_exec(items, {
-    prompt = "ToC> ",
-    actions = {
-      ["default"] = function(sel)
-        local t = jump[sel[1]]
-        if not t then
-          return
-        end
-        vim.cmd("edit " .. vim.fn.fnameescape(t.file))
-        vim.api.nvim_win_set_cursor(0, { t.lnum, 0 })
-      end,
-    },
-  })
-end, {
-  desc = "Fuzzy VimTeX ToC (fzf-lua)",
-})

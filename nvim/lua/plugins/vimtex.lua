@@ -46,14 +46,15 @@ vim.g.vimtex_quickfix_ignore_filters = {}
 vim.g.vimtex_format_enabled = 0
 
 -- use vim-matchup instead of matchparen
-vim.g.matchup_override_vimtex = 1
-vim.g.matchup_matchparen_enabled = 1
+-- vim.g.matchup_override_vimtex = 1
+-- vim.g.matchup_matchparen_enabled = 1
 
 -- folding
 vim.g.vimtex_fold_enabled = 0
 vim.g.vimtex_fold_manual = 0
 
 -- disable syntax conceal
+vim.g.vimtex_syntax_enabled = 1
 vim.g.vimtex_syntax_conceal_disable = 1
 
 -- =========================
@@ -99,8 +100,7 @@ vim.g.vimtex_view_enabled = 1
 vim.g.vimtex_view_method = "skim"
 vim.g.vimtex_view_automatic = 0
 
-vim.g.vimtex_view_general_viewer =
-  "/Applications/Skim.app/Contents/SharedSupport/displayline"
+vim.g.vimtex_view_general_viewer = "/Applications/Skim.app/Contents/SharedSupport/displayline"
 vim.g.vimtex_view_general_options = "-r @line @pdf @tex"
 
 vim.g.vimtex_view_skim_activate = 0

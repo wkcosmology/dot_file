@@ -219,7 +219,9 @@ vim.api.nvim_create_autocmd("FileType", {
     map("n", "<leader>vv", "<cmd>VimtexView<cr>", { buffer = ev.buf })
     map("n", "<leader>vc", "<cmd>VimtexTocOpen<cr>", { buffer = ev.buf })
     map("n", "<leader>cc", "<cmd>VimtexClean<cr>", { buffer = ev.buf })
-    map("n", "<leader>so", "<cmd>TexTocFzf<cr>", { buffer = ev.buf, desc = "Fuzzy VimTeX ToC" })
+    map("n", "<leader>so", function()
+      return require("vimtex.fzf-lua").run({ layers = "l" })
+    end)
   end,
 })
 vim.api.nvim_create_autocmd("FileType", {

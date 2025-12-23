@@ -60,3 +60,49 @@ vim.keymap.set("n", "<C-u>", function()
   local n = (vim.v.count > 0) and vim.v.count or 40
   neoscroll.scroll(-n, { move_cursor = true, duration = 250 })
 end, { buffer = true, silent = true })
+
+local hl = vim.api.nvim_set_hl
+local link = function(a, b) hl(0, a, { link = b }) end
+
+-- ---------------------------------------------------------
+-- Commands & structure (dim)
+-- ---------------------------------------------------------
+link("texCmd", "Special")
+link("texCmdName", "Special")
+link("texCmdStyle", "Special")
+link("texBeginEnd", "Comment")
+
+-- ---------------------------------------------------------
+-- Sections (stand out, but calm)
+-- ---------------------------------------------------------
+link("texSection", "Title")
+link("texSectionName", "Title")
+
+-- ---------------------------------------------------------
+-- References & citations
+-- ---------------------------------------------------------
+link("texLabel", "Comment")
+link("texRefZone", "Comment")
+link("texRefArg", "Comment")
+link("texCite", "Comment")
+
+-- ---------------------------------------------------------
+-- Math (readable, non-distracting)
+-- ---------------------------------------------------------
+link("texMathDelim", "Comment")
+link("texMathZoneX", "Normal")
+link("texMathZoneY", "Normal")
+
+-- ---------------------------------------------------------
+-- Comments
+-- ---------------------------------------------------------
+link("texComment", "Comment")
+
+-- ---------------------------------------------------------
+-- TODO / FIXME inside comments
+-- ---------------------------------------------------------
+vim.cmd([[
+  syntax match MyTexTodo /\v<(TODO|FIXME|NOTE|OPTIMIZE|XXX):/
+        \ containedin=texComment,vimCommentTitle
+]])
+link("MyTexTodo", "Todo")

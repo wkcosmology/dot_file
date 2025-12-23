@@ -63,6 +63,8 @@ do
     NormalFloat = { bg = "NONE" },
     FloatBorder = { bg = "NONE" },
     LspSignatureActiveParameter = { fg = "Orange", bg = "NONE" },
+    NavicSeparator = { fg = "Grey", bg = "NONE" },
+    NavicText = { bg = "NONE" },
   }
 
   local link = {
