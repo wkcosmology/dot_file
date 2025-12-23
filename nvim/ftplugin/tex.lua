@@ -52,12 +52,12 @@ if not ok then
 end
 
 vim.keymap.set("n", "<C-d>", function()
-  local n = (vim.v.count > 0) and vim.v.count or 40
+  local n = (vim.v.count > 0) and vim.v.count or 20
   neoscroll.scroll(n, { move_cursor = true, duration = 250 })
 end, { buffer = true, silent = true })
 
 vim.keymap.set("n", "<C-u>", function()
-  local n = (vim.v.count > 0) and vim.v.count or 40
+  local n = (vim.v.count > 0) and vim.v.count or 20
   neoscroll.scroll(-n, { move_cursor = true, duration = 250 })
 end, { buffer = true, silent = true })
 
