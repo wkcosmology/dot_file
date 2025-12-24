@@ -35,14 +35,14 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 --   Hint = "#10B981",
 -- })
 
-require("lsp_signature").setup({
-  max_width = 80,
-  bind = false,
-  hint_enable = false,
-  close_timeout = 4000,
-  hi_parameter = "LspSignatureActiveParameter",
-  always_trigger = false,
-})
+-- require("lsp_signature").setup({
+--   max_width = 80,
+--   bind = false,
+--   hint_enable = false,
+--   close_timeout = 4000,
+--   hi_parameter = "LspSignatureActiveParameter",
+--   always_trigger = false,
+-- })
 
 -- lspsaga
 require("lspsaga").setup({

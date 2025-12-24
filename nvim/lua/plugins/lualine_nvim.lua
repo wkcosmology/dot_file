@@ -1,4 +1,6 @@
-require("nvim-navic").setup({
+local navic = require("nvim-navic")
+
+navic.setup({
   highlight = false,
   separator = " > ",
   lsp = {
@@ -10,7 +12,7 @@ require("nvim-navic").setup({
 require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = "auto",
+    theme = require("lualine.themes.catppuccin_mocha"),
     -- component_separators = { left = "", right = "" },
     component_separators = { left = "", right = "│" },
     section_separators = { left = "", right = "" },
@@ -112,10 +114,21 @@ require("lualine").setup({
   winbar = {
     lualine_c = {
       {
-        "navic",
+        function()
+        if navic.is_available() then
+          local loc = navic.get_location()
+          if loc ~= nil and loc ~= "" then
+            return loc
+          end
+        end
+        return "󰒲  LSP is sleeping..."
+      end,
+        cond = function()
+          return navic.is_available()
+        end,
         color_correction = nil,
         navic_opts = nil,
-        color = { fg = 'Orange', bg = 'NONE' },
+        color = { fg = "Orange", bg = "NONE" },
       },
     },
   },

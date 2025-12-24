@@ -146,7 +146,7 @@ Plug("hrsh7th/cmp-path")
 Plug("hrsh7th/cmp-nvim-lua")
 Plug("lukas-reineke/cmp-under-comparator")
 Plug("hrsh7th/cmp-cmdline")
-Plug("ray-x/lsp_signature.nvim")
+-- Plug("ray-x/lsp_signature.nvim")
 -- lsp UI
 Plug("nvim-lua/lsp-status.nvim")
 Plug("onsails/lspkind-nvim")
