@@ -9,6 +9,7 @@ opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
 vim.cmd("filetype plugin indent on")
+vim.opt.spell = false
 
 opt.expandtab = true
 opt.hidden = true
@@ -103,3 +104,19 @@ vim.g.session_autoload = "no"
 pcall(function()
   require("smear_cursor").enabled = true
 end)
+
+require("nvim-surround").setup({
+  keymaps = {
+    insert = "<C-g>s",
+    insert_line = "<C-g>S",
+    normal = "ys",
+    normal_cur = "yss",
+    normal_line = "yS",
+    normal_cur_line = "ySS",
+    visual = "gs",
+    visual_line = "gS",
+    delete = "ds",
+    change = "cs",
+    change_line = "cS",
+  },
+})

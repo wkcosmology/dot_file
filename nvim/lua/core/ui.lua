@@ -62,7 +62,7 @@ do
     FzfLuaFzfPointer = { fg = "Orange" },
     NormalFloat = { bg = "NONE" },
     FloatBorder = { bg = "NONE" },
-    LspSignatureActiveParameter = { fg = "Orange", bg = "NONE" },
+    LspSignatureActiveParameter = { fg = "Orange", bg = "NONE", underline = false, bold = false },
     NavicSeparator = { fg = "Grey", bg = "NONE" },
     NavicText = { bg = "NONE" },
   }

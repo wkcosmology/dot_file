@@ -19,7 +19,8 @@ Plug("markonm/traces.vim")
 -- enhance * search
 Plug("haya14busa/vim-asterisk")
 -- powerful!!! operate on surround
-Plug("tpope/vim-surround")
+-- Plug("tpope/vim-surround")
+Plug ("kylechui/nvim-surround")
 -- enhance . operate, support more like vim-surround
 Plug("tpope/vim-repeat")
 -- lua version of easymotion

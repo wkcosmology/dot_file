@@ -66,8 +66,8 @@ require("lspsaga").setup({
     },
   },
   hover = {
-    max_width = 0.9,
-    max_height = 0.8,
+    max_width = 0.5,
+    max_height = 0.4,
     open_link = "gx",
   },
   lightbulb = {
