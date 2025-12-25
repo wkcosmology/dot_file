@@ -70,15 +70,35 @@ require("lualine").setup({
         },
       },
     },
-    lualine_c = { "filetype" },
+    lualine_c = {
+      {
+        "filetype",
+        fmt = function(ft)
+          return ft ~= "" and ("{" .. ft .. "}") or ""
+        end,
+        colored = false,
+        icon_only = false,
+        icon = false,
+        icons_enabled = false,
+      },
+    },
     lualine_x = {
       {
-        "diff",
+        "diagnostics",
+        sources = { "nvim_diagnostic" },
+        sections = { "error", "warn" },
+        symbols = { error = "  ", warn = "  ", info = "  " },
         colored = true,
-        diff_color = { added = "GitSignsAdd", modified = "GitSignsChange", removed = "GitSignsDelete" },
-        symbols = { added = " ", modified = " ", removed = " " }, -- Changes the symbols used by the diff.
+        update_in_insert = false,
+        always_visible = false,
       },
-      "diagnostics",
+      {
+        "diff",
+        colored = false,
+        diff_color = { added = "GitSignsAdd", modified = "GitSignsChange", removed = "GitSignsDelete" },
+        symbols = { added = "  ", modified = "  ", removed = "  " },
+        always_visible = true,
+      },
     },
     lualine_y = {
       "progress",
@@ -105,7 +125,18 @@ require("lualine").setup({
         shorting_target = 40,
       },
     },
-    lualine_c = { "filetype" },
+    lualine_c = {
+      {
+        "filetype",
+        fmt = function(ft)
+          return ft ~= "" and ("{" .. ft .. "}") or ""
+        end,
+        colored = false,
+        icon_only = false,
+        icon = false,
+        icons_enabled = false,
+      },
+    },
     lualine_x = { "location" },
     lualine_y = {},
     lualine_z = {},

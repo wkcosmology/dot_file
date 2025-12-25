@@ -23,9 +23,9 @@ opt.list = true
 opt.listchars:append({ eol = "↲" })
 
 -- cursorline only in active window
-vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave", "BufWinEnter" }, {
+vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave" }, {
   callback = function()
-    vim.wo.cursorline = vim.api.nvim_win_get_config(0).relative == ""
+    vim.wo.cursorline = (vim.api.nvim_win_get_config(0).relative == "")
   end,
 })
 

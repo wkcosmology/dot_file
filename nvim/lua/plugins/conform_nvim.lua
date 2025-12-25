@@ -51,8 +51,7 @@ require("conform").setup({
     latexindent = {
       command = "latexindent",
       args = {
-        "-g",
-        "/dev/null",
+        "-g=/dev/null",
         "-y=defaultIndent:'  ',indentPreamble:1,removeTrailingWhitespace:1",
         "-l",
         "-",

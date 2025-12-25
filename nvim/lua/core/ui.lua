@@ -67,10 +67,11 @@ do
     NavicText = { bg = "NONE" },
     DiagnosticUnderlineWarn = { underline = false, undercurl = false },
     DiagnosticUnderlineError = { underline = false, undercurl = false },
+    CursorLineNr = { fg = "Orange", bg = "#3b3f52" },
+    CursorLineSign = { bg = "#3b3f52" },
   }
 
   local link = {
-    CursorLineNr = "Constant",
     MyTodo = "Todo",
     TelescopeNormal = "FzfLuaNormal",
     TelescopeSelection = "FzfLuaCursor",
