@@ -72,7 +72,7 @@ map("n", "<leader>st", "<cmd>Telescope toggleterm<cr>")
 map("n", "<leader>so", "<cmd>Telescope lsp_document_symbols<cr>")
 -- file
 map("n", "<leader>ff", fzf.files)
-map("n", "<leader>fr", "<cmd>FzfLua frecency<cr>")
+map("n", "<leader>fr", fzf.oldfiles)
 map("n", "<leader>fs", "<cmd>Telescope file_browser<cr>")
 map("n", "<leader>fc", function()
   require("aerial").fzf_lua_picker()
@@ -148,7 +148,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- G-group: Git
 -- ---------------------------------------------------------
 map("n", "<leader>gd", function()
-  require("script").toggle_git_diff()
+  require("plugins.script").toggle_git_diff()
 end)
 map("n", "<leader>gh", "<cmd>diffget //2<cr>")
 map("n", "<leader>gl", "<cmd>diffget //3<cr>")

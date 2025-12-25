@@ -57,7 +57,6 @@ require("telescope").setup({
     selection_caret = "▌ ",
     entry_prefix = "  ",
     initial_mode = "insert",
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     results_title = "",
     dynamic_preview_title = "",
     selection_strategy = "reset",
@@ -82,8 +81,6 @@ require("telescope").setup({
       case_mode = "smart_case", -- or "ignore_case" or "respect_case"
     },
     file_browser = {
-      theme = "ivy",
-      prompt_path = true,
       hijack_netrw = true,
     },
     bibtex = {
