@@ -48,9 +48,22 @@ require("conform").setup({
       end,
     },
 
-    latexindent = { command = "latexindent", args = { "-l", "-" }, stdin = true },
+    latexindent = {
+      command = "latexindent",
+      args = {
+        "-g",
+        "/dev/null",
+        "-y=defaultIndent:'  ',indentPreamble:1,removeTrailingWhitespace:1",
+        "-l",
+        "-",
+      },
+      stdin = true,
+    },
+
     black = { command = "black", args = { "-" }, stdin = true },
+
     cmake_format = { command = "cmake-format", args = { "-" }, stdin = true },
+
     fprettify = { command = "fprettify", args = { "-" }, stdin = true },
   },
 })

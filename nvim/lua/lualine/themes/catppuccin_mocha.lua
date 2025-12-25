@@ -50,9 +50,15 @@ return {
   },
 
   inactive = {
-    a = { fg = colors.base, bg = colors.blue },
+    a = { fg = colors.base, bg = colors.subtext0 },
     b = { fg = colors.subtext0, bg = colors.surface0 },
     c = { fg = colors.subtext0, bg = colors.base },
     x = { fg = colors.subtext0, bg = colors.surface0 },
+  },
+  winbar = {
+    c = { fg = colors.subtext0, bg = colors.base },
+  },
+  inactive_winbar = {
+    c = { fg = colors.subtext0, bg = colors.base },
   },
 }

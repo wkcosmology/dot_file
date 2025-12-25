@@ -65,6 +65,8 @@ do
     LspSignatureActiveParameter = { fg = "Orange", bg = "NONE", underline = false, bold = false },
     NavicSeparator = { fg = "Grey", bg = "NONE" },
     NavicText = { bg = "NONE" },
+    DiagnosticUnderlineWarn = { underline = false, undercurl = false },
+    DiagnosticUnderlineError = { underline = false, undercurl = false },
   }
 
   local link = {
@@ -146,16 +148,16 @@ do
 end
 
 -- ---------- ColorColumn rule (only when window wide enough) ----------
-do
-  local W = 121
-  local grp = vim.api.nvim_create_augroup("vimrc_colorcolumn", { clear = true })
-  vim.api.nvim_create_autocmd({ "WinEnter", "WinResized" }, {
-    group = grp,
-    callback = function()
-      vim.wo.colorcolumn = (vim.api.nvim_win_get_width(0) >= W) and "120" or ""
-    end,
-  })
-end
+-- do
+--   local W = 121
+--   local grp = vim.api.nvim_create_augroup("vimrc_colorcolumn", { clear = true })
+--   vim.api.nvim_create_autocmd({ "WinEnter", "WinResized" }, {
+--     group = grp,
+--     callback = function()
+--       vim.wo.colorcolumn = (vim.api.nvim_win_get_width(0) >= W) and "120" or ""
+--     end,
+--   })
+-- end
 
 -- ---------- pretties ----------
 do

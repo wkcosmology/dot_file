@@ -7,7 +7,6 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 opt.wrap = true
 opt.number = true
 opt.relativenumber = true
-opt.cursorline = true
 vim.cmd("filetype plugin indent on")
 vim.opt.spell = false
 
@@ -23,14 +22,12 @@ opt.guicursor = "a:blinkon100"
 opt.list = true
 opt.listchars:append({ eol = "↲" })
 
--- =========================
--- Keymaps
--- =========================
-vim.keymap.set("v", "<", "<gv", { silent = true })
-vim.keymap.set("v", ">", ">gv", { silent = true })
-
--- junegunn/vim-easy-align
-vim.keymap.set("x", "ga", "<Plug>(EasyAlign)", { silent = true })
+-- cursorline only in active window
+vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave", "BufWinEnter" }, {
+  callback = function()
+    vim.wo.cursorline = vim.api.nvim_win_get_config(0).relative == ""
+  end,
+})
 
 -- =========================
 -- Autocmds
@@ -113,7 +110,7 @@ require("nvim-surround").setup({
     normal_cur = "yss",
     normal_line = "yS",
     normal_cur_line = "ySS",
-    visual = "gs",
+    visual = "S",
     visual_line = "gS",
     delete = "ds",
     change = "cs",

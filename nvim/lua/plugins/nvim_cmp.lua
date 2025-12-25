@@ -97,7 +97,19 @@ local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true }
 end
 
-vim.lsp.config("jedi_language_server", { on_attach = on_attach })
+vim.lsp.config("pyright", {
+  on_attach = on_attach,
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "off",
+        diagnosticMode = "openFilesOnly", -- only report on open buffers
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+      },
+    },
+  },
+})
 vim.lsp.config("vimls", { on_attach = on_attach })
 vim.lsp.config("texlab", { on_attach = on_attach })
 vim.lsp.config("cmake", { on_attach = on_attach })
@@ -124,7 +136,7 @@ vim.lsp.config("clangd", {
   },
   capabilities = capabilities,
 })
-vim.lsp.enable("jedi_language_server")
+vim.lsp.enable("pyright")
 vim.lsp.enable("vimls")
 vim.lsp.enable("texlab")
 vim.lsp.enable("cmake")
@@ -137,8 +149,12 @@ vim.api.nvim_create_autocmd("WinNew", {
   callback = function()
     local win = vim.api.nvim_get_current_win()
     vim.schedule(function()
-      if not vim.api.nvim_win_is_valid(win) then return end
-      if vim.api.nvim_win_get_config(win).relative == "" then return end
+      if not vim.api.nvim_win_is_valid(win) then
+        return
+      end
+      if vim.api.nvim_win_get_config(win).relative == "" then
+        return
+      end
       if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "markdown" then
         vim.wo[win].spell = false
       end

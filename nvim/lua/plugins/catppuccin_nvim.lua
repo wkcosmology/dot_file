@@ -10,7 +10,7 @@ require("catppuccin").setup({
   dim_inactive = {
     enabled = false, -- dims the background color of inactive window
     shade = "dark",
-    percentage = 0.15, -- percentage of the shade to apply to the inactive window
+    percentage = 0.85, -- percentage of the shade to apply to the inactive window
   },
   no_italic = true, -- Force no italic
   no_bold = true, -- Force no bold
@@ -28,7 +28,7 @@ require("catppuccin").setup({
     properties = {},
     types = {},
     operators = {},
-    -- miscs = {}, -- Uncomment to turn off hard-coded styles
+    miscs = {}, -- Uncomment to turn off hard-coded styles
   },
   color_overrides = {},
   custom_highlights = {},

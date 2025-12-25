@@ -33,7 +33,7 @@ map("n", "gV", "`[v`]", { remap = false })
 
 -- disable command-line window
 map("n", "<leader>q:", "q:")
-map("n", "q:", "<Nop>")
+vim.keymap.del("n", "q:")
 
 -- resize window
 map("n", "<C-w>0", "<cmd>vertical resize 120<cr>")
@@ -43,6 +43,13 @@ map("n", "<leader>dg", "<cmd>Neogen<cr>")
 
 -- cd to the current path
 map("n", "cd", "<cmd>CdPwd<cr>", {})
+
+-- continue indent/un-indent
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- junegunn/vim-easy-align
+map("x", "ga", "<Plug>(EasyAlign)")
 
 -- ---------------------------------------------------------
 -- fuzzy search

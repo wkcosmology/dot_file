@@ -310,7 +310,7 @@ vim.keymap.set({ "n", "x", "o" }, "<C-s>", function()
   })
 end)
 
-vim.keymap.set({ "n", "v", "o", "x" }, "S", function()
+vim.keymap.set({ "n", "v", "o", "x" }, "gs", function()
   require("flash").jump({
     search = { mode = "search", max_length = 0 },
     label = { after = { 0, 0 }, uppercase = true },

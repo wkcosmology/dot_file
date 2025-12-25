@@ -115,23 +115,29 @@ require("lualine").setup({
     lualine_c = {
       {
         function()
-        if navic.is_available() then
-          local loc = navic.get_location()
-          if loc ~= nil and loc ~= "" then
-            return loc
+          if navic.is_available() then
+            local loc = navic.get_location()
+            if loc ~= nil and loc ~= "" then
+              return loc
+            end
           end
-        end
-        return "󰒲  LSP is sleeping..."
-      end,
-        cond = function()
-          return navic.is_available()
+          return "󰒲  LSP is sleeping..."
         end,
         color_correction = nil,
         navic_opts = nil,
-        color = { fg = "Orange", bg = "NONE" },
       },
     },
   },
-  inactive_winbar = {},
+  inactive_winbar = {
+    lualine_c = {
+      {
+        function()
+          return "󰒲  LSP is sleeping..."
+        end,
+        color_correction = nil,
+        navic_opts = nil,
+      },
+    },
+  },
   extensions = { "fzf", "aerial", "toggleterm", "fugitive", "neo-tree" },
 })

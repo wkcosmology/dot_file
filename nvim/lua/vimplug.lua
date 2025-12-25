@@ -20,7 +20,7 @@ Plug("markonm/traces.vim")
 Plug("haya14busa/vim-asterisk")
 -- powerful!!! operate on surround
 -- Plug("tpope/vim-surround")
-Plug ("kylechui/nvim-surround")
+Plug("kylechui/nvim-surround")
 -- enhance . operate, support more like vim-surround
 Plug("tpope/vim-repeat")
 -- lua version of easymotion
@@ -89,7 +89,7 @@ Plug("SmiteshP/nvim-navic")
 Plug("sphamba/smear-cursor.nvim")
 
 -- ---------------------------------------------------------------------------
--- C/C++ related
+-- Language specific
 -- ---------------------------------------------------------------------------
 -- switch header and source file
 Plug("p00f/clangd_extensions.nvim", { ["for"] = { "c", "cpp", "h", "hpp" } })
@@ -146,7 +146,7 @@ Plug("hrsh7th/cmp-path")
 Plug("hrsh7th/cmp-nvim-lua")
 Plug("lukas-reineke/cmp-under-comparator")
 Plug("hrsh7th/cmp-cmdline")
--- Plug("ray-x/lsp_signature.nvim")
+Plug("ray-x/lsp_signature.nvim")
 -- lsp UI
 Plug("nvim-lua/lsp-status.nvim")
 Plug("onsails/lspkind-nvim")
