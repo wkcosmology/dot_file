@@ -1,7 +1,7 @@
 # The syntax is "key = value". The whitespace around the
 # equals doesn't matter.
 background = 282c34
-foreground = ffffff
+# foreground = ffffff
 
 # Empty values reset the configuration to the default value
 font-family = MiscFixedSC613
@@ -9,8 +9,8 @@ font-size = 15
 font-thicken = true
 font-thicken-strength = 255
 
-background-opacity = 0.9
-background-blur = 20
+background-opacity = 1
+background-blur = 100
 
 confirm-close-surface = true
 
@@ -20,5 +20,8 @@ macos-titlebar-style = hidden
 shell-integration = zsh
 
 window-decoration = none
-window-padding-x = 5
+window-padding-x = 0
 window-padding-color = background
+
+background-image = ~/.config/ghostty/background.jpg
+background-image-opacity = 0.1
