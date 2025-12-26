@@ -25,3 +25,4 @@ window-padding-color = background
 
 background-image = ~/.config/ghostty/background.jpg
 background-image-opacity = 0.1
+background-image-fit = cover
