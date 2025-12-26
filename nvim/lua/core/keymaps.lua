@@ -31,10 +31,6 @@ map("n", "<C-l>", "<cmd>nohlsearch<cr>")
 -- select last paste area
 map("n", "gV", "`[v`]", { remap = false })
 
--- disable command-line window
-map("n", "<leader>q:", "q:")
-vim.keymap.del("n", "q:")
-
 -- resize window
 map("n", "<C-w>0", "<cmd>vertical resize 120<cr>")
 
