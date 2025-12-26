@@ -132,11 +132,12 @@ end
 local close_win = vim.api.nvim_create_augroup("close_win", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   group = close_win,
-  pattern = { "qf", "help", "fzf", "toggleterm", "fugitive", "undotree", "fugitiveblame", "git", "gista-list" },
+  pattern = { "qf", "help", "fzf", "toggleterm", "fugitive", "undotree", "fugitiveblame", "git", "gista-list", "vim"},
   callback = function(ev)
     map("t", "<C-g>", "<cmd>close<cr>", { buffer = ev.buf })
     map("i", "<C-g>", "<cmd>close<cr>", { buffer = ev.buf })
     map("n", "<C-g>", "<cmd>close<cr>", { buffer = ev.buf })
+    map("n", "q", "<cmd>close<cr>", { buffer = ev.buf })
   end,
 })
 
