@@ -152,7 +152,8 @@ require("lualine").setup({
               return loc
             end
           end
-          return "󰒲  LSP is sleeping..."
+          -- return "󰒲  LSP is sleeping..."
+          return "  Take a drink at the winbar..."
         end,
         color_correction = nil,
         navic_opts = nil,
@@ -163,7 +164,8 @@ require("lualine").setup({
     lualine_c = {
       {
         function()
-          return "󰒲  LSP is sleeping..."
+          -- return "󰒲  LSP is sleeping..."
+          return "  Take a drink at the winbar..."
         end,
         color_correction = nil,
         navic_opts = nil,
