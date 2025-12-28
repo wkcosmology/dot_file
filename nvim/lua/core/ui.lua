@@ -69,6 +69,7 @@ do
     DiagnosticUnderlineError = { underline = false, undercurl = false },
     CursorLineNr = { fg = "Orange", bg = "#3b3f52" },
     CursorLineSign = { bg = "#3b3f52" },
+    WinSeparator = { bg = "NONE", fg = "Grey" },
   }
 
   local link = {
