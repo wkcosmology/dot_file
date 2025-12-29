@@ -1,9 +1,12 @@
 -- Setup nvim-cmp.
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 cmp.setup({
   performance = {
     debounce = 10,
+    throttle = 20,
+    max_view_entries = 30,
   },
   snippet = {
     expand = function(args)
@@ -11,18 +14,17 @@ cmp.setup({
     end,
   },
   completion = {
-    -- autocomplete = false,
     completeopt = "menu,menuone,noselect",
     keyword_length = 1,
   },
   window = {
     completion = cmp.config.window.bordered({
-      border = "rounded",
+      border = "single",
       scrollbar = false,
       winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
     }),
     documentation = cmp.config.window.bordered({
-      border = "rounded",
+      border = "single",
       scrollbar = true,
       winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
     }),
@@ -42,6 +44,7 @@ cmp.setup({
     { name = "buffer" },
     { name = "luasnip" },
     { name = "path" },
+    { name = "vimtex" },
   },
   preselect = cmp.PreselectMode.None,
   experimental = { native_menu = false, ghost_text = false },
@@ -61,7 +64,7 @@ cmp.setup({
   formatting = {
     fields = { "abbr", "kind", "menu" },
     format = function(entry, vim_item)
-      local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+      local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
       vim_item.abbr = vim_item.abbr:gsub("•", ""):gsub("^%s+", "")
       kind.kind = "    [" .. (string.sub(strings[2], 1, 10) or "") .. "]"
@@ -70,6 +73,7 @@ cmp.setup({
     end,
   },
 })
+
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline("/", { sources = { { name = "buffer", keyword_length = 3 } } })
 cmp.setup.cmdline("?", { sources = { { name = "buffer", keyword_length = 3 } } })
@@ -77,28 +81,25 @@ cmp.setup.cmdline(":", {
   sources = cmp.config.sources({ { name = "path", keyword_length = 3 } }, { { name = "cmdline", keyword_length = 3 } }),
 })
 
--- config for each language
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- config for languages
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local navic = require("nvim-navic")
 
--- Attach to all the languages
+-- on_attach to all the languages
 local on_attach = function(client, bufnr)
   navic.attach(client, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
-
   local function buf_set_option(...)
     vim.api.nvim_buf_set_option(bufnr, ...)
   end
-
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
   local opts = { noremap = true, silent = true }
 end
 
+vim.lsp.config("*", { on_attach = on_attach, capabilities = capabilities })
 vim.lsp.config("pyright", {
-  on_attach = on_attach,
   settings = {
     python = {
       analysis = {
@@ -110,21 +111,17 @@ vim.lsp.config("pyright", {
     },
   },
 })
-vim.lsp.config("vimls", { on_attach = on_attach })
-vim.lsp.config("texlab", { on_attach = on_attach })
-vim.lsp.config("cmake", { on_attach = on_attach })
-vim.lsp.config("fortls", { on_attach = on_attach })
 vim.lsp.config("lua_ls", {
-  on_attach = on_attach,
-  Lua = {
-    diagnostics = {
-      -- Get the language server to recognize the `vim` global
-      globals = { "vim" },
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { "vim" },
+      },
     },
   },
 })
 vim.lsp.config("clangd", {
-  on_attach = on_attach,
   cmd = {
     "clangd",
     "--clang-tidy",
@@ -134,30 +131,14 @@ vim.lsp.config("clangd", {
     "--all-scopes-completion",
     "--header-insertion=iwyu",
   },
-  capabilities = capabilities,
 })
-vim.lsp.enable("pyright")
-vim.lsp.enable("vimls")
-vim.lsp.enable("texlab")
-vim.lsp.enable("cmake")
-vim.lsp.enable("fortls")
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("clangd")
 
--- disable spell check in hover window
-vim.api.nvim_create_autocmd("WinNew", {
-  callback = function()
-    local win = vim.api.nvim_get_current_win()
-    vim.schedule(function()
-      if not vim.api.nvim_win_is_valid(win) then
-        return
-      end
-      if vim.api.nvim_win_get_config(win).relative == "" then
-        return
-      end
-      if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "markdown" then
-        vim.wo[win].spell = false
-      end
-    end)
-  end,
+vim.lsp.enable({
+  "pyright",
+  "vimls",
+  "texlab",
+  "cmake",
+  "fortls",
+  "lua_ls",
+  "clangd",
 })

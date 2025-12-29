@@ -2,9 +2,9 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
-    "jedi_language_server",
+    "pyright",
     "vimls",
-    "texlab",
+    -- "texlab",
     "clangd",
     "fortls",
     "cmake",

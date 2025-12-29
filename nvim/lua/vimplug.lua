@@ -117,6 +117,7 @@ Plug("akinsho/toggleterm.nvim")
 Plug("alpertuna/vim-header", { ["on"] = "AddHeader" })
 -- vimtex
 Plug("lervag/vimtex")
+Plug("micangl/cmp-vimtex")
 -- treesitter
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
 Plug("nvim-treesitter/nvim-treesitter-textobjects", { ["branch"] = "main" })

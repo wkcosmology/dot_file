@@ -102,18 +102,20 @@ pcall(function()
   require("smear_cursor").enabled = true
 end)
 
-require("nvim-surround").setup({
-  keymaps = {
-    insert = "<C-g>s",
-    insert_line = "<C-g>S",
-    normal = "ys",
-    normal_cur = "yss",
-    normal_line = "yS",
-    normal_cur_line = "ySS",
-    visual = "S",
-    visual_line = "gS",
-    delete = "ds",
-    change = "cs",
-    change_line = "cS",
-  },
+-- disable spell check in hover window
+vim.api.nvim_create_autocmd("WinNew", {
+  callback = function()
+    local win = vim.api.nvim_get_current_win()
+    vim.schedule(function()
+      if not vim.api.nvim_win_is_valid(win) then
+        return
+      end
+      if vim.api.nvim_win_get_config(win).relative == "" then
+        return
+      end
+      if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "markdown" then
+        vim.wo[win].spell = false
+      end
+    end)
+  end,
 })

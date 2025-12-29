@@ -62,7 +62,9 @@ vim.keymap.set("n", "<C-u>", function()
 end, { buffer = true, silent = true })
 
 local hl = vim.api.nvim_set_hl
-local link = function(a, b) hl(0, a, { link = b }) end
+local link = function(a, b)
+  hl(0, a, { link = b })
+end
 
 -- ---------------------------------------------------------
 -- Commands & structure (dim)
@@ -106,3 +108,30 @@ vim.cmd([[
         \ containedin=texComment,vimCommentTitle
 ]])
 link("MyTexTodo", "Todo")
+
+-- ---------------------------------------------------------
+-- disable annoying "Event" in the bibtex auto-completion
+-- ---------------------------------------------------------
+local cmp = require("cmp")
+cmp.setup.filetype({ "tex" }, {
+  sources = cmp.config.sources({
+    {
+      name = "nvim_lsp",
+      entry_filter = function(entry)
+        if entry:get_kind() == cmp.lsp.CompletionItemKind.Event then
+          return false
+        end
+        return true
+      end,
+    },
+    { name = "vimtex" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+  }),
+  formatting = {
+    format = function(entry, vim_item)
+      return vim_item
+    end,
+  },
+})
