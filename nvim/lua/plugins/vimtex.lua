@@ -4,7 +4,7 @@
 
 -- imaps
 vim.g.vimtex_imaps_enabled = 1
-vim.g.vimtex_imaps_disabled = { "]]" } -- cannot be disabled
+vim.g.vimtex_imaps_disabled = { "]]" }
 
 -- TeX basics
 vim.g.tex_flavor = "pdflatex"
@@ -22,7 +22,6 @@ vim.g.vimtex_compiler_latexmk = {
   executable = "latexmk",
   hooks = {},
   options = {
-    "-pdf",
     "-cd",
     "-verbose",
     "-file-line-error",
