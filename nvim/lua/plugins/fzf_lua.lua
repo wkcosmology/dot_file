@@ -116,4 +116,9 @@ require("fzf-lua").setup({
   },
 })
 
-require("fzf-lua-frecency").setup()
+require("plugins.fzflua_bib").setup({
+  bibfile = vim.fn.expand("~/.zotero_library.bib"),
+  copy_template = "%s", -- or "\\cite{%s}"
+  title_max_len = 80,
+  preview_window = "right:50%:wrap",
+})
