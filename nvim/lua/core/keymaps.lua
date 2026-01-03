@@ -61,12 +61,11 @@ map("n", "<leader>sq", fzf.quickfix)
 map("n", "<leader>sd", fzf.lsp_document_diagnostics)
 map("n", "<leader>sD", fzf.lsp_workspace_diagnostics)
 map("n", "<leader>sj", fzf.spell_suggest)
--- map("n", "<leader>sb", "<cmd>Telescope bibtex<cr>")
+map("n", "<leader>bb", fzf.buffers)
 map("n", "<leader>sb", require('plugins.fzflua_bib').pick)
 map("n", "<leader>sn", "<cmd>Telescope luasnip<cr>")
 map("n", "<leader>sy", "<cmd>Telescope neoclip<cr>")
 map("n", "<leader>st", "<cmd>Telescope toggleterm<cr>")
-map("n", "<leader>so", "<cmd>Telescope lsp_document_symbols<cr>")
 -- file
 map("n", "<leader>ff", fzf.files)
 map("n", "<leader>fr", fzf.oldfiles)
@@ -106,7 +105,6 @@ map("n", "<leader>ft", "<cmd>Neotree<cr>")
 -- ---------------------------------------------------------
 -- B-group: buffers
 -- ---------------------------------------------------------
-map("n", "<leader>bb", "<cmd>Telescope buffers theme=ivy<cr>")
 map("n", "<leader>bd", "<cmd>Bwipeout<cr>")
 map("n", "<leader>bD", "<cmd>DeleteHiddenBuffers<cr>")
 map("n", "<leader>bs", "<cmd>ClangdSwitchSourceHeader<cr>")
@@ -220,7 +218,6 @@ vim.api.nvim_create_autocmd("FileType", {
   group = ft_grp,
   pattern = "tex",
   callback = function(ev)
-    map("n", "<leader>sb", "<cmd>Telescope bibtex<cr>", { buffer = ev.buf })
     map("n", "<leader>ee", "<cmd>write | VimtexCompile<cr>", { buffer = ev.buf })
     map("n", "<leader>vv", "<cmd>VimtexView<cr>", { buffer = ev.buf })
     map("n", "<leader>vc", "<cmd>VimtexTocOpen<cr>", { buffer = ev.buf })
