@@ -87,12 +87,14 @@ local navic = require("nvim-navic")
 
 -- on_attach to all the languages
 local on_attach = function(client, bufnr)
-  navic.attach(client, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
   local function buf_set_option(...)
     vim.api.nvim_buf_set_option(bufnr, ...)
+  end
+  if client.server_capabilities.documentSymbolProvider then
+    navic.attach(client, bufnr)
   end
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
   local opts = { noremap = true, silent = true }

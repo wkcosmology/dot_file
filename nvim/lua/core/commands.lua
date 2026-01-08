@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "fugitive",
   callback = function(ev)
     map("n", "fP", "<cmd>Git push --force-with-lease<cr>", { buffer = ev.buf, noremap = true })
+    map("n", "a", "<cmd>nohlsearch<CR>", { buffer = ev.buf, noremap = true })
   end,
 })
 

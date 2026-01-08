@@ -62,7 +62,7 @@ map("n", "<leader>sd", fzf.lsp_document_diagnostics)
 map("n", "<leader>sD", fzf.lsp_workspace_diagnostics)
 map("n", "<leader>sj", fzf.spell_suggest)
 map("n", "<leader>bb", fzf.buffers)
-map("n", "<leader>sb", require('plugins.fzflua_bib').pick)
+map("n", "<leader>sb", require("plugins.fzflua_bib").pick)
 map("n", "<leader>sn", "<cmd>Telescope luasnip<cr>")
 map("n", "<leader>sy", "<cmd>Telescope neoclip<cr>")
 map("n", "<leader>st", "<cmd>Telescope toggleterm<cr>")
@@ -154,6 +154,21 @@ map("n", "<leader>gm", "<cmd>Git blame<cr>")
 map("n", "<leader>gP", "<cmd>Git push<cr>")
 map("n", "<leader>gp", "<cmd>Git pull<cr>")
 map("n", "<leader>gf", "<cmd>Git fetch<cr>")
+
+-- Abort Fugitive/Git commit safely with <C-g> in the commit message buffer
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("gitcommit_abort", { clear = true }),
+  pattern = "gitcommit",
+  callback = function(ev)
+    vim.keymap.set("n", "<C-g>", function()
+      if not vim.bo[ev.buf].modifiable then
+        return
+      end
+      vim.api.nvim_buf_set_lines(ev.buf, 0, -1, false, { "" })
+      vim.cmd("silent wq")
+    end, { buffer = ev.buf, silent = true, desc = "Abort commit" })
+  end,
+})
 
 -- ---------------------------------------------------------
 -- X-group: Copy
