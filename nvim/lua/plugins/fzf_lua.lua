@@ -1,6 +1,9 @@
 require("fzf-lua").setup({
   "ivy",
   file_icons = false,
+  buffers = {
+    formatter = "path.filename_first",
+  },
   winopts = {
     height = 26,
     width = 1,

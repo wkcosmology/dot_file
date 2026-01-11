@@ -61,6 +61,8 @@ Plug("tpope/vim-abolish")
 Plug("moll/vim-bbye")
 -- swap and split window
 Plug("xorid/swap-split.nvim")
+-- buffer manager
+Plug("serhez/bento.nvim")
 
 -- ---------------------------------------------------------------------------
 -- ui
