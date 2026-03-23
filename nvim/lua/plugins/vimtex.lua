@@ -7,7 +7,7 @@ vim.g.vimtex_imaps_enabled = 1
 vim.g.vimtex_imaps_disabled = { "]]" }
 
 -- TeX basics
-vim.g.tex_flavor = "pdflatex"
+vim.g.tex_flavor = "xelatex"
 vim.g.tex_conceal = ""
 vim.g.vimtex_parser_bib_backend = "lua"
 
@@ -27,7 +27,12 @@ vim.g.vimtex_compiler_latexmk = {
     "-file-line-error",
     "-synctex=1",
     "-interaction=nonstopmode",
+    "-xelatex", -- ← add this
   },
+}
+
+vim.g.vimtex_compiler_latexmk_engines = {
+  _ = "-xelatex",   -- default for all files
 }
 
 -- =========================
