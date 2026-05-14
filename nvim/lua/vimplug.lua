@@ -125,7 +125,7 @@ Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
 Plug("nvim-treesitter/nvim-treesitter-textobjects", { ["branch"] = "main" })
 -- filetree in lua
 Plug("MunifTanjim/nui.nvim")
-Plug("nvim-neo-tree/neo-tree.nvim", { ["branch"] = "v2.x" })
+Plug("nvim-neo-tree/neo-tree.nvim", { ["branch"] = "v3.x" })
 Plug("karb94/neoscroll.nvim")
 -- generating document
 Plug("danymat/neogen")
