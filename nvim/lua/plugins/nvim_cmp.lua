@@ -67,7 +67,7 @@ cmp.setup({
       local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
       vim_item.abbr = vim_item.abbr:gsub("•", ""):gsub("^%s+", "")
-      kind.kind = "    [" .. (string.sub(strings[2], 1, 10) or "") .. "]"
+      kind.kind = "    [" .. (string.sub(strings[1], 1, 10) or "") .. "]"
       kind.menu = ""
       return kind
     end,
