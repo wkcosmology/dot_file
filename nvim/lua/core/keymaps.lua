@@ -70,18 +70,18 @@ map("n", "<leader>st", "<cmd>Telescope toggleterm<cr>")
 map("n", "<leader>ff", fzf.files)
 map("n", "<leader>fr", fzf.oldfiles)
 map("n", "<leader>fs", "<cmd>Telescope file_browser<cr>")
-map("n", "<leader>fc", function()
+map("n", "<leader>so", function()
   require("aerial").fzf_lua_picker()
 end)
 
-local search_grp = vim.api.nvim_create_augroup("search", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-  group = search_grp,
-  pattern = { "c", "h", "cpp", "hpp", "python", "lua", "vim" },
-  callback = function(ev)
-    map("n", "<leader>so", "<cmd>Telescope lsp_document_symbols<cr>", { buffer = ev.buf })
-  end,
-})
+-- local search_grp = vim.api.nvim_create_augroup("search", { clear = true })
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = search_grp,
+--   pattern = { "c", "h", "cpp", "hpp", "python", "lua", "vim" },
+--   callback = function(ev)
+--     map("n", "<leader>so", "<cmd>Telescope lsp_document_symbols<cr>", { buffer = ev.buf })
+--   end,
+-- })
 
 -- ---------------------------------------------------------
 -- LSP related
