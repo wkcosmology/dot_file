@@ -1,4 +1,31 @@
 -- =========================
+-- neoscroll integration
+-- =========================
+
+-- local ok, neoscroll = pcall(require, "neoscroll")
+-- if not ok then return end
+--
+-- local function scroll(dir)
+--   local win_w = vim.api.nvim_win_get_width(0)
+--   local half = math.floor(vim.api.nvim_win_get_height(0) * 0.4)
+--   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+--   local row = vim.api.nvim_win_get_cursor(0)[1]
+--   local visual, logical = 0, 0
+--
+--   while visual < half do
+--     local i = row + dir * (logical + 1)
+--     if i < 1 or i > #lines then break end
+--     visual = visual + math.max(1, math.ceil(#(lines[i]) / win_w))
+--     logical = logical + 1
+--   end
+--
+--   neoscroll.scroll(dir * math.max(1, logical), { move_cursor = true, duration = 200 })
+-- end
+--
+-- vim.keymap.set("n", "<C-d>", function() scroll(1)  end, { buffer = true, silent = true })
+-- vim.keymap.set("n", "<C-u>", function() scroll(-1) end, { buffer = true, silent = true })
+
+-- =========================
 -- Compilation and viewing
 -- =========================
 local map = vim.keymap.set
@@ -42,33 +69,6 @@ opt.formatoptions:append("t")
 opt.formatoptions:remove("l")
 -- Don't auto-continue comments
 opt.formatoptions:remove({ "r", "o" })
-
--- =========================
--- neoscroll integration
--- =========================
-
-local ok, neoscroll = pcall(require, "neoscroll")
-if not ok then return end
-
-local function scroll(dir)
-  local win_w = vim.api.nvim_win_get_width(0)
-  local half = math.floor(vim.api.nvim_win_get_height(0) * 0.4)
-  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-  local row = vim.api.nvim_win_get_cursor(0)[1]
-  local visual, logical = 0, 0
-
-  while visual < half do
-    local i = row + dir * (logical + 1)
-    if i < 1 or i > #lines then break end
-    visual = visual + math.max(1, math.ceil(#(lines[i]) / win_w))
-    logical = logical + 1
-  end
-
-  neoscroll.scroll(dir * math.max(1, logical), { move_cursor = true, duration = 200 })
-end
-
-vim.keymap.set("n", "<C-d>", function() scroll(1)  end, { buffer = true, silent = true })
-vim.keymap.set("n", "<C-u>", function() scroll(-1) end, { buffer = true, silent = true })
 
 -- ---------------------------------------------------------
 -- Highlight
