@@ -14,7 +14,6 @@ if [ "${UNREAD}" -eq 0 ]; then
     sketchybar --set unread drawing=off
 else
     sketchybar --set unread label="${UNREAD}" icon=" " \
-        icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
         label.padding_right=2 icon.padding_left=10\
         click_script="open -a Mail"
 fi
@@ -23,7 +22,6 @@ if [ "${TOTAL}" -eq 0 ]; then
     sketchybar --set inbox drawing=off
 else
     sketchybar --set inbox label="${TOTAL}" icon=" " \
-        icon.color=0xffcdd6f4 label.color=0xffcdd6f4 \
         icon.padding_left=8\
         click_script="open -a Mail"
 fi
