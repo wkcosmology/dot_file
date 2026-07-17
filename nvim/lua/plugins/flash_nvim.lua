@@ -257,7 +257,6 @@ require("flash").setup({
   },
 })
 
-
 vim.keymap.set({ "n", "x", "o" }, "s", function()
   require("flash").jump({ label = { min_pattern_length = 1 } })
 end)
@@ -317,4 +316,3 @@ vim.keymap.set({ "n", "v", "o", "x" }, "gs", function()
     pattern = "^",
   })
 end)
-
