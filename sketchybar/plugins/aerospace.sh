@@ -23,9 +23,11 @@ display_name="$(map_label "$1")"
 
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
     sketchybar --set $NAME label="$display_name" icon="●"  \
-        background.border_color=0xffcba6f7  \
+        background.color=0xfff5b042 background.clip=0 \
+        icon.color=0xff0000FF label.color=0xff0000FF \
         background.corner_radius=10 background.height=23 background.border_width=1
 else
     sketchybar --set $NAME label="$display_name" icon="○" \
+        icon.color=0xfff5b042 label.color=0xfff5b042 \
         background.drawing=off
 fi
