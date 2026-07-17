@@ -9,7 +9,7 @@ for i in {20..1}
             sketchybar --set take_a_break padding_left=5 padding_right=5 \
                 background.corner_radius=10 background.height=23 background.border_width=1 \
                 width=80 label="$(printf "%02d" $((i))) MINs" icon="󰍹 " align=center
-            sleep 1
+            sleep 60
         else
             exit
         fi
