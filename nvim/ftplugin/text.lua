@@ -41,25 +41,25 @@ opt.formatoptions:remove({ "r", "o" })
 -- =========================
 -- neoscroll integration
 -- =========================
-local ok, neoscroll = pcall(require, "neoscroll")
-if not ok then
-  return
-end
-
-vim.keymap.set("n", "<C-d>", function()
-  local n = (vim.v.count > 0) and vim.v.count or 20
-  neoscroll.scroll(n, { move_cursor = true, duration = 250 })
-end, { buffer = true, silent = true })
-
-vim.keymap.set("n", "<C-u>", function()
-  local n = (vim.v.count > 0) and vim.v.count or 20
-  neoscroll.scroll(-n, { move_cursor = true, duration = 250 })
-end, { buffer = true, silent = true })
-
-local hl = vim.api.nvim_set_hl
-local link = function(a, b)
-  hl(0, a, { link = b })
-end
+-- local ok, neoscroll = pcall(require, "neoscroll")
+-- if not ok then
+--   return
+-- end
+--
+-- vim.keymap.set("n", "<C-d>", function()
+--   local n = (vim.v.count > 0) and vim.v.count or 20
+--   neoscroll.scroll(n, { move_cursor = true, duration = 250 })
+-- end, { buffer = true, silent = true })
+--
+-- vim.keymap.set("n", "<C-u>", function()
+--   local n = (vim.v.count > 0) and vim.v.count or 20
+--   neoscroll.scroll(-n, { move_cursor = true, duration = 250 })
+-- end, { buffer = true, silent = true })
+--
+-- local hl = vim.api.nvim_set_hl
+-- local link = function(a, b)
+--   hl(0, a, { link = b })
+-- end
 
 -- ---------------------------------------------------------
 -- TODO / FIXME inside comments

@@ -277,7 +277,7 @@ end
 vim.keymap.set({ "n", "x", "o" }, "<C-s>", function()
   Flash.jump({
     search = { mode = "search" },
-    label = { after = false, before = { 0, 0 }, uppercase = false, format = format },
+    label = { after = false, before = { 0, 0 }, uppercase = true, format = format },
     pattern = [[\<]],
     action = function(match, state)
       state:hide()
