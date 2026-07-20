@@ -22,7 +22,7 @@ opt.guicursor = "a:blinkon100"
 opt.list = true
 opt.listchars:append({ eol = "↲" })
 
-vim.api.nvim_create_autocmd({ "TextPutPost", "TextYankPost" }, {
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
     pcall(vim.hl.on_yank, { higroup = "Visual", timeout = 200 })
   end,
