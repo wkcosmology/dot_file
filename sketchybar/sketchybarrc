@@ -103,27 +103,49 @@ sketchybar --add item front_app center \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-            --set clock update_freq=10 click_script="open -a Calendar" script="$PLUGIN_DIR/clock.sh" \
-            --add item volume right \
-            --set volume script="$PLUGIN_DIR/volume.sh" \
-            --subscribe volume volume_change \
-            --add item battery right \
-            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-            --subscribe battery system_woke power_source_change \
-            --add item cpumem right \
-            --set cpumem update_freq=5 click_script="open -a Activity\ Monitor" script="$PLUGIN_DIR/cpu_mem.sh" \
-            --add bracket sysinfo cpumem battery volume right\
-            --set sysinfo  script="$PLUGIN_DIR/sysinfo.sh" \
-            --add item inbox right\
-            --set inbox script="$PLUGIN_DIR/mail.inbox.sh" \
-            --subscribe inbox front_app_switched \
-            --add bracket mail inbox right \
-            --set mail script="$PLUGIN_DIR/mail.sh" align=center\
-            --add item take_a_break right \
-            --set take_a_break \
-                      script="$PLUGIN_DIR/take_a_break.sh" \
-                      click_script="$PLUGIN_DIR/take_a_break.sh" \
-            --subscribe take_a_break system_woke
+           --set clock update_freq=30 \
+                       script="$PLUGIN_DIR/clock.sh" \
+                       click_script="open -a Calendar" \
+           \
+           --add slider volume_slider right \
+           --set volume_slider script="$PLUGIN_DIR/volume.sh" \
+                               icon.drawing=off \
+                               label.drawing=off \
+                               slider.width=0 \
+                               slider.background.height=6 \
+                               slider.background.corner_radius=3 \
+                               slider.background.color=0xff494d64 \
+                               slider.highlight_color=0xfff5b042\
+                               slider.knob.drawing=off \
+           --subscribe volume_slider mouse.clicked mouse.entered mouse.exited.global front_app_switched space_change volume_change\
+           \
+           --add item volume right \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --subscribe volume volume_change mouse.entered mouse.exited.global front_app_switched space_change\
+           \
+           --add item battery right \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change \
+           \
+           --add item cpumem right \
+           --set cpumem update_freq=5 \
+                        script="$PLUGIN_DIR/cpu_mem.sh" \
+                        click_script="open -a 'Activity Monitor'" \
+           \
+           --add bracket sysinfo cpumem battery volume volume_slider \
+           \
+           --add item unread right \
+           \
+           --add item inbox right \
+           --set inbox script="$PLUGIN_DIR/mail.inbox.sh" \
+           --subscribe inbox unread front_app_switched \
+           \
+           --add bracket mail unread inbox \
+           \
+           --add item take_a_break right \
+           --set take_a_break script="$PLUGIN_DIR/take_a_break.sh" \
+                              click_script="$PLUGIN_DIR/take_a_break.sh" \
+           --subscribe take_a_break system_woke
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
