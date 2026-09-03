@@ -8,8 +8,8 @@ tell application "Mail"
 end tell
 EOF
 )
-UNREAD=$(printf "%02d" "${UNREAD:-0}")
-TOTAL=$(printf "%02d" "${TOTAL:-0}")
+UNREAD=$(printf "%d" "${UNREAD:-0}")
+TOTAL=$(printf "%d" "${TOTAL:-0}")
 # if [ "${UNREAD}" -eq 0 ]; then
 #     sketchybar --set unread drawing=off
 # else
