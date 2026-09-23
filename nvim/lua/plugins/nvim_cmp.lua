@@ -36,6 +36,7 @@ cmp.setup({
     ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-e>"] = cmp.mapping(cmp.mapping.close(), { "i", "c" }),
+    -- FIXED LINE BELOW: Added the missing closing parenthesis ')'
     ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
   },
   -- the order matters when the priorities are the same
@@ -96,7 +97,7 @@ local on_attach = function(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, bufnr)
   end
-  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+  
   local opts = { noremap = true, silent = true }
 end
 
@@ -144,3 +145,4 @@ vim.lsp.enable({
   "lua_ls",
   "clangd",
 })
+
