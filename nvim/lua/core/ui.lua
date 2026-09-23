@@ -120,7 +120,7 @@ do
         ["zb"] = function() neoscroll.zb({ half_win_duration = 100 }) end,
         -- stylua: ignore end
       },
-      hide_cursor = true,
+      hide_cursor = false,
       stop_eof = true,
       respect_scrolloff = true,
       cursor_scrolls_alone = true,

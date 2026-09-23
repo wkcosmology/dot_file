@@ -1,0 +1,9 @@
+{
+  "trustedformulae": [
+    "felixkratz/formulae/sketchybar"
+  ],
+  "trustedtaps": [
+    "nikitabobko/tap",
+    "romkatv/powerlevel10k"
+  ]
+}
