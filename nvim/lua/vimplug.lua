@@ -19,7 +19,6 @@ Plug("markonm/traces.vim")
 -- enhance * search
 Plug("haya14busa/vim-asterisk")
 -- powerful!!! operate on surround
--- Plug("tpope/vim-surround")
 Plug("kylechui/nvim-surround")
 -- enhance . operate, support more like vim-surround
 Plug("tpope/vim-repeat")
@@ -49,8 +48,6 @@ Plug("tpope/vim-scriptease")
 Plug("prettier/vim-prettier", { ["do"] = "yarn install" })
 -- dispatch run the tasks
 Plug("tpope/vim-dispatch")
--- quick navi the working files
-Plug("ThePrimeagen/harpoon", { ["branch"] = "harpoon2" })
 -- case preserving substitute
 Plug("tpope/vim-abolish")
 
@@ -61,19 +58,16 @@ Plug("tpope/vim-abolish")
 Plug("moll/vim-bbye")
 -- swap and split window
 Plug("xorid/swap-split.nvim")
--- buffer manager
-Plug("serhez/bento.nvim")
 
 -- ---------------------------------------------------------------------------
 -- ui
 -- ---------------------------------------------------------------------------
 -- color theme
-Plug("bluz71/vim-moonfly-colors")
+-- Plug("bluz71/vim-moonfly-colors")
 Plug("catppuccin/nvim")
 -- let the cursor stay away from ceil and bottom
 Plug("drzel/vim-scrolloff-fraction")
 -- statusline
--- Plug("wkcosmology/statusline")
 Plug("nvim-lualine/lualine.nvim")
 -- show the vertical lines to represent the indent
 Plug("lukas-reineke/indent-blankline.nvim")
@@ -129,8 +123,6 @@ Plug("nvim-neo-tree/neo-tree.nvim", { ["branch"] = "v3.x" })
 Plug("karb94/neoscroll.nvim")
 -- generating document
 Plug("danymat/neogen")
--- presentation
-Plug("tjdevries/present.nvim")
 
 -- ---------------------------------------------------------------------------
 -- Lsp and related
