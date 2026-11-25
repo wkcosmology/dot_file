@@ -68,4 +68,5 @@ vim.cmd([[
   syntax match MyTexTodo /\v<(TODO|FIXME|NOTE|OPTIMIZE|XXX):/
         \ containedin=texComment,vimCommentTitle
 ]])
-link("MyTexTodo", "Todo")
+vim.api.nvim_set_hl(0, "MyTexTodo", { link = "Todo" })
+

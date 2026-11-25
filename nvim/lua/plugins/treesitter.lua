@@ -1,8 +1,8 @@
 require("nvim-treesitter").setup({
   highlight = {
-    enable = false,
+    enable = true,
     additional_vim_regex_highlighting = false,
-    disable = { "latex", "lua", "vim", "tex" , "txt"},
+    disable = { "latex", "lua", "vim", "tex" },
   },
   indent = {
     enable = false,
